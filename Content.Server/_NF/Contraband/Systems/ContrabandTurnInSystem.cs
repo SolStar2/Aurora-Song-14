@@ -19,6 +19,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Stacks;
+using Content.Shared.Store;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
@@ -81,12 +82,15 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
             return;
         }
 
-        GetPalletGoods(gridUid, (uid, comp), out var toSell, out var amount, out var unregistered);
+        GetPalletGoods(gridUid, (uid, comp), out var toSell, out var amounts);
+        GetPalletUnregistered(gridUid, (uid, comp), out var unregistered); // Aurora
+
+        amounts.TryGetValue(comp.SleRewardCurrency, out var sleValue); // Aurora - separate sle and turn in rewards.
 
         var totalCount = toSell;
         toSell.UnionWith(unregistered);
         _uiSystem.SetUiState(uid, ContrabandPalletConsoleUiKey.Contraband,
-            new ContrabandPalletConsoleInterfaceState((int) amount, totalCount.Count, unregistered.Count, true));
+            new ContrabandPalletConsoleInterfaceState((int) sleValue, totalCount.Count, unregistered.Count, true)); // Aurora - separate sle and turn in rewards.
     }
 
     private void OnPalletUIOpen(EntityUid uid, ContrabandPalletConsoleComponent component, BoundUIOpenedEvent args)
@@ -146,12 +150,16 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
         return pads;
     }
 
-    private void SellPallets(EntityUid gridUid, Entity<ContrabandPalletConsoleComponent> component, EntityUid? station, out int amount)
+    // Aurora - separate sle and turn in rewards.
+    private void SellPallets(EntityUid gridUid, Entity<ContrabandPalletConsoleComponent> component, EntityUid? station, out int sleReward, out int turnInReward)
     {
         station ??= _station.GetOwningStation(gridUid);
-        GetPalletGoods(gridUid, component, out var toSell, out amount , out _);
+        GetPalletGoods(gridUid, component, out var toSell, out var values); // Aurora - separate sle and turn in rewards.
 
-        Log.Debug($"{component.Comp.Faction} sold {toSell.Count} contraband items for {amount}");
+        values.TryGetValue(component.Comp.SleRewardCurrency, out sleReward); // Aurora - separate sle and turn in rewards.
+        values.TryGetValue(component.Comp.TurnInRewardCurrency, out turnInReward); // Aurora - separate sle and turn in rewards.
+
+        Log.Debug($"{component.Comp.Faction} sold {toSell.Count} contraband items for {sleReward} and {turnInReward}."); // Aurora - separate sle and turn in rewards.
 
         if (station != null)
         {
@@ -165,12 +173,14 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
         }
     }
 
-    private void GetPalletGoods(EntityUid gridUid, Entity<ContrabandPalletConsoleComponent> console, out HashSet<EntityUid> toSell, out int amount, out HashSet<EntityUid> unregistered)
+    // Aurora - support for multiple currencies.
+    private void GetPalletGoods(EntityUid gridUid, Entity<ContrabandPalletConsoleComponent> console, out HashSet<EntityUid> toSell, out Dictionary<ProtoId<CurrencyPrototype>, int> values)
     {
-        amount = 0;
+        values = new Dictionary<ProtoId<CurrencyPrototype>, int>(); // Aurora - support for multiple currencies.
         toSell = new HashSet<EntityUid>();
-        unregistered = new HashSet<EntityUid>(); // Aurora
 
+        int sleRewardAmount = 0; // Aurora - separate sle and turn in rewards.
+        int turnInRewardAmount = 0; // Aurora - separate sle and turn in rewards.
         foreach (var (palletUid, _) in GetContrabandPallets(console, gridUid))
         {
             foreach (var ent in _lookup.GetEntitiesIntersecting(palletUid,
@@ -192,19 +202,28 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
                 if (TryComp<ContrabandComponent>(ent, out var comp)
                     && !toSell.Contains(ent)
                     && comp.TurnInValues is { } turnInValues
-                    && turnInValues.ContainsKey(console.Comp.RewardType))
+                    && (turnInValues.ContainsKey(console.Comp.SleRewardCurrency) || turnInValues.ContainsKey(console.Comp.TurnInRewardCurrency))) // Aurora - separate sle and turn in rewards.
                 {
                     toSell.Add(ent);
-                    var value = comp.TurnInValues[console.Comp.RewardType];
-                    amount += value;
+                    sleRewardAmount += comp.TurnInValues[console.Comp.SleRewardCurrency]; // Aurora - separate sle and turn in rewards.
+                    turnInRewardAmount += comp.TurnInValues[console.Comp.TurnInRewardCurrency]; // Aurora - separate sle and turn in rewards.
                 }
+            }
+            values.Add(console.Comp.SleRewardCurrency, sleRewardAmount);
+            values.Add(console.Comp.TurnInRewardCurrency, turnInRewardAmount);
+        }
+    }
 
-                // Aurora
-                if (MetaData(ent).EntityPrototype is {} proto
-                    && console.Comp.RegisterRecipies.ContainsKey(proto))
-                {
+    // Aurora
+    private void GetPalletUnregistered(EntityUid gridUid, Entity<ContrabandPalletConsoleComponent> console, out HashSet<EntityUid> unregistered)
+    {
+        unregistered = new HashSet<EntityUid>();
+        foreach (var (palletUid, _) in GetContrabandPallets(console, gridUid))
+        {
+            foreach (var ent in _lookup.GetEntitiesIntersecting(palletUid, LookupFlags.Dynamic | LookupFlags.Sundries | LookupFlags.Approximate))
+            {
+                if (MetaData(ent).EntityPrototype is { } proto && console.Comp.RegisterRecipies.ContainsKey(proto))
                     unregistered.Add(ent);
-                }
             }
         }
     }
@@ -252,14 +271,14 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
             return;
         }
 
-        SellPallets(gridUid, (uid, component), null, out var price);
+        SellPallets(gridUid, (uid, component), null, out var sleValue, out var turnInValue); // Aurora - separate sle and turn in rewards.
 
-        var stackPrototype = _protoMan.Index<StackPrototype>(component.RewardType);
-        var stackUid = _stack.Spawn(price, stackPrototype, _scuOutput.ToCoordinates()); // Aurora spawn on scu output
+        var stackPrototype = _protoMan.Index<StackPrototype>(component.SleRewardCurrency); // Aurora - separate sle and turn in rewards.
+        var stackUid = _stack.Spawn(sleValue, stackPrototype, _scuOutput.ToCoordinates()); // Aurora spawn on scu output
         _transform.SetLocalRotation(stackUid, Angle.Zero); // Orient these to grid north instead of map north
 
-        var rewardPrototype = _protoMan.Index<StackPrototype>(component.RewardCashPrototype); // Aurora: need EC prototype defined in scope
-        stackUid = _stack.Spawn(price, rewardPrototype, args.Actor.ToCoordinates()); // Aurora: spawn "cash" (now EC)
+        var rewardPrototype = _protoMan.Index<StackPrototype>(component.TurnInRewardCurrency); // Aurora: need EC prototype defined in scope
+        stackUid = _stack.Spawn(turnInValue, rewardPrototype, args.Actor.ToCoordinates()); // Aurora: spawn "cash" (now EC)
         if (!_hands.TryPickupAnyHand(args.Actor, stackUid))
             _transform.SetLocalRotation(stackUid, Angle.Zero); // Orient these to grid north instead of map north
         UpdatePalletConsoleInterface(uid, component);
@@ -280,10 +299,10 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
                 new ContrabandPalletConsoleInterfaceState(0, 0, 0, false));
             return;
         }
-        GetPalletGoods(gridUid, ent, out _, out _ , out var toRegister);
+        GetPalletUnregistered(gridUid, ent, out var toRegister);
 
         // Award SCUs
-        var stackPrototype = _protoMan.Index<StackPrototype>(ent.Comp.RewardType);
+        var stackPrototype = _protoMan.Index<StackPrototype>(ent.Comp.SleRewardCurrency);
         // 1 SCU per registered item
         var stackUid = _stack.Spawn(toRegister.Count, stackPrototype, _scuOutput.ToCoordinates());
 

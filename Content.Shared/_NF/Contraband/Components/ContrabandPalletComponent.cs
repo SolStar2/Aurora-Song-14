@@ -1,5 +1,6 @@
 using Content.Shared.Access;
 using Content.Shared.Stacks;
+using Content.Shared.Store;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
@@ -10,11 +11,12 @@ namespace Content.Shared._NF.Contraband.Components;
 [Access(typeof(SharedContrabandTurnInSystem))]
 public sealed partial class ContrabandPalletConsoleComponent : Component
 {
-    [ViewVariables(VVAccess.ReadWrite), DataField("cashType", serverOnly: true, customTypeSerializer: typeof(PrototypeIdSerializer<StackPrototype>))]
-    public string RewardType = "FrontierUplinkCoin";
+    // Aurora - Renamed to SleRewardCurrency to reflect the distinction between the reward for sle for receiving contraband versus the reward for the person turning in the contraband
+    [ViewVariables(VVAccess.ReadWrite), DataField(serverOnly: true, customTypeSerializer: typeof(PrototypeIdSerializer<StackPrototype>))]
+    public ProtoId<CurrencyPrototype> SleRewardCurrency = "FrontierUplinkCoin";
 
-    [DataField]
-    public EntProtoId RewardCashPrototype = "ExchangeCoin"; // SpaceCash5000 > ExchangeCoin | switched from cash to ExchangeCoin as economy experiment - Aurora
+    [ViewVariables(VVAccess.ReadWrite), DataField(serverOnly: true, customTypeSerializer: typeof(PrototypeIdSerializer<StackPrototype>))]
+    public ProtoId<CurrencyPrototype> TurnInRewardCurrency = "ExchangeCoin"; // SpaceCash5000 > ExchangeCoin | switched from cash to ExchangeCoin as economy experiment - Aurora
 
     [DataField]
     public SoundSpecifier ErrorSound = new SoundCollectionSpecifier("CargoError"); // Aurora: add deny sound
