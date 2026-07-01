@@ -1,0 +1,9 @@
+<!--  Bounty Contracts Cartridge UI -->
+<ui1:NeoNoteUiFragment xmlns:ui="clr-namespace:Content.Client._AS.NeoNote.UI"
+                              xmlns="https://spacestation14.io"
+                              xmlns:ui1="clr-namespace:Content.Client._AS.NeoNote.UI"
+                              VerticalExpand="True" HorizontalExpand="True">
+
+    <!-- All submenus are added by code -->
+
+</ui1:NeoNoteUiFragment>

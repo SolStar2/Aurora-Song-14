@@ -9,22 +9,23 @@
 #   - type: Sprite
 #     sprite: Objects/Devices/cartridge.rsi
 
-- type: entity
-  parent: NFBasePDACartridge # Frontier: BaseItem<NFBasePDACartridge
-  id: NotekeeperCartridge
-  name: notekeeper cartridge
-  description: A program for keeping notes.
-  components:
-  - type: Sprite
-    state: cart-y
-  - type: UIFragment
-    ui: !type:NotekeeperUi
-  - type: Cartridge
-    programName: notekeeper-program-name
-    icon:
-      sprite:  Objects/Misc/books.rsi
-      state: book_icon
-  - type: NotekeeperCartridge
+# Aurora's Song - Moved to _AS namespace
+#- type: entity
+#  parent: NFBasePDACartridge # Frontier: BaseItem<NFBasePDACartridge
+#  id: NotekeeperCartridge
+#  name: notekeeper cartridge
+#  description: A program for keeping notes.
+#  components:
+#  - type: Sprite
+#    state: cart-y
+#  - type: UIFragment
+#    ui: !type:NotekeeperUi
+#  - type: Cartridge
+#    programName: notekeeper-program-name
+#    icon:
+#      sprite:  Objects/Misc/books.rsi
+#      state: book_icon
+#  - type: NotekeeperCartridge
 
 - type: entity
   parent: NFBasePDACartridge # Frontier: BaseItem<NFBasePDACartridge

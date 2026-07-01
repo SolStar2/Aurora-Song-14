@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Threading;
@@ -1938,6 +1939,117 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 .Where(r => r.RecordCharacterId == recordId)
                 .OrderByDescending(r => r.CreatedAt)
                 .ToListAsync();
+        }
+
+        #endregion
+
+        #region Personal Notes
+
+        public async Task<RecordPersonalNote> AddPersonalNote(Guid authorUserId, int authorCharacterId, string title, string body, int roundId)
+        {
+            await using var db = await GetDb();
+
+            // The target in this case matches the author. This maintains indexing search patterns.
+            var characterRecord = BuildCharacterRecord(RecordType.PersonalNote, authorCharacterId, authorUserId, authorCharacterId, roundId);
+
+            var record = new RecordPersonalNote
+            {
+                RecordCharacter = characterRecord,
+                Body = body,
+                Title = title,
+            };
+
+            db.DbContext.RecordPersonalNote.Add(record);
+            await db.DbContext.SaveChangesAsync();
+            return record;
+        }
+
+        public async Task<List<RecordPersonalNote>> GetPersonalNotes(int authorCharacterId)
+        {
+            await using var db = await GetDb();
+
+            var characterRecords = await FilterCharacterRecords(db.DbContext, RecordType.PersonalNote, authorCharacterId)
+                .Include(r => r.RecordPersonalNote)
+                .Include(le => le.LastEdit)
+                .AsNoTracking()
+                .ToListAsync();
+
+            return characterRecords
+                .Select(r => r.RecordPersonalNote)
+                .OfType<RecordPersonalNote>()
+                .ToList();
+        }
+
+        public async Task<RecordUpdateResult> UpdatePersonalNote(Guid? authorUserId,
+            int authorCharacterId,
+            int recordId,
+            string? title,
+            string? note,
+            bool allowNonOwner = false)
+        {
+            var result = new RecordUpdateResult();
+
+            await using var db = await GetDb();
+
+            var existing = await db.DbContext.RecordPersonalNote
+                .Include(r => r.RecordCharacter)
+                .SingleOrDefaultAsync(r => r.RecordCharacterId == recordId);
+
+            if (existing == null)
+            {
+                result.Status = RecordUpdateStatus.NotFound;
+                return result;
+            }
+
+            if (!allowNonOwner && existing.RecordCharacter.AuthorCharacterId != authorCharacterId)
+            {
+                result.Status = RecordUpdateStatus.Prohibited;
+                return result;
+            }
+
+            if (existing.RecordCharacter.Deleted == true)
+            {
+                result.Status = RecordUpdateStatus.Prohibited;
+                return result;
+            }
+
+            var edits = new List<RecordEdit>(2);
+
+            if (title != null && existing.Title != title)
+            {
+                edits.Add(AddRecordEdit(db.DbContext,
+                    existing.RecordCharacter,
+                    nameof(RecordPersonalNote.Title),
+                    existing.Title,
+                    title,
+                    authorUserId,
+                    authorCharacterId));
+                existing.Title = title;
+            }
+
+            if (note != null && existing.Body != note)
+            {
+                edits.Add(AddRecordEdit(db.DbContext,
+                    existing.RecordCharacter,
+                    nameof(RecordPersonalNote.Body),
+                    existing.Body,
+                    note,
+                    authorUserId,
+                    authorCharacterId));
+                existing.Body = note;
+            }
+
+            if (edits.Count == 0)
+            {
+                result.Status = RecordUpdateStatus.NoChange;
+                return result;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+            result.Status = RecordUpdateStatus.Updated;
+            result.Edits = edits.Select(e => new Edit(e.Field, e.Id, e.OldValue, e.NewValue)).ToList();
+
+            return result;
         }
 
         #endregion

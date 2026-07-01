@@ -1,0 +1,36 @@
+<Control xmlns="https://spacestation14.io" HorizontalExpand="True">
+    <PanelContainer HorizontalExpand="True" Margin="4,4,4,4">
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="8,8,8,8">
+
+            <!-- Content section: title with preview underneath -->
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                <Label Name="TitleLabel" StyleClasses="LabelHeading"
+                       ClipText="True"/>
+                <Label Name="PreviewLabel"
+                       MaxHeight="48" ClipText="True"
+                       StyleClasses="LabelSubText"/>
+            </BoxContainer>
+
+            <!-- Data section: buttons + timestamps -->
+            <BoxContainer Orientation="Vertical" HorizontalAlignment="Right">
+
+                <!-- Row 1: action buttons -->
+                <BoxContainer Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Name="OpenButton" Text="{Loc 'neonote-ui-entry-open'}"
+                            Margin="0,0,4,0"/>
+                    <Button Name="DeleteButton" Text="{Loc 'neonote-ui-entry-delete'}"/>
+                </BoxContainer>
+
+                <!-- Row 2: created timestamp -->
+                <Label Name="CreatedLabel" StyleClasses="LabelSubText"
+                       HorizontalAlignment="Right"/>
+
+                <!-- Row 3: modified timestamp -->
+                <Label Name="ModifiedLabel" StyleClasses="LabelSubText"
+                       HorizontalAlignment="Right"/>
+
+            </BoxContainer>
+
+        </BoxContainer>
+    </PanelContainer>
+</Control>

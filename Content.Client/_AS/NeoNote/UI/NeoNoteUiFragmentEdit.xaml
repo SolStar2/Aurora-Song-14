@@ -1,0 +1,22 @@
+<Control xmlns="https://spacestation14.io"
+         HorizontalExpand="True" VerticalExpand="True">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="8,8,8,8">
+
+        <!-- Editable title -->
+        <LineEdit Name="TitleEdit" HorizontalExpand="True"
+                  PlaceHolder="{Loc 'neonote-ui-title-placeholder'}"/>
+
+        <PanelContainer StyleClasses="LowDivider" Margin="0,4,0,4"/>
+
+        <!-- Editable body, scrollable -->
+        <TextEdit Name="BodyEdit" HorizontalExpand="True" VerticalExpand="True"/>
+
+        <!-- Footer actions -->
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0,8,0,0">
+            <Button Name="ExitButton" Text="{Loc 'neonote-ui-edit-close'}"/>
+            <Control HorizontalExpand="True"/>
+            <Button Name="SaveButton" Text="{Loc 'neonote-ui-edit-save'}"/>
+        </BoxContainer>
+
+    </BoxContainer>
+</Control>

@@ -1,0 +1,31 @@
+<Control xmlns="https://spacestation14.io"
+         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+         HorizontalExpand="True" VerticalExpand="True">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="8,8,8,8">
+
+        <!-- Header: title + timestamps -->
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+            <Label Name="TitleLabel" StyleClasses="LabelHeading"/>
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                <Label Name="CreatedLabel" StyleClasses="LabelSubText" Margin="0,0,8,0"/>
+                <Label Name="ModifiedLabel" StyleClasses="LabelSubText"/>
+            </BoxContainer>
+        </BoxContainer>
+
+        <PanelContainer StyleClasses="LowDivider" Margin="0,4,0,4"/>
+
+        <!-- Body, scrollable -->
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
+            <RichTextLabel Name="BodyLabel" HorizontalExpand="True" VerticalAlignment="Top"/>
+        </ScrollContainer>
+
+        <!-- Footer actions -->
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0,8,0,0">
+            <Button Name="CloseButton" Text="{Loc 'neonote-ui-view-close'}"/>
+            <Control HorizontalExpand="True"/>
+            <Button Name="DeleteButton" Text="{Loc 'neonote-ui-entry-delete'}" Margin="0,0,4,0"/>
+            <Button Name="EditButton" Text="{Loc 'neonote-ui-view-edit'}"/>
+        </BoxContainer>
+
+    </BoxContainer>
+</Control>

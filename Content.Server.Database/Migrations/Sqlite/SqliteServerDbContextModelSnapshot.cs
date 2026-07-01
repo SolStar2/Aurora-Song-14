@@ -1362,6 +1362,28 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("record_edit", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.RecordPersonalNote", b =>
+                {
+                    b.Property<int>("RecordCharacterId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("record_character_id");
+
+                    b.Property<string>("Body")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("body");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("title");
+
+                    b.HasKey("RecordCharacterId")
+                        .HasName("PK_record_personal_note");
+
+                    b.ToTable("record_personal_note", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.RoleWhitelist", b =>
                 {
                     b.Property<Guid>("PlayerUserId")
@@ -2131,6 +2153,18 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("RecordCharacter");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.RecordPersonalNote", b =>
+                {
+                    b.HasOne("Content.Server.Database.RecordCharacter", "RecordCharacter")
+                        .WithOne("RecordPersonalNote")
+                        .HasForeignKey("Content.Server.Database.RecordPersonalNote", "RecordCharacterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_record_personal_note_record_character_record_character_id");
+
+                    b.Navigation("RecordCharacter");
+                });
+
             modelBuilder.Entity("Content.Server.Database.RoleWhitelist", b =>
                 {
                     b.HasOne("Content.Server.Database.Player", "Player")
@@ -2326,6 +2360,8 @@ namespace Content.Server.Database.Migrations.Sqlite
             modelBuilder.Entity("Content.Server.Database.RecordCharacter", b =>
                 {
                     b.Navigation("RecordEdits");
+
+                    b.Navigation("RecordPersonalNote");
                 });
 
             modelBuilder.Entity("Content.Server.Database.Round", b =>

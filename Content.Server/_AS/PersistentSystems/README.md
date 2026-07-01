@@ -16,7 +16,7 @@ The goal of this project is to bridge the gap of continuity between rounds by in
 Not all of these systems are currently planned and will need further discussion.
 
 - [X] RecordCharacter
-	- [ ] RecordPersonalNote
+	- [X] RecordPersonalNote
 	- [ ] RecordSLENote
 	- [ ] RecordMedicalNote
 	- [ ] RecordLicense

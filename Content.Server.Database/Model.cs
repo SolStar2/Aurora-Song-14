@@ -54,6 +54,9 @@ namespace Content.Server.Database
         #region Aurora Song
 
         public DbSet<RecordCharacter> RecordCharacter { get; set; } = null!;
+
+        public DbSet<RecordPersonalNote> RecordPersonalNote { get; set; } = null!;
+
         public DbSet<RecordEdit> RecordEdit { get; set; } = null!;
 
         #endregion
@@ -353,6 +356,13 @@ namespace Content.Server.Database
             modelBuilder.Entity<RecordCharacter>()
                 .HasIndex(r => new { r.RecordType, r.TargetCharacterId, r.CreatedAt })
                 .IsDescending(false, false, true);
+
+            // RecordPersonalNote
+            modelBuilder.Entity<RecordPersonalNote>()
+                .HasOne(r => r.RecordCharacter)
+                .WithOne(r => r.RecordPersonalNote)
+                .HasForeignKey<RecordPersonalNote>(r => r.RecordCharacterId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // RecordEdit
             modelBuilder.Entity<RecordEdit>()
@@ -1189,6 +1199,8 @@ namespace Content.Server.Database
         public Guid? DeletedById { get; set; }
         public DateTime? DeletedAt { get; set; }
 
+        public RecordPersonalNote? RecordPersonalNote { get; set; }
+
         public ICollection<RecordEdit>? RecordEdits { get; set; }
 
     }
@@ -1202,6 +1214,15 @@ namespace Content.Server.Database
         Arrest,
         LegalCase,
         Employment,
+    }
+
+    public class RecordPersonalNote
+    {
+        [Key]
+        public int RecordCharacterId { get; set; }
+        public RecordCharacter RecordCharacter { get; set; } = null!;
+        public string Title { get; set; } = null!;
+        public string Body { get; set; } = null!;
     }
 
     /// <summary>

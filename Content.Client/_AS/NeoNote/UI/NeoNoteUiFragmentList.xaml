@@ -1,0 +1,28 @@
+<Control xmlns="https://spacestation14.io" HorizontalExpand="True" VerticalExpand="True">
+    <PanelContainer VerticalExpand="True" HorizontalExpand="True">
+
+        <Label Name="NoNotesLabel" Text="{Loc 'neonote-ui-list-no-notes'}"
+               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <!-- Scroll with all notes -->
+        <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
+            <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
+                <BoxContainer
+                    Name="NotesContainer"
+                    Orientation="Vertical"
+                    VerticalExpand="True">
+                    <!-- Notes are added here by code -->
+                </BoxContainer>
+            </ScrollContainer>
+
+            <!-- Footer -->
+            <PanelContainer HorizontalExpand="True" MinHeight="32">
+                <BoxContainer Orientation="Horizontal" Margin="8,8,8,8" HorizontalExpand="True">
+                    <Control HorizontalExpand="True"/>
+                    <Button Name="CreateButton" Text="{Loc 'neonote-ui-list-create'}"/>
+                </BoxContainer>
+            </PanelContainer>
+        </BoxContainer>
+
+    </PanelContainer>
+</Control>

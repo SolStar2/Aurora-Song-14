@@ -27,6 +27,11 @@ public sealed class RecordLogging : EntitySystem
             $"{session:Player} created {record.RecordType}: {record.Id}.\n{adminLogDetails}");
     }
 
+    public void LogPersonalNoteCreated(RecordPersonalNote record, ICommonSession session)
+    {
+        LogRecordCreated(session, record.RecordCharacter, $"Title: {record.Title}\nBody: {record.Body}");
+    }
+
     public void LogRecordUpdated(ICommonSession? session, int? recordId, RecordUpdateResult result)
     {
         switch (result.Status)

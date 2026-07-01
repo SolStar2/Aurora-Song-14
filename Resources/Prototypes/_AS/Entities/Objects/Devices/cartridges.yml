@@ -1,0 +1,16 @@
+- type: entity
+  parent: NFBasePDACartridge
+  id: NotekeeperCartridge # reuse the NoteKeeperCartridge so we dont touch 1 million files
+  name: neonote cartridge
+  description: A program for keeping notes.
+  components:
+  - type: Sprite
+    state: cart-y
+  - type: UIFragment
+    ui: !type:NeoNoteUi
+  - type: Cartridge
+    programName: neonote-program-name
+    icon:
+      sprite:  _AS/Interface/Misc/program_icons.rsi
+      state: neo_note
+  - type: NeoNoteCartridge

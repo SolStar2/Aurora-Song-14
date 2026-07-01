@@ -325,6 +325,9 @@ namespace Content.Server.Database
         // Aurora Song
         #region Persistent Game Systems
 
+        Task<RecordPersonalNote> AddPersonalNote(Guid authorUserId, int authorCharacterId, string title, string body, int roundId);
+        Task<List<RecordPersonalNote>> GetPersonalNotes(int authorCharacterId);
+        Task<RecordUpdateResult> UpdatePersonalNote(Guid? authorUserId, int authorCharacterId, int recordId, string? title, string? body, bool allowNonOwner = false);
         Task<RecordCharacter?> GetCharacterRecord(int recordId);
         Task<List<RecordCharacter>> GetFilteredCharacterRecords(RecordType? recordType, int? targetCharacterId = null, Guid? authorUserId = null, int? authorCharacterId = null, bool? hidden = false, bool? deleted = false);
         Task<RecordUpdateStatus> HideRecord(int recordId, Guid? authorUserId, int? authorCharacterId, bool allowNonOwner = false, bool updateEdits = false);
@@ -1061,6 +1064,24 @@ namespace Content.Server.Database
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetRecordEdits(recordId));
+        }
+
+        public Task<RecordPersonalNote> AddPersonalNote(Guid authorUserId, int authorCharacterId, string title, string body, int roundId)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddPersonalNote(authorUserId, authorCharacterId, title, body, roundId));
+        }
+
+        public Task<List<RecordPersonalNote>> GetPersonalNotes(int authorCharacterId)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetPersonalNotes(authorCharacterId));
+        }
+
+        public Task<RecordUpdateResult> UpdatePersonalNote(Guid? authorUserId, int authorCharacterId, int recordId, string? title, string? body, bool allowNonOwner)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.UpdatePersonalNote(authorUserId, authorCharacterId, recordId, title, body, allowNonOwner));
         }
 
         #endregion

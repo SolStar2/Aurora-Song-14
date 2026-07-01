@@ -19,6 +19,29 @@ public sealed class CartridgeLoaderSystem : SharedCartridgeLoaderSystem
     [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
     [Dependency] private readonly PdaSystem _pda = default!;
 
+    // Aurora's Song - add queueing to state pushes to avoid collisions.
+    private struct PendingUiState(Entity<UserInterfaceComponent?> entity, Enum key, BoundUserInterfaceState? state)
+    {
+        public Entity<UserInterfaceComponent?> Entity = entity;
+        public Enum Key = key;
+        public BoundUserInterfaceState? State =  state;
+    }
+
+    // Aurora's Song - add queueing to state pushes to avoid collisions.
+    private sealed class LoaderQueue
+    {
+        public EntityUid Loader;
+        public Queue<PendingUiState> Queue = new ();
+
+        public LoaderQueue(EntityUid loader, PendingUiState state)
+        {
+            Loader = loader;
+            Queue.Enqueue(state);
+        }
+    }
+
+    private List<LoaderQueue> _pendingStateUpdates = new(); // Aurora's Song - add queueing to state pushes to avoid collisions.
+
     public override void Initialize()
     {
         base.Initialize();
@@ -29,6 +52,21 @@ public sealed class CartridgeLoaderSystem : SharedCartridgeLoaderSystem
         SubscribeLocalEvent<CartridgeLoaderComponent, AfterInteractEvent>(OnUsed);
         SubscribeLocalEvent<CartridgeLoaderComponent, CartridgeLoaderUiMessage>(OnLoaderUiMessage);
         SubscribeLocalEvent<CartridgeLoaderComponent, CartridgeUiMessage>(OnUiMessage);
+    }
+
+    // Aurora's Song - add queueing to state pushes to avoid collisions.
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        for (int i = _pendingStateUpdates.Count - 1; i >= 0; i--)
+        {
+            var loaderQueue = _pendingStateUpdates[i];
+            if (loaderQueue.Queue.TryDequeue(out var update))
+                _userInterfaceSystem.SetUiState(update.Entity, update.Key, update.State);
+            else
+                _pendingStateUpdates.RemoveAt(i);
+        }
     }
 
     public IReadOnlyList<EntityUid> GetInstalled(EntityUid uid, ContainerManagerComponent? comp = null)
@@ -128,8 +166,15 @@ public sealed class CartridgeLoaderSystem : SharedCartridgeLoaderSystem
         if (!Resolve(loaderUid, ref loader))
             return;
 
-        if (_userInterfaceSystem.HasUi(loaderUid, loader.UiKey))
-            _userInterfaceSystem.SetUiState(loaderUid, loader.UiKey, state);
+        if (!_userInterfaceSystem.HasUi(loaderUid, loader.UiKey))
+            return;
+
+        var pending = new PendingUiState(loaderUid, loader.UiKey, state);
+        var index = _pendingStateUpdates.FindIndex(u => u.Loader == loaderUid);
+        if (index == -1)
+            _pendingStateUpdates.Add(new LoaderQueue(loaderUid, pending));
+        else
+            _pendingStateUpdates[index].Queue.Enqueue(pending);
     }
 
     /// <summary>
@@ -354,6 +399,11 @@ public sealed class CartridgeLoaderSystem : SharedCartridgeLoaderSystem
 
     protected override void OnItemInserted(EntityUid uid, CartridgeLoaderComponent loader, EntInsertedIntoContainerMessage args)
     {
+        // Aurora's Song - Add LoaderContentsChangedEvent
+        if (loader.ActiveProgram != args.Entity && loader.ActiveProgram is { } activeProgram)
+            RaiseLocalEvent(activeProgram, new LoaderContentsChangedEvent((uid, loader), args.Entity, args.Container, true));
+        // End Aurora's Song
+
         if (args.Container.ID != InstalledContainerId && args.Container.ID != loader.CartridgeSlot.ID)
             return;
 
@@ -371,6 +421,11 @@ public sealed class CartridgeLoaderSystem : SharedCartridgeLoaderSystem
 
     protected override void OnItemRemoved(EntityUid uid, CartridgeLoaderComponent loader, EntRemovedFromContainerMessage args)
     {
+        // Aurora's Song - Add LoaderContentsChangedEvent
+        if (loader.ActiveProgram != args.Entity && loader.ActiveProgram is { } activeProgram)
+            RaiseLocalEvent(activeProgram, new LoaderContentsChangedEvent((uid, loader), args.Entity, args.Container, false));
+        // End Aurora's Song
+
         if (args.Container.ID != InstalledContainerId && args.Container.ID != loader.CartridgeSlot.ID)
             return;
 
