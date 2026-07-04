@@ -2111,7 +2111,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         /// <param name="body">The new Body to update the note with. nNull leave the body as is.</param>
         /// <param name="allowNonOwner">When set, allows edits not originating from the note's author character.</param>
         /// <returns>The outcome of the attempted edit.</returns>
-        public async Task<RecordUpdateResult> UpdatePersonalNote(Guid authorUserId,
+        public async Task<RecordUpdateResult> UpdatePersonalNote(Guid? authorUserId,
             int? authorCharacterId,
             int recordId,
             string? title,
