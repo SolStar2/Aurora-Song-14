@@ -5,6 +5,9 @@ using Robust.Client.UserInterface.XAML;
 
 namespace Content.Client._AS.NeoNote.UI;
 
+/// <summary>
+/// The ui for the view of list of notes.
+/// </summary>
 [GenerateTypedNameReferences]
 public sealed partial class NeoNoteUiFragmentList : Control
 {
@@ -18,6 +21,10 @@ public sealed partial class NeoNoteUiFragmentList : Control
         CreateButton.OnPressed += _ => OnCreateButtonPressed?.Invoke();
     }
 
+    /// <summary>
+    /// Populates the list view with notes.
+    /// </summary>
+    /// <param name="notes">The list of entries to display.</param>
     public void PopulateNotes(List<NeoNoteEntry> notes)
     {
         NotesContainer.RemoveAllChildren();

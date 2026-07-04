@@ -11,6 +11,9 @@ using Robust.Shared.Player;
 
 namespace Content.Server._AS.CartridgeLoader.Cartridges;
 
+/// <summary>
+/// Server side handling of the NeoNote system. Handles messages and sends states to client and interfaces with Personal Note API.
+/// </summary>
 public sealed class NeoNoteCartridgeSystem : EntitySystem
 {
     [Dependency] private readonly PersonalRecordSystem _record = default!;
@@ -32,6 +35,7 @@ public sealed class NeoNoteCartridgeSystem : EntitySystem
 
     private void OnLoaderContentsChanged(Entity<NeoNoteCartridgeComponent> ent, ref LoaderContentsChangedEvent args)
     {
+        // update the ui state when the id being used gets changed.
         if (args.Container.ID != PdaComponent.PdaIdSlotId)
             return;
         UpdateUiState(args.Loader);
@@ -39,6 +43,7 @@ public sealed class NeoNoteCartridgeSystem : EntitySystem
 
     private void OnUiReady(Entity<NeoNoteCartridgeComponent> ent, ref CartridgeUiReadyEvent args)
     {
+        // update ui state when ui is ready to be opened.
         UpdateUiState(args.Loader);
     }
 
@@ -50,7 +55,7 @@ public sealed class NeoNoteCartridgeSystem : EntitySystem
         var actor = args.Actor;
         var loader = GetEntity(args.LoaderUid);
 
-        switch (message.Payload)
+        switch (message.Payload) // reads the payload type sent and calls the appropriate handler.
         {
             case NeoNoteCreateMessage create:
                 OnNeoNoteCreateMessage(create, actor, loader);
@@ -64,6 +69,12 @@ public sealed class NeoNoteCartridgeSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Handles client request to create a note.
+    /// </summary>
+    /// <param name="create">the payload sent by the client</param>
+    /// <param name="actor">the player mob who initiated the request</param>
+    /// <param name="loader">the cartridge loader that the cartridge is in.</param>
     private async void OnNeoNoteCreateMessage(NeoNoteCreateMessage create, EntityUid actor, EntityUid loader)
     {
         try
@@ -79,6 +90,12 @@ public sealed class NeoNoteCartridgeSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Handles client request to delete a note.
+    /// </summary>
+    /// <param name="hide">the payload sent by the client</param>
+    /// <param name="actor">the player mob who initiated the request</param>
+    /// <param name="loader">the cartridge loader that the cartridge is in.</param>
     private async void OnNeoNoteHideMessage(NeoNoteHideMessage hide, EntityUid actor, EntityUid loader)
     {
         try
@@ -95,6 +112,12 @@ public sealed class NeoNoteCartridgeSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Handles client request to save a note.
+    /// </summary>
+    /// <param name="save">the payload sent by the client</param>
+    /// <param name="actor">the player mob who initiated the request</param>
+    /// <param name="loader">the cartridge loader that the cartridge is in.</param>
     private async void OnNeoNoteSaveMessage(NeoNoteSaveMessage save, EntityUid actor, EntityUid loader)
     {
         try
@@ -123,6 +146,10 @@ public sealed class NeoNoteCartridgeSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Retrieve the PersonalNote records for the profile id found on the card in the loader and update the NeoNote cartridge state.
+    /// </summary>
+    /// <param name="loader">The cartridge loader that contains the </param>
     private async Task AsyncUpdateUiState(EntityUid loader)
     {
         var notes = new List<NeoNoteEntry>();
@@ -141,6 +168,11 @@ public sealed class NeoNoteCartridgeSystem : EntitySystem
         _cartridge.UpdateCartridgeUiState(loader, state);
     }
 
+    /// <summary>
+    /// Gets the profile id from a id card on an entity.
+    /// </summary>
+    /// <param name="ent">The entity to check for an id card.</param>
+    /// <returns>The profile id found on the entity's id card if one is found.</returns>
     private int? GetProfileId(EntityUid ent)
     {
         if (!_id.TryGetIdCard(ent, out var idCard))

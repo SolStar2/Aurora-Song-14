@@ -31,7 +31,7 @@ public sealed class RecordEditTests
         var db = GetDb(pair.Server);
 
         var created = await db.AddCharacterRecord(RecordType.PersonalNote, null, null, null, null);
-        await db.HideRecord(created.Id, null, null, allowNonOwner: true, updateEdits: true);
+        await db.HideRecord(created.Id, null, null, allowNonAuthor: true, updateEdits: true);
         var edits = await db.GetRecordEdits(created.Id);
         var edit = edits.FirstOrDefault();
         Assert.That(edit, Is.Not.Null, "Edit not found.");

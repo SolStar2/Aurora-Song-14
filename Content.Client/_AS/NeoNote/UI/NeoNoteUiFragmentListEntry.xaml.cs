@@ -6,6 +6,9 @@ using Robust.Client.UserInterface.XAML;
 
 namespace Content.Client._AS.NeoNote.UI;
 
+/// <summary>
+/// Populate the ui with the contents of a note.
+/// </summary>
 [GenerateTypedNameReferences]
 public sealed partial class NeoNoteUiFragmentListEntry : Control
 {
@@ -20,6 +23,7 @@ public sealed partial class NeoNoteUiFragmentListEntry : Control
         PreviewLabel.Text = note.Body;
         CreatedLabel.Text = Loc.GetString("neonote-ui-list-entry-created",
             ("time", CanonicalFormat.CanonDateTime(note.CreatedAt).ToString("yyyy-MM-dd HH:mm")));
+        // If note has been edited show the last time it was edited.
         ModifiedLabel.Text = note.ModifiedAt is { } modified
             ? Loc.GetString("neonote-ui-list-entry-modified",
                 ("time", CanonicalFormat.CanonDateTime(modified).ToString("yyyy-MM-dd HH:mm")))

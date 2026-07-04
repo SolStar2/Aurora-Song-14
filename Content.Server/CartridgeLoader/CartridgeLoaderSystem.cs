@@ -59,6 +59,7 @@ public sealed class CartridgeLoaderSystem : SharedCartridgeLoaderSystem
     {
         base.Update(frameTime);
 
+        // Work backwards though the list for cleaner removals.
         for (int i = _pendingStateUpdates.Count - 1; i >= 0; i--)
         {
             var loaderQueue = _pendingStateUpdates[i];

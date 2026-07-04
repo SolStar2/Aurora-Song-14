@@ -6,10 +6,12 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._AS.NeoNote.UI;
 
+/// <summary>
+/// The Edit view for NeoNote.
+/// </summary>
 [GenerateTypedNameReferences]
 public sealed partial class NeoNoteUiFragmentEdit : Control
 {
-    // null recordId means this is a new note (create), otherwise it's an edit (save)
     public event Action<SaveData>? OnSavePressed;
     public event Action? OnExitPressed;
 
@@ -19,10 +21,11 @@ public sealed partial class NeoNoteUiFragmentEdit : Control
 
         var recordId = note?.RecordId;
 
-        if (note is { } existing)
+        if (note is { } existing) // null recordId means this is a new note (create), otherwise it's an edit (save)
         {
+            // Pre populate the fields of the note if they exist.
             TitleEdit.Text = existing.Title;
-            BodyEdit.TextRope = new Rope.Leaf(existing.Body);
+            BodyEdit.TextRope = new Rope.Leaf(existing.Body); // We use a rope because it's better for live editing text out of order.
             SaveButton.Text = Loc.GetString("neonote-ui-edit-save");
         }
         else
@@ -38,6 +41,7 @@ public sealed partial class NeoNoteUiFragmentEdit : Control
         ExitButton.OnPressed += _ => OnExitPressed?.Invoke();
     }
 
+    // The note and its contents that was saved.
     public struct SaveData(int? recordId, string title, string body)
     {
         public readonly int? RecordId = recordId;

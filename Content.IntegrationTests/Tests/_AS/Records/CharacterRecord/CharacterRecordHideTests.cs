@@ -35,7 +35,7 @@ public sealed class CharacterRecordHideTests
         var db = GetDb(pair.Server);
         var record = await db.AddCharacterRecord(RecordType.PersonalNote, null, null, null, null);
 
-        await db.HideRecord(record.Id, null, null, allowNonOwner: true);
+        await db.HideRecord(record.Id, null, null, allowNonAuthor: true);
         var query = await db.GetFilteredCharacterRecords(RecordType.PersonalNote, hidden: null);
         Assert.That(query, Is.Not.Empty, "Hidden record not returned with hidden override.");
         Assert.That(query.Find(r => r.Id == record.Id).Hidden, Is.True, "Hidden flag not set.");
@@ -52,8 +52,8 @@ public sealed class CharacterRecordHideTests
         var db = GetDb(pair.Server);
         var record = await db.AddCharacterRecord(RecordType.PersonalNote, null, null, null, null);
 
-        await db.HideRecord(record.Id, null, null, allowNonOwner: true);
-        await db.UnhideRecord(record.Id, null, null, allowNonOwner: true);
+        await db.HideRecord(record.Id, null, null, allowNonAuthor: true);
+        await db.UnhideRecord(record.Id, null, null, allowNonAuthor: true);
         var query = await db.GetFilteredCharacterRecords(RecordType.PersonalNote);
         Assert.That(query, Is.Not.Empty, "Hidden record not unhidden.");
         Assert.That(query.Find(r => r.Id == record.Id).Hidden, Is.False, "Hidden flag not unset.");
@@ -171,7 +171,7 @@ public sealed class CharacterRecordHideTests
 
         await Task.WhenAll(
             records.Select(test =>
-                db.HideRecord(test.Id, null, null, allowNonOwner: true)));
+                db.HideRecord(test.Id, null, null, allowNonAuthor: true)));
 
         await Task.WhenAll(
             records.Select(test =>
@@ -218,7 +218,7 @@ public sealed class CharacterRecordHideTests
 
         await Task.WhenAll(
             records.Select(test =>
-                db.HideRecord(test.Id, null, null, allowNonOwner: true)));
+                db.HideRecord(test.Id, null, null, allowNonAuthor: true)));
 
         await Task.WhenAll(
             records.Select(test =>
@@ -246,11 +246,11 @@ public sealed class CharacterRecordHideTests
             Is.EqualTo(RecordUpdateStatus.Prohibited),
             "Hiding a record as a non-owner without allowNonOwner override should be prohibited.");
 
-        Assert.That(await db.HideRecord(-1, null, null, allowNonOwner: true),
+        Assert.That(await db.HideRecord(-1, null, null, allowNonAuthor: true),
             Is.EqualTo(RecordUpdateStatus.NotFound),
             "Hiding a record id that does not exist should report NotFound.");
 
-        Assert.That(await db.HideRecord(record.Id, null, null, allowNonOwner: true),
+        Assert.That(await db.HideRecord(record.Id, null, null, allowNonAuthor: true),
             Is.EqualTo(RecordUpdateStatus.Updated),
             "Successfully hiding a visible record should report Updated.");
 
@@ -258,7 +258,7 @@ public sealed class CharacterRecordHideTests
             Is.EqualTo(RecordUpdateStatus.Prohibited),
             "Hiding a record as a non-owner without allowNonOwner override should be Prohibited, even on an already hidden record.");
 
-        Assert.That(await db.HideRecord(record.Id, null, null, allowNonOwner: true),
+        Assert.That(await db.HideRecord(record.Id, null, null, allowNonAuthor: true),
             Is.EqualTo(RecordUpdateStatus.NoChange),
             "Hiding an already hidden record should report NoChange.");
 
@@ -276,21 +276,21 @@ public sealed class CharacterRecordHideTests
             Is.EqualTo(RecordUpdateStatus.Prohibited),
             "Unhiding a record as a non-owner without allowNonOwner override should be Prohibited, even on an already visible record.");
 
-        Assert.That(await db.UnhideRecord(record.Id, null, null, allowNonOwner: true),
+        Assert.That(await db.UnhideRecord(record.Id, null, null, allowNonAuthor: true),
             Is.EqualTo(RecordUpdateStatus.NoChange),
             "Unhiding an already visible record should report NoChange.");
 
-        await db.HideRecord(record.Id, null, null, allowNonOwner: true);
+        await db.HideRecord(record.Id, null, null, allowNonAuthor: true);
 
         Assert.That(await db.UnhideRecord(record.Id, null, null),
             Is.EqualTo(RecordUpdateStatus.Prohibited),
             "Unhiding a record as a non-owner without allowNonOwner override should be Prohibited.");
 
-        Assert.That(await db.UnhideRecord(-1, null, null, allowNonOwner: true),
+        Assert.That(await db.UnhideRecord(-1, null, null, allowNonAuthor: true),
             Is.EqualTo(RecordUpdateStatus.NotFound),
             "Unhiding a record id that does not exist should report NotFound.");
 
-        Assert.That(await db.UnhideRecord(record.Id, null, null, allowNonOwner: true),
+        Assert.That(await db.UnhideRecord(record.Id, null, null, allowNonAuthor: true),
             Is.EqualTo(RecordUpdateStatus.Updated),
             "Successfully Unhiding a hidden record should report Updated.");
 
@@ -304,12 +304,12 @@ public sealed class CharacterRecordHideTests
         var db = GetDb(pair.Server);
 
         var created = await db.AddCharacterRecord(RecordType.PersonalNote, null, null, null, null);
-        await db.HideRecord(created.Id, null, null, allowNonOwner: true);
+        await db.HideRecord(created.Id, null, null, allowNonAuthor: true);
         var edits = await db.GetRecordEdits(created.Id);
         Assert.That(edits, Is.Empty, "Edit added while updateEdits was not set.");
 
         created = await db.AddCharacterRecord(RecordType.PersonalNote, null, null, null, null);
-        await db.HideRecord(created.Id, null, null, allowNonOwner: true, updateEdits: true);
+        await db.HideRecord(created.Id, null, null, allowNonAuthor: true, updateEdits: true);
         edits = await db.GetRecordEdits(created.Id);
         Assert.That(edits, Is.Not.Empty, "Edit not added with updateEdits set.");
 
@@ -323,7 +323,7 @@ public sealed class CharacterRecordHideTests
         var db = GetDb(pair.Server);
 
         var created = await db.AddCharacterRecord(RecordType.PersonalNote, null, null, null, null);
-        await db.HideRecord(created.Id, null, null, allowNonOwner: true, updateEdits: true);
+        await db.HideRecord(created.Id, null, null, allowNonAuthor: true, updateEdits: true);
         var edits = await db.GetRecordEdits(created.Id);
         var edit = edits.FirstOrDefault();
         Assert.That(edit, Is.Not.Null, "Edit not found.");

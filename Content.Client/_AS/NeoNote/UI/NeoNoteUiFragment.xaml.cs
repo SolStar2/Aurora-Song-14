@@ -3,6 +3,9 @@ using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client._AS.NeoNote.UI;
 
+/// <summary>
+/// The base Ui for NeoNote
+/// </summary>
 [GenerateTypedNameReferences]
 public sealed partial class NeoNoteUiFragment : BoxContainer
 {
