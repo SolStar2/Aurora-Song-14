@@ -355,8 +355,9 @@
   components:
   - type: MetabolizerTagWhitelist # Aurora's Song - Replace Sheleg metabolizer with a tag whitelist for chems
     tags:
+    - Aphrodisiac
     - Cryogenic
-    - Sheleg
+    - ShelegCompatible
     - Toxin
     - Narcotic
     stages: [ "Bloodstream" ]

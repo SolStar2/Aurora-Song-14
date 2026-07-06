@@ -1,5 +1,6 @@
 - type: tile
   id: FloorWoodParquet
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-parquet
   sprite: /Textures/_Corvax/Tiles/wood_parquet.png
   variants: 4
@@ -20,6 +21,7 @@
 
 - type: tile
   id: FloorWoodChess
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-chess
   sprite: /Textures/_Corvax/Tiles/wood_chess.png
   variants: 4
@@ -40,6 +42,7 @@
 
 - type: tile
   id: FloorWoodBlack
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-black
   sprite: /Textures/_Corvax/Tiles/wood_black.png
   variants: 4
@@ -60,6 +63,7 @@
 
 - type: tile
   id: FloorWoodLargeBlack
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-large-black
   sprite: /Textures/_Corvax/Tiles/wood_large_black.png
   variants: 4
@@ -80,6 +84,7 @@
 
 - type: tile
   id: FloorWoodParquetBlack
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-parquet-black
   sprite: /Textures/_Corvax/Tiles/wood_parquet_black.png
   variants: 4
@@ -100,6 +105,7 @@
 
 - type: tile
   id: FloorWoodChessBlack
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-chess-black
   sprite: /Textures/_Corvax/Tiles/wood_chess_black.png
   variants: 4
@@ -120,6 +126,7 @@
 
 - type: tile
   id: FloorWoodDark
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-dark
   sprite: /Textures/_Corvax/Tiles/wood_dark.png
   variants: 4
@@ -140,6 +147,7 @@
 
 - type: tile
   id: FloorWoodLargeDark
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-large-dark
   sprite: /Textures/_Corvax/Tiles/wood_large_dark.png
   variants: 4
@@ -160,6 +168,7 @@
 
 - type: tile
   id: FloorWoodParquetDark
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-parquet-dark
   sprite: /Textures/_Corvax/Tiles/wood_parquet_dark.png
   variants: 4
@@ -180,6 +189,7 @@
 
 - type: tile
   id: FloorWoodChessDark
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-chess-dark
   sprite: /Textures/_Corvax/Tiles/wood_chess_dark.png
   variants: 4
@@ -200,6 +210,7 @@
 
 - type: tile
   id: FloorWoodLight
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-light
   sprite: /Textures/_Corvax/Tiles/wood_light.png
   variants: 4
@@ -220,6 +231,7 @@
 
 - type: tile
   id: FloorWoodLargeLight
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-large-light
   sprite: /Textures/_Corvax/Tiles/wood_large_light.png
   variants: 4
@@ -240,6 +252,7 @@
 
 - type: tile
   id: FloorWoodParquetLight
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-parquet-light
   sprite: /Textures/_Corvax/Tiles/wood_parquet_light.png
   variants: 4
@@ -260,6 +273,7 @@
 
 - type: tile
   id: FloorWoodChessLight
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-chess-light
   sprite: /Textures/_Corvax/Tiles/wood_chess_light.png
   variants: 4
@@ -280,6 +294,7 @@
 
 - type: tile
   id: FloorWoodRed
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-red
   sprite: /Textures/_Corvax/Tiles/wood_red.png
   variants: 4
@@ -300,6 +315,7 @@
 
 - type: tile
   id: FloorWoodLargeRed
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-large-red
   sprite: /Textures/_Corvax/Tiles/wood_large_red.png
   variants: 4
@@ -320,6 +336,7 @@
 
 - type: tile
   id: FloorWoodParquetRed
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-parquet-red
   sprite: /Textures/_Corvax/Tiles/wood_parquet_red.png
   variants: 4
@@ -340,6 +357,7 @@
 
 - type: tile
   id: FloorWoodChessRed
+  parent: BaseStationTile # Aurora's Song
   name: tiles-wood-chess-red
   sprite: /Textures/_Corvax/Tiles/wood_chess_red.png
   variants: 4

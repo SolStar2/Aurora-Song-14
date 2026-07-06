@@ -399,9 +399,9 @@
   id: TableDungeonLootWeaponsAmmunition
   table: !type:GroupSelector
     children:
-    - !type:NestedSelector
-      weight: 0.15
-      tableId: TableDungeonLootWeaponsAmmunitionRubber
+    # - !type:NestedSelector Aurora's Song commented out
+    #   weight: 0.15
+    #   tableId: TableDungeonLootWeaponsAmmunitionRubber
     - !type:NestedSelector
       weight: 0.3
       tableId: TableDungeonLootWeaponsAmmunitionLethal
@@ -411,9 +411,9 @@
     - !type:NestedSelector
       weight: 0.15
       tableId: TableDungeonLootWeaponsAmmunitionUranium
-    - !type:NestedSelector
-      weight: 0.05
-      tableId: TableDungeonLootWeaponsAmmunitionPractice
+    # - !type:NestedSelector Aurora's Song commented out
+    #   weight: 0.05
+    #   tableId: TableDungeonLootWeaponsAmmunitionPractice
 
 # region ammo lethal
 - type: entityTable
@@ -482,16 +482,16 @@
     - id: WeaponCaseShortAmmoBoxUranium45
 
 # region ammo practice
-- type: entityTable
-  id: TableDungeonLootWeaponsAmmunitionPractice
-  table: !type:GroupSelector
-    children:
-    - id: WeaponCaseShortAmmoBoxPractice20
-    - id: WeaponCaseShortAmmoBoxPractice30
-    - id: WeaponCaseShortAmmoBoxPractice35
-    - id: WeaponCaseShortAmmoBoxPractice25
-    - id: WeaponCaseShortAmmoBoxPracticeShotgun
-    - id: WeaponCaseShortAmmoBoxPractice45
+# - type: entityTable
+#   id: TableDungeonLootWeaponsAmmunitionPractice
+#   table: !type:GroupSelector
+#     children:
+#     - id: WeaponCaseShortAmmoBoxPractice20
+#     - id: WeaponCaseShortAmmoBoxPractice30
+#     - id: WeaponCaseShortAmmoBoxPractice35
+#     - id: WeaponCaseShortAmmoBoxPractice25
+#     - id: WeaponCaseShortAmmoBoxPracticeShotgun
+#     - id: WeaponCaseShortAmmoBoxPractice45
 
 # region combined
 - type: entityTable

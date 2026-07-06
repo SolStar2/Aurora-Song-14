@@ -1,0 +1,41 @@
+- type: entity
+  parent: SheetOtherBase
+  id: MaterialSheetChitin
+  name: chitin plate
+  description: A plate of Xeno chitin, usable in construction.
+  suffix: Full
+  components:
+    - type: Stack
+      stackType: ChitinPlate
+      baseLayer: base
+      layerStates:
+        - chitin-1
+        - chitin-2
+        - chitin-3
+    - type: Sprite
+      sprite: _AS/Objects/Materials/Sheets/chitin.rsi
+      state: chitin-3
+      layers:
+      - state: chitin-3
+        map: ["base"]
+    - type: Appearance
+    - type: Tag
+      tags:
+      - Sheet
+      - ConstructionMaterial
+    - type: Material
+    - type: PhysicalComposition
+      materialComposition:
+        Chitin: 100
+    - type: Item
+      heldPrefix: chitin
+
+- type: entity
+  parent: MaterialSheetChitin
+  id: MaterialSheetChitin1
+  suffix: Single
+  components:
+    - type: Sprite
+      state: chitin
+    - type: Stack
+      count: 1

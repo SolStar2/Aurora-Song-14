@@ -1,0 +1,4 @@
+- type: guideEntry
+  id: ASDefinitions
+  name: guide-entry-frontier-definitions # "Definitions"
+  text: "/ServerInfo/_AS/Guidebook/Definitions.xml"

@@ -1,0 +1,669 @@
+# Wood tables
+- type: constructionGraph
+  id: N14TableWood
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: TableCounterBar
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 1
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+        - to: TableWoodRound
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 1
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+        - to: TableWoodSquare
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 1
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+        - to: TableWoodStand
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+        - to: TableWoodCabledrum
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 4
+              doAfter: 2
+        - to: TableWoodSettler
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+
+    - node: TableCounterBar
+      entity: N14TableCounterBar
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableWoodRound
+      entity: N14TableWoodRound
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableWoodSquare
+      entity: N14TableWoodSquare
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableWoodStand
+      entity: N14TableWoodStand
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableWoodCabledrum
+      entity: N14TableWoodCabledrum
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 4
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableWoodSettler
+      entity: N14TableWoodSettler
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+# Metal tables
+- type: constructionGraph
+  id: N14TableMetal
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: TableMetalGrate
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 4
+        - to: TableMetalRound
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 2
+
+    - node: TableMetalGrate
+      entity: N14TableMetalGrate
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 4
+          steps:
+            - tool: Anchoring
+              doAfter: 2
+
+    - node: TableMetalRound
+      entity: N14TableMetalRound
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Anchoring
+              doAfter: 2
+
+# Multi-tile tables
+- type: constructionGraph
+  id: N14TableMulti
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: TableCasinoCards
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 4
+            - material: Cloth
+              amount: 2
+        - to: TableCasinoPool
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 4
+            - material: Cloth
+              amount: 2
+        - to: TableWoodenOvalWide
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 4
+        - to: TableWoodenSquareWide
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 4
+        - to: TableMetalWide
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 4
+        - to: TableCounter
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+        - to: TableCounterBend
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+        - to: TableCounterIntersect
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+        - to: TableCounterCross
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+        - to: TableCounterCraft
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+        - to: TableCounterCraftBend
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+        - to: TableCounterCraftIntersect
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+        - to: TableCounterCraftCross
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+        - to: TableCounterMetal
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+        - to: TableCounterMetalBend
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+        - to: TableCounterMetalIntersect
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+        - to: TableCounterMetalCross
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 2
+            - material: MetalRod
+              amount: 2
+
+    - node: TableCasinoCards
+      entity: N14TableCasinoCards
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 4
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableCasinoPool
+      entity: N14TableCasinoPool
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 4
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableWoodenOvalWide
+      entity: N14TableWoodenOvalWide
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 4
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableWoodenSquareWide
+      entity: N14TableWoodenSquareWide
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 4
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableMetalWide
+      entity: N14TableMetalWide
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 4
+          steps:
+            - tool: Anchoring
+              doAfter: 2
+
+    - node: TableCounter
+      entity: N14TableCounter
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableCounterBend
+      entity: N14TableCounterBend
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableCounterIntersect
+      entity: N14TableCounterIntersect
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableCounterCross
+      entity: N14TableCounterCross
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableCounterCraft
+      entity: N14TableCounterCraft
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableCounterCraftBend
+      entity: N14TableCounterCraftBend
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableCounterCraftIntersect
+      entity: N14TableCounterCraftIntersect
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableCounterCraftCross
+      entity: N14TableCounterCraftCross
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: TableCounterMetal
+      entity: N14TableCounterMetal
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Anchoring
+              doAfter: 2
+
+    - node: TableCounterMetalBend
+      entity: N14TableCounterMetalBend
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Anchoring
+              doAfter: 2
+
+    - node: TableCounterMetalIntersect
+      entity: N14TableCounterMetalIntersect
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Anchoring
+              doAfter: 2
+
+    - node: TableCounterMetalCross
+      entity: N14TableCounterMetalCross
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+          steps:
+            - tool: Anchoring
+              doAfter: 2

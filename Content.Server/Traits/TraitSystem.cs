@@ -46,7 +46,7 @@ public sealed class TraitSystem : EntitySystem
 
             // Add all components required by the prototype
             if (traitPrototype.Components.Count > 0)
-                EntityManager.AddComponents(args.Mob, traitPrototype.Components, false);
+                EntityManager.AddComponents(args.Mob, traitPrototype.Components, traitPrototype.ReplaceComponents); // Harmony change. See TraitPrototype.cs
 
             // Add all JobSpecials required by the prototype
             foreach (var special in traitPrototype.Specials)

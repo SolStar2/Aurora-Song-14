@@ -29,3 +29,5 @@ construction-recipe-plastic-flaps-opaque = plastic flaps (opaque)
 # Aurora - Added localization for diagonal walls to display correct names in construction menu
 construction-recipe-wall-solid-diagonal = solid wall (diagonal)
 construction-recipe-wall-reinforced-diagonal = reinforced wall (diagonal)
+construction-recipe-window-shuttle-diagonal = shuttle window (diagonal)
+construction-recipe-wall-shuttle-interior = shuttle wall (interior)

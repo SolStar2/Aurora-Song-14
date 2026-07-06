@@ -42,3 +42,8 @@
     trackAllDamage: true
     damageOverlay:
       sprite: Structures/Windows/cracks.rsi
+  # Aurora's Song Start
+  - type: Construction
+    graph: ASwindow
+    node: resinWindow
+  # Aurora's Song End

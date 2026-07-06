@@ -6,6 +6,8 @@
   physicalDesc: reagent-physical-desc-gold-flecked # Aurora's Song | Refactor pomelustine to avoid unexpecting exposure
   flavor: fruity
   color: "#45072f"
+  tags: # Aurora's Song
+  - Aphrodisiac
   metabolisms:
     Bloodstream: # Aurora's Song - Medicine>Bloodstream
       metabolismRate : 0.03
@@ -79,6 +81,8 @@
   physicalDesc: reagent-physical-desc-syrupy
   flavor: sweet
   color: "#ae0072"
+  tags: # Aurora's Song
+  - Aphrodisiac
   metabolisms:
     Bloodstream: # Aurora's Song - Medicine>Bloodstream
       metabolismRate : 0.02

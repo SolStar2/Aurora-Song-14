@@ -3,6 +3,8 @@
   start: start
   graph:
     - node: start
+      actions:
+        - !type:DestroyEntity {}
       edges:
         - to: Frame
           completed:
@@ -21,8 +23,8 @@
             - !type:EntityAnchored {}
           steps:
             - material: WoodPlank
-              amount: 2
-              doAfter: 2
+              amount: 6 # Aurora's Song - 2 > 6
+              doAfter: 5 # Aurora's Song - 2 > 5
 
     - node: Frame
       entity: N14WallWoodFrame
@@ -57,7 +59,7 @@
           completed:
             - !type:GivePrototype
               prototype: MaterialWoodPlank1
-              amount: 1
+              amount: 6 # Aurora's Song - 1 > 6
           steps:
             - tool: Prying
               doAfter: 10

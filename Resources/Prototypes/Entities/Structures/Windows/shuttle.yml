@@ -98,3 +98,8 @@
   - type: DamageVisuals
     damageOverlay:
       sprite: Structures/Windows/cracks_diagonal.rsi
+# Aurora's Song Start
+  - type: Construction
+    graph: ASWindowDiagonal
+    node: shuttleWindowDiagonal
+# Aurora's Song End

@@ -1,0 +1,6 @@
+- type: stack
+  parent: BaseVeryLargeStack
+  id: ChitinPlate
+  name: stack-chitin
+  icon: { sprite: _AS/Objects/Materials/Sheets/chitin.rsi, state: chitin-1 }
+  spawn: MaterialSheetChitin1

@@ -1,0 +1,43 @@
+# Author Info
+# GitHub: SalamanderSkies
+# Discord: SalamanderSkies
+
+# Maintainer Info
+# GitHub: SalamanderSkies
+# Discord: SalamanderSkies
+
+- type: vessel
+  id: Scavenger
+  parent: BaseVessel
+  name: XED Scavenger
+  description: An experiemental, expedition-worthy salvaging shuttle utilizing Xenomorph materials.
+  price: 97500 # ~75000 appraisal w/ 30% markup
+  category: Medium
+  group: Expedition
+  shuttlePath: /Maps/_AS/Shuttles/Expedition/scavenger.yml
+  guidebookPage: ShipyardScavenger
+  class:
+  - Expedition
+  - Salvage
+  engine:
+  - AME
+
+- type: gameMap
+  id: Scavenger
+  mapName: 'XED Scavenger'
+  mapPath: /Maps/_AS/Shuttles/Expedition/scavenger.yml
+  minPlayers: 0
+  stations:
+    Scavenger:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Scavenger {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationJobs
+        availableJobs:
+          ContractorInterview: [ 0, 0 ]
+          PilotInterview: [ 0, 0 ]
+          MercenaryInterview: [ 0, 0 ]

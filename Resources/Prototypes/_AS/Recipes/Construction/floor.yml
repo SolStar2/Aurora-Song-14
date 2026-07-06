@@ -1,0 +1,140 @@
+#N14 Rugs
+- type: construction
+  id: N14RugMat
+  graph: N14Rugs
+  startNode: start
+  targetNode: RugMat
+  category: construction-category-misc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  hide: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: N14RugMatWelcome
+  graph: N14Rugs
+  startNode: start
+  targetNode: RugMatWelcome
+  category: construction-category-misc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  hide: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: N14RugMatVulgar2
+  graph: N14Rugs
+  startNode: start
+  targetNode: RugMatVulgar2
+  category: construction-category-misc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  hide: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: N14RugMatRubberSingle
+  graph: N14Rugs
+  startNode: start
+  targetNode: RugMatRubberSingle
+  category: construction-category-misc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  hide: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: N14RugBlue
+  graph: N14Rugs
+  startNode: start
+  targetNode: RugBlue
+  category: construction-category-misc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  hide: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: N14RugBlueShag
+  graph: N14Rugs
+  startNode: start
+  targetNode: RugBlueShag
+  category: construction-category-misc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  hide: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: N14RugBrownFancy
+  graph: N14Rugs
+  startNode: start
+  targetNode: RugBrownFancy
+  category: construction-category-misc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  hide: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: N14RugRed
+  graph: N14Rugs
+  startNode: start
+  targetNode: RugRed
+  category: construction-category-misc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  hide: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: N14RugYellow
+  graph: N14Rugs
+  startNode: start
+  targetNode: RugYellow
+  category: construction-category-misc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  hide: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: N14RugMatRubberLarge
+  graph: N14Rugs
+  startNode: start
+  targetNode: RugMatRubberLarge
+  category: construction-category-misc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  hide: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked

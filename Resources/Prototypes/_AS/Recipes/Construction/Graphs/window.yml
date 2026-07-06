@@ -1,0 +1,41 @@
+- type: constructionGraph
+  id: ASwindow
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: resinWindow
+          steps:
+            - material: ChitinPlate
+              amount: 2
+            - material: PlasmaGlass
+              amount: 2
+              doAfter: 4
+
+    - node: resinWindow
+      entity: XenoResinWindow
+      edges:
+        - to: start
+          completed:
+            - !type:GivePrototype
+              prototype: MaterialSheetChitin
+              amount: 2
+            - !type:GivePrototype
+              prototype: SheetPGlass1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Welding
+              doAfter: 5
+            - tool: Screwing
+              doAfter: 1
+            - tool: Prying
+              doAfter: 2
+            - tool: Welding
+              doAfter: 5
+            - tool: Screwing
+              doAfter: 1
+            - tool: Anchoring
+              doAfter: 2

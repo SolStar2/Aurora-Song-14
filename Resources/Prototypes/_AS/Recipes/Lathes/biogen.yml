@@ -8,6 +8,13 @@
   materials:
     Biomass: 10
 
+- type: latheRecipe
+  id: ASBioGenChitinPlate
+  result: MaterialSheetChitin1
+  parent: BaseMaterialsNoDiscountRecipe
+  materials:
+    Biomass: 10
+
 #region Cubes
 
 - type: latheRecipe

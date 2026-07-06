@@ -15,6 +15,7 @@
   - FloorTileItemDarkPavement
   - FloorTileItemDarkPavementVertical
   - FloorTileItemDarkOffset
+  - FloorTileItemDarkSquiggly # Aurora's Song
 
 - type: latheRecipePack
   id: FloorSteelTilesStatic

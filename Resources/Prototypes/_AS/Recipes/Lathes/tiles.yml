@@ -88,3 +88,33 @@
   parent: NFBaseFloorTileWoodRecipe
   id: FloorTileItemWoodChessRed
   result: FloorTileItemWoodChessRed
+
+# Xeno tile base
+- type: latheRecipe
+  abstract: true
+  id: ASBaseFloorTileXenoRecipe
+  applyMaterialDiscount: false
+  completetime: 0.5
+  materials:
+    Chitin: 25
+
+# Xeno tiles
+- type: latheRecipe
+  parent: ASBaseFloorTileXenoRecipe
+  id: FloorTileItemXeno
+  result: FloorTileItemXeno
+
+- type: latheRecipe
+  parent: ASBaseFloorTileXenoRecipe
+  id: FloorTileItemXenoSteel
+  result: FloorTileItemXenoSteel
+
+- type: latheRecipe
+  parent: ASBaseFloorTileXenoRecipe
+  id: FloorTileItemXenoSteelCorner
+  result: FloorTileItemXenoSteelCorner
+
+- type: latheRecipe
+  parent: ASBaseFloorTileXenoRecipe
+  id: FloorTileItemXenoMaint
+  result: FloorTileItemXenoMaint

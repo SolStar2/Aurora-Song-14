@@ -1,0 +1,34 @@
+- type: decal
+  id: GrassA
+  tags: ["markings"]
+  sprite:
+    sprite: _AS/Decals/grass.rsi
+    state: grassa
+
+- type: decal
+  id: GrassB
+  tags: ["markings"]
+  sprite:
+    sprite: _AS/Decals/grass.rsi
+    state: grassb
+
+- type: decal
+  id: GrassC
+  tags: ["markings"]
+  sprite:
+    sprite: _AS/Decals/grass.rsi
+    state: grassc
+
+- type: decal
+  id: GrassD
+  tags: ["markings"]
+  sprite:
+    sprite: _AS/Decals/grass.rsi
+    state: grassd
+
+- type: decal
+  id: GrassE
+  tags: ["markings"]
+  sprite:
+    sprite: _AS/Decals/grass.rsi
+    state: grasse

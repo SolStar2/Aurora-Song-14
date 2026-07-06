@@ -89,6 +89,7 @@
   - ConveyorBeltAssembly
   - SheetRGlass
   - Durathread
+  - MetalRod # Aurora's Song
 
 - type: latheRecipePack
   id: NFBasicElectronicsStatic

@@ -94,6 +94,13 @@
               amount: 1
               doAfter: 1
 
+        # Aurora's Song Start
+        - to: TableXeno
+          steps:
+            - material: ChitinPlate
+              amount: 1
+              doAfter: 1
+        # Aurora's Song End
 
     - node: CounterWoodFrame
       entity: CounterWoodFrame
@@ -446,7 +453,7 @@
       - to: TableFrame
         completed:
         - !type:SpawnPrototype
-          prototype: SheetSteel1
+          prototype: MaterialSheetChitin # Aurora's Song - Was SheetSteel1
           amount: 1
         steps:
         - tool: Anchoring

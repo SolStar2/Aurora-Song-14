@@ -165,6 +165,18 @@
             - material: Steel
               amount: 2
               doAfter: 1
+        # Aurora's Song Start
+        - to: wallChitin
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: ChitinPlate
+              amount: 2
+              doAfter: 2
+      # Aurora's Song End
         ##
 
     - node: wall
@@ -185,7 +197,7 @@
         - to: girder
           completed:
             - !type:GivePrototype
-              prototype: SheetSteel1
+              prototype: MaterialSheetChitin1 # Aurora's Song - Was SheetSteel1
               amount: 2
           steps:
             - tool: Welding
@@ -312,6 +324,18 @@
             - material: Plasteel
               amount: 2
               doAfter: 1
+        # Aurora's Song Start
+        - to: reinforcedWallChitin
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: ChitinPlate
+              amount: 2
+              doAfter: 1
+        # Aurora's Song End
 
         #Mono - create diagonal reinforced wall
         - to: wallReinforcedDiagonal
@@ -428,7 +452,7 @@
         - to: reinforcedGirder
           completed:
             - !type:SpawnPrototype
-              prototype: SheetPlasteel1
+              prototype: MaterialSheetChitin1 # Aurora's Song - Was SheetPlasteel1
               amount: 2
           steps:
             - tool: Cutting

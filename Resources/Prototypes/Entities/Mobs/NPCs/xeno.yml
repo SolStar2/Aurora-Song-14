@@ -95,6 +95,10 @@
     spawned:
     - id: FoodMeatXeno
       amount: 5
+    # Aurora's Song Start
+    - id: MaterialSheetChitin1
+      amount: 2
+    # Aurora's Song End
   - type: GhostRole
     allowMovement: true
     allowSpeech: true

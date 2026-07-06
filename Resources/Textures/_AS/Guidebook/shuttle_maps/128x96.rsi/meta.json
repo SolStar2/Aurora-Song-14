@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "dinghy by zenixic(discord/github), dove by salamanderskies (discord/github)",
+    "copyright": "dinghy by zenixic(discord/github), dove and scavenger by salamanderskies (discord/github)",
     "extra_copyright": [
     ],
     "metaAtlas": false,
@@ -15,6 +15,9 @@
         },
         {
             "name": "dove"
+        },
+        {
+            "name": "scavenger"
         }
     ]
 }

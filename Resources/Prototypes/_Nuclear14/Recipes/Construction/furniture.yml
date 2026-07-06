@@ -32,21 +32,21 @@
     - !type:TileNotBlocked
   hide: false
 
-- type: construction
-  id: N14MedicalBed
-  graph: bed
-  startNode: start
-  targetNode: medicalbed
-  category: construction-category-furniture
-  #   icon:           # Aurora's Song
-  #     sprite: Structures/Furniture/furniture.rsi
-  #     state: bed-MED
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-  hide: false
+#- type: construction   Aurora's Song - Duplicate of upstream medbed recipe
+#  id: N14MedicalBed
+#  graph: bed
+#  startNode: start
+#  targetNode: medicalbed
+#  category: construction-category-furniture
+#  #   icon:           # Aurora's Song
+#  #     sprite: Structures/Furniture/furniture.rsi
+#  #     state: bed-MED
+#  objectType: Structure
+#  placementMode: SnapgridCenter
+#  canBuildInImpassable: false
+#  conditions:
+#    - !type:TileNotBlocked
+#  hide: false
 
 - type: construction
   id: N14Bedroll
@@ -340,7 +340,7 @@
 
 - type: construction
   id: N14TableCounterBar
-  graph: N14TableCounterBarRecipes
+  graph: N14TableWood # Aurora's Song - N14TableCounterBarRecipes > N14TableWood
   startNode: start
   targetNode: TableCounterBar
   category: construction-category-furniture
@@ -357,7 +357,7 @@
 
 - type: construction
   id: N14TableMetalGrate
-  graph: N14TableMetalGrateRecipes
+  graph: N14TableMetal # Aurora's Song - N14TableMetalGrateRecipes > N14TableMetal
   startNode: start
   targetNode: TableMetalGrate
   category: construction-category-furniture
@@ -374,7 +374,7 @@
 
 - type: construction
   id: N14TableWoodSettler
-  graph: N14TableRecipes
+  graph: N14TableWood # Aurora's Song - N14TableRecipes > N14TableWood
   startNode: start
   targetNode: TableWoodSettler
   category: construction-category-furniture

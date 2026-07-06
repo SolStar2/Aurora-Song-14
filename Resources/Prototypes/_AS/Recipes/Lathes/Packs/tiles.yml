@@ -19,3 +19,11 @@
   - FloorTileItemWoodLargeRed
   - FloorTileItemWoodParquetRed
   - FloorTileItemWoodChessRed
+
+- type: latheRecipePack
+  id: XenoTiles
+  recipes:
+  - FloorTileItemXeno
+  - FloorTileItemXenoSteel
+  - FloorTileItemXenoSteelCorner
+  - FloorTileItemXenoMaint

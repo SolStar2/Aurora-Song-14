@@ -1,0 +1,35 @@
+<Document>
+  # SCAVENGER-CLASS SHUTTLE
+  <Box>
+    <GuideEntityEmbed Entity="WeaponTurretXeno" Caption="XENOMORPH"/>
+    <GuideEntityEmbed Entity="PosterContrabandExoChomp" Caption="EXPERIMENTAL"/>
+    <GuideEntityEmbed Entity="SignRND" Caption="DIVISION"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ShuttleMapScavenger" Caption=""/>
+  </Box>
+  [color=#a4885c]Ship Size:[/color] Medium
+
+  [color=#a4885c]Recommended Crew:[/color] 2-3
+
+  [color=#a4885c]Power Gen Type:[/color] AME*
+
+  [color=#a4885c]Expeditions:[/color] Yes
+
+  [color=#a4885c]IFF Console:[/color] None
+
+  "An experiemental, expedition-worthy salvaging shuttle utilizing Xenomorph materials."
+
+  # Ship Functions
+
+  <Box>
+    <GuideEntityEmbed Entity="ButtonFrameCautionSecurity" Caption="Open Blast Doors"/>
+    <GuideEntityEmbed Entity="ButtonFrameCaution" Caption="Toggle Shutters"/>
+    <GuideEntityEmbed Entity="ButtonFrameGrey" Caption="Toggle Lights"/>
+  </Box>
+
+  # Notes
+
+  *When replacing the XED Scavenger's in-built AME, note that the [bold]Target Power[/bold] for the shuttle is [color=#a4885c]46[bold]kW[/bold][/color] baseline. Modifications to the XED Scavenger may increase or decrease this.
+
+</Document>

@@ -18,7 +18,7 @@
       default: [ HarpyEarsDefault ]
     enum.HumanoidVisualLayers.Chest:
       limit: 4 # Aurora's Song -- 1 > 4
-      required: true
+      required: false # Aurora's Song - Let harpies be naked
       default: [ HarpyChestDefault ]
     enum.HumanoidVisualLayers.LArm:
       limit: 2
@@ -31,8 +31,8 @@
 #      limit: 2
 #      required: false
     enum.HumanoidVisualLayers.RArmExtension:
-      limit: 2
-      required: false
+      limit: 1 
+      required: true
       default: [ HarpyWingDefaultHuescale ]
     enum.HumanoidVisualLayers.LHand:
       limit: 2

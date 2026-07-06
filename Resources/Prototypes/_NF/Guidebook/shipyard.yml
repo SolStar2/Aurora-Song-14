@@ -56,6 +56,7 @@
   - ShipyardProspector
   - ShipyardPulsar
   - ShipyardRetort
+  - ShipyardScavenger # Aurora's Song
   - ShipyardSearchlight
   - ShipyardSkipper
   - ShipyardSpirit
@@ -365,4 +366,9 @@
   id: ShipyardDove
   name: guide-entry-shipyard-dove
   text: "/ServerInfo/_AS/Guidebook/Shipyard/Dove.xml"
+
+- type: guideEntry
+  id: ShipyardScavenger
+  name: guide-entry-shipyard-scavenger
+  text: "/ServerInfo/_AS/Guidebook/Shipyard/Scavenger.xml"
 # Aurora's Song end

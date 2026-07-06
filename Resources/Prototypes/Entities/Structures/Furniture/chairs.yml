@@ -521,3 +521,8 @@
   components:
   - type: Sprite
     state: xeno-chair
+  # Aurora's Song Start
+  - type: Construction
+    graph: ASseats
+    node: xenoChair
+  # Aurora's Song End

@@ -1,0 +1,234 @@
+#Rugs
+- type: constructionGraph
+  id: N14Rugs
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: RugMat
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Plastic
+              amount: 1
+              doAfter: 2
+            - material: Cloth
+              amount: 1
+        - to: RugMatWelcome
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Plastic
+              amount: 1
+              doAfter: 2
+            - material: Cloth
+              amount: 1
+        - to: RugMatVulgar2
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Plastic
+              amount: 1
+              doAfter: 2
+            - material: Cloth
+              amount: 1
+        - to: RugMatRubberSingle
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Plastic
+              amount: 2
+              doAfter: 2
+        - to: RugBlue
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Cloth
+              amount: 4
+              doAfter: 2
+        - to: RugBlueShag
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Cloth
+              amount: 4
+              doAfter: 2
+        - to: RugBrownFancy
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Cloth
+              amount: 4
+              doAfter: 2
+        - to: RugRed
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Cloth
+              amount: 4
+              doAfter: 2
+        - to: RugYellow
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Cloth
+              amount: 4
+              doAfter: 2
+        - to: RugMatRubberLarge
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:EntityAnchored {}
+          steps:
+            - material: Plastic
+              amount: 4
+              doAfter: 2
+
+    - node: RugMat
+      entity: N14RugMat
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetPlastic1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 1
+          steps:
+            - tool: Cutting
+              doAfter: 2
+
+    - node: RugMatWelcome
+      entity: N14RugMatWelcome
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetPlastic1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 1
+          steps:
+            - tool: Cutting
+              doAfter: 2
+
+    - node: RugMatVulgar2
+      entity: N14RugMatVulgar2
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetPlastic1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 1
+          steps:
+            - tool: Cutting
+              doAfter: 2
+
+    - node: RugMatRubberSingle
+      entity: N14RugMatRubberSingle
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetPlastic1
+              amount: 2
+          steps:
+            - tool: Cutting
+              doAfter: 2
+
+    - node: RugBlue
+      entity: N14RugBlue
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 4
+          steps:
+            - tool: Cutting
+              doAfter: 2
+
+    - node: RugBlueShag
+      entity: N14RugBlueShag
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 4
+          steps:
+            - tool: Cutting
+              doAfter: 2
+
+    - node: RugBrownFancy
+      entity: N14RugBrownFancy
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 4
+          steps:
+            - tool: Cutting
+              doAfter: 2
+
+    - node: RugRed
+      entity: N14RugRed
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 4
+          steps:
+            - tool: Cutting
+              doAfter: 2
+
+    - node: RugYellow
+      entity: N14RugYellow
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 4
+          steps:
+            - tool: Cutting
+              doAfter: 2
+
+    - node: RugMatRubberLarge
+      entity: N14RugMatRubberLarge
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetPlastic1
+              amount: 4
+          steps:
+            - tool: Cutting
+              doAfter: 2

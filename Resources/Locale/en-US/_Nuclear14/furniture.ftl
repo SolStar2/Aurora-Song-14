@@ -312,7 +312,7 @@ ent-N14RugBlue = blue rug
 ent-N14RugBlueShag = blue shag rug
 
 ent-N14RugBrownFancy = brown rug
-    .desc = a fancy looking rug
+    .desc = A fancy looking rug
 
 ent-N14RugRed= red rug
     .desc = A patterned red rug.

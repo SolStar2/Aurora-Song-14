@@ -190,6 +190,8 @@
   - type: Construction
     graph: N14Seat
     node: N14ChairOfficeRed
+  - type: StaticPrice # Aurora's Song - Arbitrage
+    price: 25
 
 - type: entity
   parent: OfficeChairBase
@@ -199,7 +201,8 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/chairs.rsi
     state: office_chair_broken
-
+  - type: StaticPrice # Aurora's Song - Arbitrage
+    price: 25
 
 - type: entity
   parent: OfficeChairBase
@@ -212,6 +215,8 @@
   - type: Construction
     graph: N14Seat
     node: N14ChairOfficeBlue
+  - type: StaticPrice # Aurora's Song - Arbitrage
+    price: 25
 
 - type: entity
   parent: N14ChairOfficeRed
@@ -221,7 +226,8 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/chairs.rsi
     state: office_chair_blue_broken
-
+  - type: StaticPrice # Aurora's Song - Arbitrage
+    price: 25
 
 - type: entity
   parent: OfficeChairBase
@@ -246,7 +252,8 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/chairs.rsi
     state: office_chair_green_broken
-
+  - type: StaticPrice # Aurora's Song - Arbitrage
+    price: 25
 
 - type: entity
   parent: OfficeChairBase
@@ -302,3 +309,8 @@
   components:
   - type: Sprite
     state: diner_chair
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairDinerBench
+  # Aurora's Song End

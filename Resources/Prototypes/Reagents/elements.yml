@@ -8,6 +8,9 @@
   color: "#848789"
   boilingPoint: 2327.0
   meltingPoint: 660.0
+  tags: # Aurora's Song
+  - IPCCompatible
+  - ShelegCompatible
   metabolisms: #Floofstation, wipes aphrodisiacs
     Bloodstream: # Aurora's Song - Medicine>Bloodstream
       effects:

@@ -107,7 +107,8 @@
   flavor: medicine
   color: "#2d5708"
   tags: # Aurora's Song
-  - IPC
+  - IPCCompatible
+  - ShelegCompatible
   metabolisms:
     Bloodstream:
       effects:
@@ -948,8 +949,8 @@
   physicalDesc: reagent-physical-desc-translucent
   flavor: medicine
   color: "#404040"
-  tags:
-  - Sheleg
+  tags: # Aurora's Song
+  - ShelegCompatible
   metabolisms:
     Bloodstream:
       effects:

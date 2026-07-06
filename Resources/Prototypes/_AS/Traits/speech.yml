@@ -19,3 +19,48 @@
   cost: 2
   components:
   - type: MilbratAccent
+
+- type: trait
+  id: IPCSiliconSynthesizer
+  replaceComponents: true
+  name: trait-silicon-synth-name
+  description: trait-silicon-synth-desc
+  category: SpeechTraits
+  speciesWhitelist: [IPC]
+  cost: 1
+  components:
+    - type: Speech
+      speechSounds: Borg
+      speechVerb: Robotic
+
+- type: trait
+  id: IPCSyndieSiliconSynthesizer
+  replaceComponents: true
+  name: trait-syndie-synth-name
+  description: trait-syndie-synth-desc
+  category: SpeechTraits
+  speciesWhitelist: [IPC]
+  cost: 1
+  components:
+    - type: Speech
+      speechSounds: SyndieBorg
+      speechVerb: Robotic
+    - type: Vocal
+      sounds:
+        Unsexed: UnisexSiliconSyndicate
+
+- type: trait
+  id: IPCXenoborgSynthesizer
+  replaceComponents: true
+  name: trait-xeno-synth-name
+  description: trait-xeno-synth-desc
+  category: SpeechTraits
+  speciesWhitelist: [IPC]
+  cost: 1
+  components:
+    - type: Speech
+      speechSounds: Xenoborg
+      speechVerb: Robotic
+    - type: Vocal
+      sounds:
+        Unsexed: UnisexSiliconXenoborg

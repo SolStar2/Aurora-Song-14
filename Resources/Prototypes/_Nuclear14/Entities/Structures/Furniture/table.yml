@@ -54,6 +54,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/tables.rsi
     state: table_metal_round-2
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMetal
+    node: TableMetalRound
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableMetalRound
@@ -109,6 +114,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/tables.rsi
     state: table_wood_round
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableWood
+    node: TableWoodRound
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableDeskSchool
@@ -128,6 +138,11 @@
         - TableMask
         layer:
         - TableLayer
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableWood
+    node: TableWoodSquare
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableWoodSquare
@@ -144,6 +159,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/tables.rsi
     state: table_wood_stand
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableWood
+    node: TableWoodStand
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableWoodSquare
@@ -152,6 +172,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/tables.rsi
     state: cable_reel
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableWood
+    node: TableWoodCabledrum
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableWoodSquare
@@ -254,6 +279,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
     state: table_cards
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableCasinoCards
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableCasinoCards
@@ -263,6 +293,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
     state: table_pool
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableCasinoPool
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableCasinoCards
@@ -271,6 +306,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
     state: table_wood_wide_oval
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableWoodenOvalWide
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableCasinoCards
@@ -279,6 +319,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
     state: table_wood_wide_square
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableWoodenSquareWide
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableCasinoCards
@@ -287,6 +332,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
     state: table_metal_wide
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableMetalWide
+  # Aurora's Song End
 
 # Counters / Benches / Smoothed Tables
 - type: entity
@@ -297,6 +347,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/counters.rsi
     state: wood_counter
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableCounter
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableCounter
@@ -306,6 +361,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/counters.rsi
     state: wood_counter_bend
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableCounterBend
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableCounter
@@ -315,6 +375,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/counters.rsi
     state: wood_counter_intersect
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableCounterIntersect
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableCounter
@@ -324,6 +389,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/counters.rsi
     state: wood_counter_cross
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableCounterCross
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableCounter
@@ -333,6 +403,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/counters.rsi
     state: craft_counter
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableCounterCraft
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableCounter
@@ -342,6 +417,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/counters.rsi
     state: craft_counter_bend
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableCounterCraftBend
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableCounter
@@ -351,6 +431,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/counters.rsi
     state: craft_counter_intersect
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableCounterCraftIntersect
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableCounter
@@ -360,6 +445,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/counters.rsi
     state: craft_counter_cross
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableCounterCraftCross
+  # Aurora's Song End
 
 - type: entity
   parent: N14FreeTableBase
@@ -369,6 +459,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/counters.rsi
     state: metal_counter
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableCounterMetal
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableCounterMetal
@@ -378,6 +473,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/counters.rsi
     state: metal_counter_bend
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableCounterMetalBend
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableCounterMetal
@@ -387,6 +487,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/counters.rsi
     state: metal_counter_intersect
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableCounterMetalIntersect
+  # Aurora's Song End
 
 - type: entity
   parent: N14TableCounterMetal
@@ -396,7 +501,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/counters.rsi
     state: metal_counter_cross
-
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14TableMulti
+    node: TableCounterMetalCross
+  # Aurora's Song End
 
 # - type: entity
   # id: N14TableMetalBuilt
@@ -418,8 +527,8 @@
   - type: Icon
     sprite: _Nuclear14/Structures/Furniture/Tables/metalgrate.rsi
   - type: Construction
-    graph: N14TableMetalGrateRecipes
-    node: start
+    graph: N14TableMetal # Aurora's Song - N14TableMetalGrateRecipes > N14TableMetal
+    node: TableMetalGrate # Aurora's Song - start > TableMetalGrate
 
 - type: entity
   id: N14TableWoodSettler
@@ -430,8 +539,8 @@
   - type: Icon
     sprite: _Nuclear14/Structures/Furniture/Tables/table_settler.rsi
   - type: Construction
-    graph: N14TableRecipes
-    node: start
+    graph: N14TableWood # Aurora's Song - N14TableRecipes > N14TableWood
+    node: TableWoodSettler # Aurora's Song - start > TableWoodSettler
 
 # - type: entity
   # id: N14TableWoodenBuilt
@@ -454,5 +563,5 @@
   - type: Icon
     sprite: _Nuclear14/Structures/Furniture/Tables/barcounter.rsi
   - type: Construction
-    graph: N14TableCounterBarRecipes
-    node: start
+    graph: N14TableWood # Aurora's Song - N14TableCounterBarRecipes > N14TableWood
+    node: TableCounterBar # Aurora's Song - start > TableCounterBar

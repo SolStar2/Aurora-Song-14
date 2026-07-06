@@ -54,6 +54,8 @@
     off: item-toggle-examine-magnet-off
   - type: Appearance
   - type: NFConstructionBag
+  - type: Item # Aurora
+    size: Normal # Aurora
 
 - type: entity
   parent: ConstructionBag
@@ -74,7 +76,7 @@
       visible: false
       map: [ "enum.ToggleableVisuals.Layer" ]
   - type: Item
-    size: Ginormous
+    size: Normal # Aurora: Ginormous>Normal
     inhandVisuals:
       left:
       - state: inhand-left

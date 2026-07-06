@@ -1,59 +1,61 @@
-- type: constructionGraph
-  id: N14TableCounterBarRecipes
-  start: start
-  graph:
-    - node: start
-      edges:
-        - to: TableCounterBar
-          completed:
-            - !type:SnapToGrid
-              southRotation: true
-          conditions:
-            - !type:EntityAnchored {}
-          steps:
-            - material: WoodPlank
-              amount: 2
-              doAfter: 2
+# Aurora's Song Start - Commmented all of this out in favor of different graphs
+#- type: constructionGraph
+#  id: N14TableCounterBarRecipes
+#  start: start
+#  graph:
+#    - node: start
+#      edges:
+#        - to: TableCounterBar
+#          completed:
+#            - !type:SnapToGrid
+#              southRotation: true
+#          conditions:
+#            - !type:EntityAnchored {}
+#          steps:
+#            - material: WoodPlank
+#              amount: 2
+#              doAfter: 2
+#
+#    - node: TableCounterBar
+#      entity: N14TableCounterBar
 
-    - node: TableCounterBar
-      entity: N14TableCounterBar
+#- type: constructionGraph
+#  id: N14TableMetalGrateRecipes
+#  start: start
+#  graph:
+#    - node: start
+#      edges:
+#        - to: TableMetalGrate
+#          completed:
+#            - !type:SnapToGrid
+#              southRotation: true
+#          conditions:
+#            - !type:EntityAnchored {}
+#          steps:
+#            - material: Steel
+#              amount: 2
+#              doAfter: 2
+#
+#    - node: TableMetalGrate
+#      entity: N14TableMetalGrate
 
-- type: constructionGraph
-  id: N14TableMetalGrateRecipes
-  start: start
-  graph:
-    - node: start
-      edges:
-        - to: TableMetalGrate
-          completed:
-            - !type:SnapToGrid
-              southRotation: true
-          conditions:
-            - !type:EntityAnchored {}
-          steps:
-            - material: Steel
-              amount: 2
-              doAfter: 2
-
-    - node: TableMetalGrate
-      entity: N14TableMetalGrate
-
-- type: constructionGraph
-  id: N14TableRecipes
-  start: start
-  graph:
-    - node: start
-      edges:
-        - to: TableWoodSettler
-          completed:
-            - !type:SnapToGrid
-              southRotation: true
-          conditions:
-            - !type:EntityAnchored {}
-          steps:
-            - material: WoodPlank
-              amount: 2
-              doAfter: 2
-
-    - node: TableWoodSettler
-      entity: N14TableWoodSettler
+#- type: constructionGraph
+#  id: N14TableRecipes
+#  start: start
+#  graph:
+#    - node: start
+#      edges:
+#        - to: TableWoodSettler
+#          completed:
+#            - !type:SnapToGrid
+#              southRotation: true
+#          conditions:
+#            - !type:EntityAnchored {}
+#          steps:
+#            - material: WoodPlank
+#              amount: 2
+#              doAfter: 2
+#
+#    - node: TableWoodSettler
+#      entity: N14TableWoodSettler
+# Aurora's Song End

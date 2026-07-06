@@ -117,6 +117,12 @@ public sealed partial class AnchorableSystem : EntitySystem
         if (!TryComp(args.Used, out ToolComponent? usedTool) || !_tool.HasQuality(args.Used, anchorable.Tool, usedTool))
             return;
 
+        // Aurora's Song Start: Dont anchor items parented to the player anchoring them. Very simple fix to deal with all of our backpacks being anchorable.
+        var xform = Transform(uid);
+        if (xform.ParentUid == args.User)
+            return;
+        // Aurora's Song End
+
         args.Handled = true;
         TryToggleAnchor(uid, args.User, args.Used, anchorable, usingTool: usedTool);
     }

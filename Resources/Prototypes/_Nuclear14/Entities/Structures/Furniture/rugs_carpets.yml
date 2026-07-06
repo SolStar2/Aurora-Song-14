@@ -28,6 +28,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/rugs.rsi
     state: mat_blank
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14Rugs
+    node: RugMat
+  # Aurora's Song End
 
 - type: entity
   parent: N14RugMat
@@ -36,6 +41,11 @@
   components:
   - type: Sprite
     state: mat_welcome
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14Rugs
+    node: RugMatWelcome
+  # Aurora's Song End
 
 - type: entity
   parent: N14RugMat
@@ -53,6 +63,11 @@
   components:
   - type: Sprite
     state: mat_vulgar_2
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14Rugs
+    node: RugMatVulgar2
+  # Aurora's Song End
 
 - type: entity
   parent: N14RugMatVulgar1
@@ -89,6 +104,11 @@
   components:
   - type: Sprite
     state: rubber_single
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14Rugs
+    node: RugMatRubberSingle
+  # Aurora's Song End
 
 - type: entity
   parent: N14RugMatRubberSingle
@@ -120,6 +140,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/rugs64x64.rsi
     state: rug_blue
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14Rugs
+    node: RugBlue
+  # Aurora's Song End
 
 - type: entity
   parent: N14RugBlue
@@ -129,6 +154,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/rugs64x64.rsi
     state: rug_blue_shag
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14Rugs
+    node: RugBlueShag
+  # Aurora's Song End
 
 - type: entity
   parent: N14RugBlue
@@ -137,6 +167,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/rugs64x64.rsi
     state: rug_fancy
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14Rugs
+    node: RugBrownFancy
+  # Aurora's Song End
 
 - type: entity
   parent: N14RugBlue
@@ -145,6 +180,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/rugs64x64.rsi
     state: rug_red
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14Rugs
+    node: RugRed
+  # Aurora's Song End
 
 - type: entity
   parent: N14RugBlue
@@ -153,6 +193,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/rugs64x64.rsi
     state: rug_yellow
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14Rugs
+    node: RugYellow
+  # Aurora's Song End
 
 - type: entity
   parent: N14RugBlue
@@ -161,3 +206,8 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/rugs64x64.rsi
     state: rug_rubber
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14Rugs
+    node: RugMatRubberLarge
+  # Aurora's Song End

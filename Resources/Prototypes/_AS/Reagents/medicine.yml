@@ -6,6 +6,9 @@
   physicalDesc: reagent-physical-desc-metallic
   flavor: metallic
   color: "#EDFAFF"
+  tags: # Aurora's Song
+  - IPCCompatible
+  - ShelegCompatible
   metabolisms:
     Bloodstream: # Aurora's Song - Medicine>Bloodstream
       metabolismRate: 0.5

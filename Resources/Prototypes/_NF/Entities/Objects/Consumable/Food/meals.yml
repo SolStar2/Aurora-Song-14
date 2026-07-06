@@ -762,6 +762,7 @@
     tags:
     - Cooked
     - NFHotdog
+    - Meat # Aurora's Song
   - type: FlavorProfile
     flavors:
       - meaty

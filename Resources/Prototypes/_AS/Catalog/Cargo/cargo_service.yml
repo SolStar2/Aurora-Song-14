@@ -1,0 +1,11 @@
+- type: cargoProduct
+  id: ServiceTowelsCrate
+  name: towel crate
+  description: A rainbow of towels, for when the space tsunami rolls in.
+  icon:
+    sprite: Clothing/Multiple/towel.rsi
+    state: icon
+  product: ASCratePlasticBiodegradableTowelsFill
+  cost: 1000
+  category: cargoproduct-category-name-service
+  group: market

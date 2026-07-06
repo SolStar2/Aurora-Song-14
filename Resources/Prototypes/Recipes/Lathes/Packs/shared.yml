@@ -5,6 +5,7 @@
   recipes:
   - SheetRGlass
   - MaterialDurathread
+  - MetalRod # Aurora's Song
 
 - type: latheRecipePack
   id: PartsStatic

@@ -835,6 +835,7 @@
     - NFFloorTiles # Frontier
     - NFFloorTilesCarpet # Frontier
     - CorvaxWoodTiles # Aurora's Song
+    - XenoTiles # Aurora's Song
     dynamicPacks:
     - FauxTiles
   - type: EmagLatheRecipes # Frontier

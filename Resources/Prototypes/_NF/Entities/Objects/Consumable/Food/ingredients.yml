@@ -328,6 +328,9 @@
   - type: Construction
     graph: NFHotdogStove
     node: start
+  - type: Tag # Aurora's Song
+    tags:
+    - Meat
 
 - type: entity
   parent: BaseItem

@@ -50,6 +50,7 @@
     tags:
     - Payload
     - ClothMade
+    - Plushie # Imp
   - type: MothFood # Frontier
 
 - type: entity

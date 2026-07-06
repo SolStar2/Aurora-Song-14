@@ -105,6 +105,11 @@
   - type: Sprite
     state: mattress1
     snapCardinals: true
+  # Aurora's Song Start
+  - type: Construction
+    graph: N14Bed
+    node: bedmattress
+  # Aurora's Song End
 
 - type: entity
   parent: N14BedMattressDirty1

@@ -145,7 +145,8 @@
   description: Keeping your drinks at the perfect temperature since 1892.
   components:
   - type: Sprite
-    sprite: Objects/Consumable/Drinks/vacuumflask.rsi
+    sprite: _Impstation/Objects/Consumable/Drinks/vacuumflask.rsi #Imp: Redirect to Impstation sprites
+  - type: Engraveable #Imp
   - type: Tool
     qualities:
     - Rolling # Perfectly cylindrical flask

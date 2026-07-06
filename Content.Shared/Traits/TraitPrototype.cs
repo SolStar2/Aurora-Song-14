@@ -71,6 +71,12 @@ public sealed partial class TraitPrototype : IPrototype
     [DataField]
     public ProtoId<TraitCategoryPrototype>? Category;
 
+    /// <summary>
+    /// Allows you to replace existing components. Harmony change.
+    /// </summary>
+    [DataField]
+    public bool ReplaceComponents = false;
+
     /// Misfit - Species Trait Hiding
     /// <summary>
     /// Species whitelist for certain traits, this applies to the menu as well, hence its separation.

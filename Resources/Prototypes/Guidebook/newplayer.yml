@@ -7,7 +7,7 @@
   - Controls
   - CharacterCreation
   - StartingGear # Frontier
-  - NFDefinitions # Frontier
+  - ASDefinitions # Aurora's Song
 
 - type: guideEntry
   id: Controls

@@ -14,7 +14,7 @@
               amount: 2
               doAfter: 1
             - material: Cloth
-              amount: 6
+              amount: 2 # Aurora's Song - 6 > 2
               doAfter: 2
         - to: bedwood
           completed:
@@ -24,7 +24,7 @@
               amount: 2
               doAfter: 1
             - material: Cloth
-              amount: 6
+              amount: 2 # Aurora's Song - 6 > 2
               doAfter: 2
         - to: bedroll
           completed:
@@ -33,16 +33,25 @@
             - material: Cloth
               amount: 3
               doAfter: 2
-        - to: medicalbed
+#        - to: medicalbed     Aurora's Song - Duplicate of upstream medbed recipe
+#          completed:
+#            - !type:SnapToGrid { }
+#          steps:
+#            - material: Plasteel
+#              amount: 2
+#              doAfter: 1
+#            - material: Durathread
+#              amount: 2
+#              doAfter: 1
+        # Aurora's Song Start
+        - to: bedmattress
           completed:
             - !type:SnapToGrid { }
           steps:
-            - material: Plasteel
+            - material: Cloth
               amount: 2
-              doAfter: 1
-            - material: Durathread
-              amount: 2
-              doAfter: 1
+              doAfter: 2
+        # Aurora's Song End
     - node: bed
       entity: N14Bed
       edges:
@@ -53,7 +62,7 @@
               amount: 2
             - !type:SpawnPrototype
               prototype: MaterialCloth1
-              amount: 6
+              amount: 2 # Aurora's Song - 6 > 2
           steps:
             - tool: Screwing
               doAfter: 1
@@ -67,24 +76,24 @@
               amount: 2
             - !type:SpawnPrototype
               prototype: MaterialCloth1
-              amount: 6
+              amount: 2 # Aurora's Song - 6 > 2
           steps:
             - tool: Screwing
               doAfter: 1
-    - node: medicalbed
-      entity: MedicalBed
-      edges:
-        - to: start
-          completed:
-            - !type:SpawnPrototype
-              prototype: SheetPlasteel1
-              amount: 2
-            - !type:SpawnPrototype
-              prototype: MaterialDurathread1
-              amount: 2
-          steps:
-            - tool: Screwing
-              doAfter: 1
+#    - node: medicalbed     Aurora's Song - Duplicate of upstream medbed recipe
+#      entity: MedicalBed
+#      edges:
+#        - to: start
+#          completed:
+#            - !type:SpawnPrototype
+#              prototype: SheetPlasteel1
+#              amount: 2
+#            - !type:SpawnPrototype
+#              prototype: MaterialDurathread1
+#              amount: 2
+#          steps:
+#            - tool: Screwing
+#              doAfter: 1
     - node: bedroll
       entity: N14Bedroll
       edges:
@@ -96,3 +105,16 @@
           steps:
             - tool: Slicing
               doAfter: 1
+    # Aurora's Song Start
+    - node: bedmattress
+      entity: N14BedMattressDirty1
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 2
+    # Aurora's Song End

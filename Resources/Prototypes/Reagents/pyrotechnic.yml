@@ -165,7 +165,7 @@
   tileReactions:
   - !type:FlammableTileReaction {}
   tags: # Aurora's Song
-  - IPC
+  - IPCCompatible
   metabolisms:
     Bloodstream:
       effects:

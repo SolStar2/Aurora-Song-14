@@ -1,0 +1,19 @@
+# Static
+
+- type: latheRecipePack
+  id: BarPack
+  recipes:
+    - DrinkVacuumFlaskXL
+
+- type: latheRecipePack
+  id: ServiceMiscPack
+  recipes:
+    - ClothingBeltPlushie
+
+- type: latheRecipePack
+  id: LunchboxPack
+  recipes:
+    - SteelLunchbox
+    - SteelLunchboxBlue
+    - SteelLunchboxPink
+    - SteelLunchboxOrange

@@ -2,6 +2,7 @@
   id: ASBioGenMaterialsStatic
   recipes:
   - ASBioGenMeatSheet
+  - ASBioGenChitinPlate
 
 - type: latheRecipePack
   id: ASBioGenAnimalCubesStatic
