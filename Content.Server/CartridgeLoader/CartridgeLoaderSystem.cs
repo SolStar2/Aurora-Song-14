@@ -167,6 +167,7 @@ public sealed class CartridgeLoaderSystem : SharedCartridgeLoaderSystem
         if (!Resolve(loaderUid, ref loader))
             return;
 
+        // Aurora's Song - add queueing to state pushes to avoid collisions.
         if (!_userInterfaceSystem.HasUi(loaderUid, loader.UiKey))
             return;
 
@@ -176,6 +177,7 @@ public sealed class CartridgeLoaderSystem : SharedCartridgeLoaderSystem
             _pendingStateUpdates.Add(new LoaderQueue(loaderUid, pending));
         else
             _pendingStateUpdates[index].Queue.Enqueue(pending);
+        // End Aurora's Song - add queueing to state pushes to avoid collisions.
     }
 
     /// <summary>
