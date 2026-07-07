@@ -4,13 +4,11 @@
   suffix: health code violation
   description: Allegedly it's a cocktail. The warning cone motif seems apt.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: HealthViolation
-          Quantity: 30
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: HealthViolation
+        Quantity: 60
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/healthcodeviolation.rsi
     state: icon
@@ -21,13 +19,11 @@
   suffix: gunmetal
   description: A cloudy mix of rum, cream, and... is that welding fuel? Probably tasty.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Gunmetal
-          Quantity: 30
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Gunmetal
+        Quantity: 60
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/gunmetal.rsi
     state: icon
@@ -38,13 +34,11 @@
   suffix: lemon drop
   description: A martini glass filled with a translucent mix of refreshing lemony goodness.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: LemonDrop
-          Quantity: 30
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: LemonDrop
+        Quantity: 60
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/lemondrop.rsi
     state: icon
@@ -55,13 +49,11 @@
   suffix: green grass
   description: An odd green cocktail, topped with oranges, ice, and a plastic straw. Curious.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: GreenGrass
-          Quantity: 30
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: GreenGrass
+        Quantity: 60
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/greengrass.rsi
     state: icon
@@ -72,13 +64,11 @@
   suffix: arsonist's brew
   description: It's probably not concerning that it's glowing faintly. Or bubbling. Or smoking. No, not at all.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: ArsonistsBrew
-          Quantity: 30
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: ArsonistsBrew
+        Quantity: 60
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/arsonist.rsi
     state: icon
@@ -89,16 +79,14 @@
   suffix: kvass
   description: A cool refreshing drink with a taste of socialism.
   components:
-    - type: SolutionContainerManager
-      solutions:
-        drink:
-          maxVol: 30
-          reagents:
-            - ReagentId: Kvass
-              Quantity: 30
-    - type: Icon
-      sprite: _DV/Objects/Consumable/Drinks/kvass.rsi
-      state: icon
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Kvass
+        Quantity: 60
+  - type: Icon
+    sprite: _DV/Objects/Consumable/Drinks/kvass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -106,29 +94,25 @@
   suffix: mothamphetamine
   description: A strangely... Fuzzy drink. It has a chaotic aura.
   components:
-    - type: SolutionContainerManager
-      solutions:
-        drink:
-          maxVol: 30
-          reagents:
-            - ReagentId: Mothamphetamine
-              Quantity: 30
-    - type: Icon
-      sprite: _DV/Objects/Consumable/Drinks/mothamphetamine.rsi
-      state: icon
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Mothamphetamine
+        Quantity: 60
+  - type: Icon
+    sprite: _DV/Objects/Consumable/Drinks/mothamphetamine.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
   id: DoubleIceCreamGlass
   suffix: double ice cream
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: DoubleIceCream
-          Quantity: 30
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: DoubleIceCream
+        Quantity: 60
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/doubleicecreamglass.rsi
     state: icon
@@ -138,13 +122,11 @@
   id: LemonLimeBittersGlass
   suffix: lemon lime bitters
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: LemonLimeBitters
-          Quantity: 30
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: LemonLimeBitters
+        Quantity: 60
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/lemonlimebitters.rsi
     state: icon

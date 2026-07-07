@@ -53,10 +53,9 @@
     fillBaseName: vial-1-
     inHandsMaxFillLevels: 4
     inHandsFillBaseName: -fill-
-  - type: SolutionContainerManager
-    solutions:
-      beaker:
-        maxVol: 300
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      maxVol: 300 # I'm leaving this as 300, makes them slightly (60u) larger than Jugs
   - type: SolutionTransfer
     maxTransferAmount: 300
   - type: Item

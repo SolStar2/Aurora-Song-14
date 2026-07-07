@@ -18,13 +18,13 @@ namespace Content.Server._AS.Sandbox.Commands
     /// A command to link a set of conveyor belts
     /// </summary>
     [AnyCommand]
-    public sealed class LinkConveyorCommand : LocalizedEntityCommands
+    public sealed partial class LinkConveyorCommand : LocalizedEntityCommands
     {
-        [Dependency] private readonly IAdminManager _adminManager = default!;
-        [Dependency] private readonly SandboxSystem _sandboxSystem = default!;
-        [Dependency] private readonly MapSystem _mapSystem = default!;
-        [Dependency] private readonly DeviceLinkSystem _deviceLinkSystem = default!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        [Dependency] private IAdminManager _adminManager = default!;
+        [Dependency] private SandboxSystem _sandboxSystem = default!;
+        [Dependency] private MapSystem _mapSystem = default!;
+        [Dependency] private DeviceLinkSystem _deviceLinkSystem = default!;
+        [Dependency] private IPrototypeManager _prototypeManager = default!;
 
         public override string Command => "linkconveyors";
 

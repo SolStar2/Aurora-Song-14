@@ -8,10 +8,10 @@ using Robust.Shared.Network;
 namespace Content.Server._Floof.Info;
 
 
-public sealed class NsfwDisclaimerSystem : EntitySystem
+public sealed partial class NsfwDisclaimerSystem : EntitySystem
 {
-    [Dependency] private readonly INetManager _netManager = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private INetManager _netManager = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     private static DateTime LastValidReadTime => DateTime.UtcNow - TimeSpan.FromDays(60);
 

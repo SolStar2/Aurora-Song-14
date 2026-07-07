@@ -2,13 +2,13 @@
   parent: Undergarments
   id: Human
   limits:
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: false
     enum.HumanoidVisualLayers.Hair:
       limit: 1
       required: false
     enum.HumanoidVisualLayers.FacialHair:
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.HeadTop: # Aurora's Song
       limit: 1
       required: false
     enum.HumanoidVisualLayers.HeadSide: #imp
@@ -54,6 +54,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceHuman
+  categories: [ HideSpawnMenu ]
   name: human appearance
   components:
   - type: Inventory
@@ -99,11 +100,9 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
-  - type: Speech # Frontier
-    allowedEmotes: [ 'Belch' ] # Frontier
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganHuman
   abstract: true
   suffix: human

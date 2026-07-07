@@ -33,26 +33,26 @@ using Content.Shared.Station.Components;
 
 namespace Content.Server._NF.Smuggling;
 
-public sealed class DeadDropSystem : EntitySystem
+public sealed partial class DeadDropSystem : EntitySystem
 {
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly MapLoaderSystem _map = default!;
-    [Dependency] private readonly MetaDataSystem _meta = default!;
-    [Dependency] private readonly PaperSystem _paper = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly RadioSystem _radio = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ShipyardSystem _shipyard = default!;
-    [Dependency] private readonly ShuttleSystem _shuttle = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedMapSystem _mapManager = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly SectorServiceSystem _sectorService = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly SharedGameTicker _ticker = default!;
-    [Dependency] private readonly LinkedLifecycleGridSystem _linkedLifecycleGrid = default!;
-    [Dependency] private readonly StationRenameWarpsSystems _stationRenameWarps = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private MapLoaderSystem _map = default!;
+    [Dependency] private MetaDataSystem _meta = default!;
+    [Dependency] private PaperSystem _paper = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private RadioSystem _radio = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private ShipyardSystem _shipyard = default!;
+    [Dependency] private ShuttleSystem _shuttle = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedMapSystem _mapManager = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private SectorServiceSystem _sectorService = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private SharedGameTicker _ticker = default!;
+    [Dependency] private LinkedLifecycleGridSystem _linkedLifecycleGrid = default!;
+    [Dependency] private StationRenameWarpsSystems _stationRenameWarps = default!;
     private ISawmill _sawmill = default!;
 
     private readonly Queue<EntityUid> _drops = [];
@@ -110,7 +110,7 @@ public sealed class DeadDropSystem : EntitySystem
         _minDeadDropTimeout = newMax;
         // Change all existing dead drop timeouts
         var minTime = _timing.CurTime + TimeSpan.FromSeconds(_minDeadDropTimeout);
-        var query = EntityManager.AllEntityQueryEnumerator<DeadDropComponent>();
+        var query = AllEntityQuery<DeadDropComponent>();
         while (query.MoveNext(out var _, out var comp))
         {
             comp.MinimumCoolDown = _minDeadDropTimeout;
@@ -124,7 +124,7 @@ public sealed class DeadDropSystem : EntitySystem
         _maxDeadDropTimeout = newMax;
         // Change all existing dead drop timeouts
         var maxTime = _timing.CurTime + TimeSpan.FromSeconds(_maxDeadDropTimeout);
-        var query = EntityManager.AllEntityQueryEnumerator<DeadDropComponent>();
+        var query = AllEntityQuery<DeadDropComponent>();
         while (query.MoveNext(out var _, out var comp))
         {
             comp.MaximumCoolDown = _maxDeadDropTimeout;
@@ -137,7 +137,7 @@ public sealed class DeadDropSystem : EntitySystem
     {
         _minDeadDropDistance = newMax;
         // Change all existing dead drop timeouts
-        var query = EntityManager.AllEntityQueryEnumerator<DeadDropComponent>();
+        var query = AllEntityQuery<DeadDropComponent>();
         while (query.MoveNext(out var _, out var comp))
         {
             comp.MinimumDistance = _minDeadDropDistance;
@@ -148,7 +148,7 @@ public sealed class DeadDropSystem : EntitySystem
     {
         _maxDeadDropDistance = newMax;
         // Change all existing dead drop timeouts
-        var query = EntityManager.AllEntityQueryEnumerator<DeadDropComponent>();
+        var query = AllEntityQuery<DeadDropComponent>();
         while (query.MoveNext(out var _, out var comp))
         {
             comp.MaximumDistance = _maxDeadDropDistance;
@@ -214,7 +214,7 @@ public sealed class DeadDropSystem : EntitySystem
         }
 
         //Find a new potential dead drop to spawn.
-        var deadDropQuery = EntityManager.EntityQueryEnumerator<PotentialDeadDropComponent>();
+        var deadDropQuery = EntityQueryEnumerator<PotentialDeadDropComponent>();
         List<(EntityUid ent, PotentialDeadDropComponent comp)> potentialDeadDrops = new();
         while (deadDropQuery.MoveNext(out var ent, out var potentialDeadDrop))
         {
@@ -531,7 +531,7 @@ public sealed class DeadDropSystem : EntitySystem
         dropHint.AppendLine();
         dropHint.AppendLine(Loc.GetString("deaddrop-hint-next-drop", ("time", RoundTimerUtils.ToString(hintNextDrop)))); // Aurora's Song: Time Consistency
 
-        var paper = EntityManager.SpawnEntity(component.HintPaper, Transform(uid).Coordinates);
+        var paper = Spawn(component.HintPaper, Transform(uid).Coordinates);
 
         if (TryComp(paper, out PaperComponent? paperComp))
         {
@@ -544,7 +544,7 @@ public sealed class DeadDropSystem : EntitySystem
         component.DeadDropCalled = true;
         //logic of posters ends here and logic of radio signals begins here
 
-        var deadDropQuery = EntityManager.EntityQueryEnumerator<StationDeadDropReportingComponent>();
+        var deadDropQuery = EntityQueryEnumerator<StationDeadDropReportingComponent>();
         while (deadDropQuery.MoveNext(out var reportStation, out var reportComp))
         {
             if (!TryComp<StationDataComponent>(reportStation, out var stationData))
@@ -645,7 +645,7 @@ public sealed class DeadDropSystem : EntitySystem
         if (entityList == null)
         {
             entityList = new();
-            var hintQuery = EntityManager.AllEntityQueryEnumerator<DeadDropComponent>();
+            var hintQuery = AllEntityQuery<DeadDropComponent>();
             while (hintQuery.MoveNext(out var ent, out var _))
             {
                 var stationUid = _station.GetOwningStation(ent);
@@ -666,19 +666,19 @@ public sealed class DeadDropSystem : EntitySystem
                 break;
 
             string objectHintString;
-            if (EntityManager.TryGetComponent<PotentialDeadDropComponent>(hintTuple.Item2, out var potentialDeadDrop))
+            if (TryComp<PotentialDeadDropComponent>(hintTuple.Item2, out var potentialDeadDrop))
                 objectHintString = Loc.GetString(potentialDeadDrop.HintText);
             else
                 objectHintString = Loc.GetString("dead-drop-hint-generic");
 
             string stationHintString;
-            if (EntityManager.TryGetComponent(hintTuple.Item1, out MetaDataComponent? stationMetadata))
+            if (TryComp(hintTuple.Item1, out MetaDataComponent? stationMetadata))
                 stationHintString = stationMetadata.EntityName;
             else
                 stationHintString = Loc.GetString("dead-drop-station-hint-generic");
 
             string timeString;
-            if (EntityManager.TryGetComponent<DeadDropComponent>(hintTuple.Item2, out var deadDrop) && deadDrop.NextDrop != null)
+            if (TryComp<DeadDropComponent>(hintTuple.Item2, out var deadDrop) && deadDrop.NextDrop != null)
             {
                 var dropTimeWithError = deadDrop.NextDrop.Value - _ticker.RoundStartTimeSpan + TimeSpan.FromSeconds(_random.Next(-MaxHintTimeErrorSeconds, MaxHintTimeErrorSeconds));
                 timeString = Loc.GetString("dead-drop-time-known", ("time", RoundTimerUtils.ToString(dropTimeWithError))); // Aurora's Song: Time Consistency

@@ -37,8 +37,9 @@
     color: "#4dc4ff"
   - type: AlwaysHot
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -116,8 +117,9 @@
     price: 125
   - type: AlwaysHot
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:

@@ -19,11 +19,11 @@ namespace Content.Shared._Floof.Consent;
 
 public abstract partial class SharedConsentSystem : EntitySystem
 {
-    [Dependency] private readonly SharedMindSystem _mindSystem = default!;
-    [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
-    // [Dependency] private readonly ISharedPlayerManager _playerManager = default!; // Aurora's Song
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly ILogManager _log = default!;
+    [Dependency] private SharedMindSystem _mindSystem = default!;
+    [Dependency] private ExamineSystemShared _examineSystem = default!;
+    [Dependency] private ISharedPlayerManager _playerManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private ILogManager _log = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -98,8 +98,8 @@ public abstract partial class SharedConsentSystem : EntitySystem
             return false;
 
         if (!_mindSystem.TryGetMind(ent.Owner, out _, out var mind)
-            || mind.Session == null
-            || !UserConsents.TryGetValue(mind.Session.UserId, out var consentSettings)
+            || !_playerManager.TryGetSessionById(mind.UserId, out var session) // Aurora's Song - Make use PlayerManager
+            || !UserConsents.TryGetValue(session.UserId, out var consentSettings) // Aurora's Song - Make use PlayerManager
             || !consentSettings.Toggles.TryGetValue(consentId, out var toggle))
             return consentToggle.DefaultValue;
 

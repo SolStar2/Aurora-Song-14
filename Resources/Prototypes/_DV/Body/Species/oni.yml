@@ -119,7 +119,7 @@
     baseCritThreshold: 115
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic # Aurora's Song - OrganBase>OrganBaseOrganic
   id: OrganOni
   abstract: true
   suffix: Oni

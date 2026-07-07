@@ -8,10 +8,10 @@ namespace Content.Client._AS.Shuttles.Systems;
 /// <summary>
 ///     Handles the falling animation for entities that fall into FTL SPace.
 /// </summary>
-public sealed class FTLFallingVisualsSystem : EntitySystem
+public sealed partial class FTLFallingVisualsSystem : EntitySystem
 {
-    [Dependency] private readonly AnimationPlayerSystem _anim = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private AnimationPlayerSystem _anim = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     private readonly string _chasmFallAnimationKey = "chasm_fall";
 

@@ -11,11 +11,11 @@ using Robust.Shared.Random; // Aurora's Song - EMP Vulnerability Chance
 
 namespace Content.Server.StationEvents.Events;
 
-public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
+public sealed partial class IonStormRule : StationEventSystem<IonStormRuleComponent>
 {
-    [Dependency] private readonly IonStormSystem _ionStorm = default!;
-    [Dependency] private readonly SharedEmpVulnerableSystem _empVulnerable = default!; //Moffstation - EMP Vulnerability
-    [Dependency] private readonly IRobustRandom _robustRandom = default!; // Aurora's Song - EMP Vulnerability Chance
+    [Dependency] private IonStormSystem _ionStorm = default!;
+    [Dependency] private SharedEmpVulnerableSystem _empVulnerable = default!; //Moffstation - EMP Vulnerability
+    [Dependency] private IRobustRandom _robustRandom = default!; // Aurora's Song - EMP Vulnerability Chance
 
     protected override void Started(EntityUid uid, IonStormRuleComponent comp, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {

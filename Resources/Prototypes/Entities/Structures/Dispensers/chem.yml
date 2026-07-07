@@ -16,7 +16,7 @@
       - ChemDispensable
     maxItemSize: Large # Frontier
     grid: # Frontier
-    - 0,0,20,8 # Frontier
+    - 0,0,42,8 # Frontier # Aurora's Song - Doubled the size so you can fit all Reinforced jugs if you want
   - type: ReagentDispenser # Frontier
     canAutoLabel: true # Frontier
   - type: ApcPowerReceiver

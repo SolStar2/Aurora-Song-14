@@ -1,6 +1,6 @@
 # Base
 - type: entity
-  parent: BulletWaterShot
+  parent: [SolutionCryo, BulletWaterShot] # Aurora's Song - Add SolutionCryo
   id: SplatterChemBase
   name: chemical splatter
   categories: [ HideSpawnMenu ]
@@ -18,18 +18,13 @@
     layers:
     - state: icon
       map: ["enum.VaporVisualLayers.Base"]
-  - type: SolutionContainerManager
-    solutions:
-      vapor:
-        maxVol: 50
-        canReact: false
   - type: RefillableSolution
     solution: vapor
   - type: DrainableSolution
     solution: vapor
   - type: SolutionInjectOnEmbed
-    transferAmount: 50
-    solution: melee
+    transferAmount: 60 # Aurora's Song - 50>60
+    solution: vapor # Aurora's Song - melee>vapor
   - type: InjectableSolution
     solution: vapor
   - type: Vapor
@@ -43,83 +38,68 @@
   id: SplatterChemPhlogNapalm
   categories: [ HideSpawnMenu ]
   components:
-  - type: SolutionContainerManager
-    solutions:
-      vapor:
-        maxVol: 50
-        canReact: false
-        reagents:
-        - ReagentId: Napalm
-          Quantity: 1
-        - ReagentId: Phlogiston
-          Quantity: 1
-        - ReagentId: ChlorineTrifluoride
-          Quantity: 1
-        - ReagentId: Laughter
-          Quantity: 4
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Napalm
+        Quantity: 1
+      - ReagentId: Phlogiston
+        Quantity: 1
+      - ReagentId: ChlorineTrifluoride
+        Quantity: 1
+      - ReagentId: Laughter
+        Quantity: 4
 
 - type: entity
   parent: SplatterChemBase
   id: SplatterChemDrugs
   categories: [ HideSpawnMenu ]
   components:
-  - type: SolutionContainerManager
-    solutions:
-      vapor:
-        maxVol: 50
-        canReact: false
-        reagents:
-        - ReagentId: THC
-          Quantity: 5
-        - ReagentId: PolytrinicAcid
-          Quantity: 1
-        - ReagentId: Razorium
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: THC
+        Quantity: 5
+      - ReagentId: PolytrinicAcid
+        Quantity: 1
+      - ReagentId: Razorium
+        Quantity: 1
 
 - type: entity
   parent: SplatterChemBase
   id: SplatterChemMute
   categories: [ HideSpawnMenu ]
   components:
-  - type: SolutionContainerManager
-    solutions:
-      vapor:
-        maxVol: 50
-        canReact: false
-        reagents:
-        - ReagentId: MuteToxin
-          Quantity: 4
-        - ReagentId: PolytrinicAcid
-          Quantity: 1
-        - ReagentId: ChloralHydrate
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: MuteToxin
+        Quantity: 4
+      - ReagentId: PolytrinicAcid
+        Quantity: 1
+      - ReagentId: ChloralHydrate
+        Quantity: 1
 
 - type: entity
   parent: SplatterChemBase
   id: SplatterChemWeh
   categories: [ HideSpawnMenu ]
   components:
-  - type: SolutionContainerManager
-    solutions:
-      vapor:
-        maxVol: 50
-        canReact: false
-        reagents:
-        - ReagentId: JuiceThatMakesYouWeh
-          Quantity: 5 # 50u in bloodstream required to turn victim into a lizard
-        - ReagentId: Licoxide
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: JuiceThatMakesYouWeh
+        Quantity: 5 # 50u in bloodstream required to turn victim into a lizard
+      - ReagentId: Licoxide
+        Quantity: 1
 
 - type: entity
   parent: SplatterChemBase
   id: SplatterChemCold
   categories: [ HideSpawnMenu ]
   components:
-  - type: SolutionContainerManager
-    solutions:
-      vapor:
-        maxVol: 50
-        canReact: false
-        reagents:
-        - ReagentId: Fresium
-          Quantity: 7 # needs 40u in bloodstream for special effect
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Fresium
+        Quantity: 7 # needs 40u in bloodstream for special effect

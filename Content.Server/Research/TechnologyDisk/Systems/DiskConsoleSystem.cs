@@ -9,12 +9,12 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.Research.TechnologyDisk.Systems;
 
-public sealed class DiskConsoleSystem : EntitySystem
+public sealed partial class DiskConsoleSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly ResearchSystem _research = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private ResearchSystem _research = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -39,10 +39,13 @@ public sealed class DiskConsoleSystem : EntitySystem
                 continue;
 
             RemComp(uid, printing);
-            if (!console.DiskRare)
-                Spawn(console.DiskPrototype, xform.Coordinates);
-            else
-                Spawn(console.DiskPrototypeRare, xform.Coordinates);
+            // Aurora's Song Start
+            Spawn(console.DiskPrototype, xform.Coordinates);
+            // if (!console.DiskRare)
+            //     Spawn(console.DiskPrototype, xform.Coordinates);
+            // else
+            //     Spawn(console.DiskPrototypeRare, xform.Coordinates);
+            // Aurora's Song End
         }
     }
 

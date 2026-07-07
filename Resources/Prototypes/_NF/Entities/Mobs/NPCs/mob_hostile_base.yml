@@ -52,7 +52,6 @@
     allowedStates:
     - Alive
     - Critical
-    damageCap: 500
     damage:
       types: # Aurora's Song - Convert from groups to types
         Blunt: -0.2
@@ -75,7 +74,6 @@
     - Alive
     - Critical
     - Dead
-    damageCap: 9999
 #endregion
 
 #region Restrictions
@@ -105,7 +103,6 @@
     - type: CanMoveInAir
     - type: Tag
     - type: Access
-    - type: Timer
     - type: TimedSpawner
     - type: Jittering
 

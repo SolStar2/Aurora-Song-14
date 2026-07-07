@@ -1,5 +1,5 @@
 - type: entity
-  parent: MaterialBase
+  parent: [SolutionCompositeSmallStackable, MaterialBase] # Aurora's Song - Convert to solution
   id: MaterialPom
   name: pompoms
   description: A pile of small, fluffy pompoms. What did you have to do to obtain these?
@@ -29,17 +29,16 @@
       map: ["base"]
   - type: Appearance
   - type: Edible
+    solution: composite # Aurora's Song
     requiresSpecialDigestion: true
   - type: FlavorProfile
     flavors:
     - soft
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 3
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 3
   - type: Tag
     tags:
       - ClothMade

@@ -13,7 +13,6 @@
   startingGear: NFPirateFirstMateGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true
-  canBeAntag: true
   icon: "JobIconNFPirateFirstMate"
   supervisors: job-supervisors-captain
   weight: 30

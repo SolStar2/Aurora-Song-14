@@ -586,22 +586,25 @@
   id: NFSalvageMaterialCrateSpawner
   parent: SalvageMaterialCrateSpawner
   components:
-  - type: RandomSpawner
-    prototypes:
-    - NFCrateSalvageAssortedGoodies
-    - NFCrateSalvageAssortedGoodies
-    - NFCrateSalvageAssortedGoodies
-    - NFCrateSalvageAssortedGoodiesPlastic
-    - NFCrateSalvageAssortedGoodiesPlastic
-    - NFCrateSalvageAssortedGoodiesTrashCart
-    chance: 0.95
-    rarePrototypes:
-    - CrateTradeSecureNormal
-    - CrateTradeSecureHigh
-    - CrateSalvageEquipment
-    - CrateTrashCartFilled
-    - CrateArtifactContainer
-    rareChance: 0.03
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - !type:GroupSelector
+        weight: 0.97
+        children:
+        - id: NFCrateSalvageAssortedGoodies
+          weight: 3
+        - id: NFCrateSalvageAssortedGoodiesPlastic
+          weight: 2
+        - id: NFCrateSalvageAssortedGoodiesTrashCart
+      - !type:GroupSelector
+        weight: 0.03
+        children:
+        - id: CrateTradeSecureNormal
+        - id: CrateTradeSecureHigh
+        - id: CrateSalvageEquipment
+        - id: CrateTrashCartFilled
+        - id: CrateArtifactContainer
     offset: 0.0
 
 - type: entity
@@ -818,36 +821,40 @@
   parent: SalvageMobSpawner
   suffix: 95
   components:
-  - type: RandomSpawner
-    prototypes:
-    - SpawnMobCarp
-    - SpawnMobCarp
-    - SpawnMobCarp
-    - SpawnMobCarp
-    - SpawnMobCarp
-    - SpawnMobBearSalvage
-    - SpawnMobSpiderSalvage
-    - SpawnMobKangarooSalvage
-    - PlushieCarp
-    - DehydratedSpaceCarp
-    - NFMobTick
-    - NFMobTick
-    - NFMobTick
-    - NFMobSmallRainbowSnake # SpawnMobCobraSalvage<NFMobSmallRainbowSnake
-    chance: 0.95
-    rarePrototypes:
-    - NFSalvageSpawnerMobTickSwarm
-    - NFSpawnMobWyvern
-    - NFSpawnMobWyvern
-    - NFMobShark
-    - NFMobShark
-    - NFMobShark
-    - NFMobShark
-    - NFMobShark
-    - NFPlushieSharkMinnow
-    - DehydratedSharkMinnow
-    - SpawnMobCobraSalvage
-    rareChance: 0.2
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - !type:GroupSelector
+        weight: 0.98
+        children:
+        - id: SpawnMobCarp
+        - id: SpawnMobCarp
+        - id: SpawnMobCarp
+        - id: SpawnMobCarp
+        - id: SpawnMobCarp
+        - id: SpawnMobBearSalvage
+        - id: SpawnMobSpiderSalvage
+        - id: SpawnMobKangarooSalvage
+        - id: PlushieCarp
+        - id: DehydratedSpaceCarp
+        - id: NFMobTick
+        - id: NFMobTick
+        - id: NFMobTick
+        - id: NFMobSmallRainbowSnake # SpawnMobCobraSalvage<NFMobSmallRainbowSnake
+      - !type:GroupSelector
+        weight: 0.02
+        children:
+        - id: NFSalvageSpawnerMobTickSwarm
+        - id: NFSpawnMobWyvern
+        - id: NFSpawnMobWyvern
+        - id: NFMobShark
+        - id: NFMobShark
+        - id: NFMobShark
+        - id: NFMobShark
+        - id: NFMobShark
+        - id: NFPlushieSharkMinnow
+        - id: DehydratedSharkMinnow
+        - id: SpawnMobCobraSalvage
     offset: 0.0
 
 - type: entity

@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: [SolutionDrink, BaseItem] # Aurora's Song - Convert to solution
   id: DrinkKegBase
   name: cask
   abstract: true
@@ -27,10 +27,9 @@
     - Back
   - type: StaticPrice
     price: 30
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 300
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      maxVol: 300 # I'm leaving this as 300, makes them slightly (60u) larger than Jugs
   - type: Edible  # Aurora's Song - Convert to edible from Drink
     edible: Drink
     solution: drink

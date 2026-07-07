@@ -1736,7 +1736,6 @@ entities:
   - uid: 467
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 1.5,7.5
       parent: 1
 - proto: DefibrillatorCabinetFilled

@@ -11,15 +11,13 @@
         Quantity: 10
       - ReagentId: Uranium # Added to cause an EMP reaction when grinded with a specific plushie 1/2
         Quantity: 5
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 10
-        - ReagentId: JuiceThatMakesYouWeh
-          Quantity: 10
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 10
+      - ReagentId: JuiceThatMakesYouWeh
+        Quantity: 10
   - type: Speech
     speechVerb: Reptilian # for pais (In the secret stash)
   - type: FoodSequenceElement
@@ -44,15 +42,13 @@
         Quantity: 5
       - ReagentId: Aluminium # Added to cause an EMP reaction when grinded with a specific plushie
         Quantity: 5
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 10
-        - ReagentId: JuiceThatMakesYouWeh
-          Quantity: 10
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 10
+      - ReagentId: JuiceThatMakesYouWeh
+        Quantity: 10
   - type: Speech
     speechVerb: Reptilian # for pais (In the secret stash)
   - type: FoodSequenceElement

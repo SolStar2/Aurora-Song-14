@@ -23,7 +23,31 @@
   - type: Organ
 
 - type: entity
-  parent: OrganBase
+  id: OrganBaseOrganic
+  name: organ
+  abstract: true
+  parent: [ OrganBase, SolutionFood, SolutionTiny ]
+  components:
+  - type: FlavorProfile
+    flavors:
+    - chicken # INTRODUCING OUR NEW EVERY-MEAT BURRITO, IT'S GOT EVERY MEAT!
+  - type: Edible
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 20
+  - type: Tag # I am nearing my limit of tolerance for TagComponent.
+    tags:
+    - Raw
+    - Meat
+  # Aurora's Song Start - Make them grindable
+  - type: Extractable
+    grindableSolutionName: food
+  # Aurora's Song End
+
+- type: entity
+  parent: OrganBase # Aurora's Song - OrganBaseOrganic>OrganBase
   id: OrganBaseTorso
   name: torso
   abstract: true
@@ -246,7 +270,7 @@
       - RFoot
 
 - type: entity
-  parent: [ OrganBase, OrganEdible ] # Aurora's Song - added OrganEdible
+  parent: OrganBase
   id: OrganBaseBrain
   name: brain
   abstract: true
@@ -265,23 +289,21 @@
   - type: InputMover
   - type: Examiner
   - type: BlockMovement
-# Aurora's Song - edible, grindable organs
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: GreyMatter
-          Quantity: 5
-# Aurora's Song edit ends
   - type: BadFood
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 15
+      - ReagentId: GreyMatter
+        Quantity: 10
   - type: FoodSequenceElement
     entries:
       Burger: Brain
       Taco: Brain
 
 - type: entity
-  parent: [ OrganBase, OrganEdible ] # Aurora's Song - added OrganEdible
+  parent: OrganBase
   id: OrganBaseEyes
   name: eyes
   abstract: true
@@ -304,7 +326,7 @@
       - Eyes
 
 - type: entity
-  parent: [ OrganBase, OrganEdible ] # Aurora's Song - added OrganEdible
+  parent: OrganBase
   id: OrganBaseTongue
   name: tongue
   abstract: true
@@ -317,7 +339,7 @@
     - state: tongue
 
 - type: entity
-  parent: [ OrganBase, OrganEdible ] # Aurora's Song - added OrganEdible
+  parent: OrganBase
   id: OrganBaseAppendix
   name: appendix
   abstract: true
@@ -330,7 +352,7 @@
     - state: appendix
 
 - type: entity
-  parent: [ OrganBase, OrganEdible ] # Aurora's Song - added OrganEdible
+  parent: OrganBase
   id: OrganBaseEars
   name: ears
   abstract: true
@@ -343,7 +365,7 @@
     - state: ears
 
 - type: entity
-  parent: [ OrganBase, OrganEdible ] # Aurora's Song - added OrganEdible
+  parent: OrganBase
   id: OrganBaseLungs
   name: lungs
   abstract: true
@@ -354,18 +376,9 @@
   - type: Lung
   - type: Metabolizer
     stages: [ Respiration ]
-  - type: SolutionContainerManager
+  - type: SolutionManager
     solutions:
-      Lung:
-        maxVol: 100.0
-        canReact: false
-# Aurora's Song - edible, grindable organs
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
-# Aurora's Song edit ends
+    - SolutionLungGas
   - type: Sprite
     layers:
     - state: lung-l
@@ -374,7 +387,18 @@
     heldPrefix: lungs
 
 - type: entity
-  parent: [ OrganBase, OrganEdible ] # Aurora's Song - added OrganEdible
+  parent: Solution
+  id: SolutionLungGas # TODO: Metabolize directly from gasses :(
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: Lung
+    solution:
+      maxVol: 100.0
+      canReact: false
+
+- type: entity
+  parent: OrganBase
   id: OrganBaseHeart
   name: heart
   abstract: true
@@ -390,7 +414,7 @@
     stages: [ Bloodstream ]
 
 - type: entity
-  parent: [ OrganBase, OrganEdible ] # Aurora's Song - added OrganEdible
+  parent: OrganBase
   id: OrganBaseStomach
   name: stomach
   abstract: true
@@ -399,17 +423,9 @@
   - type: Organ
     category: Stomach
   - type: Stomach
-  - type: SolutionContainerManager
+  - type: SolutionManager
     solutions:
-      stomach:
-        maxVol: 50
-# Aurora's Song - edible, grindable organs
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
-# Aurora's Song edit ends
+    - SolutionStomach
   - type: Metabolizer
     maxReagents: 3
     stages: [ Digestion ]
@@ -420,7 +436,17 @@
     heldPrefix: stomach
 
 - type: entity
-  parent: [ OrganBase, OrganEdible ] # Aurora's Song - added OrganEdible
+  parent: Solution
+  id: SolutionStomach
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: stomach
+    solution:
+      maxVol: 150 # 1.25 liters which is average for a human
+
+- type: entity
+  parent: OrganBase
   id: OrganBaseLiver
   name: liver
   abstract: true
@@ -438,7 +464,7 @@
     stages: [ Metabolites ]
 
 - type: entity
-  parent: [ OrganBase, OrganEdible ] # Aurora's Song - added OrganEdible
+  parent: OrganBase
   id: OrganBaseKidneys
   name: kidneys
   abstract: true

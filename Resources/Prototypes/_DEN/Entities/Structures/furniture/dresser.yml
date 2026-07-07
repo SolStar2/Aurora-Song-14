@@ -9,6 +9,7 @@
     state: somberdresser
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -48,6 +49,7 @@
     state: somberdresser
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: StaticPrice
     price: 125

@@ -1,7 +1,7 @@
 ﻿# Basic Gambling Crate
-- type: entity
+- type: entity # Unused, we use the entity table directly now
   name: LotteryPullBasic
-  id: LotteryPullBasic
+  id: LotteryPullBasicSpawner
   parent: MarkerBasePlaceFree
   suffix: "Gambling"
   components:
@@ -15,104 +15,113 @@
       - sprite: _NF/Markers/general.rsi
         state: questionmark
         color: red
-  - type: RandomSpawner
-    prototypes:
-    - WeaponCaseLongWT550Expedition
-    - WeaponCaseLongM90Expedition
-    - WeaponCaseLongBulldog
-    - WeaponCaseLongVulcanExpedition
-    - ASPlasmaRifleScourer
-    - WeaponCaseLongAtreidesExpedition
-    - Telecrystal1
-    - Telecrystal5
-    - FoodCakeSlime
-    - SpaceCash30000
-    - SpaceCash10000
-    - SpaceCash5000
-    - SpaceCash2500
-    - SpaceCash500
-    - SpaceCash100
-    - SpaceCash10
-    - SpaceCash
-    - CigaretteSpent
-    - Sledgehammer
-    - WeaponMeleeToolboxRobust
-    - ThrowingStar
-    - WeaponFlareGun
-    - ToySword
-    - Shovel
-    - WeaponWaterPistol
-    - WeaponWaterBlaster
-    - NFWeaponRifleFoam
-    - ClothingUniformJumpsuitFamilyGuy
-    - ClothingOuterFlannelBlue
-    - ClothingHeadHelmetBone
-    - ClothingOuterSuitCarp
-    - ClothingHeadHatCatEars
-    - ClothingHeadHatDogEars
-    - ClothingOuterArmorReflective
-    - ClothingUniformJumpskirtSyndieFormalDress
-    - ClothingNeckCloakNanotrasen
-    - ClothingUniformJumpsuitNanotrasen
-    - ClothingShoesSnakeskinBoots
-    - ClothingOuterCoatSpaceAsshole
-    - ClothingUniformJumpsuitHawaiYellow
-    - ClothingHeadSafari
-    - ClothingMaskGasMercenary
-    - ClothingHeadHatCardborg
-    - ClothingUnderSocksCoder
-    - ClothingUniformJumpskirtOfLife
-    - ClothingNeckBling
-    - ClothingShoesBling
-    - IngotGold
-    - GoldOre1
-    - GoldOre
-    - DrinkGoldenCup
-    - ToolboxGoldFilled
-    - ClothingEyesGlassesGar
-    - ClothingEyesGlassesGarGiga
-    - ClothingEyesGlassesGarOrange
-    - ClothingHeadHatChameleon
-    - ClothingBeltChampion
-    - PlushieRGBee
-    - PlushieGhost
-    - PlushieHampter
-    - PlushiePenguin
-    - PlushieHuman
-    - PlushieLizard
-    - PlushieLamp
-    - PlushieSharkBlue
-    - PlushieMoth
-    - PlushieArachind
-    - PlushieThrongler
-    - AmeJar
-    - SoapOmega
-    - ClothingEyesGlassesMeson
-    - Chainsaw
-    - Crowbar
-    - WelderIndustrial
-    - HydroponicsToolHatchet
-    - ToyAmongPequeno
-    - Lamp
-    - NFCartridgeCap
-    - CableHVStack1
-    - DrinkMugBlue
-    - CablecuffsBroken
-    - FoodPlateTin
-    - NFMagazineBoxFoam
-    - NFBoxDonkSoftBox
-    - GrenadeFoamDart
-    - StorageFillAmmoBoxHonk35
-    - StorageFillAmmoBoxHonk35SMG
-    - ClothingHandsKnuckleDustersQM
-    chance: 1
+  - type: EntityTableSpawner
     offset: 0.0
-    rarePrototypes:
-    #- SweepingSongGAMBLING
-    - ASWeaponPKSLAYGambling
-    #- ClothingHandsGlovesNorthStarRaiden
-    - ClothingMagbootsGamblingCursed
-    - ClothingEyesHudOmni
-    - Omnitool
-    #- MobWizFedWizardViolet
-    rareChance: 0.001
+    table: !type:NestedSelector
+      tableId: LotteryPullBasic
+
+- type: entityTable
+  id: LotteryPullBasic
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: WeaponCaseLongWT550Expedition
+      - id: WeaponCaseLongM90Expedition
+      - id: WeaponCaseLongBulldog
+      - id: WeaponCaseLongVulcanExpedition
+      - id: ASPlasmaRifleScourer
+      - id: WeaponCaseLongAtreidesExpedition
+      - id: Telecrystal1
+      - id: Telecrystal5
+      - id: FoodCakeSlime
+      - id: SpaceCash30000
+      - id: SpaceCash10000
+      - id: SpaceCash5000
+      - id: SpaceCash2500
+      - id: SpaceCash500
+      - id: SpaceCash100
+      - id: SpaceCash10
+      - id: SpaceCash
+      - id: CigaretteSpent
+      - id: Sledgehammer
+      - id: WeaponMeleeToolboxRobust
+      - id: ThrowingStar
+      - id: WeaponFlareGun
+      - id: ToySword
+      - id: Shovel
+      - id: WeaponWaterPistol
+      - id: WeaponWaterBlaster
+      - id: NFWeaponRifleFoam
+      - id: ClothingUniformJumpsuitFamilyGuy
+      - id: ClothingOuterFlannelBlue
+      - id: ClothingHeadHelmetBone
+      - id: ClothingOuterSuitCarp
+      - id: ClothingHeadHatCatEars
+      - id: ClothingHeadHatDogEars
+      - id: ClothingOuterArmorReflective
+      - id: ClothingUniformJumpskirtSyndieFormalDress
+      - id: ClothingNeckCloakNanotrasen
+      - id: ClothingUniformJumpsuitNanotrasen
+      - id: ClothingShoesSnakeskinBoots
+      - id: ClothingOuterCoatSpaceAsshole
+      - id: ClothingUniformJumpsuitHawaiYellow
+      - id: ClothingHeadSafari
+      - id: ClothingMaskGasMercenary
+      - id: ClothingHeadHatCardborg
+      - id: ClothingUnderSocksCoder
+      - id: ClothingUniformJumpskirtOfLife
+      - id: ClothingNeckBling
+      - id: ClothingShoesBling
+      - id: IngotGold
+      - id: GoldOre1
+      - id: GoldOre
+      - id: DrinkGoldenCup
+      - id: ToolboxGoldFilled
+      - id: ClothingEyesGlassesGar
+      - id: ClothingEyesGlassesGarGiga
+      - id: ClothingEyesGlassesGarOrange
+      - id: ClothingHeadHatChameleon
+      - id: ClothingBeltChampion
+      - id: PlushieRGBee
+      - id: PlushieGhost
+      - id: PlushieHampter
+      - id: PlushiePenguin
+      - id: PlushieHuman
+      - id: PlushieLizard
+      - id: PlushieLamp
+      - id: PlushieSharkBlue
+      - id: PlushieMoth
+      - id: PlushieArachind
+      - id: PlushieThrongler
+      - id: AmeJar
+      - id: SoapOmega
+      - id: ClothingEyesGlassesMeson
+      - id: Chainsaw
+      - id: Crowbar
+      - id: WelderIndustrial
+      - id: HydroponicsToolHatchet
+      - id: ToyAmongPequeno
+      - id: Lamp
+      - id: NFCartridgeCap
+      - id: CableHVStack1
+      - id: DrinkMugBlue
+      - id: CablecuffsBroken
+      - id: FoodPlateTin
+      - id: NFMagazineBoxFoam
+      - id: NFBoxDonkSoftBox
+      - id: GrenadeFoamDart
+      - id: StorageFillAmmoBoxHonk35
+      - id: StorageFillAmmoBoxHonk35SMG
+      - id: ClothingHandsKnuckleDustersQM
+    # Rare items
+    - !type:GroupSelector
+      weight: 0.001
+      children:
+      # - id:  SweepingSongGAMBLING
+      - id: ASWeaponPKSLAYGambling
+      # - id:  ClothingHandsGlovesNorthStarRaiden
+      - id: ClothingMagbootsGamblingCursed
+      - id: ClothingEyesHudOmni
+      - id: Omnitool
+      # - id:  MobWizFedWizardViolet

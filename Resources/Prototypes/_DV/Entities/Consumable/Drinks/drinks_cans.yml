@@ -4,12 +4,10 @@
   name: Dr. Gibb Blood Red can
   description:  A drink to quench YOUR bloodthirst.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: DrGibbBloodRed
-          Quantity: 30
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: DrGibbBloodRed
+        Quantity: 60
   - type: Sprite
     sprite: _DV/Objects/Consumable/Drinks/drgibbbloodred.rsi

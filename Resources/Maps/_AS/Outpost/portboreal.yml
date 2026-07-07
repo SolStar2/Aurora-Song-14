@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 272.0.1
+  engineVersion: 277.2.1
   forkId: ""
   forkVersion: ""
-  time: 07/02/2026 04:58:55
-  entityCount: 13717
+  time: 07/06/2026 04:15:51
+  entityCount: 13718
 maps:
 - 1
 grids:
@@ -81315,6 +81315,13 @@ entities:
     components:
     - type: Transform
       pos: 14.5,20.5
+      parent: 2
+- proto: SpawnPointBorg
+  entities:
+  - uid: 13718
+    components:
+    - type: Transform
+      pos: 4.5,-20.5
       parent: 2
 - proto: SpawnPointColonialRepresentative
   entities:

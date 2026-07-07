@@ -6,36 +6,10 @@
   components:
   - type: EntityStorage
     capacity: 40
-  - type: ContainerFill
+  - type: EntityTableContainerFill
     containers:
-      entity_storage: # 30 pulls
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
-        - LotteryPullBasic
+      entity_storage: !type:AllSelector
+        children: # 30 pulls
+        - !type:NestedSelector
+          tableId: LotteryPullBasic
+          rolls: 30

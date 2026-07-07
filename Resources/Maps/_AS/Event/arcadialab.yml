@@ -3009,9 +3009,6 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
-    - type: SalvageMobRestrictionsGrid
-      mobsToKill:
-      - invalid
     - type: NavMap
   - uid: 5
     mapInit: true
@@ -27330,7 +27327,7 @@ entities:
       pos: 12.5,7.5
       parent: 1
     - type: GasCanister
-      gasMixture:
+      air:
         volume: 1000
         immutable: False
         temperature: 293.15
@@ -27364,7 +27361,7 @@ entities:
       pos: 12.5,8.5
       parent: 1
     - type: GasCanister
-      gasMixture:
+      air:
         volume: 1000
         immutable: False
         temperature: 293.15

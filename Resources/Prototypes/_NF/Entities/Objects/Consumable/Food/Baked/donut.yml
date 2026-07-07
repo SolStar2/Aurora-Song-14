@@ -11,15 +11,13 @@
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/Baked/donut.rsi
     state: uncooked
-  - type: SolutionContainerManager
-    solutions: &uncookedSolution
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 2
-        - ReagentId: GastroToxin
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution: &uncookedSolution
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 2
+      - ReagentId: GastroToxin
+        Quantity: 1
   - type: DeepFrySpawn
     cycles: 2
     output: FoodDonutPlain
@@ -36,8 +34,8 @@
     flavors:
       - dough
       - sweet
-  - type: SolutionContainerManager
-    solutions: *uncookedSolution
+  - type: Solution # Aurora's Song - Convert to solution
+    solution: *uncookedSolution
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/Baked/donut.rsi
     state: jelly-uncooked

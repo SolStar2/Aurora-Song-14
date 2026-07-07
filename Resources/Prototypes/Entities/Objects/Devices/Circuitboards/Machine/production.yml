@@ -24,7 +24,7 @@
     requirements: # Frontier
       MatterBin: 3 # Frontier stackRequirements<requirements
     stackRequirements:
-      # Manipulator: 3 # Frontier
+      # Manipulator: 4 # Frontier
       Glass: 1
     tagRequirements:
       Igniter:

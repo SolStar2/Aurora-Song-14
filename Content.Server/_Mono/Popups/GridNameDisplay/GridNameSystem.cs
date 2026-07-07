@@ -11,11 +11,11 @@ namespace Content.Server._Mono.Popups.GridNameDisplay;
 /// This system tracks when players move between grids and sends grid name events
 /// to display when a player enters a new grid for the first time.
 /// </summary>
-public sealed class GridNameSystem : EntitySystem
+public sealed partial class GridNameSystem : EntitySystem
 {
-    // [Dependency] private readonly IPlayerManager _playerManager = default!; // Aurora's Song
-    // [Dependency] private readonly SharedTransformSystem _transform = default!; // Aurora's Song
-    // [Dependency] private readonly PlayerSystem _playerSystem = default!; // Aurora's Song
+    // [Dependency] private IPlayerManager _playerManager = default!; // Aurora's Song
+    // [Dependency] private SharedTransformSystem _transform = default!; // Aurora's Song
+    // [Dependency] private PlayerSystem _playerSystem = default!; // Aurora's Song
 
     public override void Initialize()
     {

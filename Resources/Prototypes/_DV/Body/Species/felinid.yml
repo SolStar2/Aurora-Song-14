@@ -175,7 +175,7 @@
   - type: Wagging # Aurora's Song - Add wagging
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic # Aurora's Song - OrganBase>OrganBaseOrganic
   id: OrganFelinid
   abstract: true
   suffix: Felinid

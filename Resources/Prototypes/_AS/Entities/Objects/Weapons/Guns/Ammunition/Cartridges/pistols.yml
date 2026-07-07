@@ -1,7 +1,7 @@
 ﻿- type: entity
   id: ASCartridgePistol35Funny
   name: cartridge (.35 pistol, Honk)
-  parent: NFBaseCartridgePistol35
+  parent: [SolutionAmmo, SolutionToolVeryTiny, NFBaseCartridgePistol35] # Aurora's Song - Convert to solution
   components:
   - type: CartridgeAmmo
     proto: ASBulletPistol35Funny
@@ -13,11 +13,10 @@
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#ff00f3"
   - type: ChemicalAmmo
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        reagents:
-        - ReagentId: Honk
-          Quantity: 0.5
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Honk
+        Quantity: 0.5
   - type: SolutionTransfer
     maxTransferAmount: 0.5

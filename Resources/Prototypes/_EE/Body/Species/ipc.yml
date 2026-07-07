@@ -270,7 +270,7 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: Oil
-        Quantity: 300
+        Quantity: 600
   - type: BlockInjection
     #blockHypospray: true # Aurora's Song: This field is broken and thus no longer used
     blockInjectOnProjectile: true
@@ -282,13 +282,7 @@
   id: OrganIPC
   abstract: true
   suffix: IPC
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      organ:
-        reagents:
-        - ReagentId: Oil
-          Quantity: 10
+  # Aurora's Song - Remove reagent from limbs
 
 # Aurora's Song
 - type: entity

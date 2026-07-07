@@ -2,6 +2,7 @@
 //using Content.Shared.CCVar; // Frontier
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs.Systems;
 //using Content.Shared.Mood; // Frontier
 using Robust.Shared.Configuration;
@@ -12,8 +13,9 @@ namespace Content.Shared.Contests;
 
 public sealed partial class ContestsSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
 
     /// <summary>
     ///     The presumed average mass of a player entity
@@ -230,9 +232,11 @@ public sealed partial class ContestsSystem : EntitySystem
             || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.Critical, out var threshold))
             return 1f;
 
+        var totalDamage = _damageable.GetTotalDamage((performer, damage)); // Aurora's Song - Convert to use damageable system
+
         return ContestClamp(ContestClampOverride(bypassClamp)
-            ? 1 - damage.TotalDamage.Float() / threshold.Value.Float()
-            : 1 - Math.Clamp(damage.TotalDamage.Float() / threshold.Value.Float(), 0, 0.25f * rangeFactor));
+            ? 1 - totalDamage.Float() / threshold.Value.Float() // Aurora's Song - Convert to use damageable system
+            : 1 - Math.Clamp(totalDamage.Float() / threshold.Value.Float(), 0, 0.25f * rangeFactor)); // Aurora's Song - Convert to use damageable system
     }
 
     /// <summary>
@@ -252,11 +256,14 @@ public sealed partial class ContestsSystem : EntitySystem
             || !_mobThreshold.TryGetThresholdForState(target, Mobs.MobState.Critical, out var targetThreshold))
             return 1f;
 
+        var totalPerfDamage = _damageable.GetTotalDamage((performer, perfDamage)); // Aurora's Song - Convert to use damageable system
+        var totalTargetDamage = _damageable.GetTotalDamage((target, targetDamage)); // Aurora's Song - Convert to use damageable system
+
         return ContestClamp(ContestClampOverride(bypassClamp)
-            ? (1 - perfDamage.TotalDamage.Float() / perfThreshold.Value.Float())
-                / (1 - targetDamage.TotalDamage.Float() / targetThreshold.Value.Float())
-            : (1 - Math.Clamp(perfDamage.TotalDamage.Float() / perfThreshold.Value.Float(), 0, 0.25f * rangeFactor))
-                / (1 - Math.Clamp(targetDamage.TotalDamage.Float() / targetThreshold.Value.Float(), 0, 0.25f * rangeFactor)));
+            ? (1 - totalPerfDamage.Float() / perfThreshold.Value.Float()) // Aurora's Song - Convert to use damageable system
+                / (1 - totalTargetDamage.Float() / targetThreshold.Value.Float()) // Aurora's Song - Convert to use damageable system
+            : (1 - Math.Clamp(totalPerfDamage.Float() / perfThreshold.Value.Float(), 0, 0.25f * rangeFactor)) // Aurora's Song - Convert to use damageable system
+                / (1 - Math.Clamp(totalTargetDamage.Float() / targetThreshold.Value.Float(), 0, 0.25f * rangeFactor))); // Aurora's Song - Convert to use damageable system
     }
     #endregion
 

@@ -10,7 +10,7 @@
 
 - type: cargoProduct
   id: CargoBarrel
-  name: barrel (empty)
+  name: cargo-product-barrel-empty # Aurora's Song - use FTL
   icon:
     sprite: _NF/Objects/Storage/Barrels/white.rsi
     state: icon
@@ -45,7 +45,7 @@
 
 - type: cargoProduct
   id: CargoBarrelFluorine
-  name: barrel of fluorine
+  name: cargo-product-barrel-fluorine # Aurora's Song - use FTL
 #  abstract: true
   icon:
     sprite: _NF/Objects/Storage/Barrels/blue.rsi
@@ -69,7 +69,7 @@
 
 - type: cargoProduct
   id: CargoBarrelAluminium
-  name: barrel of aluminium
+  name: cargo-product-barrel-aluminium # Aurora's Song - use FTL
 #  abstract: true
   icon:
     sprite: _NF/Objects/Storage/Barrels/white.rsi
@@ -81,7 +81,7 @@
 
 - type: cargoProduct
   id: CargoBarrelPhosphorus
-  name: barrel of phosphorus
+  name: cargo-product-barrel-phosphorus # Aurora's Song - use FTL
 #  abstract: true
   icon:
     sprite: _NF/Objects/Storage/Barrels/red.rsi
@@ -129,7 +129,7 @@
 
 - type: cargoProduct
   id: CargoBarrelLithium
-  name: barrel of lithium
+  name: cargo-product-barrel-lithium # Aurora's Song - use FTL
 #  abstract: true
   icon:
     sprite: _NF/Objects/Storage/Barrels/grey.rsi
@@ -165,7 +165,7 @@
 
 - type: cargoProduct
   id: CargoBarrelRadium
-  name: barrel of radium
+  name: cargo-product-barrel-radium # Aurora's Song - use FTL
 #  abstract: true
   icon:
     sprite: _NF/Objects/Storage/Barrels/green.rsi
@@ -189,7 +189,7 @@
 
 - type: cargoProduct
   id: CargoBarrelCopper
-  name: barrel of copper
+  name: cargo-product-barrel-copper # Aurora's Song - use FTL
 #  abstract: true
   icon:
     sprite: _NF/Objects/Storage/Barrels/red.rsi
@@ -213,7 +213,7 @@
 
 - type: cargoProduct
   id: CargoBarrelMercury
-  name: barrel of mercury
+  name: cargo-product-barrel-mercury # Aurora's Song - use FTL
 #  abstract: true
   icon:
     sprite: _NF/Objects/Storage/Barrels/grey.rsi
@@ -237,7 +237,7 @@
 
 - type: cargoProduct
   id: CargoBarrelEthanol
-  name: barrel of ethanol
+  name: cargo-product-barrel-ethanol # Aurora's Song - use FTL
 #  abstract: true
   icon:
     sprite: _NF/Objects/Storage/Barrels/blue.rsi
@@ -261,7 +261,7 @@
 
 - type: cargoProduct
   id: CargoBarrelNitrogen
-  name: barrel of nitrogen
+  name: cargo-product-barrel-nitrogen # Aurora's Song - use FTL
 #  abstract: true
   icon:
     sprite: _NF/Objects/Storage/Barrels/red.rsi

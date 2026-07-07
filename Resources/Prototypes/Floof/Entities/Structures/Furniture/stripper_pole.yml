@@ -36,8 +36,9 @@
     sprite: Floof/Structures/pole.rsi
     state: pole
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -98,8 +99,9 @@
     graph: Lewd
     node: FurnStripPoleInit
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:

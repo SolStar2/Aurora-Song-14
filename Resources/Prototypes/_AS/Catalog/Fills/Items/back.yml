@@ -16,6 +16,21 @@
           amount: 1
         - id: JugSaline
           amount: 1
+        - id: ArithrazineChemistryVial
+          amount: 2
+        - id: DiphenhydramineChemistryVial
+          amount: 2
+
+- type: entity
+  id: ClothingBackpackDuffelTraumaShanaFilledHand
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackDuffelTrauma
+  suffix: Shana Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
         - id: JugTranexamicAcid
           amount: 1
         - id: JugPyrazine
@@ -24,7 +39,4 @@
           amount: 1
         - id: JugEpinephrine
           amount: 1
-        - id: ArithrazineChemistryVial
-          amount: 2
-        - id: DiphenhydramineChemistryVial
-          amount: 2
+

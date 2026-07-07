@@ -8,6 +8,16 @@
     tags:
       - Sushi
 
+# Aurora's Song Start - Make common parent for sushi slices
+- type: entity
+  parent: [SolutionVeryTiny, FoodBaseSushi, FoodInjectableBase]
+  id: FoodBaseSushiSlice
+  abstract: true
+  components:
+  - type: Item
+    size: Tiny
+# Aurora's Song End
+
 - type: entity
   name: avocado sushi
   parent: [FoodBaseSushi, FoodMealBase]
@@ -20,22 +30,20 @@
       - avocado
   - type: Sprite
     state: avocadosushi
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 42
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 30
-        - ReagentId: CucumberWater
-          Quantity: 3
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 30
+      - ReagentId: CucumberWater
+        Quantity: 3
   - type: SliceableFood
     count: 6
     slice: FoodMealAvocadoSushiSlice
 
 - type: entity
   name: avocado sushi
-  parent: [FoodBaseSushi, FoodInjectableBase]
+  parent: FoodBaseSushiSlice # Aurora's Song - Convert to solution
   id: FoodMealAvocadoSushiSlice
   description: Where did the seaweed come from?
   components:
@@ -45,17 +53,13 @@
       - avocado
   - type: Sprite
     state: avocadosushislice
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 7
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: CucumberWater
-          Quantity: .5
-  - type: Item
-    size: Tiny
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: CucumberWater
+        Quantity: .5
   - type: FoodSequenceElement
     entries:
       Burger: AvocadoSushi
@@ -73,17 +77,15 @@
       - fishy
   - type: Sprite
     state: carpsushi
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 48
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 30
-        - ReagentId: CarpoToxin
-          Quantity: 6
-        - ReagentId: CucumberWater
-          Quantity: 3
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 30
+      - ReagentId: CarpoToxin
+        Quantity: 6
+      - ReagentId: CucumberWater
+        Quantity: 3
   - type: SliceableFood
     count: 6
     slice: FoodMealCarpSushiSlice
@@ -94,7 +96,7 @@
 
 - type: entity
   name: carp sushi
-  parent: [FoodBaseSushi, FoodInjectableBase]
+  parent: FoodBaseSushiSlice # Aurora's Song - Convert to solution
   id: FoodMealCarpSushiSlice
   description: Certainly worth the smaller risk.
   components:
@@ -104,19 +106,15 @@
       - fishy
   - type: Sprite
     state: carpsushislice
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 8
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: CarpoToxin
-          Quantity: 1
-        - ReagentId: CucumberWater
-          Quantity: .5
-  - type: Item
-    size: Tiny
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: CarpoToxin
+        Quantity: 1
+      - ReagentId: CucumberWater
+        Quantity: .5
   - type: Tag
     tags:
       - Sushi
@@ -138,15 +136,13 @@
       - fishy
   - type: Sprite
     state: freshsushi
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 35
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 30
-        - ReagentId: CucumberWater
-          Quantity: 3
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 30
+      - ReagentId: CucumberWater
+        Quantity: 3
   - type: SliceableFood
     count: 6
     slice: FoodMealCarpSushiSlice
@@ -157,7 +153,7 @@
 
 - type: entity
   name: fresh fish sushi
-  parent: [FoodBaseSushi, FoodInjectableBase]
+  parent: FoodBaseSushiSlice # Aurora's Song - Convert to solution
   id: FoodMealCuredCarpSushiSlice
   description: Even less risky, still delicious. You're still not sure where the seaweed came from.
   components:
@@ -167,17 +163,13 @@
       - fishy
   - type: Sprite
     state: freshsushislice
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 7
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: CucumberWater
-          Quantity: .5
-  - type: Item
-    size: Tiny
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: CucumberWater
+        Quantity: .5
   - type: Tag
     tags:
       - Sushi
@@ -189,7 +181,7 @@
 
 - type: entity
   name: gas station sushi
-  parent: [FoodBaseSushi, FoodInjectableBase]
+  parent: FoodBaseSushiSlice # Aurora's Song - Convert to solution
   id: FoodMealGasSafeSushiSlice
   suffix: Safe
   description: Is it worth the risk?
@@ -201,15 +193,11 @@
       - bitter
   - type: Sprite
     state: gassushislice
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-  - type: Item
-    size: Tiny
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
   - type: Tag
     tags:
       - Sushi
@@ -224,10 +212,8 @@
   id: FoodMealGasBadSushiSlice
   suffix: Bad
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: GastroToxin
-          Quantity: 5
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: GastroToxin
+        Quantity: 5

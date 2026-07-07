@@ -22,16 +22,16 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._DEN.Holosign.Systems;
 
-public abstract class SharedLabelableHolosignProjectorSystem : EntitySystem
+public abstract partial class SharedLabelableHolosignProjectorSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedUserInterfaceSystem _uiSystem = default!;
-    // [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!; // Aurora's Song
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedChargesSystem _charges = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly SharedConsentSystem _consent = default!;
+    [Dependency] protected SharedUserInterfaceSystem _uiSystem = default!;
+    // [Dependency] private ISharedAdminLogManager _adminLogger = default!; // Aurora's Song
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedChargesSystem _charges = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private SharedConsentSystem _consent = default!;
 
     private readonly ProtoId<ConsentTogglePrototype> _nsfwDescriptionsConsent = "NSFWDescriptions";
 
@@ -105,7 +105,7 @@ public abstract class SharedLabelableHolosignProjectorSystem : EntitySystem
             }
         }
 
-        var holoUid = EntityManager.PredictedSpawnAtPosition(
+        var holoUid = PredictedSpawnAtPosition(
             ent.Comp.SignProto,
             args.ClickLocation.SnapToGrid(EntityManager));
 
@@ -133,7 +133,7 @@ public abstract class SharedLabelableHolosignProjectorSystem : EntitySystem
             ent,
             user);
 
-        EntityManager.PredictedDeleteEntity(sign);
+        PredictedDel(sign);
 
         return true;
     }

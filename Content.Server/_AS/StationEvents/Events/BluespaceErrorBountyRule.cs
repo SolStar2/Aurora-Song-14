@@ -41,25 +41,25 @@ namespace Content.Server._AS.StationEvents.Events;
 /// Checks for specific mob prototypes and their cuff states for bonus rewards
 /// Most logic adapted from Frontier's BluespaceErrorRule with additional bounty checking
 /// </summary>
-public sealed class BluespaceErrorBountyRule : StationEventSystem<BluespaceErrorBountyRuleComponent>
+public sealed partial class BluespaceErrorBountyRule : StationEventSystem<BluespaceErrorBountyRuleComponent>
 {
     NanotrasenNameGenerator _nameGenerator = new();
-    [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly IPrototypeManager _protoManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly MapLoaderSystem _loader = default!;
-    [Dependency] private readonly MetaDataSystem _metadata = default!;
-    [Dependency] private readonly BankSystem _bank = default!;
-    [Dependency] private readonly ChatSystem _chatManager = default!;
-    [Dependency] private readonly PricingSystem _pricing = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly ShuttleSystem _shuttle = default!;
-    [Dependency] private readonly LinkedLifecycleGridSystem _linkedLifecycleGrid = default!;
-    [Dependency] private readonly SharedSalvageSystem _salvage = default!;
-    [Dependency] private readonly RadioSystem _radio = default!;
-    [Dependency] private readonly StationRenameWarpsSystems _renameWarps = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!; // Aurora Song
+    [Dependency] private MapSystem _map = default!;
+    [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private IPrototypeManager _protoManager = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private MapLoaderSystem _loader = default!;
+    [Dependency] private MetaDataSystem _metadata = default!;
+    [Dependency] private BankSystem _bank = default!;
+    [Dependency] private ChatSystem _chatManager = default!;
+    [Dependency] private PricingSystem _pricing = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private ShuttleSystem _shuttle = default!;
+    [Dependency] private LinkedLifecycleGridSystem _linkedLifecycleGrid = default!;
+    [Dependency] private SharedSalvageSystem _salvage = default!;
+    [Dependency] private RadioSystem _radio = default!;
+    [Dependency] private StationRenameWarpsSystems _renameWarps = default!;
+    [Dependency] private SharedAudioSystem _audio = default!; // Aurora Song
 
     /// <summary>
     /// Adapted from New Frontier's BluespaceErrorRule.Started

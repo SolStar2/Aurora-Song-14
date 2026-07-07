@@ -17,13 +17,13 @@ using Content.Shared.Tiles; // starcup
 
 namespace Content.Server._EE.Silicon.BlindHealing;
 
-public sealed class BlindHealingSystem : SharedBlindHealingSystem
+public sealed partial class BlindHealingSystem : SharedBlindHealingSystem
 {
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly BlindableSystem _blindableSystem = default!;
-    [Dependency] private readonly StackSystem _stackSystem = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private BlindableSystem _blindableSystem = default!;
+    [Dependency] private StackSystem _stackSystem = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
 
     public override void Initialize()
     {
@@ -73,8 +73,8 @@ public sealed class BlindHealingSystem : SharedBlindHealingSystem
     {
 
         if (args.Handled
-            || !TryComp<DamageableComponent>(args.Target, out var damageable) // starcup: user -> target.
-            || damageable.DamageContainerID != null && !component.DamageContainers.Contains(damageable.DamageContainerID)
+            || !TryComp<InjurableComponent>(args.Target, out var injurable) // Aurora's Song - Use Injurable
+            || injurable.DamageContainer != null && !component.DamageContainers.Contains(injurable.DamageContainer.Value) // Aurora's Song - Use Injurable
             || !TryComp<BlindableComponent>(args.Target, out var blindcomp) // starcup: user -> target.
             || blindcomp.EyeDamage == 0
             || args.Target == null // starcup: we should have a target
@@ -90,8 +90,8 @@ public sealed class BlindHealingSystem : SharedBlindHealingSystem
     private void OnUse(EntityUid uid, BlindHealingComponent component, ref UseInHandEvent args)
     {
         if (args.Handled
-            || !TryComp<DamageableComponent>(args.User, out var damageable)
-            || damageable.DamageContainerID != null && !component.DamageContainers.Contains(damageable.DamageContainerID)
+            || !TryComp<InjurableComponent>(args.User, out var injurable)
+            || injurable.DamageContainer != null && !component.DamageContainers.Contains(injurable.DamageContainer.Value)
             || !TryComp<BlindableComponent>(args.User, out var blindcomp)
             || blindcomp.EyeDamage == 0
             || !component.AllowSelfHeal)

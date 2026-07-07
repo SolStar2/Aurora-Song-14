@@ -16,11 +16,11 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._Floof.Consent;
 
-public sealed class ConsentSystem : SharedConsentSystem
+public sealed partial class ConsentSystem : SharedConsentSystem
 {
-    // [Dependency] private readonly ConsentSystem _consent = default!; // Aurora's Song
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    // [Dependency] private readonly StationSpawningSystem _stationSpawning = default!; // Aurora's Song
+    // [Dependency] private ConsentSystem _consent = default!; // Aurora's Song
+    [Dependency] private IPlayerManager _playerManager = default!;
+    // [Dependency] private StationSpawningSystem _stationSpawning = default!; // Aurora's Song
 
     protected override FormattedMessage GetConsentText(NetUserId userId)
     {

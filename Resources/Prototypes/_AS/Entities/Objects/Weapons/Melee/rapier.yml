@@ -47,10 +47,9 @@
     slots:
     - back
     - suitStorage
-  - type: SolutionContainerManager
-    solutions:
-      melee:
-        maxVol: 2
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      maxVol: 2
   - type: MeleeChemicalInjector
     solution: melee
   - type: RefillableSolution

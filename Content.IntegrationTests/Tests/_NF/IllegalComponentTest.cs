@@ -1,8 +1,14 @@
 using Content.Server.Salvage.Magnet;
 using Content.Server.Solar.Components;
+using Content.Shared.Chemistry.Components.SolutionManager; // Aurora's Song
 using Content.Shared.Prototypes;
-using Content.Shared.Storage.Components;
+using Content.Shared.Storage.Components; // Aurora's Song
 using Robust.Shared.Prototypes;
+
+// Aurora's Song Start - This is so we can tell people not to use these comps
+#pragma warning disable CS0612 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
+// Aurora's Song End
 
 namespace Content.IntegrationTests.Tests._NF;
 
@@ -15,6 +21,7 @@ public sealed class IllegalComponentTest
         typeof(SolarPanelComponent), // Frontier: use NF variant
         typeof(SalvageMobRestrictionsComponent), // Frontier: use NF variant
         typeof(StorageFillComponent), // Aurora's Song - Use EntityTableStorageFill
+        typeof(SolutionContainerManagerComponent), // Aurora's Song - Use SolutionComponent or SolutionManagerComponent
     };
 
     [Test]

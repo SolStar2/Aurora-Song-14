@@ -6,7 +6,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: BaseItem
+  parent: [SolutionDrink, SolutionNormal, BaseItem] # Aurora's Song - Convert to solution
   id: BaseAmphora
   name: amphora
   description: It's an earthenware jar suitable for carrying liquids, an example of ancient technology.
@@ -14,26 +14,22 @@
   components:
   - type: StaticPrice
     price: 150
-  - type: SolutionContainerManager
-    solutions:
-      jar:
-        maxVol: 120
   - type: Edible  # Aurora's Song - Convert to edible from Drink
     edible: Drink
-    solution: jar
+    solution: drink # Aurora's Song - jar>drink
     destroyOnEmpty: false # Aurora's Song: DO NOT EAT IT
   - type: Spillable
-    solution: jar
+    solution: drink # Aurora's Song - jar>drink
   - type: RefillableSolution
-    solution: jar
+    solution: drink # Aurora's Song - jar>drink
   - type: DrainableSolution
-    solution: jar
+    solution: drink # Aurora's Song - jar>drink
   - type: ExaminableSolution
-    solution: jar
+    solution: drink # Aurora's Song - jar>drink
   - type: DrawableSolution
-    solution: jar
+    solution: drink # Aurora's Song - jar>drink
   - type: InjectableSolution
-    solution: jar
+    solution: drink # Aurora's Song - jar>drink
   - type: SolutionTransfer
     canChangeTransferAmount: true
   - type: UserInterface
@@ -52,7 +48,7 @@
         sound:
           collection: GlassBreak
       - !type:SpillBehavior
-        solution: jar
+        solution: drink # Aurora's Song - Convert to solution
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: DamageOnLand

@@ -9,9 +9,9 @@ using Robust.Shared.Network;
 
 namespace Content.Client._Floof.Consent;
 
-public sealed class ClientConsentManager : IClientConsentManager
+public sealed partial class ClientConsentManager : IClientConsentManager
 {
-    [Dependency] private readonly IClientNetManager _netManager = default!;
+    [Dependency] private IClientNetManager _netManager = default!;
 
     // TODO: sync all players consent settings with ServerConsentManager, for client prediction
     private PlayerConsentSettings? _consent;

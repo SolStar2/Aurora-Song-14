@@ -9,6 +9,7 @@
     state: sandbag_single
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -45,6 +46,7 @@
     snapCardinals: true
   - type: Damageable
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -88,6 +90,7 @@
     state: barbedwire_single
   - type: Damageable
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -151,6 +154,7 @@
     state: black
   - type: Damageable
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
 
 - type: entity

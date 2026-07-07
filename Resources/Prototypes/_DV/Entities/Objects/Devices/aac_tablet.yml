@@ -24,7 +24,7 @@
   - type: ActivatableUI
     singleUser: false
     key: enum.AACTabletKey.Key
-  - type: Damageable
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:

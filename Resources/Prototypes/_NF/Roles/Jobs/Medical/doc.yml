@@ -14,7 +14,6 @@
   supervisors: job-supervisors-colcom # Aurora's Song - Switched to ColCom from CentCom
   weight: 170
   displayWeight: 55 # Second from the top
-  canBeAntag: false
   accessGroups:
   - AllAccess
   special:

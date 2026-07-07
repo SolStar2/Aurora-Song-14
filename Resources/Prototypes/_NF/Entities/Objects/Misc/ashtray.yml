@@ -30,7 +30,7 @@
   - type: Dumpable
   - type: Item
     size: Small
-  - type: Damageable
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: DamageOnLand
     damage:

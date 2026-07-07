@@ -126,8 +126,9 @@
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: StructuralInorganic
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -157,7 +158,7 @@
           shader: unshaded
         - state: canister
     - type: GasCanister
-      gasMixture:
+      air: # Aurora's Song - gasMixture>air
         volume: 15000 # 1500[base canister volume] * 10
         moles: # List of gasses for easy reference
           - 18717.1051 # oxygen
@@ -187,7 +188,7 @@
           shader: unshaded
         - state: canister
     - type: GasCanister
-      gasMixture:
+      air: # Aurora's Song - gasMixture>air
         volume: 15000 # 1500[base canister volume] * 10
         moles: # List of gasses for easy reference
           - 0 # oxygen
@@ -240,8 +241,9 @@
           layer:
           - TabletopMachineLayer
     - type: Damageable
-      damageContainer: StructuralInorganic
       damageModifierSet: Glass
+    - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+      damageContainer: StructuralInorganic
     - type: Destructible
       thresholds:
       - trigger:

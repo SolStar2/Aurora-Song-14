@@ -22,6 +22,7 @@
   - type: Appearance
   - type: Damageable
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:

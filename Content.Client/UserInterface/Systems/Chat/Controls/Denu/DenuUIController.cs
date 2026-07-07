@@ -17,11 +17,11 @@ using Range = Robust.Client.UserInterface.Controls.Range;
 namespace Content.Client.UserInterface.Systems.Chat.Controls.Denu;
 
 
-public sealed class DenuUIController : UIController
+public sealed partial class DenuUIController : UIController
 {
     [UISystemDependency] private readonly TypingIndicatorSystem _typingIndicatorSystem = default!;
     [UISystemDependency] private readonly EarmuffsSystem _earmuffsSystem = default!;
-    [Dependency] private readonly IOverlayManager _overlayManager = default!;
+    [Dependency] private IOverlayManager _overlayManager = default!;
 
     public bool AutoFormatterEnabled { get; set; } = false;
 

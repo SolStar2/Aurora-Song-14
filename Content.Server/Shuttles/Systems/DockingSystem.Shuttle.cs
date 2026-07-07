@@ -38,10 +38,10 @@ public sealed partial class DockingSystem
     /// Checks if 2 docks can be connected by moving the shuttle directly onto docks.
     /// </summary>
     private bool CanDock(
+        EntityUid shuttleDockUid,
         DockingComponent shuttleDock,
-        TransformComponent shuttleDockXform,
+        EntityUid gridDockUid,
         DockingComponent gridDock,
-        TransformComponent gridDockXform,
         Box2 shuttleAABB,
         Angle targetGridRotation,
         FixturesComponent shuttleFixtures,
@@ -54,6 +54,9 @@ public sealed partial class DockingSystem
         shuttleDockedAABB = Box2.UnitCentered;
         gridRotation = Angle.Zero;
         matty = Matrix3x2.Identity;
+
+        var shuttleDockXform = Transform(shuttleDockUid);
+        var gridDockXform = Transform(gridDockUid);
 
         if (shuttleDock.Docked ||
             gridDock.Docked ||
@@ -181,7 +184,7 @@ public sealed partial class DockingSystem
             return validDockConfigs;
 
         var targetGridGrid = _gridQuery.GetComponent(targetGrid);
-        var targetGridXform = _xformQuery.GetComponent(targetGrid);
+        var targetGridXform = Transform(targetGrid);
         var targetGridAngle = _transform.GetWorldRotation(targetGridXform).Reduced();
         var shuttleFixturesComp = Comp<FixturesComponent>(shuttleUid);
         var shuttleAABB = _gridQuery.GetComponent(shuttleUid).LocalAABB;
@@ -194,8 +197,6 @@ public sealed partial class DockingSystem
             // We'll try all combinations of shuttle docks and see which one is most suitable
             foreach (var (dockUid, shuttleDock) in shuttleDocks)
             {
-                var shuttleDockXform = _xformQuery.GetComponent(dockUid);
-
                 // Frontier: skip docks that don't match type
                 if ((shuttleDock.DockType & dockType) == DockType.None)
                     continue;
@@ -203,15 +204,14 @@ public sealed partial class DockingSystem
 
                 foreach (var (gridDockUid, gridDock) in gridDocks)
                 {
-                    // Aurora's Song: Running CanDock() several hundred times is computationally expensive.
+                    // Aurora's Song Start - Running CanDock() several hundred times is computationally expensive.
                     if (priorityTag != null &&
                         !(TryComp<PriorityDockComponent>(gridDockUid, out var priority) &&
-                        priority.Tag?.Equals(priorityTag) == true))
+                          priority.Tag?.Equals(priorityTag) == true))
                     {
                         continue;
                     }
-
-                    var gridXform = _xformQuery.GetComponent(gridDockUid);
+                    // Aurora's Song End
 
                     // Frontier: skip docks that don't match type
                     if ((gridDock.DockType & dockType) == DockType.None)
@@ -219,8 +219,10 @@ public sealed partial class DockingSystem
                     // End Frontier
 
                     if (!CanDock(
-                            shuttleDock, shuttleDockXform,
-                            gridDock, gridXform,
+                            dockUid,
+                            shuttleDock,
+                            gridDockUid,
+                            gridDock,
                             shuttleAABB,
                             targetGridAngle,
                             shuttleFixturesComp,
@@ -289,10 +291,10 @@ public sealed partial class DockingSystem
                             // End Frontier
 
                             if (!CanDock(
+                                    otherUid,
                                     other,
-                                    _xformQuery.GetComponent(otherUid),
+                                    otherGridUid,
                                     otherGrid,
-                                    _xformQuery.GetComponent(otherGridUid),
                                     shuttleAABB,
                                     targetGridAngle,
                                     shuttleFixturesComp,

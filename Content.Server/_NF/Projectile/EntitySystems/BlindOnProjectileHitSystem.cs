@@ -4,7 +4,7 @@ using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
 using Robust.Shared.Random;
 using Content.Server.Chat.Systems;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew; // Aurora's Song
 using Robust.Shared.Prototypes;
 using Content.Shared.Chat.Prototypes;
 
@@ -12,10 +12,10 @@ namespace Content.Server._NF.Projectile.EntitySystems;
 
 public sealed partial class BlindOnProjectileHitSystem : EntitySystem
 {
-    [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!;
-    [Dependency] private readonly BlindableSystem _blindingSystem = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private StatusEffectsSystem _statusEffectsSystem = default!;
+    [Dependency] private BlindableSystem _blindingSystem = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private ChatSystem _chat = default!;
 
     private readonly ProtoId<EmotePrototype> _screamEmoteId = "Scream";
 
@@ -45,7 +45,6 @@ public sealed partial class BlindOnProjectileHitSystem : EntitySystem
         // how much damage they already accumulated.
         _blindingSystem.AdjustEyeDamage((args.Target, blindable), 1);
         var statusTimeSpan = TimeSpan.FromSeconds(time * MathF.Sqrt(blindable.EyeDamage));
-        _statusEffectsSystem.TryAddStatusEffect(args.Target, TemporaryBlindnessSystem.BlindingStatusEffect,
-            statusTimeSpan, false, TemporaryBlindnessSystem.BlindingStatusEffect);
+        _statusEffectsSystem.TrySetStatusEffectDuration(args.Target, BlindnessSystem.BlindingStatusEffect, statusTimeSpan); // Aurora's Song - Use NEW status effect system
     }
 }

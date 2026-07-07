@@ -3,14 +3,15 @@ using Content.Shared.EntityConditions;
 using Content.Shared.Mind;
 using Robust.Shared.Prototypes;
 using Content.Shared.Mind.Components;
+using Robust.Shared.Player;
 
 namespace Content.Shared._AS.Consent.EntityEffects;
 
-public sealed class ConsentEntityConditionSystem
+public sealed partial class ConsentEntityConditionSystem
     : EntityConditionSystem<MindContainerComponent, Consent>
 {
-    [Dependency] private readonly SharedConsentSystem _consent = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private SharedConsentSystem _consent = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
 
     protected override void Condition(Entity<MindContainerComponent> ent, ref EntityConditionEvent<Consent> args)
     {
@@ -19,10 +20,10 @@ public sealed class ConsentEntityConditionSystem
         if (!_mind.TryGetMind(ent.Owner, out _, out var mind))
             return;
 
-        if (mind.Session is not { } session)
+        if (mind.UserId is not { } userId) // Aurora's Song - Use mind userId
             return;
 
-        if (!_consent.TryGetConsent(session.UserId, out var settings))
+        if (!_consent.TryGetConsent(userId, out var settings)) // Aurora's Song - Use mind userId
             return;
 
         foreach (var effect in args.Condition.EffectTypes)

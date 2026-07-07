@@ -132,7 +132,12 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         var newHeight = random.NextFloat(0.8f, 1.2f); // Random height between 80% and 120% of normal
         var newWidth = random.NextFloat(0.8f, 1.2f); // Random width between 80% and 120% of normal
 
-        return new HumanoidCharacterAppearance(newEyeColor, newSkinColor, new(), newHeight, newWidth); // Aurora's Song - Scale sliders
+        // Safety step. Most systems which called Random() also called this, and not doing so caused issues with markings.
+        // In the future it could *maybe* be removed, but it's probably worth the extra CPU cycles to validate this info.
+        return EnsureValid(
+            new HumanoidCharacterAppearance(newEyeColor, newSkinColor, new(), newHeight, newWidth), // Aurora's Song - Scale sliders
+            species,
+            sex);
     }
 
     public static Color ClampColor(Color color)

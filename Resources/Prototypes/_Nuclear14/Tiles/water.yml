@@ -1,5 +1,6 @@
 # Aurora's Song | replaced names and descriptions with locale stringe
 - type: entity
+  parent: [SolutionTank, SolutionTile] # Aurora's Song - Convert to solution
   id: N14FloorWaterDirtyEntity
   placement:
     mode: SnapgridCenter
@@ -16,15 +17,18 @@
     drawdepth: BelowFloor
     layers:
       - state: shoreline_water
-  - type: SolutionContainerManager
-    solutions:
-      pool:
-        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable.
-        reagents:
-        - ReagentId: Water
-          Quantity: 9999999
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Water
+        Quantity: 7680
+  - type: SolutionRegeneration # Aurora's Song - Add regeneration
+    generated:
+      reagents:
+      - ReagentId: Water
+        Quantity: 1
   - type: DrainableSolution
-    solution: pool
+    solution: tank # Aurora's Song - pool>tank
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.5
     sprintSpeedModifier: 0.5
@@ -127,13 +131,6 @@
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.2
     sprintSpeedModifier: 0.2
-  - type: SolutionContainerManager
-    solutions:
-      pool:
-        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable.
-        reagents:
-        - ReagentId: Water #TODO: Add WaterSalt Reagent.
-          Quantity: 9999999
 
 - type: entity
   parent: N14FloorWaterSaltDeep

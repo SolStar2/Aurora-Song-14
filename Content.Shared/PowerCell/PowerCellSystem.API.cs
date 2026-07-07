@@ -10,7 +10,7 @@ namespace Content.Shared.PowerCell;
 
 public sealed partial class PowerCellSystem
 {
-    [Dependency] private readonly SharedPowerReceiverSystem _powerSystem = default!; // Frontier
+    [Dependency] private SharedPowerReceiverSystem _powerSystem = default!; // Frontier
 
     /// <summary>
     /// Checks if a power cell slot has a battery inside.

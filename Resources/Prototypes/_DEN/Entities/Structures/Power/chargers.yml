@@ -17,8 +17,9 @@
     energy: 1.4
     color: "#d9418d"
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: StaticPrice
     price: 2000
   - type: Destructible

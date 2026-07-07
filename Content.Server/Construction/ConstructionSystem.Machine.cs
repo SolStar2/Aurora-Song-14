@@ -14,7 +14,7 @@ namespace Content.Server.Construction;
 
 public sealed partial class ConstructionSystem
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!; // Frontier
+    [Dependency] private IPrototypeManager _prototypeManager = default!; // Frontier
 
     private void InitializeMachines()
     {
@@ -108,7 +108,7 @@ public sealed partial class ConstructionSystem
             var partProto = _prototypeManager.Index<MachinePartPrototype>(part);
             for (var i = 0; i < amount; i++)
             {
-                var p = EntityManager.SpawnEntity(partProto.StockPartPrototype, xform.Coordinates);
+                var p = Spawn(partProto.StockPartPrototype, xform.Coordinates);
 
                 if (!_container.Insert(p, partContainer))
                     throw new Exception($"Couldn't insert machine part of type {part} to machine with prototype {partProto.StockPartPrototype.ToString() ?? "N/A"}!");

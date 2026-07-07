@@ -8,12 +8,12 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.Access.Systems;
 
-public sealed class JobStatusSystem : SharedJobStatusSystem
+public sealed partial class JobStatusSystem : SharedJobStatusSystem
 {
-    [Dependency] private readonly ShowJobIconsSystem _showJobIcons = default!;
-    // [Dependency] private readonly ShowCrewIconsSystem _showCrewIcons = default!; // Aurora's Song
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly LicenseSystem _license = default!; // Aurora's Song
+    [Dependency] private ShowJobIconsSystem _showJobIcons = default!;
+    // [Dependency] private ShowCrewIconsSystem _showCrewIcons = default!; // Aurora's Song
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private LicenseSystem _license = default!; // Aurora's Song
 
     private static readonly ProtoId<SecurityIconPrototype> CrewBorderIcon = "CrewBorderIcon";
     private static readonly ProtoId<SecurityIconPrototype> CrewUncertainBorderIcon = "CrewUncertainBorderIcon";

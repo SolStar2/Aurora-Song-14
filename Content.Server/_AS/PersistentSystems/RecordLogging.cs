@@ -8,9 +8,9 @@ using Robust.Shared.Player;
 
 namespace Content.Server._AS.PersistentSystems;
 
-public sealed class RecordLogging : EntitySystem
+public sealed partial class RecordLogging : EntitySystem
 {
-    [Dependency] private readonly IAdminLogManager _adminLog = default!;
+    [Dependency] private IAdminLogManager _adminLog = default!;
     private ISawmill _sawmill = default!;
 
     public override void Initialize()

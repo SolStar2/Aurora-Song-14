@@ -1,6 +1,6 @@
 # Salvage expedition objective
 - type: entity
-  parent: XenoWardingTower
+  parent: [SolutionTank, SolutionNormal, XenoWardingTower] # Aurora's Song - Convert to solution
   id: ArgocyteEgg
   name: argocyte egg
   description: Looks more like a fossil than egg.
@@ -42,10 +42,8 @@
         solution: tank
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 150
-        reagents:
-        - ReagentId: FerrochromicAcid
-          Quantity: 150
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: FerrochromicAcid
+        Quantity: 120

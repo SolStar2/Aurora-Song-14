@@ -451,7 +451,7 @@
       - id: ChemistryBottleChlorine
       - id: ChemistryBottleFluorine
       - id: ChemistryBottleEphedrine
-      - id: ChemistryBottleNecrosol
+      # - id: ChemistryBottleNecrosol # Aurora's Song - Necrosol was replaced with Arcryox upstream
       - id: ChemistryBottleLithium
       - id: ChemistryBottleMuteToxin
       - id: ChemistryBottlePhosphorus

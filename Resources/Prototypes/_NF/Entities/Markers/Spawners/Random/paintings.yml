@@ -3,33 +3,36 @@
   id: RandomPaintingHalloween
   suffix: Halloween
   components:
-  - type: RandomSpawner
-    offset: 0
-    prototypes:
-      - PaintingPersistenceOfMemory
-      - PaintingTheSonOfMan
-      - PaintingTheKiss
-      - PaintingTheScream
-      - PaintingTheGreatWave
-      - PaintingCafeTerraceAtNight
-      - PaintingNightHawks
-      - PaintingSkeletonCigarette
-      - PaintingPrayerHands
-      - PaintingOldGuitarist
-      - PaintingOlympia
-      - PaintingSaturn
-      - PaintingSleepingGypsy
-      - PaintingRedBlueYellow
-      - PaintingHelloWorld
-      - PaintingNightOfThePostGoblin
-      - PaintingCaladrius
-      # Special halloween posters
-      - PaintingSpookyIan
-      - PaintingSpookyLady
-    chance: 1
-    rarePrototypes:
-      - PaintingSkeletonBoof
-      - PaintingEmpty
-      - PaintingMoony
-      - PaintingAmogusTriptych
-    rareChance: 0.01
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - !type:GroupSelector
+        weight: 0.99
+        children:
+        - id: PaintingPersistenceOfMemory
+        - id: PaintingTheSonOfMan
+        - id: PaintingTheKiss
+        - id: PaintingTheScream
+        - id: PaintingTheGreatWave
+        - id: PaintingCafeTerraceAtNight
+        - id: PaintingNightHawks
+        - id: PaintingSkeletonCigarette
+        - id: PaintingPrayerHands
+        - id: PaintingOldGuitarist
+        - id: PaintingOlympia
+        - id: PaintingSaturn
+        - id: PaintingSleepingGypsy
+        - id: PaintingRedBlueYellow
+        - id: PaintingHelloWorld
+        - id: PaintingNightOfThePostGoblin
+        - id: PaintingCaladrius
+        # id: Special halloween posters
+        - id: PaintingSpookyIan
+        - id: PaintingSpookyLady
+      - !type:GroupSelector
+        weight: 0.01
+        children:
+        - id: PaintingSkeletonBoof
+        - id: PaintingEmpty
+        - id: PaintingMoony
+        - id: PaintingAmogusTriptych

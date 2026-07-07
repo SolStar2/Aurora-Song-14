@@ -150,12 +150,12 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: AmmoniaBlood
-        Quantity: 300
+        Quantity: 600 # Aurora's Song - 300>600 - Solution refactor
   - type: EmpVulnerable
 
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic # Aurora's Song - OrganBase>OrganBaseOrganic
   id: OrganAvali
   abstract: true
   suffix: Avali

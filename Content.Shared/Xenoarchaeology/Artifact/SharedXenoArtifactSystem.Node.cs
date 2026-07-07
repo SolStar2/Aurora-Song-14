@@ -12,20 +12,18 @@ namespace Content.Shared.Xenoarchaeology.Artifact;
 
 public abstract partial class SharedXenoArtifactSystem
 {
-    [Dependency] private readonly EntityTableSystem _entityTable =  default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!; // Frontier
+    [Dependency] private EntityTableSystem _entityTable =  default!;
+    [Dependency] private IConfigurationManager _cfg = default!; // Frontier
 
-    private EntityQuery<XenoArtifactComponent> _xenoArtifactQuery;
-    private EntityQuery<XenoArtifactNodeComponent> _nodeQuery;
+    [Dependency] private EntityQuery<XenoArtifactComponent> _xenoArtifactQuery = default!;
+    [Dependency] private EntityQuery<XenoArtifactNodeComponent> _nodeQuery = default!;
+
     private bool _singleUseNodes; // Frontier
 
     private void InitializeNode()
     {
         SubscribeLocalEvent<XenoArtifactNodeComponent, MapInitEvent>(OnNodeMapInit);
         Subs.CVar(_cfg, NFCCVars.XenoarchSingleUseNodes, OnSetSingleUseNodes, true); // Frontier
-
-        _xenoArtifactQuery = GetEntityQuery<XenoArtifactComponent>();
-        _nodeQuery = GetEntityQuery<XenoArtifactNodeComponent>();
     }
 
     /// <summary>

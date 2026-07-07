@@ -28,16 +28,16 @@ using Content.Shared.CCVar;
 
 namespace Content.Server._DV.CartridgeLoader.Cartridges;
 
-public sealed class NanoChatCartridgeSystem : EntitySystem
+public sealed partial class NanoChatCartridgeSystem : EntitySystem
 {
-    [Dependency] private readonly CartridgeLoaderSystem _cartridge = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly SharedNanoChatSystem _nanoChat = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private CartridgeLoaderSystem _cartridge = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private SharedNanoChatSystem _nanoChat = default!;
+    [Dependency] private SharedUserInterfaceSystem _ui = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     private EntityQuery<PdaComponent> _pdaQuery;
     private EntityQuery<NanoChatCardComponent> _cardQuery;

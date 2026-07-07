@@ -11,11 +11,11 @@ using Content.Server.Shuttles.Components; // Frontier
 
 namespace Content.Server.Shuttles.Systems;
 
-public sealed partial class RadarConsoleSystem : SharedRadarConsoleSystem // Frontier: add partial
+public sealed partial class RadarConsoleSystem : SharedRadarConsoleSystem
 {
-    [Dependency] private readonly ShuttleConsoleSystem _console = default!;
-    [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly TransformSystem _transform = default!; // Frontier
+    [Dependency] private ShuttleConsoleSystem _console = default!;
+    [Dependency] private UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private TransformSystem _transform = default!; // Frontier
 
     public override void Initialize()
     {
@@ -81,7 +81,7 @@ public sealed partial class RadarConsoleSystem : SharedRadarConsoleSystem // Fro
     public void SetTarget(Entity<RadarConsoleComponent> ent, NetEntity targetEntity, Vector2 target)
     {
         // Try to get entity
-        if (EntityManager.TryGetEntity(targetEntity, out var targetUid)
+        if (TryGetEntity(targetEntity, out var targetUid)
             && HasComp<ShuttleComponent>(targetUid)
             && (!TryComp(targetUid, out IFFComponent? iff) || (iff.Flags & (IFFFlags.Hide | IFFFlags.HideLabel)) == 0)
             && TryComp(targetUid, out TransformComponent? xform))

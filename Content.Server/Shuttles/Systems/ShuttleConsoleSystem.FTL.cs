@@ -3,28 +3,28 @@ using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Shared._Mono.Ships; // Mono
 using Content.Shared.Popups; // Mono
-using Content.Shared.Shuttles.BUIStates;
+using Content.Shared.Shuttles.BUIStates; // AS
 using Content.Shared.Shuttles.Components; // AS
 using Content.Shared.Shuttles.Events;
 using Content.Shared.Shuttles.Systems; // Mono
 using Content.Shared.Shuttles.UI.MapObjects;
 using Content.Shared.Station.Components; // Mono
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Audio; // AS
 using Robust.Shared.Audio.Components; // AS
 using Robust.Shared.Audio.Systems; // AS
+using Robust.Shared.Map.Components; // AS
 
 namespace Content.Server.Shuttles.Systems;
 
 public sealed partial class ShuttleConsoleSystem
 {
     // Begin Mono
-    // [Dependency] private readonly IMapManager _mapManager = default!; // Aurora's Song
-    [Dependency] private readonly SharedShuttleSystem _sharedShuttle = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly EntityManager _entity = default!;
+    // [Dependency] private IMapManager _mapManager = default!; // Aurora's Song
+    [Dependency] private SharedShuttleSystem _sharedShuttle = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private EntityManager _entity = default!;
 
     private readonly SoundSpecifier _errorSound = new SoundPathSpecifier("/Audio/Effects/Cargo/buzz_sigh.ogg")
     {
@@ -63,7 +63,7 @@ public sealed partial class ShuttleConsoleSystem
     private void OnBeaconFTLMessage(Entity<ShuttleConsoleComponent> ent, ref ShuttleConsoleFTLBeaconMessage args)
     {
         var beaconEnt = GetEntity(args.Beacon);
-        if (!_xformQuery.TryGetComponent(beaconEnt, out var targetXform))
+        if (!TryComp(beaconEnt, out TransformComponent? targetXform))
         {
             return;
         }
@@ -107,14 +107,14 @@ public sealed partial class ShuttleConsoleSystem
 
         while (beaconQuery.MoveNext(out var destUid, out _))
         {
-            var meta = _metaQuery.GetComponent(destUid);
+            var meta = MetaData(destUid);
             var name = meta.EntityName;
 
             if (string.IsNullOrEmpty(name))
                 name = Loc.GetString("shuttle-console-unknown");
 
             // Can't travel to same map (yet)
-            var destXform = _xformQuery.GetComponent(destUid);
+            var destXform = Transform(destUid);
             beacons ??= new List<ShuttleBeaconObject>();
             beacons.Add(new ShuttleBeaconObject(GetNetEntity(destUid), GetNetCoordinates(destXform.Coordinates), name));
         }
@@ -144,7 +144,7 @@ public sealed partial class ShuttleConsoleSystem
         if (consoleUid == null)
             return;
 
-        var shuttleUid = _xformQuery.GetComponent(consoleUid.Value).GridUid; // Mono
+        var shuttleUid = Transform(consoleUid.Value).GridUid;
 
         if (shuttleUid == null || !TryComp(shuttleUid.Value, out ShuttleComponent? shuttleComp))
             return;
@@ -188,7 +188,7 @@ public sealed partial class ShuttleConsoleSystem
 
         // Mono: Check for nearby grids that are above the mass threshold
         var xform = Transform(shuttleUid.Value);
-        var bounds = xform.WorldMatrix.TransformBox(Comp<MapGridComponent>(shuttleUid.Value).LocalAABB).Enlarged(ShuttleFTLRange);
+        var bounds = _transform.GetWorldMatrix(shuttleUid.Value).TransformBox(Comp<MapGridComponent>(shuttleUid.Value).LocalAABB).Enlarged(ShuttleFTLRange);
         var bodyQuery = GetEntityQuery<PhysicsComponent>();
         // Keep track of docked grids to exclude them from the proximity check
         var dockedGrids = new HashSet<EntityUid>();

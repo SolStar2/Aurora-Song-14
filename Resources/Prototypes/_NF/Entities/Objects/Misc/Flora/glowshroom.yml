@@ -12,8 +12,9 @@
           radius: 0.2
   - type: InteractionOutline
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Wood
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -125,13 +126,11 @@
   - type: FlavorProfile
     flavors:
     - mushroom
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 8
-        reagents:
-        - ReagentId: Radium # maybe DON'T eat weird glowing mushrooms, actually
-          Quantity: 8
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Radium # maybe DON'T eat weird glowing mushrooms, actually
+        Quantity: 8
   - type: StaticPrice
     price: 20
 #  - type: PointLight # Commented out due to performance concerns

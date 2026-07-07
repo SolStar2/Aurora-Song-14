@@ -1,6 +1,7 @@
 - type: entity
   parent: AppearanceHuman
   id: AppearanceDwarf
+  categories: [ HideSpawnMenu ]
   name: dwarf appearance
   components:
   - type: Inventory
@@ -66,7 +67,6 @@
     accent: dwarvish # Aurora's Song - Scottish to dwarvish
   - type: Speech
     speechSounds: Bass
-    allowedEmotes: ['Belch'] # Frontier
   - type: NpcFactionMember # Aurora's Song - Add this to dwarf regular
     factions:
     - NanoTrasen
@@ -76,7 +76,7 @@
     viewRange: 5 # Frontier
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganDwarf
   abstract: true
   suffix: Dwarf

@@ -12,7 +12,6 @@
   supervisors: job-supervisors-sr
   weight: 60
   displayWeight: 10
-  canBeAntag: false
   access:
   - Cargo # Aurora's Song - Cargo access is being undeprecated
   - Maintenance

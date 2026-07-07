@@ -7,6 +7,7 @@
 // SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// DEN OVERHAULED FILE
 
 using Content.Shared._Floof.Consent;
 using Content.Shared.DetailExaminable;
@@ -18,10 +19,10 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.DetailExaminable
 {
-    public sealed class DetailExaminableSystem : EntitySystem
+    public sealed partial class DetailExaminableSystem : EntitySystem
     {
-        [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
-        [Dependency] private readonly SharedConsentSystem _consentSystem = default!;
+        [Dependency] private ExamineSystemShared _examineSystem = default!;
+        [Dependency] private SharedConsentSystem _consentSystem = default!;
 
         private ProtoId<ConsentTogglePrototype> _nsfwDescriptionsConsent = "NSFWDescriptions";
 

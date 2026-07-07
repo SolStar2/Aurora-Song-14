@@ -19,7 +19,7 @@
     damage:
       types:
         Blunt: 1
-  - type: Damageable
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Biological
   - type: Destructible
     thresholds:
@@ -48,48 +48,36 @@
     - MindRoleGhostRoleFamiliar
   - type: GhostRoleMobSpawner
     prototype: MobSpawnBabyDragon
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 36
-        reagents:
-        - data: null
-          ReagentId: Egg
-          Quantity: 12
-        - data: null
-          ReagentId: Ichor
-          Quantity: 12
-        - data: null
-          ReagentId: Vitamin
-          Quantity: 12
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      maxVol: 36
+      reagents:
+      - ReagentId: Egg
+        Quantity: 12
+      - ReagentId: Ichor
+        Quantity: 12
+      - ReagentId: Vitamin
+        Quantity: 12
   - type: StaticPrice
     price: 20000
 
 - type: entity
   name: dragon eggshells
-  parent: BaseItem
+  parent: [SolutionFood, Eggshells] # Aurora's Song - Convert to solution, BaseItem>Eggshells and delete duplicated components
   id: DragonEggshells
   description: You're walkin' on 'em bud.
   components:
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/dragon_egg.rsi
     state: broken
-  - type: Edible # Aurora's Song - Food>Edible
   - type: Item
-    sprite: Objects/Consumable/Food/egg.rsi
     size: Large
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 2
-        reagents:
-        - ReagentId: Egg
-          Quantity: 1
-  - type: Tag
-    tags:
-    - Egg
-    - Trash
-  - type: SpaceGarbage
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      maxVol: 2
+      reagents:
+      - ReagentId: Egg
+        Quantity: 1
 
 - type: entity #This is only for the hatching animation since this is an in between from picking the ghost role and becoming the dragon
   id: MobSpawnBabyDragon

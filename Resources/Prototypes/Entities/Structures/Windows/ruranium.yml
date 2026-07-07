@@ -9,8 +9,9 @@
   - type: Icon
     sprite: _NF/Structures/Windows/reinforced_uranium_window.rsi # Frontier
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: RGlass
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:

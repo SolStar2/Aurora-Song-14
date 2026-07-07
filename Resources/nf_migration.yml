@@ -239,7 +239,7 @@ WeaponRifleSVT: NFWeaponRifleSVS
 hydroponicsTrayAnchored: hydroponicsTray
 
 # 2025-03-18 Upstream merge
-NecrosolChemistryBottle: ChemistryBottleNecrosol
+NecrosolChemistryBottle: null # Aurora's Song - Replace with null because it is replaced with arcryox (no bottle atm)
 
 # 2025-03-22 Old proto cleanup
 SignSec: SignSecurity

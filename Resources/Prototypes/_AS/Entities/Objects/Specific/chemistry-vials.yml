@@ -5,13 +5,11 @@
   components:
   - type: Label
     currentLabel: med-desc-arithrazine
-  - type: SolutionContainerManager
-    solutions:
-      beaker:
-        maxVol: 30
-        reagents:
-          - ReagentId: Arithrazine
-            Quantity: 30
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Arithrazine
+        Quantity: 30
 
 - type: entity
   id: DiphenhydramineChemistryVial
@@ -20,10 +18,8 @@
   components:
   - type: Label
     currentLabel: med-desc-diphenhydramine
-  - type: SolutionContainerManager
-    solutions:
-      beaker:
-        maxVol: 30
-        reagents:
-          - ReagentId: Diphenhydramine
-            Quantity: 30
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Diphenhydramine
+        Quantity: 30

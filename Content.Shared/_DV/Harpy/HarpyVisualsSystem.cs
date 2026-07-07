@@ -6,10 +6,10 @@ using Content.Shared.Inventory; // Aurora's Song
 
 namespace Content.Shared._DV.Harpy;
 
-public sealed class HarpyVisualsSystem : EntitySystem
+public sealed partial class HarpyVisualsSystem : EntitySystem
 {
-    // [Dependency] private readonly TagSystem _tagSystem = default!; // Frontier
-    [Dependency] private readonly SharedHideableHumanoidLayersSystem _humanoidSystem = default!; // Aurora's Song
+    // [Dependency] private TagSystem _tagSystem = default!; // Frontier
+    [Dependency] private SharedHideableHumanoidLayersSystem _humanoidSystem = default!; // Aurora's Song
 
     //    [ValidatePrototypeId<TagPrototype>] // Frontier
     //    private const string HarpyWingsTag = "HidesHarpyWings"; // Frontier

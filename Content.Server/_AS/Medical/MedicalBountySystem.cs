@@ -43,22 +43,22 @@ namespace Content.Server._AS.Medical;
 /// </summary>
 public sealed partial class ASMedicalBountySystem : EntitySystem
 {
-    [Dependency] private readonly IAdminLogManager _adminLog = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly BankSystem _bank = default!;
-    [Dependency] private readonly BloodstreamSystem _bloodstream = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly HandsSystem _hands = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly PowerReceiverSystem _power = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly StackSystem _stack = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly AccessReaderSystem _access = default!;
+    [Dependency] private IAdminLogManager _adminLog = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private BankSystem _bank = default!;
+    [Dependency] private BloodstreamSystem _bloodstream = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private HandsSystem _hands = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private PowerReceiverSystem _power = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private StackSystem _stack = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
+    [Dependency] private AccessReaderSystem _access = default!;
 
     private List<ASMedicalBountyPrototype> _cachedPrototypes = new();
 
@@ -205,7 +205,7 @@ public sealed partial class ASMedicalBountySystem : EntitySystem
 
         // Check that the entity inside is alive.
         var bounty = medicalBounty.Bounty;
-        if (damageable.TotalDamage > bounty.MaximumDamageToRedeem)
+        if (_damageable.GetTotalDamage((bountyUid, damageable)) > bounty.MaximumDamageToRedeem) // Aurora's Song - Damage refactor
         {
             _popup.PopupEntity(Loc.GetString("as-medical-bounty-redemption-fail-too-much-damage"), uid);
             _audio.PlayPvs(component.DenySound, uid);
@@ -214,7 +214,7 @@ public sealed partial class ASMedicalBountySystem : EntitySystem
 
         // Calculate amount of reward to pay out.
         var bountyPayout = medicalBounty.MaxBountyValue;
-        foreach (var (damageType, damageVal) in damageable.Damage.DamageDict)
+        foreach (var (damageType, damageVal) in _damageable.GetPositiveDamage((bountyUid, damageable)).DamageDict) // Aurora's Song - Damage refactor
         {
             if (bounty.DamageSets.ContainsKey(damageType))
             {
@@ -339,7 +339,7 @@ public sealed partial class ASMedicalBountySystem : EntitySystem
 
         // Check that the entity inside is sufficiently healed.
         var bounty = medicalBounty.Bounty;
-        if (damageable.TotalDamage > bounty.MaximumDamageToRedeem)
+        if (_damageable.GetTotalDamage((bountyUid, damageable)) > bounty.MaximumDamageToRedeem) // Aurora's Song - Damage refactor
         {
             return new ASMedicalBountyRedemptionUIState(ASMedicalBountyRedemptionStatus.TooDamaged, 0, paidToStation);
         }
@@ -352,7 +352,7 @@ public sealed partial class ASMedicalBountySystem : EntitySystem
 
         // Bounty is redeemable, calculate amount of reward to pay out.
         var bountyPayout = medicalBounty.MaxBountyValue;
-        foreach (var (damageType, damageVal) in damageable.Damage.DamageDict)
+        foreach (var (damageType, damageVal) in _damageable.GetPositiveDamage((bountyUid, damageable)).DamageDict) // Aurora's Song - Damage refactor
         {
             if (bounty.DamageSets.ContainsKey(damageType))
             {

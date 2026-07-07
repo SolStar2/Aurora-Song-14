@@ -18,6 +18,8 @@
   abstract: true
   components:
   - type: Damageable
+  - type: Injurable
+    damageContainer: Inorganic
 
 - type: entity
   id: DelayedSmoke
@@ -126,13 +128,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-cognizine
-  - type: SolutionContainerManager
-    solutions:
-      injector:
-        maxVol: 15
-        reagents:
-          - ReagentId: Cognizine
-            Quantity: 15 # Surely three friends is enough.
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Cognizine
+        Quantity: 15 # Surely three friends is enough.
 
 - type: entity
   id: SyringeOpporozidone
@@ -141,13 +141,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-opporozidone
-  - type: SolutionContainerManager
-    solutions:
-      injector:
-        maxVol: 15
-        reagents:
-          - ReagentId: Opporozidone
-            Quantity: 15
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Opporozidone
+        Quantity: 15
 
 # Premium Alcohol: wait, it's just marketing?
 
@@ -252,10 +250,9 @@
     state: burnt-icon
   - type: Smokable
     state: Burnt
-  - type: SolutionContainerManager
-    solutions:
-      smokable:
-        maxVol: 20
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents: []
 
 - type: entity
   name: lil vulp cannon

@@ -1,6 +1,7 @@
 # BASE
 - type: entity
   parent:
+  - SolutionAmmo # Aurora's Song - Convert to solution
   - Dart
   - ConjuredObject10 # Despawns in 10 seconds
   id: MobHostileThrowableWeapon
@@ -22,10 +23,9 @@
     damage:
       types:
         Piercing: 6
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        maxVol: 2
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      maxVol: 2
   - type: SolutionTransfer
     maxTransferAmount: 4
   - type: SolutionInjectOnEmbed
@@ -48,13 +48,11 @@
   - type: Sprite
     sprite: Objects/Fun/Darts/dart_red.rsi
     state: icon
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        maxVol: 2
-        reagents:
-        - ReagentId: Impedrezene
-          Quantity: 2
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Impedrezene
+        Quantity: 2
 
 - type: entity # 4 hits to KO a spaceman
   parent: DartSyndicateImpedrezene
@@ -62,13 +60,12 @@
   name: syndicate tranquilizer dart
   categories: [ HideSpawnMenu ]
   components:
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        maxVol: 3
-        reagents:
-        - ReagentId: ChloralHydrate
-          Quantity: 3
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      maxVol: 3
+      reagents:
+      - ReagentId: ChloralHydrate
+        Quantity: 3
 
 ## Aberrant flesh
 - type: entity
@@ -96,13 +93,11 @@
     - state: spikeSolution1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        maxVol: 3
-        reagents:
-        - ReagentId: GastroToxin
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: GastroToxin
+        Quantity: 1
   - type: SolutionContainerVisuals
     maxFillLevels: 1
     fillBaseName: spikeSolution

@@ -33,8 +33,9 @@
       state: rock_asteroid_west
   - type: MiningScannerViewable
   - type: Damageable
-    damageContainer: Inorganic # Frontier: StructuralInorganic<Inorganic
     damageModifierSet: Metallic # Frontier: Rock<Metallic
+  - type: Injurable
+    damageContainer: Inorganic # Frontier: StructuralInorganic<Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -821,8 +822,9 @@
         - MiningGatheringHard # Frontier
         - MiningGatheringSoft # Frontier
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:

@@ -207,7 +207,7 @@
         Blunt: 3
         Slash: 3
         Piercing: 4
-  - type: Damageable
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:

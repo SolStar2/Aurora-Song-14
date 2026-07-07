@@ -17,16 +17,16 @@ using Content.Server._EE.Power.Components;
 
 namespace Content.Server._EE.Power;
 
-public sealed class BatteryDrinkerSystem : EntitySystem
+public sealed partial class BatteryDrinkerSystem : EntitySystem
 {
-    // [Dependency] private readonly ItemSlotsSystem _slots = default!; // Aurora's Song
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly BatterySystem _battery = default!;
-    [Dependency] private readonly SiliconChargeSystem _silicon = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    // [Dependency] private readonly PowerCellSystem _powerCell = default!; // Aurora's Song
-    // [Dependency] private readonly SharedContainerSystem _container = default!; // Aurora's Song
+    // [Dependency] private ItemSlotsSystem _slots = default!; // Aurora's Song
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private BatterySystem _battery = default!;
+    [Dependency] private SiliconChargeSystem _silicon = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    // [Dependency] private PowerCellSystem _powerCell = default!; // Aurora's Song
+    // [Dependency] private SharedContainerSystem _container = default!; // Aurora's Song
 
     public override void Initialize()
     {

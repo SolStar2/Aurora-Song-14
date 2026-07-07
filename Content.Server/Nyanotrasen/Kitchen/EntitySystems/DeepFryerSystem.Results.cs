@@ -69,16 +69,13 @@ public sealed partial class DeepFryerSystem
 
             // Ensure it's Food here, so it passes the whitelist.
             var mobFoodComponent = EnsureComp<EdibleComponent>(mob); // Aurora's Song
-            if (!_solutionContainerSystem.EnsureSolutionEntity(mob, mobFoodComponent.Solution, out var alreadyHadFood, out var mobFood))
+            if (!_solutionContainerSystem.TryGetSolution(mob, mobFoodComponent.Solution, out var mobFood, out var mobFoodSolution)) // Aurora's Song
                 return false;
-
-            var mobFoodSolution = mobFood.Value.Comp.Solution;
 
             // This line here is mainly for mice, because they have a food
             // component that mirrors how much blood they have, which is
             // used for the reagent grinder.
-            if (alreadyHadFood)
-                mobFoodSolution.RemoveAllSolution();
+            mobFoodSolution.RemoveAllSolution(); // Aurora's Song
 
             if (TryComp<BloodstreamComponent>(mob, out var bloodstreamComponent)) // Aurora's Song
             {
@@ -195,10 +192,8 @@ public sealed partial class DeepFryerSystem
         }
 
         // Make sure there's enough room for the fryer solution.
-        if (!_solutionContainerSystem.EnsureSolutionEntity(item, foodComponent.Solution, out var foodEnt))
+        if (!_solutionContainerSystem.TryGetSolution(item, foodComponent.Solution, out var foodEnt, out var foodSolution)) // Aurora's Song - Use single solution
             return;
-
-        var foodSolution = foodEnt.Value.Comp.Solution;
 
         // The solution quantity is used to give the fried food an extra
         // buffer too, to support injectables or condiments.

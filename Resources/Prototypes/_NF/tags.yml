@@ -126,8 +126,9 @@
 - type: Tag
   id: DroneUsable
 
-- type: Tag
-  id: LightReplacer
+# Aurora's Song - Prefer upstream
+#- type: Tag
+#  id: LightReplacer
 
 - type: Tag
   id: HoverbikeKeys

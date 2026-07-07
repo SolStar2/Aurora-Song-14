@@ -50,8 +50,9 @@
         variation: 0.05
   - type: UnpoweredFlashlight # Powered by the noosphere
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:

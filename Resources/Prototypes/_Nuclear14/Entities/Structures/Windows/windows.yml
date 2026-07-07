@@ -30,8 +30,9 @@
         layer:
         - GlassLayer
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Glass
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: ExaminableDamage
     messages: WindowMessages
   - type: Destructible

@@ -9,6 +9,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Fluids;
 using Content.Shared.Fluids.Components;
 using Content.Shared._NF.Fluids.Components;
+using Content.Shared.Chemistry.Components; // Aurora's Song
 using Content.Shared.Fluids.EntitySystems;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
@@ -19,17 +20,17 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._NF.Fluids.EntitySystems;
 
-public sealed class AdvDrainSystem : DrainSystem
+public sealed partial class AdvDrainSystem : DrainSystem
 {
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
-    [Dependency] private readonly SharedAmbientSoundSystem _ambientSoundSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private SharedAmbientSoundSystem _ambientSoundSystem = default!;
+    [Dependency] private SharedAudioSystem _audioSystem = default!;
+    [Dependency] private SharedAppearanceSystem _appearanceSystem = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private PowerCellSystem _powerCell = default!;
 
     private readonly HashSet<Entity<PuddleComponent>> _puddles = new();
 
@@ -123,7 +124,6 @@ public sealed class AdvDrainSystem : DrainSystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-        var managerQuery = GetEntityQuery<SolutionContainerManagerComponent>();
 
         var query = EntityQueryEnumerator<AdvDrainComponent>();
         while (query.MoveNext(out var uid, out var drain))
@@ -161,11 +161,8 @@ public sealed class AdvDrainSystem : DrainSystem
                 continue;
             }
 
-            if (!managerQuery.TryGetComponent(uid, out var manager))
-                continue;
-
             // Best to do this one every second rather than once every tick...
-            if (!_solutionContainerSystem.ResolveSolution((uid, manager), AdvDrainComponent.SolutionName, ref drain.Solution, out var drainSolution))
+            if (!_solutionContainerSystem.ResolveSolution(uid, AdvDrainComponent.SolutionName, ref drain.Solution, out var drainSolution))
                 continue;
 
             if (drainSolution.AvailableVolume <= 0)
@@ -213,7 +210,7 @@ public sealed class AdvDrainSystem : DrainSystem
                 // but queuedelete should be pretty safe.
                 if (!_solutionContainerSystem.ResolveSolution(puddle.Owner, puddle.Comp.SolutionName, ref puddle.Comp.Solution, out var puddleSolution))
                 {
-                    EntityManager.QueueDeleteEntity(puddle);
+                    QueueDel(puddle);
                     continue;
                 }
 
@@ -239,7 +236,7 @@ public sealed class AdvDrainSystem : DrainSystem
     private void OnExamined(Entity<AdvDrainComponent> entity, ref ExaminedEvent args)
     {
         if (!args.IsInDetailsRange ||
-            !HasComp<SolutionContainerManagerComponent>(entity) ||
+            !HasComp<SolutionComponent>(entity) ||
             !TryComp<AdvDrainComponent>(entity, out var drain) ||
             !_solutionContainerSystem.ResolveSolution(entity.Owner, AdvDrainComponent.SolutionName, ref entity.Comp.Solution, out var drainSolution))
         {

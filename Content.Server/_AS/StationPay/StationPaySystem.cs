@@ -45,15 +45,15 @@ internal sealed class ScheduledPayout(EntityUid uid, int lastPayout) : IComparab
 }
 
 [UsedImplicitly]
-public sealed class StationPaySystem : EntitySystem
+public sealed partial class StationPaySystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly GameTicker _gameTicker = default!;
-    [Dependency] private readonly BankSystem _bank = default!;
-    [Dependency] private readonly IChatManager _chat = default!;
-    [Dependency] private readonly ISharedPlayerManager _player = default!;
+    [Dependency] private IConfigurationManager _config = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private GameTicker _gameTicker = default!;
+    [Dependency] private BankSystem _bank = default!;
+    [Dependency] private IChatManager _chat = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
 
     private int _payoutDelay = 3600;
 

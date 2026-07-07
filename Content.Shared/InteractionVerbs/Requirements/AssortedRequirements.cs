@@ -15,9 +15,13 @@ public sealed partial class EntityWhitelistRequirement : InteractionRequirement
 {
     [DataField] public EntityWhitelist Whitelist = new(), Blacklist = new();
 
-    public override bool IsMet(InteractionArgs args, InteractionVerbPrototype proto, InteractionAction.VerbDependencies deps) =>
-        !deps.WhitelistSystem.IsWhitelistFail(Whitelist, args.Target)
-        && !deps.WhitelistSystem.IsWhitelistPass(Blacklist, args.Target);
+    public override bool IsMet(InteractionArgs args, InteractionVerbPrototype proto, InteractionAction.VerbDependencies deps)
+    {
+        var whitelistSystem = deps.EntMan.System<EntityWhitelistSystem>();
+
+        return !whitelistSystem.IsWhitelistFail(Whitelist, args.Target)
+               && !whitelistSystem.IsWhitelistPass(Blacklist, args.Target);
+    }
 }
 
 /// <summary>

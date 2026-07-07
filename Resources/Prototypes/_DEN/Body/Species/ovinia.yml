@@ -163,7 +163,7 @@
     baseDecayRate: 0.075 #25% slower than normal
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic # Aurora's Song - OrganBase>OrganBaseOrganic
   id: OrganOvinia
   abstract: true
   suffix: Ovinia

@@ -8,7 +8,6 @@
   startingGear: CAFLeaderGearEVAJackhammer
   icon: "JobIconColonialArmedForces"
   supervisors: job-supervisors-colcom
-  canBeAntag: false
   accessGroups:
   - AllAccess
   access:
@@ -116,7 +115,6 @@
   startingGear: CAFTrooperGearEVAJackhammer
   icon: "JobIconColonialArmedForces"
   supervisors: job-supervisors-colcom
-  canBeAntag: false
   accessGroups:
   - AllAccess
   access:
@@ -224,7 +222,6 @@
   startingGear: CAFMedicalGearEVA
   icon: "JobIconColonialArmedForces"
   supervisors: job-supervisors-colcom
-  canBeAntag: false
   accessGroups:
   - AllAccess
   access:
@@ -307,7 +304,6 @@
   startingGear: CAFEngineerGearEVA
   icon: "JobIconColonialArmedForces"
   supervisors: job-supervisors-colcom
-  canBeAntag: false
   accessGroups:
   - AllAccess
   access:

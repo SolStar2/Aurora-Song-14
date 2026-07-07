@@ -15,10 +15,10 @@ namespace Content.Shared.Silicons.Laws;
 /// </summary>
 public abstract partial class SharedSiliconLawSystem : EntitySystem
 {
-    // [Dependency] private readonly SharedPopupSystem _popup = default!; // Frontier: no emag
-    // [Dependency] private readonly SharedStunSystem _stunSystem = default!; // Frontier: no emag
-    // [Dependency] private readonly EmagSystem _emag = default!; // Frontier: no emag
-    // [Dependency] private readonly SharedMindSystem _mind = default!; // Frontier: no emag
+    // [Dependency] private SharedPopupSystem _popup = default!; // Frontier: no emag
+    // [Dependency] private SharedStunSystem _stunSystem = default!; // Frontier: no emag
+    // [Dependency] private EmagSystem _emag = default!; // Frontier: no emag
+    // [Dependency] private SharedMindSystem _mind = default!; // Frontier: no emag
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -40,7 +40,7 @@ public abstract partial class SharedSiliconLawSystem : EntitySystem
         // Corvax-Next-AiRemoteControl-Start Aurora: In case we ever turn this on
         if (HasComp<AiRemoteControllerComponent>(uid))
             return;
-        // Corvax-Next-AiRemoteControl-End 
+        // Corvax-Next-AiRemoteControl-End
 
         // prevent self-emagging
         if (uid == args.UserUid)

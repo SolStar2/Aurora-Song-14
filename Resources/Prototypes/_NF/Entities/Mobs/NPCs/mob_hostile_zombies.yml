@@ -20,6 +20,7 @@
 - type: entity
   abstract: true
   parent:
+  - SolutionHypospraySmall # Aurora's Song - Convert to solution
   - MobMovementSpeedModifierEVAMelee
   - MobStaminaBoss
   - MobNonHumanHostileBase
@@ -56,19 +57,14 @@
         Structural: 45
     soundHit:
       path: /Audio/Effects/bite.ogg
-  - type: SolutionContainerManager
-    solutions:
-      melee:
-        maxVol: 20
-  - type: SolutionRegeneration
-    solution: melee
+  - type: SolutionRegeneration # Aurora's Song - Removed solution property
     generated:
       reagents:
       - ReagentId: NFZombieBiteToxin # ~3-4 bites - slow down, ~8-9 bites - poison damage
         Quantity: 1
   - type: MeleeChemicalInjector
     transferAmount: 1
-    solution: melee
+    solution: hypospray # Aurora's Song - melee>hypospray
   - type: Butcherable
     spawned:
     - id: NFSpawnZombieLoot
@@ -475,8 +471,7 @@
         Cold: 4
         Slash: 6
         Structural: 45
-  - type: SolutionRegeneration
-    solution: melee
+  - type: SolutionRegeneration # Aurora's Song - Removed solution property
     generated:
       reagents:
       - ReagentId: Fresium
@@ -675,7 +670,6 @@
       reagents:
       - ReagentId: WeldingFuel
         Quantity: 100
-  - type: Timer
   - type: TimedSpawner
     prototypes:
     - NFZombiePileLoophole
@@ -750,8 +744,9 @@
     layers:
     - state: spawner
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Zombie
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Biological
   - type: Destructible
     thresholds:
     - trigger:

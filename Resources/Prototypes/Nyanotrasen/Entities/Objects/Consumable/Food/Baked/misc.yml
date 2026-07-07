@@ -10,12 +10,10 @@
     - state: moldy
   - type: SliceableFood
     slice: FoodBreadMoldySlice
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 60
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 20
-        - ReagentId: Mold
-          Quantity: 28
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 20
+      - ReagentId: Mold
+        Quantity: 28

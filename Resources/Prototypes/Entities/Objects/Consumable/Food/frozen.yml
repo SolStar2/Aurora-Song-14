@@ -2,19 +2,17 @@
 # Base
 
 - type: entity
-  parent: FoodInjectableBase
+  parent: [SolutionVeryTiny, FoodInjectableBase]
   id: FoodFrozenBase
   abstract: true
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/frozen.rsi
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20 # For sprinkles or something? Idk.
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
 
 # Ice-cream
 
@@ -88,15 +86,13 @@
     storedRotation: -45
   - type: Sprite
     state: cornuto
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Theobromine
-          Quantity: 1
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Theobromine
+        Quantity: 1
   - type: FlavorProfile # Frontier: add flavour profile
     flavors: # Frontier
     - sweet # Frontier
@@ -168,15 +164,13 @@
   - type: Edible
     trash:
     - FoodFrozenPopsicleTrash
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20 # Frontier: 30<20
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Theobromine
-          Quantity: 1
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Theobromine
+        Quantity: 1
   - type: FlavorProfile # Frontier: add flavour profile
     flavors: # Frontier
     - sweet # Frontier
@@ -204,17 +198,15 @@
     - type: Edible
       trash:
       - FoodFrozenSnowconeTrash
-    - type: SolutionContainerManager
-      solutions:
-        food:
-          maxVol: 20 # For sprinkles or something? Idk.
-          reagents:
-            - ReagentId: Ice
-              Quantity: 8
-            - ReagentId: Water
-              Quantity: 2
-            - ReagentId: Sugar
-              Quantity: 2
+    - type: Solution
+      solution:
+        reagents:
+          - ReagentId: Ice
+            Quantity: 8
+          - ReagentId: Water
+            Quantity: 2
+          - ReagentId: Sugar
+            Quantity: 2
     - type: FlavorProfile # Frontier: add flavour profile
       flavors: # Frontier
       - sweet # Frontier
@@ -226,16 +218,14 @@
   id: FoodFrozenSnowcone
   description: It's just shaved ice. Still fun to chew on.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-          - ReagentId: Ice
-            Quantity: 8
+  - type: Solution
+    solution:
+      reagents:
+        - ReagentId: Ice
+          Quantity: 8
   - type: FlavorProfile # Frontier: add flavour profile
     flavors: # Frontier
-    - ice # Frontier
+    - sweet # Frontier
     - cold # Frontier
 
 - type: entity
@@ -340,21 +330,19 @@
     - sweet
     - cold
     - magical
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-          - ReagentId: SpaceDrugs
-            Quantity: 4
-          - ReagentId: MindbreakerToxin
-            Quantity: 2.5
-          - ReagentId: Happiness
-            Quantity: 2.5
-          - ReagentId: Psicodine
-            Quantity: 1
-          - ReagentId: Sugar
-            Quantity: 2
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: SpaceDrugs
+        Quantity: 4
+      - ReagentId: MindbreakerToxin
+        Quantity: 2.5
+      - ReagentId: Happiness
+        Quantity: 2.5
+      - ReagentId: Psicodine
+        Quantity: 1
+      - ReagentId: Sugar
+        Quantity: 2
   # End Frontier: flavors, custom fill
 
 # Trash

@@ -15,14 +15,14 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._AS.Bank;
 
-public sealed class DepartmentBonusDispensationMachineSystem : EntitySystem
+public sealed partial class DepartmentBonusDispensationMachineSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly BankSystem _bank = default!;
-    [Dependency] private readonly StackSystem _stack = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private BankSystem _bank = default!;
+    [Dependency] private StackSystem _stack = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
 
     public override void Initialize()
     {

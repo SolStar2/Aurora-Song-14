@@ -1,7 +1,7 @@
 - type: cargoProduct
   id: ServiceTowelsCrate
-  name: towel crate
-  description: A rainbow of towels, for when the space tsunami rolls in.
+  name: cargo-product-towel-crate
+  description: cargo-product-description-towel-crate
   icon:
     sprite: Clothing/Multiple/towel.rsi
     state: icon

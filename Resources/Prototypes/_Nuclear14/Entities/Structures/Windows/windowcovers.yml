@@ -13,8 +13,9 @@
       sprite: _Nuclear14/Structures/Furniture/barricades.rsi
       state: boarded
     - type: Damageable
-      damageContainer: Inorganic
       damageModifierSet: Wood
+    - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+      damageContainer: Inorganic
     - type: Physics
       bodyType: Static
     - type: Fixtures
@@ -61,8 +62,9 @@
       sprite: _Nuclear14/Structures/Windows/windowbars.rsi
       state: icon
     - type: Damageable
-      damageContainer: Inorganic
       damageModifierSet: Metallic
+    - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+      damageContainer: Inorganic
     - type: PowerConsumer
     - type: Electrified
       requirePower: true

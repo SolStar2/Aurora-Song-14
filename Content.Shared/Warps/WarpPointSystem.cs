@@ -1,12 +1,12 @@
-﻿using Content.Shared.Examine;
+using Content.Shared.Examine;
 using Content.Shared.Ghost;
 using Content.Shared.Station; // Frontier
 
 namespace Content.Shared.Warps;
 
-public sealed class WarpPointSystem : EntitySystem
+public sealed partial class WarpPointSystem : EntitySystem // Aurora's Song - Make partial for dep
 {
-    [Dependency] private readonly SharedStationSystem _station = default!; // Frontier // Aurora's Song - StationSystem>SharedStationSystem
+    [Dependency] private SharedStationSystem _station = default!; // Frontier // Aurora's Song - StationSystem>SharedStationSystem
 
     public override void Initialize()
     {
@@ -20,7 +20,7 @@ public sealed class WarpPointSystem : EntitySystem
         if (!HasComp<GhostComponent>(args.Examiner))
             return;
 
-        var loc = component.Location == null ? "<null>" : $"'{component.Location}'";
+        var loc = component.Location == null ? Name(uid) : component.Location;
         args.PushText(Loc.GetString("warp-point-component-on-examine-success", ("location", loc)));
     }
 

@@ -4,8 +4,9 @@
     back: ClothingBackpackDuffelTraumaShanaFilled
     belt: ClothingBeltMilitaryWebbingMedShanaFilled
     outerClothing: ClothingOuterHardsuitPrivateSecurity
+    suitstorage: ASWeaponRifleTFLecter
   inhand:
-    - ASWeaponRifleTFLecter
+    - ClothingBackpackDuffelTraumaShanaFilledHand
     - NFBoxMagazineRifle20Overpressure
 #  storage: # Commented out because prototypes are already filled, leaving for reference
 #    back:

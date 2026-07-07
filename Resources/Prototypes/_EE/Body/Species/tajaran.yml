@@ -198,7 +198,7 @@
   - type: Wagging # Aurora's Song - Add wagging
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic # Aurora's Song - OrganBase>OrganBaseOrganic
   id: OrganTajaran
   abstract: true
   suffix: Tajaran

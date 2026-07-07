@@ -37,11 +37,11 @@ internal sealed class ScheduledEntity(EntityUid uid, int when) : IComparable<Sch
 }
 
 [UsedImplicitly]
-public sealed class AutoSensorSystem : EntitySystem
+public sealed partial class AutoSensorSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly GameTicker _gameTicker = default!;
-    [Dependency] private readonly SuitSensorSystem _sensor = default!;
+    [Dependency] private IConfigurationManager _config = default!;
+    [Dependency] private GameTicker _gameTicker = default!;
+    [Dependency] private SuitSensorSystem _sensor = default!;
 
     private int _suitDelay = 6000;
     // TODO: same trick as StationPaySystem, this should probably be abstracted

@@ -1,6 +1,6 @@
 - type: entity
   id: KitchenDeepFryer
-  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  parent: [ SolutionTank, SolutionNormal, BaseMachinePowered, ConstructibleMachine ] # Aurora's Song - Use built-in solutions
   name: deep fryer
   description: An industrial deep fryer. A big hit at state fairs!
   components:
@@ -107,7 +107,7 @@
       - raisins
       - tea
       - terrible
-    solution: vat_oil
+    solution: tank # Aurora's Song - Use built-in solutions
     fryingOils:
       - Cornoil
       - OilGhee
@@ -120,22 +120,17 @@
     #    path: /Audio/Effects/smoke.ogg
     goodFlavorPriceBonus: 0.5
     solutionSplitMax: 20
-
-  - type: SolutionContainerManager
-    solutions:
-      vat_oil:
-        maxVol: 100
   - type: DrainableSolution
-    solution: vat_oil
+    solution: tank # Aurora's Song - Use built-in solutions
   - type: ExaminableSolution
-    solution: vat_oil
+    solution: tank # Aurora's Song - Use built-in solutions
   - type: InjectableSolution
-    solution: vat_oil
+    solution: tank # Aurora's Song - Use built-in solutions
   - type: RefillableSolution
-    solution: vat_oil
+    solution: tank # Aurora's Song - Use built-in solutions
   - type: Edible # Aurora's Song - Convert to edible
     edible: Drink
-    solution: vat_oil
+    solution: tank # Aurora's Song - Use built-in solutions
     destroyOnEmpty: false # Aurora's Song: DO NOT EAT IT
   - type: Appearance
   - type: ActivatableUI
@@ -156,7 +151,7 @@
         sound:
           collection: MetalBreak
       - !type:SpillBehavior
-        solution: vat_oil
+        solution: tank # Aurora's Song - Use built-in solutions
       - !type:ChangeConstructionNodeBehavior # Delta-V
         node: machineFrame # Delta-V
   - type: ApcPowerReceiver

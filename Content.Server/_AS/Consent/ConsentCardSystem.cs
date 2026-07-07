@@ -14,14 +14,14 @@ using Robust.Shared.Player;
 
 namespace Content.Server._AS.Consent;
 
-public sealed class ConsentCardSystem : SharedConsentCardSystem
+public sealed partial class ConsentCardSystem : EntitySystem
 {
-    [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IChatManager _chat = default!;
-    [Dependency] private readonly IAdminManager _admin = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private ISharedAdminLogManager _adminLog = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private IChatManager _chat = default!;
+    [Dependency] private IAdminManager _admin = default!;
+    [Dependency] private IPlayerManager _player = default!;
     private readonly SoundPathSpecifier _alertSound = new("/Audio/Effects/adminhelp.ogg");
 
     public override void Initialize()

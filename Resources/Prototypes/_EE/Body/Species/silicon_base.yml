@@ -18,8 +18,9 @@
           effects:
             - !type:WashCreamPie # Aurora's Song - WashCreamPieReaction>WashCreamPie
     - type: Damageable
-      damageContainer: HumanoidSilicon # DeltaV - change from Silicon
       damageModifierSet: IPC
+    - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+      damageContainer: HumanoidSilicon # DeltaV - change from Silicon
     - type: ZombieImmune
     - type: Silicon
       entityType: enum.SiliconType.Player

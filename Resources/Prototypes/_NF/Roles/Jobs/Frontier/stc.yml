@@ -11,7 +11,6 @@
     - !type:RoleTimeRequirement
       role: JobSecurityGuard
       time: 10800 # 3 hrs as security guard
-  canBeAntag: false
   icon: "JobIconStc"
   supervisors: job-supervisors-sr
   weight: 160

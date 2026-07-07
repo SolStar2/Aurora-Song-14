@@ -11,7 +11,7 @@ namespace Content.Client._AS.Bank.UI;
 [GenerateTypedNameReferences]
 public sealed partial class DepartmentBonusDispensationMachine : FancyWindow
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public event Action? OnEjectPressed;
 

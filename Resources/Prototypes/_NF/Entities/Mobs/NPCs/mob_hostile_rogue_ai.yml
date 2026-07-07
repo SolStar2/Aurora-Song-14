@@ -55,8 +55,9 @@
   id: MobRogueSiliconBase
   components:
   - type: Damageable
-    damageContainer: Silicon
     damageModifierSet: MobRogueSiliconDamageModifierSet
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Silicon
   - type: NpcFactionMember
     factions:
     - SiliconsExpeditionNF

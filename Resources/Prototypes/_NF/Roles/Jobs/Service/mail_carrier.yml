@@ -12,7 +12,6 @@
   supervisors: job-supervisors-sr
   weight: 90 # Frontier
   displayWeight: 30 # Frontier
-  canBeAntag: false
   access:
   - Cargo # Aurora's Song - Cargo access is being undeprecated
   - External # Frontier

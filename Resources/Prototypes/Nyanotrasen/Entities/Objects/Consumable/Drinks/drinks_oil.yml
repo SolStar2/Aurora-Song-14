@@ -28,13 +28,11 @@
       - state: icon
         map: ["drinkCanIcon"]
       - state: butter
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 100
-        reagents:
-        - ReagentId: OilGhee
-          Quantity: 100
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: OilGhee
+        Quantity: 120
 
 - type: entity
   parent: BaseOilJar
@@ -47,13 +45,11 @@
       - state: icon
         map: ["drinkCanIcon"]
       - state: corn
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 100
-        reagents:
-        - ReagentId: Cornoil
-          Quantity: 100
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Cornoil
+        Quantity: 120
 
 - type: entity
   parent: BaseOilJar
@@ -66,10 +62,8 @@
       - state: icon
         map: ["drinkCanIcon"]
       - state: olives
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 100
-        reagents:
-        - ReagentId: OilOlive
-          Quantity: 100
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: OilOlive
+        Quantity: 120

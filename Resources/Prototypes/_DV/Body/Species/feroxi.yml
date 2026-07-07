@@ -127,7 +127,7 @@
     dehydrationThreshold: 150
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic # Aurora's Song - OrganBase>OrganBaseOrganic
   id: OrganFeroxi
   abstract: true
   suffix: Feroxi

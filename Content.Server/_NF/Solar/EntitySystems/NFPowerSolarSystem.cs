@@ -17,12 +17,12 @@ namespace Content.Server._NF.Solar.EntitySystems;
 ///     Largely based on upstream's PowerSolarSystem (with many thanks to 20kdc, DrSmugleaf and others)
 /// </summary>
 [UsedImplicitly]
-internal sealed class NFPowerSolarSystem : EntitySystem
+internal sealed partial class NFPowerSolarSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _robustRandom = default!;
-    [Dependency] private readonly SharedPhysicsSystem _physicsSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!; // Frontier
+    [Dependency] private IRobustRandom _robustRandom = default!;
+    [Dependency] private SharedPhysicsSystem _physicsSystem = default!;
+    [Dependency] private SharedTransformSystem _transformSystem = default!;
+    [Dependency] private IGameTiming _gameTiming = default!; // Frontier
 
     /// <summary>
     /// Maximum panel angular velocity range - used to stop people rotating panels fast enough that the lag prevention becomes noticable
@@ -146,7 +146,7 @@ internal sealed class NFPowerSolarSystem : EntitySystem
     private void UpdatePanelCoverage(Entity<NFSolarPanelComponent> panel)
     {
         var entity = panel.Owner;
-        var xform = EntityManager.GetComponent<TransformComponent>(entity);
+        var xform = Comp<TransformComponent>(entity);
 
         // So apparently, and yes, I *did* only find this out later,
         // this is just a really fancy way of saying "Lambert's law of cosines".

@@ -13,12 +13,12 @@ using SharedToolSystem = Content.Shared.Tools.Systems.SharedToolSystem;
 
 namespace Content.Server._EE.Silicon.WeldingHealable;
 
-public sealed class WeldingHealableSystem : SharedWeldingHealableSystem
+public sealed partial class WeldingHealableSystem : SharedWeldingHealableSystem
 {
-    [Dependency] private readonly SharedToolSystem _toolSystem = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private SharedToolSystem _toolSystem = default!;
+    [Dependency] private DamageableSystem _damageableSystem = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
 
     public override void Initialize()
     {
@@ -30,18 +30,18 @@ public sealed class WeldingHealableSystem : SharedWeldingHealableSystem
     {
         if (args.Cancelled || args.Used == null
             || !TryComp<DamageableComponent>(args.Target, out var damageable)
+            || !TryComp<InjurableComponent>(args.Target, out var injurable) // Aurora's Song - Use Injurable
             || !TryComp<WeldingHealingComponent>(args.Used, out var component)
-            || damageable.DamageContainerID is null
-            || !component.DamageContainers.Contains(damageable.DamageContainerID)
-            || !HasDamage(damageable, component)
+            || injurable.DamageContainer is null // Aurora's Song - Use Injurable
+            || !component.DamageContainers.Contains(injurable.DamageContainer.Value.Id) // Aurora's Song - Use Injurable
+            || !HasDamage((args.Target.Value, damageable), component) // Aurora's Song - Use Injurable
             || !TryComp<WelderComponent>(args.Used, out var welder)
-            || !TryComp<SolutionContainerManagerComponent>(args.Used, out var solutionContainer)
-            || !_solutionContainer.TryGetSolution(((EntityUid) args.Used, solutionContainer), welder.FuelSolutionName, out var solution))
+            || !_solutionContainer.TryGetSolution(args.Used.Value, welder.FuelSolutionName, out var solution)) // Aurora's Song - Solution Refactor
             return;
 
         _damageableSystem.TryChangeDamage(uid, component.Damage, true, false, origin: args.User);
 
-        _solutionContainer.RemoveReagent(solution.Value, welder.FuelReagent, component.FuelCost);
+        _solutionContainer.RemoveReagent((args.Used.Value, solution), welder.FuelReagent, component.FuelCost); // Aurora's Song - Solution Refactor
 
         var str = Loc.GetString("comp-repairable-repair",
             ("target", uid),
@@ -65,11 +65,14 @@ public sealed class WeldingHealableSystem : SharedWeldingHealableSystem
     private async void Repair(EntityUid uid, WeldingHealableComponent healableComponent, InteractUsingEvent args)
     {
         if (args.Handled
-            || !EntityManager.TryGetComponent(args.Used, out WeldingHealingComponent? component)
-            || !EntityManager.TryGetComponent(args.Target, out DamageableComponent? damageable)
-            || damageable.DamageContainerID is null
-            || !component.DamageContainers.Contains(damageable.DamageContainerID)
-            || !HasDamage(damageable, component)
+            // Aurora's Song Start - Use Injurable
+            || !TryComp<WeldingHealingComponent>(args.Used, out var component)
+            || !TryComp<DamageableComponent>(args.Target, out var damageable)
+            || !TryComp<InjurableComponent>(args.Target, out var injurable)
+            || injurable.DamageContainer is null
+            || !component.DamageContainers.Contains(injurable.DamageContainer.Value.Id)
+            || !HasDamage((args.Target, damageable), component)
+            // Aurora's Song End
             || !_toolSystem.HasQuality(args.Used, component.QualityNeeded)
             || args.User == args.Target && !(component.AllowSelfHeal && healableComponent.AllowSelfHeal)) // DeltaV - self heal disabled by WeldingHealable
             return;
@@ -90,12 +93,14 @@ public sealed class WeldingHealableSystem : SharedWeldingHealableSystem
             });
     }
 
- private bool HasDamage(DamageableComponent component, WeldingHealingComponent healable)
+ private bool HasDamage(Entity<DamageableComponent> ent, WeldingHealingComponent healable)
     {
+        var damage = _damageableSystem.GetPositiveDamage(ent);
+
         // Aurora's Song - Replace with TryGetValue
         foreach (var type in healable.Damage.DamageDict)
         {
-            if (component.Damage.DamageDict.TryGetValue(type.Key, out var value) && value > 0)
+            if (damage.DamageDict.TryGetValue(type.Key, out var value) && value > 0)
                 return true;
         }
 

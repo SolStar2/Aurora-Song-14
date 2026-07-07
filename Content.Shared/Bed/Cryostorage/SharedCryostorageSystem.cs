@@ -15,17 +15,17 @@ namespace Content.Shared.Bed.Cryostorage;
 /// <summary>
 /// This handles <see cref="CryostorageComponent"/>
 /// </summary>
-public abstract class SharedCryostorageSystem : EntitySystem
+public abstract partial class SharedCryostorageSystem : EntitySystem
 {
-    [Dependency] private   readonly IConfigurationManager _configuration = default!;
-    // [Dependency] private   readonly ISharedPlayerManager _player = default!; // Aurora's Song
-    [Dependency] private   readonly SharedMapSystem _map = default!;
-    [Dependency] private   readonly MobStateSystem _mobState = default!;
-    [Dependency] private   readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] protected readonly IGameTiming Timing = default!;
-    [Dependency] protected readonly ISharedAdminLogManager AdminLog = default!;
-    [Dependency] protected readonly SharedMindSystem Mind = default!;
-    [Dependency] private readonly MetaDataSystem _meta = default!;
+    [Dependency] private IConfigurationManager _configuration = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
+    [Dependency] private SharedMapSystem _map = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] protected IGameTiming Timing = default!;
+    [Dependency] protected ISharedAdminLogManager AdminLog = default!;
+    [Dependency] protected SharedMindSystem Mind = default!;
+    [Dependency] private MetaDataSystem _meta = default!;
 
     protected EntityUid? PausedMap { get; private set; }
 
@@ -125,7 +125,8 @@ public abstract class SharedCryostorageSystem : EntitySystem
         if (args.Dragged == args.User)
             return;
 
-        if (!Mind.TryGetMind(args.Dragged, out _, out var mindComp) || mindComp.Session?.AttachedEntity != args.Dragged) // TheDen
+        if (!_player.TryGetSessionByEntity(args.Dragged, out var session) ||
+            session.AttachedEntity != args.Dragged)
             return;
 
         args.CanDrop = false;

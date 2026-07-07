@@ -3,9 +3,9 @@ using Content.Shared.Implants;
 
 namespace Content.Shared._DV.Implants.AddComponentsImplant;
 
-public sealed class AddComponentsImplantSystem : EntitySystem
+public sealed partial class AddComponentsImplantSystem : EntitySystem
 {
-    [Dependency] private readonly IComponentFactory _factory = default!;
+    [Dependency] private IComponentFactory _factory = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -18,7 +18,7 @@ public sealed class AddComponentsImplantSystem : EntitySystem
         foreach (var component in ent.Comp.ComponentsToAdd)
         {
             // Don't add the component if it already exists
-            if (EntityManager.HasComponent(args.Implanted, _factory.GetComponent(component.Key).GetType()))
+            if (HasComp(args.Implanted, _factory.GetComponent(component.Key).GetType()))
                 continue;
 
             EntityManager.AddComponent(args.Implanted, component.Value);

@@ -40,6 +40,10 @@
     ClothingUniformJumpsuitDameDane: 2
     ClothingShoesDameDane: 2
     ClothingOuterDameDane: 2
+    ClothingHeadHatMitreClown: 1
+    ClothingOuterClownPriest: 1
+    ClothingMaskSadMime: 1
+    ClothingMaskScaredMime: 1
     ClothingUniformJumpsuitKimono: 1
     ClothingHeadHatCasa: 1
     FoodPoppy: 1
@@ -52,6 +56,8 @@
     ClothingShoesBootsCowboyBrown: 1
     ClothingShoesBootsCowboyBlack: 1
     ClothingShoesBootsCowboyWhite: 1
+    ClothingHeadHatWizardFake: 1
+    ClothingOuterWizardFake: 1
     # Begin DeltaV Additions
     ClothingUniformJumpsuitKilt: 2
     ClothingOuterSuitCarp: 2
@@ -96,7 +102,6 @@
     ClothingShoesClown: 2
     ClothingUniformJumpsuitClown: 2
     ClothingOuterWinterClown: 2
-    ClothingOuterClownPriest: 1
     RubberStampClown: 1
     ClothingBackpackMime: 2
     ClothingBackpackSatchelMime: 2
@@ -104,8 +109,6 @@
     ClothingBackpackMessengerMime: 2
     ClothingHeadHatMimesoft: 2
     ClothingMaskMime: 2
-    ClothingMaskSadMime: 1
-    ClothingMaskScaredMime: 1
     ClothingUniformJumpsuitMime: 2
     ClothingUniformJumpskirtMime: 2
     ClothingOuterWinterMime: 2

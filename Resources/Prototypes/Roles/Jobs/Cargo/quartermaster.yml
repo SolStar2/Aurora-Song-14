@@ -18,7 +18,6 @@
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
   supervisors: job-supervisors-captain
-  canBeAntag: false
   # access: # Frontier
   # - Cargo # Frontier
   # - Salvage # Frontier

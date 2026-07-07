@@ -24,7 +24,6 @@
   supervisors: job-supervisors-lieutenant
   weight: 140
   displayWeight: 50
-  canBeAntag: false
   access:
   - Sergeant
   - Prisoner

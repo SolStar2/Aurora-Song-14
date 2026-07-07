@@ -42,5 +42,5 @@
   product: MechEmuCargoListing
   cost: 5000
   category: cargoproduct-category-name-cargo
-  description: An old mech with an integral forklift, useful for moving trade crates.
+  description: cargo-product-description-old-mech
   group: market

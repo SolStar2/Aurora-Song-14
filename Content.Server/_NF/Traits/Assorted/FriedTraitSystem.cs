@@ -8,9 +8,9 @@
 // /// <summary>
 // /// This handles fried trait, causing the affected to look crispy.
 // /// </summary>
-// public sealed class FriedTraitSystem : EntitySystem
+// public sealed partial class FriedTraitSystem : EntitySystem
 // {
-//     [Dependency] private readonly DeepFryerSystem _deepFryerSystem = default!;
+//     [Dependency] private DeepFryerSystem _deepFryerSystem = default!;
 //
 //     /// <inheritdoc/>
 //     public override void Initialize()

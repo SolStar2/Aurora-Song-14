@@ -14,7 +14,7 @@ public sealed partial class DeepFryerSystem
     {
         base.Update(frameTime);
 
-        var deepFryers = EntityManager.EntityQueryEnumerator<DeepFryerComponent>();
+        var deepFryers = EntityQueryEnumerator<DeepFryerComponent>();
         while (deepFryers.MoveNext(out var uid, out var component))
         {
             if (_gameTimingSystem.CurTime < component.NextFryTime ||
@@ -25,7 +25,7 @@ public sealed partial class DeepFryerSystem
 
             UpdateNextFryTime(uid, component);
 
-            if (!_solutionContainerSystem.TryGetSolution(uid, component.Solution.Name, out var solution))
+            if (!_solutionContainerSystem.TryGetSolution(uid, component.SolutionName, out var solution)) // Aurora's Song - Use SolutionName instead of Solution.Name
                 continue;
 
             // Heat the vat solution and contained entities.

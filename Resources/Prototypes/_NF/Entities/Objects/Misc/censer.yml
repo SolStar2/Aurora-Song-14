@@ -1,6 +1,6 @@
 - type: entity
   name: censer
-  parent: BaseItem
+  parent: [SolutionSmokable, BaseItem]
   id: Censer
   description: Usually you put incense in there.
   components:
@@ -28,10 +28,9 @@
         path: /Audio/Weapons/Guns/Empty/empty.ogg
       ejectSound:
         path: /Audio/Weapons/Guns/Empty/empty.ogg
-  - type: SolutionContainerManager
-    solutions:
-      smokable:
-        maxVol: 20
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      maxVol: 20
   - type: Sprite
     sprite: _NF/Objects/Misc/censer.rsi
     state: unlit-icon

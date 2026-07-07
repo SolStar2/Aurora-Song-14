@@ -1,12 +1,18 @@
 ﻿using System.Linq;
+using Content.IntegrationTests.Fixtures;
 using Content.Server.GameTicking;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests.GameRules;
 
 [TestFixture]
-public sealed class SecretStartsTest
+public sealed class SecretStartsTest : GameTest
 {
+    public override PoolSettings PoolSettings => new PoolSettings { Dirty = true };
+
+    private static readonly EntProtoId SecretGameRule = "Secret";
+
     /// <summary>
     ///     Tests that when secret is started, all of the game rules it successfully adds are also started.
     /// </summary>
@@ -14,7 +20,7 @@ public sealed class SecretStartsTest
     [Ignore("Irrelevant - no secret game preset")] // Frontier
     public async Task TestSecretStarts()
     {
-        await using var pair = await PoolManager.GetServerClient(new PoolSettings { Dirty = true });
+        var pair = Pair;
 
         var server = pair.Server;
         await server.WaitIdleAsync();
@@ -25,7 +31,7 @@ public sealed class SecretStartsTest
         {
             // this mimics roundflow:
             // rules added, then round starts
-            gameTicker.AddGameRule("Secret");
+            gameTicker.AddGameRule(SecretGameRule);
             gameTicker.StartGamePresetRules();
         });
 
@@ -39,7 +45,5 @@ public sealed class SecretStartsTest
             // End all rules
             gameTicker.ClearGameRules();
         });
-
-        await pair.CleanReturnAsync();
     }
 }

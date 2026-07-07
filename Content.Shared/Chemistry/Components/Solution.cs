@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Linq;
-using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using JetBrains.Annotations;
@@ -58,12 +57,6 @@ namespace Content.Shared.Chemistry.Components
         /// </summary>
         [DataField]
         public float Temperature { get; set; } = 293.15f;
-
-        /// <summary>
-        ///     The name of this solution, if it is contained in some <see cref="SolutionContainerManagerComponent"/>
-        /// </summary>
-        [DataField]
-        public string? Name;
 
         /// <summary>
         ///     Checks if a solution can fit into the container.
@@ -205,7 +198,7 @@ namespace Content.Shared.Chemistry.Components
             DebugTools.Assert(!Contents.Any(x => x.Quantity <= FixedPoint2.Zero));
 
             // No duplicate reagents iDs
-            DebugTools.Assert(Contents.Select(x => x.Reagent).ToHashSet().Count == Contents.Count);
+            DebugTools.Assert(Contents.Select(x => x.Reagent).ToHashSet().Count == Contents.Count, $"Solution: {this}, contained duplcate contents {Contents}");
 
             // If it isn't flagged as dirty, check heat capacity is correct.
             if (!_heatCapacityDirty)
@@ -779,124 +772,6 @@ namespace Content.Shared.Chemistry.Components
 
             return newSolution;
         }
-
-        // Frontier: cryogenics per-reagent filter function (#1443, #1533)
-        /// <summary>
-        /// Splits a solution, taking the specified amount of each reagent from the solution.
-        /// If any reagent in the solution has less volume than specified, it will all be transferred into the new solution.
-        /// </summary>
-        /// <param name="toTakePer">How much of each reagent to take.</param>
-        /// <returns>A new solution containing the reagents taken from the original solution.</returns>
-        public Solution SplitSolutionPerReagent(FixedPoint2 toTakePer)
-        {
-            if (toTakePer <= FixedPoint2.Zero)
-                return new Solution();
-
-            var origVol = Volume;
-            Solution newSolution = new Solution(Contents.Count) { Temperature = Temperature };
-
-            for (var i = Contents.Count - 1; i >= 0; i--) // iterate backwards because of remove swap.
-            {
-                var (reagent, quantity) = Contents[i];
-
-                // If the reagent has more than enough volume to remove, no need to remove it from the list.
-                if (quantity > toTakePer)
-                {
-                    Contents[i] = new ReagentQuantity(reagent, quantity - toTakePer);
-                    newSolution.Contents.Add(new ReagentQuantity(reagent, toTakePer));
-                    Volume -= toTakePer;
-                }
-                else
-                {
-                    Contents.RemoveSwap(i);
-                    //Only add positive quantities to our new solution.
-                    if (quantity > 0)
-                    {
-                        newSolution.Contents.Add(new ReagentQuantity(reagent, quantity));
-                        Volume -= quantity;
-                    }
-                }
-            }
-
-            // If old solution is empty, invalidate old solution and transfer all volume to new.
-            if (Volume <= 0)
-            {
-                RemoveAllSolution();
-                newSolution.Volume = origVol;
-            }
-            else
-            {
-                newSolution.Volume = origVol - Volume;
-                _heatCapacityDirty = true;
-            }
-            newSolution._heatCapacityDirty = true;
-
-            ValidateSolution();
-            newSolution.ValidateSolution();
-
-            return newSolution;
-        }
-
-        /// <summary>
-        /// Splits a solution, taking the specified amount of each reagent specified in reagents from the solution.
-        /// If any reagent in the solution has less volume than specified, it will all be transferred into the new solution.
-        /// </summary>
-        /// <param name="toTakePer">How much of each reagent to take.</param>
-        /// <returns>A new solution containing the reagents taken from the original solution.</returns>
-        public Solution SplitSolutionPerReagentWithOnly(FixedPoint2 toTakePer, params string[] reagents)
-        {
-            if (toTakePer <= FixedPoint2.Zero)
-                return new Solution();
-
-            var origVol = Volume;
-            Solution newSolution = new Solution(Contents.Count) { Temperature = Temperature };
-
-            for (var i = Contents.Count - 1; i >= 0; i--) // iterate backwards because of remove swap.
-            {
-                var (reagent, quantity) = Contents[i];
-
-                // Each reagent to split must be in the set given.
-                if (!reagents.Contains(reagent.Prototype))
-                    continue;
-
-                // If the reagent has more than enough volume to remove, no need to remove it from the list.
-                if (quantity > toTakePer)
-                {
-                    Contents[i] = new ReagentQuantity(reagent, quantity - toTakePer);
-                    newSolution.Contents.Add(new ReagentQuantity(reagent, toTakePer));
-                    Volume -= toTakePer;
-                }
-                else
-                {
-                    Contents.RemoveSwap(i);
-                    //Only add positive quantities to our new solution.
-                    if (quantity > 0)
-                    {
-                        newSolution.Contents.Add(new ReagentQuantity(reagent, quantity));
-                        Volume -= quantity;
-                    }
-                }
-            }
-
-            // If old solution is empty, invalidate old solution and transfer all volume to new.
-            if (Volume <= 0)
-            {
-                RemoveAllSolution();
-                newSolution.Volume = origVol;
-            }
-            else
-            {
-                newSolution.Volume = origVol - Volume;
-                _heatCapacityDirty = true;
-            }
-            newSolution._heatCapacityDirty = true;
-
-            ValidateSolution();
-            newSolution.ValidateSolution();
-
-            return newSolution;
-        }
-        // End Frontier
 
         /// <summary>
         /// Variant of <see cref="SplitSolution(FixedPoint2)"/> that doesn't return a new solution containing the removed reagents.

@@ -15,7 +15,7 @@ namespace Content.Server._NF.ShuttleRecords;
 
 public sealed partial class ShuttleRecordsSystem
 {
-    [Dependency] private readonly BankSystem _bank = default!;
+    [Dependency] private BankSystem _bank = default!;
     public void InitializeShuttleRecords()
     {
         SubscribeLocalEvent<ShuttleRecordsConsoleComponent, BoundUIOpenedEvent>(OnConsoleUiOpened);
@@ -61,7 +61,7 @@ public sealed partial class ShuttleRecordsSystem
             }
         }
 
-        if (EntityManager.TryGetComponent(targetIdEntity, out ShuttleDeedComponent? shuttleDeed))
+        if (TryComp(targetIdEntity, out ShuttleDeedComponent? shuttleDeed))
             targetIdVesselName = shuttleDeed.ShuttleName + " " + shuttleDeed.ShuttleNameSuffix;
 
         var newState = new ShuttleRecordsConsoleInterfaceState(
@@ -109,7 +109,7 @@ public sealed partial class ShuttleRecordsSystem
                 }
             }
 
-            if (EntityManager.TryGetComponent(targetIdEntity, out ShuttleDeedComponent? shuttleDeed))
+            if (TryComp(targetIdEntity, out ShuttleDeedComponent? shuttleDeed))
                 targetIdVesselName = shuttleDeed.ShuttleName + " " + shuttleDeed.ShuttleNameSuffix;
 
             var newState = new ShuttleRecordsConsoleInterfaceState(

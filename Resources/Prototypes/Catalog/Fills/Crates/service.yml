@@ -26,7 +26,6 @@
           amount: 1
         - id: BoxCleanerGrenades
         - id: WireBrush
-          amount: 2
 
 - type: entity
   parent: CratePlastic
@@ -202,6 +201,7 @@
         - id: NewtonCradle
         - id: BoxEnvelope
         - id: BrbSign
+        - id: DeskBell
         - id: RubberStampCaptain # Frontier
 
 - type: entity

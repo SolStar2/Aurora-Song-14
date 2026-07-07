@@ -15,6 +15,7 @@
     state: somberfloorcushion
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: StaticPrice
     price: 100
@@ -57,6 +58,7 @@
     state: somberleather
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: StaticPrice
     price: 125
@@ -103,6 +105,7 @@
     size: Huge
   - type: Damageable
     damageModifierSet: StrongMetallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: StaticPrice
     price: 125
@@ -168,6 +171,7 @@
     price: 125
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:

@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseFoodCondiment
+  parent: [SolutionSmall, BaseFoodCondiment] # Aurora's Song - Convert to solution
   id: BaseFoodCondimentSqueezeBottle
   abstract: true
   name: squeeze bottle
@@ -9,10 +9,6 @@
     edible: Drink
     solution: food
     destroyOnEmpty: false # Aurora's Song: DO NOT EAT IT
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
   - type: RefillableSolution
     solution: food
   - type: Spillable
@@ -38,12 +34,11 @@
   parent: BaseFoodCondimentSqueezeBottle
   id: FoodCondimentSqueezeBottleKetchup
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: Ketchup
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Ketchup
+        Quantity: 60
   - type: Sprite
     state: squeeze-bottle-ketchup
   - type: Icon
@@ -56,12 +51,11 @@
   parent: BaseFoodCondimentSqueezeBottle
   id: FoodCondimentSqueezeBottleMustard
   components:
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: Mustard
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Mustard
+        Quantity: 60
   - type: Sprite
     state: squeeze-bottle-mustard
   - type: Icon
@@ -90,7 +84,7 @@
     fillBaseName: squeeze-bottle-clear
 
 - type: entity
-  parent: [DrinkBottleVisualsNoInHand, DrinkVisualsFill, DrinkBottleGlassBaseFull] # TODO: make inhand fill sprites (and I guess inhand sprites) # Aurora's Song - DrinkBottleVisualsAll>DrinkVisualsFill
+  parent: [SolutionTiny, DrinkBottleVisualsNoInHand, DrinkVisualsFill, DrinkBottleGlassBaseFull] # TODO: make inhand fill sprites (and I guess inhand sprites) # Aurora's Song - DrinkBottleVisualsAll>DrinkVisualsFill # Aurora's Song - Convert to solution
   id: FoodCondimentBottleSoysauce
   name: soy sauce bottle
   description: Used to season dishes to umami perfection. With extra sodium!
@@ -104,13 +98,11 @@
           False: {state: "icon_empty"}
   - type: Item
     size: Small
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Soysauce
-          Quantity: 30
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Soysauce
+        Quantity: 30
   - type: SolutionTransfer
     playTransferSound: false
     canChangeTransferAmount: true

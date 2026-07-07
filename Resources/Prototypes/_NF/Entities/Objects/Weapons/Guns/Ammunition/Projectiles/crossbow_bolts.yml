@@ -1,12 +1,12 @@
 ﻿# Base
 - type: entity
   id: BaseBoltLiquidInjector
+  parent: SolutionInjector # Aurora's Song - Add SolutionInjector
   abstract: true
   components:
-  - type: SolutionContainerManager
-    solutions:
-      injector:
-        maxVol: 2
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      maxVol: 2
   - type: RefillableSolution
     solution: injector
   - type: InjectableSolution
@@ -76,7 +76,7 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 10
-  - type: Damageable
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -197,10 +197,9 @@
       types:
         Piercing: 20
     deleteOnCollide: true
-  - type: SolutionContainerManager
-    solutions:
-      injector:
-        maxVol: 5
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      maxVol: 5
   - type: RefillableSolution
     solution: injector
   - type: InjectableSolution

@@ -18,8 +18,8 @@ namespace Content.Server._NF.Bank;
 
 public sealed partial class BankSystem
 {
-    [Dependency] private readonly AccessReaderSystem _access = default!;
-    [Dependency] private readonly SharedStackSystem _stack = default!;
+    [Dependency] private AccessReaderSystem _access = default!;
+    [Dependency] private SharedStackSystem _stack = default!;
 
     private void InitializeStationATM()
     {

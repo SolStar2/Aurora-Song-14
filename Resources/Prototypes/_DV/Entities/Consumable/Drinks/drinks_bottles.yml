@@ -1,15 +1,14 @@
 - type: entity
-  parent: [DrinkVisualsOpenable, DrinkBottleGlassBaseFull] # Aurora's Song - DrinkBottleVisualsOpenable>DrinkVisualsOpenable
+  parent: [DrinkVisualsOpenable, DrinkBottleGlassSmallBaseFull] # Aurora's Song - DrinkBottleVisualsOpenable>DrinkVisualsOpenable, DrinkBottleGlassBaseFull>DrinkBottleGlassSmallBaseFull
   id: DrinkAngobittersBottleFull
   name: angobitters bottle
   description: Commonly used for mixed drinks, not drunk neat.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Angobitters
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Angobitters
+        Quantity: 60
   - type: Label
     currentLabel: reagent-name-angobitters
   - type: Sprite

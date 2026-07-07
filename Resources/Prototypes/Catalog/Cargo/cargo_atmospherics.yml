@@ -82,13 +82,14 @@
   category: cargoproduct-category-name-atmospherics
   group: market
 
+# Frontier: Uncomment
 - type: cargoProduct
   id: AtmosphericsWaterVapor
   icon:
     sprite: _NF/Structures/Storage/canister.rsi # Frontier: _NF
     state: water_vapor
   product: WaterVaporCanister
-  cost: 2000
+  cost: 2000 # Frontier: 2600>2000
   category: cargoproduct-category-name-atmospherics
   group: market
 

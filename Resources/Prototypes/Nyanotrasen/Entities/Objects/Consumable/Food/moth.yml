@@ -13,17 +13,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: herbycheese
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 7
-        - ReagentId: Protein
-          Quantity: 2
-        - ReagentId: Cream
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 7
+      - ReagentId: Protein
+        Quantity: 2
+      - ReagentId: Cream
+        Quantity: 1
 #Tastes like cheese, herbs
 
 - type: entity
@@ -40,19 +38,17 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: mothsaladbase
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 6
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Vitamin
-          Quantity: 2
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 4
+      - ReagentId: Vitamin
+        Quantity: 2
 
 # base for our special sauces
 - type: entity
-  parent: BaseItem
+  parent: [SolutionFood, SolutionVeryTiny, BaseItem] # Aurora's Song - Convert to solution
   id: BaseFoodMothSauce
   name: sauce bowl
   abstract: true
@@ -68,10 +64,6 @@
     solution: food
   - type: DrainableSolution
     solution: food
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
   - type: SolutionTransfer
     maxTransferAmount: 15
   - type: Sprite
@@ -98,13 +90,11 @@
       - state: tomatosauce-3
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: true
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: TomatoSauce
-          Quantity: 15
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: TomatoSauce
+        Quantity: 15
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 3
@@ -127,13 +117,11 @@
       - state: pesto-3
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: true
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: Pesto
-          Quantity: 15
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Pesto
+        Quantity: 15
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 3
@@ -155,13 +143,11 @@
       - state: bechamel-3
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: true
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: Bechamel
-          Quantity: 15
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Bechamel
+        Quantity: 15
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 3
@@ -185,17 +171,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: squeakingstirfry
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 25
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 6
-        - ReagentId: Vitamin
-          Quantity: 6
-        - ReagentId: Protein
-          Quantity: 8
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 6
+      - ReagentId: Vitamin
+        Quantity: 6
+      - ReagentId: Protein
+        Quantity: 8
 #Tastes like cheese, tofu and veggies
 
 - type: entity
@@ -210,15 +194,13 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: toastedseeds
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Vitamin
-          Quantity: 5
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: Vitamin
+        Quantity: 5
 
 - type: entity
   name: sweet chili cabbage wrap
@@ -235,17 +217,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: sweetchilicabbagewrap
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 8
-        - ReagentId: Vitamin
-          Quantity: 6
-        - ReagentId: CapsaicinOil
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 8
+      - ReagentId: Vitamin
+        Quantity: 6
+      - ReagentId: CapsaicinOil
+        Quantity: 1
 #Tastes like cheese, salad, sweet chili
 
 - type: entity
@@ -257,17 +237,15 @@
   - type: FlavorProfile
     flavors:
       - cheesy
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 18
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Vitamin
-          Quantity: 4
-        - ReagentId: Protein
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Vitamin
+        Quantity: 4
+      - ReagentId: Protein
+        Quantity: 1
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: bakedcheese
@@ -285,17 +263,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: bakedcheeseplatter
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 25
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 16
-        - ReagentId: Vitamin
-          Quantity: 5
-        - ReagentId: Protein
-          Quantity: 2
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 16
+      - ReagentId: Vitamin
+        Quantity: 5
+      - ReagentId: Protein
+        Quantity: 2
 
 - type: entity
   name: big baked rice
@@ -314,17 +290,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: bakedrice
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 16
-        - ReagentId: Protein
-          Quantity: 6
-        - ReagentId: Vitamin
-          Quantity: 8
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 16
+      - ReagentId: Protein
+        Quantity: 6
+      - ReagentId: Vitamin
+        Quantity: 8
 
 - type: entity
   name: lil baked rice
@@ -340,17 +314,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: bakedrice-portion
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 2.5
-        - ReagentId: Protein
-          Quantity: 1
-        - ReagentId: Vitamin
-          Quantity: 1.25
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 2.5
+      - ReagentId: Protein
+        Quantity: 1
+      - ReagentId: Vitamin
+        Quantity: 1.25
 
 # Meals
 
@@ -373,17 +345,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: greenlasagne
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 18
-        - ReagentId: Protein
-          Quantity: 6
-        - ReagentId: Vitamin
-          Quantity: 6
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 18
+      - ReagentId: Protein
+        Quantity: 6
+      - ReagentId: Vitamin
+        Quantity: 6
 #Tastes like cheese, pesto and pasta
 
 - type: entity
@@ -400,17 +370,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: greenlasagne-slice
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 6
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Protein
-          Quantity: 1
-        - ReagentId: Vitamin
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 3
+      - ReagentId: Protein
+        Quantity: 1
+      - ReagentId: Vitamin
+        Quantity: 1
 #Tastes like cheese, pesto and pasta
 
 - type: entity
@@ -425,15 +393,13 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: bakedcorn
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 8
-        - ReagentId: Vitamin
-          Quantity: 2
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 8
+      - ReagentId: Vitamin
+        Quantity: 2
 #Tastes like corn and char
 
 - type: entity
@@ -449,15 +415,13 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: butteredbakedcorn
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 16
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Vitamin
-          Quantity: 6
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Vitamin
+        Quantity: 6
 #Tastes like corn, butter and char
 
 - type: entity
@@ -474,15 +438,13 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: mozzarellasticks
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Protein
-          Quantity: 5
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 4
+      - ReagentId: Protein
+        Quantity: 5
 #Tastes like creamy cheese, breading and oil
 
 # Mac Balls should use macncheese donks
@@ -500,19 +462,17 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: macballs
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Protein
-          Quantity: 2
-        - ReagentId: Vitamin
-          Quantity: 2
-        - ReagentId: Omnizine
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Protein
+        Quantity: 2
+      - ReagentId: Vitamin
+        Quantity: 2
+      - ReagentId: Omnizine
+        Quantity: 1
 #Tastes like pasta, cornbread and cheese
 
 #Soups and Stews
@@ -529,17 +489,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: cottonsoup
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Vitamin
-          Quantity: 6
-        - ReagentId: Water
-          Quantity: 4
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Vitamin
+        Quantity: 6
+      - ReagentId: Water
+        Quantity: 4
   - type: Edible # Aurora's Song - Food>Edible
     requiresSpecialDigestion: true
   - type: MothFood # Frontier
@@ -559,19 +517,17 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: cheesesoup
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Vitamin
-          Quantity: 5
-        - ReagentId: Protein
-          Quantity: 1
-        - ReagentId: Milk
-          Quantity: 3
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Vitamin
+        Quantity: 5
+      - ReagentId: Protein
+        Quantity: 1
+      - ReagentId: Milk
+        Quantity: 3
 
 - type: entity
   name: seed soup
@@ -587,17 +543,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: seedsoup
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 7
-        - ReagentId: Vitamin
-          Quantity: 3
-        - ReagentId: Water
-          Quantity: 5
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 7
+      - ReagentId: Vitamin
+        Quantity: 3
+      - ReagentId: Water
+        Quantity: 5
 
 - type: entity
   name: moth eyeball soup
@@ -612,15 +566,13 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: eyesoup
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 12
-        reagents:
-          - ReagentId: Nutriment
-            Quantity: 5
-          - ReagentId: Vitamin
-            Quantity: 3
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: Vitamin
+        Quantity: 3
 # Tastes like tomato, squirming.
 
 - type: entity
@@ -637,19 +589,17 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: beanstew
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 25
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 12
-        - ReagentId: Vitamin
-          Quantity: 8
-        - ReagentId: Protein
-          Quantity: 3
-        - ReagentId: Water
-          Quantity: 2
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 12
+      - ReagentId: Vitamin
+        Quantity: 8
+      - ReagentId: Protein
+        Quantity: 3
+      - ReagentId: Water
+        Quantity: 2
 #Tastes like beans, cabbage and spicy sauce
 
 - type: entity
@@ -666,17 +616,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: oatstew
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Vitamin
-          Quantity: 5
-        - ReagentId: Water
-          Quantity: 5
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Vitamin
+        Quantity: 5
+      - ReagentId: Water
+        Quantity: 5
 #Tastes like oats, sweet potato, carrot and parsnip
 
 - type: entity
@@ -692,19 +640,17 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: heartburnsoup
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 6
-        - ReagentId: Vitamin
-          Quantity: 4
-        - ReagentId: Protein
-          Quantity: 4
-        - ReagentId: CapsaicinOil
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 6
+      - ReagentId: Vitamin
+        Quantity: 4
+      - ReagentId: Protein
+        Quantity: 4
+      - ReagentId: CapsaicinOil
+        Quantity: 1
 #Tastes like oats, sweet potato, carrot and parsnip
 
 - type: entity
@@ -721,15 +667,13 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: huamulancongee
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 22
-        - ReagentId: Protein
-          Quantity: 8
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 22
+      - ReagentId: Protein
+        Quantity: 8
 
 - type: entity
   name: cornmeal porridge
@@ -743,15 +687,13 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: cornmealporridge
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 11
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 9
-        - ReagentId: Vitamin
-          Quantity: 2
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 9
+      - ReagentId: Vitamin
+        Quantity: 2
 #Tastes like cornmeal.
 
 - type: entity
@@ -767,17 +709,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: cheesyporridge
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 12
-        - ReagentId: Vitamin
-          Quantity: 4
-        - ReagentId: Protein
-          Quantity: 4
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 12
+      - ReagentId: Vitamin
+        Quantity: 4
+      - ReagentId: Protein
+        Quantity: 4
 #Tastes like cornmeal, cheese, more cheese, lots of cheese.
 
 - type: entity
@@ -795,17 +735,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: eggplantpolenta
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Vitamin
-          Quantity: 6
-        - ReagentId: Protein
-          Quantity: 12
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Vitamin
+        Quantity: 6
+      - ReagentId: Protein
+        Quantity: 12
 #Tastes like cornmeal, cheese, eggplant and tomato sauce
 
 - type: entity
@@ -824,19 +762,17 @@
     layers:
     - state: bowl
     - state: chili-hot
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 6
-        - ReagentId: CapsaicinOil
-          Quantity: 4
-        - ReagentId: Vitamin
-          Quantity: 2
-        - ReagentId: JuiceTomato
-          Quantity: 3
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 6
+      - ReagentId: CapsaicinOil
+        Quantity: 4
+      - ReagentId: Vitamin
+        Quantity: 2
+      - ReagentId: JuiceTomato
+        Quantity: 3
 
 #Salads
 
@@ -854,15 +790,13 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: capresesalad
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 7
-        - ReagentId: Protein
-          Quantity: 3
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 7
+      - ReagentId: Protein
+        Quantity: 3
 #Tastes like mozzarella, tomato and balsamic
 
 - type: entity
@@ -879,17 +813,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: fleetsalad
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 12
-        - ReagentId: Vitamin
-          Quantity: 5
-        - ReagentId: Protein
-          Quantity: 3
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 12
+      - ReagentId: Vitamin
+        Quantity: 5
+      - ReagentId: Protein
+        Quantity: 3
 #Tastes like cheese, salad and bread
 
 - type: entity
@@ -906,15 +838,13 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: cottonsalad
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 8
-        - ReagentId: Vitamin
-          Quantity: 6
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 8
+      - ReagentId: Vitamin
+        Quantity: 6
   - type: Edible # Aurora's Song - Food>Edible
     requiresSpecialDigestion: true
   - type: MothFood # Frontier
@@ -934,17 +864,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: kachumbarisalad
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 12
-        - ReagentId: Vitamin
-          Quantity: 2
-        - ReagentId: Protein
-          Quantity: 6
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 12
+      - ReagentId: Vitamin
+        Quantity: 2
+      - ReagentId: Protein
+        Quantity: 6
 #Tastes like onion, tomato, corn, chili and cilantro
 
 # Pizzas
@@ -966,19 +894,17 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: pizza-firecracker
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 40
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 25
-        - ReagentId: Vitamin
-          Quantity: 5
-        - ReagentId: CapsaicinOil
-          Quantity: 1
-        - ReagentId: BbqSauce
-          Quantity: 4
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 25
+      - ReagentId: Vitamin
+        Quantity: 5
+      - ReagentId: CapsaicinOil
+        Quantity: 1
+      - ReagentId: BbqSauce
+        Quantity: 4
 
 - type: entity
   name: slice of firecracker pizza
@@ -995,19 +921,17 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: pizza-firecracker-slice
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 6
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Vitamin
-          Quantity: 0.8
-        - ReagentId: CapsaicinOil
-          Quantity: 0.1
-        - ReagentId: BbqSauce
-          Quantity: 0.5
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 4
+      - ReagentId: Vitamin
+        Quantity: 0.8
+      - ReagentId: CapsaicinOil
+        Quantity: 0.1
+      - ReagentId: BbqSauce
+        Quantity: 0.5
 # Tastes like crust, chili, corn, cheese
 
 - type: entity
@@ -1060,17 +984,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: pizza-pesto
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 40
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 30
-        - ReagentId: Vitamin
-          Quantity: 5
-        - ReagentId: Allicin
-          Quantity: 2
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 30
+      - ReagentId: Vitamin
+        Quantity: 5
+      - ReagentId: Allicin
+        Quantity: 2
 
 - type: entity
   name: slice of pesto pizza
@@ -1087,17 +1009,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: pizza-pesto-slice
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 6
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Vitamin
-          Quantity: 0.8
-        - ReagentId: Allicin
-          Quantity: 0.25
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: Vitamin
+        Quantity: 0.8
+      - ReagentId: Allicin
+        Quantity: 0.25
 # Tastes like crust, pesto, cheese
 
 - type: entity
@@ -1155,17 +1075,15 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: cheesecakes
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 2
-        - ReagentId: Protein
-          Quantity: 1
-        - ReagentId: Sugar
-          Quantity: 12
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 2
+      - ReagentId: Protein
+        Quantity: 1
+      - ReagentId: Sugar
+        Quantity: 12
 #Tastes like cheesecake and honey
 
 - type: entity
@@ -1185,15 +1103,13 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: mothmallow
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Sugar
-          Quantity: 10
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Sugar
+        Quantity: 10
   - type: MothFood # Frontier
   # Frontier: edible without special requirements
   # - type: Edible # Aurora's Song - Food>Edible
@@ -1215,15 +1131,13 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
     state: mothmallow-slice
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 7
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Sugar
-          Quantity: 2
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 4
+      - ReagentId: Sugar
+        Quantity: 2
   - type: MothFood # Frontier
   # Frontier: edible without special requirements
   # - type: Edible # Aurora's Song - Food>Edible
@@ -1256,15 +1170,13 @@
       - muffin
       - cotton
       - fiber
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 7
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Vitamin
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: Vitamin
+        Quantity: 1
   - type: MothFood # Frontier
   - type: Edible # Aurora's Song - Food>Edible
     requiresSpecialDigestion: true

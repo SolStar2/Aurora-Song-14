@@ -13,10 +13,11 @@
       sprite: _NF/Structures/Storage/canister.rsi # Frontier
       noRot: true
       layers:
-        - state: grey
+        - state: air # Aurora's Song - gray>air
         - state: paper
           visible: false
           map: [ "enum.PaperLabelVisuals.Layer" ]
+          # Aurora's Song - Undo canister damage states
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -84,8 +85,9 @@
               acts: [ "Destruction" ]
             - !type:DumpCanisterBehavior
     - type: Damageable
-      damageContainer: Inorganic
       damageModifierSet: Metallic
+    - type: Injurable
+      damageContainer: Inorganic
     - type: Physics
       bodyType: Dynamic
     - type: Fixtures
@@ -114,13 +116,23 @@
           rotationsEnabled: false
           volume: 1
     - type: GasPortable
+    # Aurora's Song - Undo canister damage states
     - type: GasCanister
+      maxIntegrity: 15 # 5 times stronger than a gas tank
+      integrity: 15
+      maxReleasePressure: 1013.25
+      safetyPressure: 10132.5 # High enough that liquid tanks don't burst immediately, with an extra 33% wiggle room to work with
+      overpressure: 20265 # Purposefully high because cans react really fucking fast, may need to redo this value if reactions change!
       gasTankSlot:
         name: comp-gas-canister-slot-name-gas-tank
         ejectOnBreak: true
         whitelist:
           components:
             - GasTank
+    - type: Explosive
+      explosionType: Minibomb # Mostly a pressure wave explosive so primarily blunt damage
+      maxIntensity: 100
+      tileBreakScale: 0.2 # Keeps the can from spacing all the hot gas it has now vented :). If this proves to be too much it can be removed.
     - type: StaticPrice
       price: 125 # Frontier: 200<125
     - type: AccessReader
@@ -143,9 +155,9 @@
   components:
     - type: Sprite
       layers:
-        - state: storage # Frontier
+        - state: storage # Frontier # Aurora's Song - Undo canister damage states
     - type: GasCanister
-      gasMixture:
+      air:
         volume: 1500
         temperature: 293.15
     - type: Destructible
@@ -182,9 +194,9 @@
   components:
   - type: Sprite
     layers:
-      - state: air # Frontier
+      - state: air # Frontier # Aurora's Song - Undo canister damage states
   - type: GasCanister
-    gasMixture:
+    air:
       volume: 1500
       moles:
         Oxygen: 581.56 # oxygen 21%
@@ -222,9 +234,9 @@
   components:
   - type: Sprite
     layers:
-      - state: oxygen # Frontier
+      - state: oxygen # Frontier # Aurora's Song - Undo canister damage states
   - type: GasCanister
-    gasMixture:
+    air:
       volume: 1500
       moles:
         Oxygen: 2769.36 # oxygen
@@ -263,7 +275,7 @@
     layers:
       - state: oxygen_liquid # Frontier
   - type: GasCanister
-    gasMixture:
+    air:
       volume: 1500
       moles:
         Oxygen: 18710.71051 # oxygen
@@ -302,9 +314,9 @@
   components:
     - type: Sprite
       layers:
-        - state: nitrogen # Frontier
+        - state: nitrogen # Frontier # Aurora's Song - Undo canister damage states
     - type: GasCanister
-      gasMixture:
+      air:
         volume: 1500
         moles:
           Nitrogen: 2769.36 # nitrogen
@@ -343,7 +355,7 @@
     layers:
       - state: nitrogen_liquid # Frontier
   - type: GasCanister
-    gasMixture:
+    air:
       volume: 1500
       moles:
         Nitrogen: 18710.71051 # nitrogen
@@ -382,9 +394,9 @@
   components:
     - type: Sprite
       layers:
-        - state: carbon # Frontier
+        - state: carbon # Frontier # Aurora's Song - Undo canister damage states
     - type: GasCanister
-      gasMixture:
+      air:
         volume: 1500
         moles:
           CarbonDioxide: 2769.36 # CO2
@@ -425,7 +437,7 @@
     layers:
       - state: carbon_liquid # Frontier
   - type: GasCanister
-    gasMixture:
+    air:
       volume: 1500
       moles:
         CarbonDioxide: 18710.71051 # CO2
@@ -464,9 +476,9 @@
   components:
     - type: Sprite
       layers:
-        - state: plasma # Frontier
+        - state: plasma # Frontier # Aurora's Song - Undo canister damage states
     - type: GasCanister
-      gasMixture:
+      air:
         volume: 1500
         moles:
           Plasma: 2769.36 # plasma
@@ -507,9 +519,9 @@
   components:
     - type: Sprite
       layers:
-        - state: tritium # Frontier
+        - state: tritium # Frontier # Aurora's Song - Undo canister damage states
     - type: GasCanister
-      gasMixture:
+      air:
         volume: 1500
         moles:
           Tritium: 2769.36 # Tritium
@@ -548,9 +560,9 @@
   components:
     - type: Sprite
       layers:
-        - state: water_vapor
+        - state: water_vapor # Aurora's Song - Undo canister damage states
     - type: GasCanister
-      gasMixture:
+      air:
         volume: 1500
         moles:
           WaterVapor: 2769.36 # Water vapor
@@ -587,9 +599,9 @@
   components:
     - type: Sprite
       layers:
-        - state: ammonia # Frontier
+        - state: ammonia # Frontier # Aurora's Song - Undo canister damage states
     - type: GasCanister
-      gasMixture:
+      air:
         volume: 1500
         moles:
           Ammonia: 2769.36 # Ammonia
@@ -628,9 +640,9 @@
   components:
     - type: Sprite
       layers:
-        - state: nitrous_oxide # Frontier
+        - state: nitrous_oxide # Frontier # Aurora's Song - Undo canister damage states
     - type: GasCanister
-      gasMixture:
+      air:
         volume: 1500
         moles:
           NitrousOxide: 2769.36 # N2O
@@ -670,8 +682,9 @@
   - type: Sprite
     layers:
     - state: frezon
+    # Aurora's Song - Undo canister damage states
   - type: GasCanister
-    gasMixture:
+    air:
       volume: 1500
       moles:
         Frezon: 2769.36 # Frezon
@@ -701,6 +714,22 @@
       - !type:DumpCanisterBehavior
 #  - type: Lock
 #    locked: true
+
+
+- type: entity
+  parent: GasCanister
+  id: MaxCapCanister # As of writing canisters currently have about 9000 explosive intensity. 95% the total damage of a syndicate bomb but spread across a larger area.
+  categories: [ Debug ]
+  name: max cap in a can
+  suffix: Max Cap
+  components:
+  - type: GasCanister
+    air:
+      volume: 1500
+      moles:
+        Oxygen: 1400
+        Tritium: 700
+      temperature: 373.149
 
 # Broke Entities
 
@@ -733,8 +762,9 @@
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
     - type: Damageable
-      damageContainer: Inorganic
       damageModifierSet: Metallic
+    - type: Injurable
+      damageContainer: Inorganic
     - type: InteractionOutline
     - type: Sprite
       sprite: _NF/Structures/Storage/canister.rsi # Frontier

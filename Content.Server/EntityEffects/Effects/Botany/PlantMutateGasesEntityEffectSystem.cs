@@ -9,7 +9,7 @@ namespace Content.Server.EntityEffects.Effects.Botany;
 
 public sealed partial class PlantMutateExudeGasesEntityEffectSystem : EntityEffectSystem<PlantHolderComponent, PlantMutateExudeGases>
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     // Frontier: List of gasses
     private Gas[] _plantGasList =
@@ -45,7 +45,7 @@ public sealed partial class PlantMutateExudeGasesEntityEffectSystem : EntityEffe
 
 public sealed partial class PlantMutateConsumeGasesEntityEffectSystem : EntityEffectSystem<PlantHolderComponent, PlantMutateConsumeGases>
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     // Frontier: List of gasses
     private Gas[] _plantGasList =

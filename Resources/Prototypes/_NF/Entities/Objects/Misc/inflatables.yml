@@ -92,7 +92,6 @@
     closeSound:
       path: /Audio/Misc/zip.ogg
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Inflatable
   - type: Destructible
     thresholds:
@@ -239,8 +238,9 @@
         layer:
         - MachineLayer
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Inflatable
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:

@@ -160,7 +160,7 @@
     bloodReferenceSolution: # Aurora's Song - Update bloodstream yml
       reagents:
       - ReagentId: GoblinBlood
-        Quantity: 300
+        Quantity: 600 # Aurora's Song - 300>600 - Solution refactor
   - type: Butcherable
     spawned:
     - id: FoodMeatGoblin
@@ -191,7 +191,7 @@
   - type: AlwaysTriggerMousetrap # DeltaV Code
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic # Aurora's Song - OrganBase>OrganBaseOrganic
   id: OrganGoblin
   abstract: true
   suffix: goblin

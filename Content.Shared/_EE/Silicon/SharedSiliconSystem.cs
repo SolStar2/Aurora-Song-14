@@ -9,10 +9,10 @@ using Content.Shared.Containers.ItemSlots;
 namespace Content.Shared._EE.Silicon.Systems;
 
 
-public sealed class SharedSiliconChargeSystem : EntitySystem
+public sealed partial class SharedSiliconChargeSystem : EntitySystem
 {
-    [Dependency] private readonly AlertsSystem _alertsSystem = default!;
-    // [Dependency] private readonly ItemSlotsSystem _itemSlots = default!; // Aurora's Song
+    [Dependency] private AlertsSystem _alertsSystem = default!;
+    // [Dependency] private ItemSlotsSystem _itemSlots = default!; // Aurora's Song
 
     public override void Initialize()
     {
@@ -102,7 +102,7 @@ public enum SiliconType
 ///     Event raised when a Silicon's charge state needs to be updated.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class SiliconChargeStateUpdateEvent : EntityEventArgs
+public sealed partial class SiliconChargeStateUpdateEvent : EntityEventArgs
 {
     public short ChargePercent { get; }
 

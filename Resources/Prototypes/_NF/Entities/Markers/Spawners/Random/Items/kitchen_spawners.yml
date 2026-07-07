@@ -10,7 +10,7 @@
       - state: green
         scale: 0.7, 0.7
       - sprite: Objects/Misc/desk_bell.rsi
-        state: normal
+        state: icon-bell # Aurora's Song - normal>icon-bell
       - sprite: _NF/Markers/general.rsi
         state: questionmark
         color: red
@@ -31,7 +31,7 @@
       - state: green
         scale: 0.7, 0.7
       - sprite: Objects/Misc/desk_bell.rsi
-        state: normal
+        state: icon-bell # Aurora's Song - normal>icon-bell
       - sprite: _NF/Markers/general.rsi
         state: questionmark
         color: red

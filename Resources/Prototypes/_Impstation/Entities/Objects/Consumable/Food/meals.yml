@@ -21,19 +21,17 @@
     requiresSpecialDigestion: true
     trash:
     - FoodPacketFoodBoatTrash
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 45
-        reagents:
-        - ReagentId: Nutriment # - Aurora's Song - Increased Nutriment
-          Quantity: 20
-        - ReagentId: TableSalt
-          Quantity: 5
-        - ReagentId: Fiber
-          Quantity: 10
-        # - ReagentId: CottonBool - Aurora's Song - Removed CottonBool (doesnt exist here)
-        #   Quantity: 10
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment # - Aurora's Song - Increased Nutriment
+        Quantity: 20
+      - ReagentId: TableSalt
+        Quantity: 5
+      - ReagentId: Fiber
+        Quantity: 10
+      # - ReagentId: CottonBool - Aurora's Song - Removed CottonBool (doesnt exist here)
+      #   Quantity: 10
   - type: Tag
     tags:
     # - ClothFood - Aurora's Song
@@ -60,19 +58,17 @@
     requiresSpecialDigestion: true
     trash:
     - FoodPacketFoodBoatTrash
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 35
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: TableSalt
-          Quantity: 5
-        - ReagentId: Fiber
-          Quantity: 10
-        - ReagentId: Sugar
-          Quantity: 5
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: TableSalt
+        Quantity: 5
+      - ReagentId: Fiber
+        Quantity: 10
+      - ReagentId: Sugar
+        Quantity: 5
   - type: Tag
     tags:
     # - ClothFood - Aurora's Song
@@ -100,17 +96,15 @@
     requiresSpecialDigestion: true
     trash:
     - FoodKebabSkewer
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 35
-        reagents:
-        - ReagentId: Soysauce
-          Quantity: 10
-        - ReagentId: Fiber
-          Quantity: 10
-        - ReagentId: Sugar
-          Quantity: 5
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Soysauce
+        Quantity: 10
+      - ReagentId: Fiber
+        Quantity: 10
+      - ReagentId: Sugar
+        Quantity: 5
   - type: Tag
     tags:
     # - ClothFood - Aurora's Song
@@ -138,19 +132,17 @@
     heldPrefix: pompette
   - type: Edible
     requiresSpecialDigestion: true
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Fiber
-          Quantity: 10
-        - ReagentId: Wine
-          Quantity: 10
-        - ReagentId: Vitamin
-          Quantity: 10
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Fiber
+        Quantity: 10
+      - ReagentId: Wine
+        Quantity: 10
+      - ReagentId: Vitamin
+        Quantity: 10
   - type: Tag
     tags:
     # - ClothFood - Aurora's Song

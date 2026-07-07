@@ -12,12 +12,12 @@ using Content.Shared.StatusEffectNew; // starcup
 
 namespace Content.Server._EE.Silicon.Death;
 
-public sealed class SiliconDeathSystem : EntitySystem
+public sealed partial class SiliconDeathSystem : EntitySystem
 {
-    [Dependency] private readonly SleepingSystem _sleep = default!;
-    [Dependency] private readonly SiliconChargeSystem _silicon = default!;
-    [Dependency] private readonly HideableHumanoidLayersSystem _hidableLayers = default!; // Aurora's Song
-    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!; // starcup
+    [Dependency] private SleepingSystem _sleep = default!;
+    [Dependency] private SiliconChargeSystem _silicon = default!;
+    [Dependency] private HideableHumanoidLayersSystem _hidableLayers = default!; // Aurora's Song
+    [Dependency] private StatusEffectsSystem _statusEffect = default!; // starcup
 
     public override void Initialize()
     {
@@ -52,7 +52,7 @@ public sealed class SiliconDeathSystem : EntitySystem
         if (deadEvent.Cancelled)
             return;
 
-        EntityManager.EnsureComponent<SleepingComponent>(uid);
+        EnsureComp<SleepingComponent>(uid);
         _statusEffect.TrySetStatusEffectDuration(uid, SleepingSystem.StatusEffectForcedSleeping); // starcup: edited for status effects refactor
 
         _hidableLayers.SetLayerOcclusion(uid, HumanoidVisualLayers.Eyes, hidden: true, SlotFlags.PREVENTEQUIP); // Aurora's Song
@@ -88,7 +88,7 @@ public sealed class SiliconDeathSystem : EntitySystem
 ///     This probably shouldn't be modified unless you intend to fill the Silicon's battery,
 ///     as otherwise it'll just be triggered again next frame.
 /// </remarks>
-public sealed class SiliconChargeDyingEvent : CancellableEntityEventArgs
+public sealed partial class SiliconChargeDyingEvent : CancellableEntityEventArgs
 {
     public EntityUid SiliconUid { get; }
     public BatteryComponent? BatteryComp { get; }
@@ -105,7 +105,7 @@ public sealed class SiliconChargeDyingEvent : CancellableEntityEventArgs
 /// <summary>
 ///     An event raised after a Silicon has gone down due to charge.
 /// </summary>
-public sealed class SiliconChargeDeathEvent : EntityEventArgs
+public sealed partial class SiliconChargeDeathEvent : EntityEventArgs
 {
     public EntityUid SiliconUid { get; }
     public BatteryComponent? BatteryComp { get; }
@@ -122,7 +122,7 @@ public sealed class SiliconChargeDeathEvent : EntityEventArgs
 /// <summary>
 ///     An event raised after a Silicon has reawoken due to an increase in charge.
 /// </summary>
-public sealed class SiliconChargeAliveEvent : EntityEventArgs
+public sealed partial class SiliconChargeAliveEvent : EntityEventArgs
 {
     public EntityUid SiliconUid { get; }
     public BatteryComponent? BatteryComp { get; }

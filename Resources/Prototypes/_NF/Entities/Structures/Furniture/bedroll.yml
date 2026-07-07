@@ -43,6 +43,8 @@
         - MobMask
   - type: Damageable
     damageModifierSet: Inflatable
+  - type: Injurable # Aurora's Song
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
       - trigger:

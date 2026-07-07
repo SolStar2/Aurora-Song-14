@@ -5,13 +5,11 @@ using Content.Shared.Morgue;
 using Content.Shared.Morgue.Components;
 using Content.Shared.Popups;
 using Robust.Shared.Player;
-using Robust.Server.Player; // Frontier
 
 namespace Content.Server.Morgue;
-
-public sealed class CrematoriumSystem : SharedCrematoriumSystem
+public sealed partial class CrematoriumSystem : SharedCrematoriumSystem
 {
-    [Dependency] private readonly GhostSystem _ghostSystem = default!;
+    [Dependency] private GhostSystem _ghostSystem = default!;
 
     public override void Initialize()
     {

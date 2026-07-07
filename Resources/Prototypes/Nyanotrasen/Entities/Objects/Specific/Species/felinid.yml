@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: FoodBase # Aurora's Song - BaseItem>FoodBase
   id: Hairball
   name: hairball
   description: Felinids, man...
@@ -8,15 +8,13 @@
     sprite: Nyanotrasen/Objects/Specific/Species/felinid.rsi
     state: icon
   - type: Hairball
-  - type: SolutionContainerManager
-    solutions:
-      hairball:
-        maxVol: 25
-        reagents:
-        - ReagentId: Protein
-          Quantity: 2
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Protein
+        Quantity: 2
   - type: Extractable
-    grindableSolutionName: hairball
+    grindableSolutionName: food # Aurora's Song - hairball>food
   - type: Tag
     tags:
     - Recyclable
@@ -27,8 +25,8 @@
       Burger: Hairball
       Taco: Hairball
       Skewer: Hairball
-    solution: hairball
-  - type: Edible # Aurora's Song - Food>Edible
-    requiresSpecialDigestion: true
-    solution: hairball
+    solution: food # Aurora's Song - hairball>food
   # End Frontier: edible hairballs
+  - type: FlavorProfile # Aurora's Song - Tastes like cat
+    flavors:
+    - cat

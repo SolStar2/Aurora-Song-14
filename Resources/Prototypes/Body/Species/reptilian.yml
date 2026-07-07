@@ -54,6 +54,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceReptilian
+  categories: [ HideSpawnMenu ]
   name: reptilian appearance
   components:
   - type: Inventory
@@ -131,6 +132,10 @@
     allowedEmotes: ['Thump', 'Hiss'] # Imp: add ReptilianHiss # Aurora's Song - ReptilianHiss>Hiss
   - type: TypingIndicator
     proto: lizard
+  - type: CreamPied
+    sprite:
+      sprite: Effects/creampie.rsi
+      state: creampie_lizard
   - type: Vocal
     sounds:
       Male: MaleReptilian
@@ -175,7 +180,7 @@
     scale: 1.2 # Frontier
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganReptilian
   abstract: true
   suffix: Reptilian

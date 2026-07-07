@@ -1,6 +1,6 @@
 - type: entity
   id: CigaretteMnemolith
-  parent: Cigarette
+  parent: [SolutionSmall, Cigarette] # Aurora's Song - Convert to solution
   name: mnemolith cigarette
   description: "The smoke clings to your thoughts, enhancing your awareness of the noosphere."
   components:
@@ -12,15 +12,13 @@
     sprite: _DEN/Objects/Consumable/Smokeables/Cigarettes/cigarettemantis.rsi
   - type: Clothing
     sprite: _DEN/Objects/Consumable/Smokeables/Cigarettes/cigarettemantis.rsi
-  - type: SolutionContainerManager
-    solutions:
-      smokable:
-        maxVol: 30
-        reagents:
-          - ReagentId: Nicotine
-            Quantity: 10
-          - ReagentId: MnemolithReagent
-            Quantity: 20
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nicotine
+        Quantity: 10
+      - ReagentId: MnemolithReagent
+        Quantity: 20
   - type: Extractable
     grindableSolutionName: smokable
   - type: Tag

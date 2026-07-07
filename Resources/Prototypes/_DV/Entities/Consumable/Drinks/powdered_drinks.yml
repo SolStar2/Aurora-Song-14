@@ -39,7 +39,7 @@
     damage:
       types:
         Blunt: 3
-  - type: Damageable
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: StaticPrice
     price: 50
@@ -57,13 +57,11 @@
       map: ["enum.OpenableVisuals.Layer"]
     - state: overlay-container
       color: "#FFC420"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: PowderedJuiceOrange
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: PowderedJuiceOrange
+        Quantity: 60
 
 - type: entity
   parent: ReagentTinBase
@@ -78,13 +76,11 @@
       map: ["enum.OpenableVisuals.Layer"]
     - state: overlay-container
       color: "#FAFAFA"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: PowderedMilk
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: PowderedMilk
+        Quantity: 60
 
 - type: entity
   parent: ReagentTinBase
@@ -99,13 +95,11 @@
       map: ["enum.OpenableVisuals.Layer"]
     - state: overlay-container
       color: "#FFFCE3"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: PowderedMilkSoy
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: PowderedMilkSoy
+        Quantity: 60
 
 - type: entity
   parent: ReagentTinBase
@@ -120,13 +114,11 @@
       map: ["enum.OpenableVisuals.Layer"]
     - state: overlay-container
       color: "#B4FF64"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: PowderedJuiceLime
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: PowderedJuiceLime
+        Quantity: 60
 
 - type: entity
   parent: ReagentTinBase
@@ -141,13 +133,11 @@
       map: ["enum.OpenableVisuals.Layer"]
     - state: overlay-container
       color: "#FFFC69"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: PowderedJuiceLemon
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: PowderedJuiceLemon
+        Quantity: 60
 
 - type: entity
   parent: ReagentTinBase
@@ -162,13 +152,11 @@
       map: ["enum.OpenableVisuals.Layer"]
     - state: overlay-container
       color: "#FFD644"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: PowderedJuicePineapple
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: PowderedJuicePineapple
+        Quantity: 60
 
 - type: entity
   parent: ReagentTinBase
@@ -183,13 +171,11 @@
       map: ["enum.OpenableVisuals.Layer"]
     - state: overlay-container
       color: "#FFFEBF"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: PowderedJuiceBanana
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: PowderedJuiceBanana
+        Quantity: 60
 
 - type: entity
   parent: ReagentTinBase
@@ -204,13 +190,11 @@
       map: ["enum.OpenableVisuals.Layer"]
     - state: overlay-container
       color: "#D366FF"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: PowderedJuiceBerry
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: PowderedJuiceBerry
+        Quantity: 60
 
 - type: entity
   parent: ReagentTinBase
@@ -225,13 +209,11 @@
       map: ["enum.OpenableVisuals.Layer"]
     - state: overlay-container
       color: "#FFBCDB"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: PowderedJuiceWatermelon
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: PowderedJuiceWatermelon
+        Quantity: 60
 
 - type: entity
   parent: ReagentTinBase
@@ -246,13 +228,11 @@
       map: ["enum.OpenableVisuals.Layer"]
     - state: overlay-container
       color: "#E57DFF"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: PowderedJuiceGrape
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: PowderedJuiceGrape
+        Quantity: 60
 
 - type: entity
   parent: ReagentTinBase
@@ -267,13 +247,11 @@
       map: ["enum.OpenableVisuals.Layer"]
     - state: overlay-container
       color: "#FFC67E"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: PowderedJuiceApple
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: PowderedJuiceApple
+        Quantity: 60
 
 - type: entity
   parent: ReagentTinBase
@@ -288,13 +266,11 @@
       map: ["enum.OpenableVisuals.Layer"]
     - state: overlay-container
       color: "#A9536C"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: PowderedJuiceCherry
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: PowderedJuiceCherry
+        Quantity: 60
 
 - type: entity
   parent: ReagentTinBase
@@ -309,13 +285,11 @@
       map: ["enum.OpenableVisuals.Layer"]
     - state: overlay-container
       color: "#FFA06B"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: PowderedJuiceCarrot
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: PowderedJuiceCarrot
+        Quantity: 60
 
 - type: entity
   parent: ReagentTinBase
@@ -330,10 +304,8 @@
       map: ["enum.OpenableVisuals.Layer"]
     - state: overlay-container
       color: "#D85553"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: PowderedJuiceTomato
-          Quantity: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: PowderedJuiceTomato
+        Quantity: 60

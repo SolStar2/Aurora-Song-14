@@ -8,9 +8,9 @@ using Robust.Shared.Timing;
 namespace Content.Client.UserInterface.Systems.Chat.Controls;
 
 
-public sealed class CircleOverlay : Overlay
+public sealed partial class CircleOverlay : Overlay
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 

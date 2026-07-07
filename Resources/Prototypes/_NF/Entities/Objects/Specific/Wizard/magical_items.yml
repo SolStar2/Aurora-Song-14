@@ -7,21 +7,17 @@
   components:
   - type: Sprite
     sprite: Objects/Consumable/Drinks/teapot.rsi # placeholder
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 100
-        reagents:
-        - ReagentId: Tea
-          Quantity: 100
-  - type: SolutionRegeneration
-    solution: drink
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Tea
+        Quantity: 100
+  - type: SolutionRegeneration # Aurora's Song - Removed solution property
     generated:
       reagents:
       - ReagentId: Tea
         Quantity: 5
-  - type: SolutionPurge
-    solution: drink
+  - type: SolutionPurge # Aurora's Song - Removed solution property
     preserve:
     - Tea
     quantity: 10
@@ -46,21 +42,18 @@
     sprite: _NF/Objects/Consumable/Smokeables/Pipes/cobpipe.rsi
   - type: BurnStateVisuals
     unlitIcon: unlit-icon
-  - type: SolutionContainerManager
-    solutions:
-      smokable:
-        maxVol: 0.3
-        reagents:
-        - ReagentId: THC
-          Quantity: 0.3
-  - type: SolutionRegeneration
-    solution: smokable
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      maxVol: 0.3
+      reagents:
+      - ReagentId: THC
+        Quantity: 0.3
+  - type: SolutionRegeneration # Aurora's Song - Removed solution property
     generated:
       reagents:
       - ReagentId: THC
         Quantity: 0.3
-  - type: SolutionPurge
-    solution: smokable
+  - type: SolutionPurge # Aurora's Song - Removed solution property
     preserve:
     - THC
     quantity: 0.3
@@ -84,21 +77,18 @@
     sprite: Objects/Consumable/Smokeables/Pipes/pipe.rsi
   - type: BurnStateVisuals
     unlitIcon: unlit-icon
-  - type: SolutionContainerManager
-    solutions:
-      smokable:
-        maxVol: 0.3
-        reagents:
-        - ReagentId: Nicotine
-          Quantity: 0.3
-  - type: SolutionRegeneration
-    solution: smokable
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      maxVol: 0.3
+      reagents:
+      - ReagentId: Nicotine
+        Quantity: 0.3
+  - type: SolutionRegeneration # Aurora's Song - Removed solution property
     generated:
       reagents:
       - ReagentId: Nicotine
         Quantity: 0.3
-  - type: SolutionPurge
-    solution: smokable
+  - type: SolutionPurge # Aurora's Song - Removed solution property
     preserve:
     - Nicotine
     quantity: 0.3
@@ -116,8 +106,9 @@
     sprite: Objects/Consumable/Drinks/shaker.rsi # placeholder
   - type: Jittering
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -186,7 +177,7 @@
   - type: Jetpack
     moleUsage: 0.00020
   - type: GasTank
-    outputPressure: 21.3
+    releasePressure: 21.3 # Aurora's Song - outputPressure>releasePressure
     air:
       volume: 50
       temperature: 293.15

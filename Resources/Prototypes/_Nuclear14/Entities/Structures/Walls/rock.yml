@@ -26,8 +26,9 @@
       - map: [ "enum.EdgeLayer.West" ]
         state: rock_asteroid_west
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Rock
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -236,8 +237,9 @@
         tags:
           - Pickaxe
     - type: Damageable
-      damageContainer: Inorganic
       damageModifierSet: Metallic
+    - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+      damageContainer: Inorganic
     - type: Destructible
       thresholds:
         - trigger:

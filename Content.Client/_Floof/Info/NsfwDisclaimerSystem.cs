@@ -5,9 +5,9 @@ using Robust.Shared.Network;
 namespace Content.Client._Floof.Info;
 
 
-public sealed class NsfwDisclaimerSystem : EntitySystem
+public sealed partial class NsfwDisclaimerSystem : EntitySystem
 {
-    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private INetManager _net = default!;
 
     private NsfwDisclaimerWindow? _window;
 

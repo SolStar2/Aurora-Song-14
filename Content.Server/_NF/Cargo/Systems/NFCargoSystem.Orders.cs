@@ -107,7 +107,7 @@ public sealed partial class NFCargoSystem
         if (!ent.Comp.AllowedGroups.Contains(product.Group))
             return;
 
-        var data = GetOrderData(EntityManager.GetNetEntity(ent), args, product, GenerateOrderId(orderDatabase));
+        var data = GetOrderData(GetNetEntity(ent), args, product, GenerateOrderId(orderDatabase));
 
         var amount = GetOutstandingOrderCount(orderDatabase);
         var capacity = orderDatabase.Capacity;
@@ -179,7 +179,7 @@ public sealed partial class NFCargoSystem
 
             // We only want to see orders made on the same computer, so filter them out
             var filteredOrders = orderDatabase.Orders
-                .Where(order => order.Computer == EntityManager.GetNetEntity(ent)).ToList();
+                .Where(order => order.Computer == GetNetEntity(ent)).ToList();
 
             var state = new NFCargoConsoleInterfaceState(
                 meta.EntityName,
@@ -314,7 +314,7 @@ public sealed partial class NFCargoSystem
         _transform.Unanchor(item, Transform(item));
 
         // Create a sheet of paper to write the order details on
-        var printed = EntityManager.SpawnEntity(paperProto, spawn);
+        var printed = Spawn(paperProto, spawn);
         if (TryComp<PaperComponent>(printed, out var paper))
         {
             // fill in the order data

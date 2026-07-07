@@ -10,8 +10,9 @@
     drawdepth: Mobs
   - type: SpriteFade
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: StructuralMetallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: RangedDamageSound
     soundGroups:
       Brute:

@@ -13,6 +13,7 @@ using Content.Shared.Radiation.Components; // Frontier
 using Content.Shared.Audio; // Frontier
 using Content.Shared.Materials; // Frontier
 using Content.Server._NF.Power.Components; // Frontier
+using Content.Server.Radiation.Systems; // Aurora's Song
 
 namespace Content.Server.Power.Generator;
 
@@ -20,17 +21,17 @@ namespace Content.Server.Power.Generator;
 /// <seealso cref="FuelGeneratorComponent"/>
 /// <seealso cref="ChemicalFuelGeneratorAdapterComponent"/>
 /// <seealso cref="SolidFuelGeneratorAdapterComponent"/>
-public sealed class GeneratorSystem : SharedGeneratorSystem
+public sealed partial class GeneratorSystem : SharedGeneratorSystem
 {
-    [Dependency] private readonly AppearanceSystem _appearance = default!;
-    [Dependency] private readonly AmbientSoundSystem _ambientSound = default!;
-    [Dependency] private readonly MaterialStorageSystem _materialStorage = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly PuddleSystem _puddle = default!;
-
-    [Dependency] private readonly PointLightSystem _pointLight = default!; // Frontier: Rads glow
-    [Dependency] private readonly SharedAmbientSoundSystem _ambientSoundSystem = default!; // Frontier: Rads sound
+    [Dependency] private AppearanceSystem _appearance = default!;
+    [Dependency] private AmbientSoundSystem _ambientSound = default!;
+    [Dependency] private MaterialStorageSystem _materialStorage = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private PuddleSystem _puddle = default!;
+    [Dependency] private RadiationSystem _radiation = default!; // Aurora's Song
+    [Dependency] private PointLightSystem _pointLight = default!; // Frontier: Rads glow
+    [Dependency] private SharedAmbientSoundSystem _ambientSoundSystem = default!; // Frontier: Rads sound
 
     private EntityQuery<UpgradePowerSupplierComponent> _upgradeQuery; // Frontier: keeping upgradeable power supplies
 
@@ -202,7 +203,7 @@ public sealed class GeneratorSystem : SharedGeneratorSystem
         if (!TryComp<RadiationSourceComponent>(uid, out var radiation)) // Frontier
             return;
 
-        radiation.Enabled = on;
+        _radiation.SetSourceEnabled((uid, radiation), on);
 
         if (on)
         {
@@ -211,8 +212,8 @@ public sealed class GeneratorSystem : SharedGeneratorSystem
             float radiationSlope = radiationIntensity / 3;
             float visualRadius = 1f + (component.RadiationIntensity * component.TargetPower / 4);
 
-            radiation.Intensity = radiationIntensity;
-            radiation.Slope = Math.Max(0.5f, radiationSlope); // Slope should always be at least 0.5 (typical for bananium)
+            _radiation.SetIntensity((uid, radiation), radiationIntensity);
+            _radiation.SetSlope((uid, radiation), Math.Max(0.5f, radiationSlope)); // Slope should always be at least 0.5 (typical for bananium)
 
             EnsureComp<PointLightComponent>(uid, out var light);
             _pointLight.SetColor(uid, component.RadiationColor, light); // Add glow - on

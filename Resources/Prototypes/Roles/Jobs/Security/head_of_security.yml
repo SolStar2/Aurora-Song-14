@@ -20,7 +20,6 @@
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
   supervisors: job-supervisors-captain
-  canBeAntag: false
   ## Frontier: commented out stuff below
   # access:
   # - HeadOfSecurity

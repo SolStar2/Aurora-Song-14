@@ -1,14 +1,12 @@
 ﻿- type: entity
-  parent: Recycler #too different so different parent
+  parent: [SolutionCryo, Recycler] #too different so different parent
   id: ASReagentGrinderIndustrialBluespace
   name: bluespace industrial reagent grinder
   description: Have we dreamed too large? Oceans may be contained within this reagent grinder, vast expanses of chemicals.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      output:
-        maxVol: 50000 #For deranged people
-        canReact: false # Perserves things within itself. Careful pulling out your flourine and chlorine plant results in a hot beaker
+  - type: Solution
+    solution:
+      maxVol: 38400 #For deranged people # 3840x10
   - type: MaterialReclaimer
     whitelist:
       components:
@@ -18,7 +16,7 @@
       - HighRiskItem
     efficiency: 0.9
     onlyReclaimDrainable: false
-    solutionContainerId: output
+    solutionContainerId: solution
     reclaimMaterials: false # Dix material duplication
   - type: Sprite
     sprite: _AS/Structures/Machines/recycling.rsi
@@ -44,6 +42,6 @@
     - machine_parts
     - machine_board
   - type: DrainableSolution
-    solution: output
+    solution: solution
   - type: ExaminableSolution
-    solution: output
+    solution: solution

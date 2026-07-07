@@ -94,8 +94,9 @@
         - MachineLayer
         density: 500
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger: # If it gets nuked, it just disappears

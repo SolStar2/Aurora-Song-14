@@ -17,8 +17,8 @@ namespace Content.Shared.Salvage;
 
 public abstract partial class SharedSalvageSystem : EntitySystem
 {
-    [Dependency] protected readonly IConfigurationManager CfgManager = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] protected IConfigurationManager _configurationManager = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     /// <summary>
     /// Main loot table for salvage expeditions.
@@ -78,7 +78,7 @@ public abstract partial class SharedSalvageSystem : EntitySystem
             mods.Add(Loc.GetString(light.Description));
         }
 
-        var duration = TimeSpan.FromSeconds(CfgManager.GetCVar(CCVars.SalvageExpeditionDuration));
+        var duration = TimeSpan.FromSeconds(_configurationManager.GetCVar(CCVars.SalvageExpeditionDuration)); // Aurora's Song - Rename to _configurationManager
 
         return new SalvageMission(seed, dungeon.ID, faction.ID, biome.ID, air.ID, temp.Temperature, light.Color, duration, mods, difficulty.ID, config); // Frontier: add difficulty.ID, config
     }

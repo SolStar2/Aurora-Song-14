@@ -28,12 +28,11 @@
   name: holy water flask
   description: Blessed be this holy water by the deity of your choosing.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Holywater
-          Quantity: 30
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Holywater
+        Quantity: 60
 
 - type: entity
   parent: [ RPED, StorageFillT2Parts ]

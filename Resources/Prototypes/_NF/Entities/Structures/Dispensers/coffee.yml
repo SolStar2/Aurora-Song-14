@@ -5,6 +5,8 @@
   description: A sleek, modern coffee machine, fit for any spacefaring species to enjoy.
   parent: ReagentDispenserBase
   components:
+  - type: Storage # Aurora's Song - Move to parent
+    openOnActivate: false
   - type: Rotatable
   - type: Sprite
     sprite: _NF/Structures/coffeemachine.rsi
@@ -44,8 +46,7 @@
   suffix: Empty
   parent: ImpCoffeeMachine
   components:
-  - type: Storage
-    openOnActivate: false
-    whitelist:
-      tags:
-      - DrinkBottle
+  - type: EntityTableContainerFill # Aurora's Song - Add empty storage fill so [Empty] means empty
+    containers:
+      storagebase: !type:AllSelector
+        children: []

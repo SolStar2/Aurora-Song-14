@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.NPC.Systems;
 using Content.Shared.EntityTable;
+using Content.Shared.EntityTable.EntitySelectors;
 using Content.Shared.Physics;
 using Content.Shared.Procedural;
 using Content.Shared.Procedural.DungeonLayers;
@@ -36,8 +37,8 @@ public sealed partial class DungeonJob
                 if (!ValidateResume())
                     return;
 
-                // if (reservedTiles.Contains(tile))    // Frontier: spawn floor loot inside the dungeon footprint
-                //    continue;                         // Frontier
+                // if (reservedTiles.Contains(tile) && !gen.IgnoreReserved)    // Frontier: spawn floor loot inside the dungeon footprint
+                //    continue;                                                // Frontier
 
                 if (!_anchorable.TileFree((_gridUid, _grid),
                         tile,

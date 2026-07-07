@@ -8,12 +8,12 @@ using Robust.Shared.Network; // Aurora's Song - Make humanoid spawners work
 
 namespace Content.Shared.Containers;
 
-public sealed class ContainerFillSystem : EntitySystem
+public sealed partial class ContainerFillSystem : EntitySystem
 {
-    [Dependency] private readonly INetManager _net = default!; // Aurora's Song - Make humanoid spawners work
-    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-    [Dependency] private readonly EntityTableSystem _entityTable = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private INetManager _net = default!; // Aurora's Song - Make humanoid spawners work
+    [Dependency] private SharedContainerSystem _containerSystem = default!;
+    [Dependency] private EntityTableSystem _entityTable = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {

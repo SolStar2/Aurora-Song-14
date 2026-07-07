@@ -58,7 +58,7 @@ public sealed partial class MetabolizerComponent : Component
             SolutionName = "stomach",
             SolutionOnBody = false,
             TransferSolutionName = BloodstreamComponent.DefaultBloodSolutionName,
-            TransferEfficacy = 1 // Aurora's Song | what if it was efficient?
+            TransferEfficacy = 0.5
         },
         ["Bloodstream"] = new()
         {

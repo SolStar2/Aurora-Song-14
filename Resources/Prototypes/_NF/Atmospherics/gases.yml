@@ -1,19 +1,21 @@
 - type: gas
   id: Respiron # Aurora's Song 9>Respiron
   name: gases-respiron
-  specificHeat: 25
+  abbreviation: gas-respiron-abbreviation # Aurora's Song
+  molarHeatCapacity: 25
   heatCapacityRatio: 1.4
   molarMass: 30
-  color: ed4ddc
+  color: '#ED4DDC'
   reagent: Respiron
   pricePerMole: 0.2
 
 - type: gas
   id: Helium # Aurora's Song 10>Helium
   name: gases-helium
-  specificHeat: 10
+  abbreviation: gas-helium-abbreviation # Aurora's Song
+  molarHeatCapacity: 10
   heatCapacityRatio: 1.3
   molarMass: 4
-  color: ed4ddc
+  color: '#ED4DDC'
   reagent: Helium
   pricePerMole: 3

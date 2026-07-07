@@ -38,13 +38,12 @@
     fuelConsumption: 0 # Powered by the noosphere
     fuelLitCost: 0 # Powered by the noosphere
     tankSafe: true
-  - type: SolutionContainerManager
-    solutions:
-      Welder:
-        reagents:
-        - ReagentId: WeldingFuel
-          Quantity: 1
-        maxVol: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 1
+      maxVol: 1
   - type: ToggleableVisuals
     spriteLayer: mantis_lighter_flame
     inhandVisuals:

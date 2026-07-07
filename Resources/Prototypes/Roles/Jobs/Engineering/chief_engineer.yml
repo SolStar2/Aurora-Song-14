@@ -18,7 +18,6 @@
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
   supervisors: job-supervisors-captain
-  canBeAntag: false
   ## Frontier: commented everything below out
   # access:
   # - Maintenance

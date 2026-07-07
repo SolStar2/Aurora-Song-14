@@ -12,8 +12,12 @@
       inverted: true # stop playing intern if you're good at engineering!
   startingGear: TechnicalAssistantGear
   icon: "JobIconTechnicalAssistant"
-  supervisors: job-supervisors-hire # Frontier
-  canBeAntag: false
+  supervisors: job-supervisors-engineering
+  # Aurora's Song - Disable existing access
+#  access:
+#  - Maintenance
+#  - Engineering
+#  - External
   accessGroups: # Frontier
   - GeneralAccess # Frontier
   setPreference: false # Frontier

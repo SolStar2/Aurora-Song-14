@@ -181,7 +181,7 @@
 #    - DoorBumpOpener # Frontier
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic # Aurora's Song - OrganBase>OrganBaseOrganic
   id: OrganHarpy
   abstract: true
   suffix: harpy

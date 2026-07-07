@@ -32,7 +32,7 @@
     layers:
       - state: respiron
   - type: GasCanister
-    gasMixture:
+    air: # Aurora's Song - gasMixture>air
       volume: 1000
       moles:
       - 0 # oxygen
@@ -89,7 +89,7 @@
     layers:
       - state: helium
   - type: GasCanister
-    gasMixture:
+    air: # Aurora's Song - gasMixture>air
       volume: 1000
       moles:
       - 0 # oxygen

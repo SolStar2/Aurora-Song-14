@@ -1,6 +1,6 @@
 #region Salvage expedition objective
 - type: entity
-  parent: CybersunDataMiner
+  parent: [SolutionTank, SolutionGinormous, CybersunDataMiner]
   id: BloodCollector
   name: blood collector
   description: A vile chamber filled with blood. Seems to hold more than it's volume.
@@ -52,13 +52,11 @@
         solution: tank
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        maxVol: 1000
-        reagents:
-        - ReagentId: Blood
-          Quantity: 1000
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 960
 
 #region Wall for POI
 - type: entity

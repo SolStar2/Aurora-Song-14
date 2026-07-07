@@ -28,6 +28,8 @@
             volume: -6
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Injurable # Aurora's Song
+    damageContainer: StructuralInorganic
   - type: Fixtures
     fixtures: &rackFixture
       fix1:

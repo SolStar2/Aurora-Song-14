@@ -1,6 +1,6 @@
 - type: entity
   id: PortablePump
-  parent: [BaseMachinePowered, SmallConstructibleMachine, StructureWheeled, MixedPowerMachine]
+  parent: [SolutionDrain, SolutionGinormous, BaseMachinePowered, SmallConstructibleMachine, StructureWheeled, MixedPowerMachine] # Aurora's Song - Use built-in solutions
   name: portable pump
   description: Drains puddles around it. Has a slot for a backup power cell and an overflow evaporation tray. A sticker on the side says "Do not submerge in water."
   components:
@@ -66,8 +66,9 @@
   - type: Machine
     board: PortablePumpMachineCircuitBoard
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
       - trigger:
@@ -93,10 +94,6 @@
                 max: 2
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: SolutionContainerManager
-    solutions:
-      drainBuffer:
-        maxVol: 1200
   - type: DrainableSolution
     solution: drainBuffer
   - type: AdvDrain

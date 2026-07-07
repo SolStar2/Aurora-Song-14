@@ -6,12 +6,11 @@
   components:
   - type: Label
     currentLabel: med-desc-bruizine
-  - type: SolutionContainerManager
-    solutions:
-      beaker:
-        reagents:
-        - ReagentId: Bruizine
-          Quantity: 200
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Bruizine
+        Quantity: 240
 
 - type: entity
   parent: Jug
@@ -21,12 +20,11 @@
   components:
   - type: Label
     currentLabel: med-desc-lacerinol
-  - type: SolutionContainerManager
-    solutions:
-      beaker:
-        reagents:
-        - ReagentId: Lacerinol
-          Quantity: 200
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Lacerinol
+        Quantity: 240
 
 - type: entity
   parent: Jug
@@ -36,12 +34,11 @@
   components:
   - type: Label
     currentLabel: med-desc-pyrazine
-  - type: SolutionContainerManager
-    solutions:
-      beaker:
-        reagents:
-        - ReagentId: Pyrazine
-          Quantity: 200
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Pyrazine
+        Quantity: 240
 
 - type: entity
   parent: Jug
@@ -51,9 +48,8 @@
   components:
   - type: Label
     currentLabel: med-desc-epinephrine
-  - type: SolutionContainerManager
-    solutions:
-      beaker:
-        reagents:
-        - ReagentId: Epinephrine
-          Quantity: 200
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Epinephrine
+        Quantity: 240

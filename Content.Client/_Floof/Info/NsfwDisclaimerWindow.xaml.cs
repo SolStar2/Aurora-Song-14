@@ -10,7 +10,7 @@ namespace Content.Client._Floof.Info;
 [GenerateTypedNameReferences]
 public sealed partial class NsfwDisclaimerWindow : FancyWindow
 {
-    [Dependency] private readonly IClientNetManager _netManager = default!;
+    [Dependency] private IClientNetManager _netManager = default!;
 
     public NsfwDisclaimerWindow()
     {

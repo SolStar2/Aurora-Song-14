@@ -12,7 +12,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockBoozeFilled
+  product: CrateVendingMachineRestockBoozeFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 400 # Frontier
   category: cargoproduct-category-name-service
   group: market
@@ -23,7 +23,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockChefvendFilled
+  product: CrateVendingMachineRestockChefvendFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 100 # Frontier
   category: cargoproduct-category-name-service
   group: market
@@ -34,7 +34,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockClothesFilled
+  product: CrateVendingMachineRestockClothesFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 2500
   category: cargoproduct-category-name-service
   group: market
@@ -45,7 +45,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockAutoDrobeFilled
+  product: CrateVendingMachineRestockAutoDrobeFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 100 # Frontier: 2500<100
   category: cargoproduct-category-name-service
   group: market
@@ -56,7 +56,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockDinnerwareFilled
+  product: CrateVendingMachineRestockDinnerwareFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 100 # Frontier
   category: cargoproduct-category-name-service
   group: market
@@ -67,7 +67,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockCondimentStationFilled
+  product: CrateVendingMachineRestockCondimentStationFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 100 # Frontier
   category: cargoproduct-category-name-service
   group: market
@@ -89,7 +89,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockGamesFilled
+  product: CrateVendingMachineRestockGamesFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 100 # Frontier
   category: cargoproduct-category-name-service
   group: market
@@ -100,7 +100,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockHotDrinksFilled
+  product: CrateVendingMachineRestockHotDrinksFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 400 # Frontier
   category: cargoproduct-category-name-service
   group: market
@@ -144,7 +144,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockPTechFilled
+  product: CrateVendingMachineRestockPTechFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 100 # Frontier
   category: cargoproduct-category-name-service
   group: market
@@ -155,7 +155,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockRobustSoftdrinksFilled
+  product: CrateVendingMachineRestockRobustSoftdrinksFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 400 # Frontier
   category: cargoproduct-category-name-service
   group: market
@@ -166,7 +166,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockSalvageEquipmentFilled
+  product: CrateVendingMachineRestockSalvageEquipmentFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 100 # Frontier 1500<100
   category: cargoproduct-category-name-engineering
   group: market
@@ -199,7 +199,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockSmokesFilled
+  product: CrateVendingMachineRestockSmokesFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 400 # Frontier
   category: cargoproduct-category-name-service
   group: market
@@ -210,7 +210,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockVendomatFilled
+  product: CrateVendingMachineRestockVendomatFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 100 # Frontier
   category: cargoproduct-category-name-service
   group: market
@@ -232,7 +232,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockTankDispenserFilled
+  product: CrateVendingMachineRestockTankDispenserFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 100 # Frontier
   category: cargoproduct-category-name-atmospherics
   group: market
@@ -243,7 +243,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockHappyHonkFilled
+  product: CrateVendingMachineRestockHappyHonkFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 400 # Frontier
   category: cargoproduct-category-name-service
   group: market
@@ -254,7 +254,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockGetmoreChocolateCorpFilled
+  product: CrateVendingMachineRestockGetmoreChocolateCorpFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 400 # Frontier
   category: cargoproduct-category-name-service
   group: market
@@ -265,7 +265,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockChangFilled
+  product: CrateVendingMachineRestockChangFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 400 # Frontier
   category: cargoproduct-category-name-service
   group: market
@@ -276,7 +276,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockDiscountDansFilled
+  product: CrateVendingMachineRestockDiscountDansFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 400 # Frontier
   category: cargoproduct-category-name-service
   group: market
@@ -287,7 +287,7 @@
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
-  product: CrateVendingMachineRestockDonutFilled
+  product: CrateVendingMachineRestockDonutFilled # Aurora's Song - Use crate instead of wrapped parcel
   cost: 400 # Frontier
   category: cargoproduct-category-name-service
   group: market

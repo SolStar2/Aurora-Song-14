@@ -139,19 +139,20 @@
     - state: green
     - state: quartz_crab
       sprite: Mobs/Elemental/orecrab.rsi
-  - type: RandomSpawner
-    prototypes:
-    # Frontier: use NF variants
-    - NFMobSpawnCrabUranium
-    - NFMobSpawnCrabIron
-    - NFMobSpawnCrabQuartz
-    - NFMobSpawnCrabSilver
-    - NFMobSpawnCrabCoal
-    - NFMobSpawnCrabGold
-    - NFMobSpawnCrabBananium
-    - NFMobSpawnCrabUranium # Frontier
-    - NFMobSpawnCrabPlasma # Frontier
-    # End Frontier
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      # Frontier: use NF variants
+      - id: NFMobSpawnCrabUranium
+      - id: NFMobSpawnCrabIron
+      - id: NFMobSpawnCrabQuartz
+      - id: NFMobSpawnCrabSilver
+      - id: NFMobSpawnCrabCoal
+      - id: NFMobSpawnCrabGold
+      - id: NFMobSpawnCrabBananium
+      - id: NFMobSpawnCrabUranium # Frontier
+      - id: NFMobSpawnCrabPlasma # Frontier
+      # End Frontier
 
 - type: entity
   parent: MarkerBase

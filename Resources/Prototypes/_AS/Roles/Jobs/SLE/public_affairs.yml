@@ -16,7 +16,6 @@
   startingGear: PublicAffairGear
   icon: "JobIconPublicAffairsLiaison"
   supervisors: job-supervisors-rookie
-  canBeAntag: false
   weight: 105
   displayWeight: 16
   accessGroups:

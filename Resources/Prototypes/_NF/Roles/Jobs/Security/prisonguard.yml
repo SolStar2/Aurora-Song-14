@@ -13,7 +13,6 @@
   startingGear: PrisonGuardGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-bailiff # Frontier
-  canBeAntag: false
   access:
   - Security
   - Brig

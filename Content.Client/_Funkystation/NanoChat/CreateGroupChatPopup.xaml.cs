@@ -15,7 +15,7 @@ namespace Content.Client._Funkystation.NanoChat;
 [GenerateTypedNameReferences]
 public sealed partial class CreateGroupChatPopup : DefaultWindow
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
     public event Action<string>? OnGroupCreated;
     private int _maxNameLength;
 

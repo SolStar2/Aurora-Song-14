@@ -14,15 +14,13 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/cheese.rsi
     state: curdcheese
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 4
-        reagents:
-        - ReagentId: Protein
-          Quantity: 3
-        - ReagentId: Cream
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Protein
+        Quantity: 3
+      - ReagentId: Cream
+        Quantity: 1
 
 - type: entity
   name: cheese curds
@@ -36,13 +34,11 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/cheese.rsi
     state: cheesecurds
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 3
-        reagents:
-        - ReagentId: Protein
-          Quantity: 3
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Protein
+        Quantity: 3
 
 # Mozzarella
 - type: entity
@@ -57,12 +53,10 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/cheese.rsi
     state: mozzarella
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 4
-        reagents:
-        - ReagentId: Protein
-          Quantity: 3
-        - ReagentId: Cream
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Protein
+        Quantity: 3
+      - ReagentId: Cream
+        Quantity: 1

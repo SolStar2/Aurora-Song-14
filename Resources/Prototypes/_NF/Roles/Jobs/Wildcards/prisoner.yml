@@ -12,7 +12,6 @@
   whitelisted: true
   startingGear: PrisonerGear
   alwaysUseSpawner: true
-  canBeAntag: false
   access:
   - Prisoner # Aurora
   icon: "JobIconPrisoner"

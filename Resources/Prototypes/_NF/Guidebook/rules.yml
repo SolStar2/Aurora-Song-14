@@ -29,7 +29,7 @@
 
 - type: guideEntry
   id: AuroraERP
-  name: guide-entry-AuroraERP
+  name: guide-entry-aurora-erp
   text: "/ServerInfo/_AS/Guidebook/Rules/ERP_Rules.xml"
   ruleEntry: true
 

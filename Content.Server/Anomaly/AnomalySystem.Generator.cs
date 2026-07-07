@@ -22,9 +22,10 @@ namespace Content.Server.Anomaly;
 /// </summary>
 public sealed partial class AnomalySystem
 {
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly ChatSystem _chat = default!; // Frontier
+    [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery = default!;
+    [Dependency] private ChatSystem _chat = default!; // Frontier
 
     private void InitializeGenerator()
     {
@@ -110,13 +111,12 @@ public sealed partial class AnomalySystem
             }
 
             // don't spawn inside of solid objects
-            var physQuery = GetEntityQuery<PhysicsComponent>();
             var valid = true;
 
             // TODO: This should be using static lookup.
             foreach (var ent in _mapSystem.GetAnchoredEntities(grid, gridComp, tile))
             {
-                if (!physQuery.TryGetComponent(ent, out var body))
+                if (!_physicsQuery.TryGetComponent(ent, out var body))
                     continue;
                 if (body.BodyType != BodyType.Static ||
                     !body.Hard ||

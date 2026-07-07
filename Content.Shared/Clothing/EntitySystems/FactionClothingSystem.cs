@@ -13,10 +13,10 @@ namespace Content.Shared.Clothing.EntitySystems;
 /// <summary>
 /// Handles <see cref="FactionClothingComponent"/> faction adding and removal.
 /// </summary>
-public sealed class FactionClothingSystem : EntitySystem
+public sealed partial class FactionClothingSystem : EntitySystem
 {
-    [Dependency] private readonly NpcFactionSystem _faction = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!; // Frontier
+    [Dependency] private NpcFactionSystem _faction = default!;
+    [Dependency] private InventorySystem _inventory = default!; // Frontier
 
     public override void Initialize()
     {
@@ -31,15 +31,15 @@ public sealed class FactionClothingSystem : EntitySystem
     // Frontier: rewritten from scratch
     private void OnEquipped(Entity<FactionClothingComponent> ent, ref GotEquippedEvent args)
     {
-        var alreadyMember = CheckEntityEquipmentForFaction(args.Equipee, ent.Comp.Faction, args.Equipment);
+        var alreadyMember = CheckEntityEquipmentForFaction(args.EquipTarget, ent.Comp.Faction, args.Equipment);
         if (alreadyMember is null)
         {
-            TryComp<NpcFactionMemberComponent>(args.Equipee, out var factionComp);
-            var faction = (args.Equipee, factionComp);
+            TryComp<NpcFactionMemberComponent>(args.EquipTarget, out var factionComp);
+            var faction = (args.EquipTarget, factionComp);
             ent.Comp.AlreadyMember = _faction.IsMember(faction, ent.Comp.Faction);
 
             // Do not edit factions on AI controlled mobs
-            if (!HasComp<ActorComponent>(args.Equipee))
+            if (!HasComp<ActorComponent>(args.EquipTarget))
                 return;
 
             if (!ent.Comp.AlreadyMember)
@@ -60,15 +60,17 @@ public sealed class FactionClothingSystem : EntitySystem
             return;
         }
 
+        // Frontier Start
         // Do not edit factions on AI controlled mobs
-        if (!HasComp<ActorComponent>(args.Equipee))
+        if (!HasComp<ActorComponent>(args.EquipTarget))
             return;
 
-        var alreadyMember = CheckEntityEquipmentForFaction(args.Equipee, ent.Comp.Faction, args.Equipment);
+        var alreadyMember = CheckEntityEquipmentForFaction(args.EquipTarget, ent.Comp.Faction, args.Equipment);
         if (alreadyMember is null)
         {
-            _faction.RemoveFaction(args.Equipee, ent.Comp.Faction);
+            _faction.RemoveFaction(args.EquipTarget, ent.Comp.Faction);
         }
+        // Frontier End
     }
 
     public bool? CheckEntityEquipmentForFaction(EntityUid ent, ProtoId<NpcFactionPrototype> prototype, EntityUid? skipEnt = null)

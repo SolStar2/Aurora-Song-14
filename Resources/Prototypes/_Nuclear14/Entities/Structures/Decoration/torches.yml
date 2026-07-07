@@ -45,6 +45,8 @@
     normalState: torch_lit
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable # Aurora's Song
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:

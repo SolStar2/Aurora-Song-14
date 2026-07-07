@@ -26,7 +26,7 @@ Once the bountied asset is stable, they'll likely remain in a catatonic state. D
 When you are ready to redeem the bounty, return the asset to the nearest [color=#469bbd]body retrieval unit[/color]. Simply insert the revived asset into the unit. [color=#d40606]Both lights[/color] should be on. Open the panel on the unit and hit the "Redeem" button, and enjoy the hard-earned spesos.
 
 <Box>
-<GuideEntityEmbed Entity="MachineMedicalBountyRedemption"/>
+<GuideEntityEmbed Entity="ASMachineMedicalBountyRedemption"/>
 </Box>
 
 ## History

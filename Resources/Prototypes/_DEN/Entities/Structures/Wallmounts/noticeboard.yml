@@ -14,6 +14,7 @@
     - 0,0,1,1
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:

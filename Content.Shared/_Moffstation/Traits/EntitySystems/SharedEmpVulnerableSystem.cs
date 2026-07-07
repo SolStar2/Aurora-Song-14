@@ -3,21 +3,22 @@ using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Content.Shared.Jittering;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 
 
 namespace Content.Shared._Moffstation.Traits.EntitySystems;
 
-public abstract class SharedEmpVulnerableSystem: EntitySystem
+public abstract partial class SharedEmpVulnerableSystem: EntitySystem
 {
     private readonly SoundSpecifier _disruptSound = new SoundCollectionSpecifier("sparks");
 
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly StatusEffect.StatusEffectsSystem _statusEffectsSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedJitteringSystem _jittering = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private StatusEffectsSystem _statusEffectsSystem = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedJitteringSystem _jittering = default!;
 
     /// <summary>
     /// Subjects the entity to disruptive effects due to a recent ion storm
@@ -37,8 +38,7 @@ public abstract class SharedEmpVulnerableSystem: EntitySystem
     /// <param name="doStun">If the target should be stunned or just slowed</param>
     protected void Disrupt(EntityUid target, TimeSpan duration, bool doStun = true)
     {
-        if(_statusEffectsSystem.CanApplyEffect(target, TemporaryBlindnessSystem.BlindingStatusEffect))
-            _statusEffectsSystem.TryAddStatusEffect(target, TemporaryBlindnessSystem.BlindingStatusEffect, duration, true, TemporaryBlindnessSystem.BlindingStatusEffect);
+        _statusEffectsSystem.TrySetStatusEffectDuration(target, BlindnessSystem.BlindingStatusEffect, duration);
 
         _jittering.DoJitter(target, duration, true);
         if (doStun)

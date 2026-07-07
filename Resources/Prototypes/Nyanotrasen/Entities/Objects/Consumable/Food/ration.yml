@@ -64,13 +64,11 @@
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/ration.rsi
     netsync: false
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15 # Too compacted for anything more
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 15
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 15
   - type: Tag
     tags:
     - Meat

@@ -1,11 +1,11 @@
 # Aurora's Song - Added noRot, Foldable, Strap, layers for folded and unfolded states, visualizer settings for layers (foldedLayer, unfoldedLayer, foldedStripe, unfoldedStripe, foldedLogo, unfoldedLogo), and corresponding settings for each towel color/ design.
 
 - type: entity
+  abstract: true
+  parent: [BaseDeployFoldable, UnsensoredClothingUniformBase, ClothingHeadBase, ClothingBeltBase] # Aurora's Song - added BaseDeployFoldable
   id: BaseTowel
   name: base towel
-  abstract: true
   description: If you want to survive out here, you gotta know where your towel is.
-  parent: [ BaseDeployFoldable, UnsensoredClothingUniformBase, ClothingHeadBase, ClothingBeltBase ] # Aurora's Song - added BaseDeployFoldable
   components:
   - type: Sprite
     sprite: Clothing/Multiple/towel.rsi
@@ -61,15 +61,9 @@
     spillWhenThrown: false
   - type: Absorbent
     pickupAmount: 15
-  - type: SolutionContainerManager
+  - type: SolutionManager
     solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 30
-      absorbed:
-        maxVol: 30
+    - SolutionMopSmall
   - type: UseDelay
     delay: 1
   - type: Fiber

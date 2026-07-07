@@ -129,6 +129,7 @@
     price: 350
 
 - type: entity
+  abstract: true # Aurora's Song
   categories: [ HideSpawnMenu ] # Frontier
   name: double-barreled shotgun
   parent: WeaponShotgunDoubleBarreled
@@ -189,6 +190,7 @@
     - WeaponShotgunKammerer
 
 - type: entity
+  abstract: true # Aurora's Song
   categories: [ HideSpawnMenu ] # Frontier
   name: sawn-off shotgun
   parent: [ BaseWeaponShotgun, BaseC1Contraband ] # Frontier: BaseSecurityBartenderContraband<BaseC1Contraband
@@ -230,6 +232,7 @@
     deconstructionTarget: null
 
 - type: entity
+  abstract: true # Aurora's Song
   categories: [ HideSpawnMenu ] # Frontier
   name: handmade pistol
   parent: [BaseWeaponShotgun, BaseC1Contraband] # Frontier: BaseMinorContraband<BaseC1Contraband

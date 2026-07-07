@@ -140,11 +140,6 @@ reagent-desc-opporozidone= A difficult to synthesize cryogenic drug used to rege
 reagent-name-arcryox = arcryox
 reagent-desc-arcryox = A sickeningly blue cryogenics chemical that is able to heal extreme wounds even on the dead. It has trouble stabilizing patients however.
 
-# Frontier: consistent cryogenics descriptors
-reagent-name-necrosol = necrosol
-reagent-desc-necrosol = A cryogenics chemical. Heals most organic damage, a true panacea. It can treat and rejuvenate plants when applied in small doses.  Works regardless of the patient being alive or dead.
-# End Frontier
-
 reagent-name-aloxadone = aloxadone
 reagent-desc-aloxadone = A cryogenics chemical. Used to treat severe burns and frostbite via regeneration of the affected tissue. Works regardless of the patient being alive or dead.
 

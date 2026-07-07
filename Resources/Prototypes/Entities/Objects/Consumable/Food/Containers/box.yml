@@ -521,7 +521,7 @@
   - type: Storage
     maxItemSize: Normal
     grid:
-    - 0,0,3,3
+    - 0,0,3,4 # Aurora's Song - I'm done fixing this box's fills
   - type: Tag
     tags:
     - Trash

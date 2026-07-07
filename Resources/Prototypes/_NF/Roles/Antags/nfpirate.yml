@@ -18,3 +18,50 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-nf-pirate-objective
+
+# Aurora's Song Start - Refactor antags according to new system
+# Pirate Captain role
+- type: antagSpecifier
+  id: PirateCaptain
+  prefRoles: [ NFPirateCaptain ]
+  allowNonHumans: true
+  multiAntagSetting: All
+  components: &pirateComponents
+  - type: MailDisabled
+  - type: NpcFactionMember
+    factions:
+    - NFPirate
+  whitelist:
+    components:
+    - AutoPirateCaptain
+  mindRoles:
+  - MindRoleNFPirateCaptain
+  briefing: &pirateBriefing
+    sound: "/Audio/_NF/Misc/pirate_greeting.ogg"
+
+# Pirate First Mate role
+- type: antagSpecifier
+  id: PirateFirstMate
+  prefRoles: [ NFPirateFirstMate ]
+  allowNonHumans: true
+  multiAntagSetting: All
+  components: *pirateComponents
+  mindRoles:
+  - MindRoleNFPirateFirstMate
+  whitelist:
+    components:
+    - AutoPirateFirstMate
+  briefing: *pirateBriefing
+
+# Pirate role
+- type: antagSpecifier
+  id: Pirate
+  prefRoles: [ NFPirate ]
+  allowNonHumans: true
+  multiAntagSetting: All
+  components: *pirateComponents
+  mindRoles:
+  - MindRoleNFPirate
+  # no whitelist, catchall
+  briefing: *pirateBriefing
+# Aurora's Song End

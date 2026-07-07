@@ -1,77 +1,5 @@
 - type: entity
   parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockBoozeFilled
-  name: Booze-O-Mat restock crate
-  description: Contains a restock box for the Booze-O-Mat.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockBooze
-        amount: 2 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockChefvendFilled
-  name: ChefVend restock crate
-  description: Contains a restock box for the ChefVend.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockChefvend
-        amount: 2 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockClothesFilled
-  name: clothing restock crate
-  description: Contains a restock box for the clothes vending machines.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockClothes
-        amount: 2 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockAutoDrobeFilled
-  name: AutoDrobe restock crate
-  description: Contains a restock box for the AutoDrobe.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockCostumes
-        amount: 2 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockCondimentStationFilled
-  name: condiment station restock crate
-  description: Contains a restock box for the condiment station.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockCondimentStation
-        amount: 2 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockDinnerwareFilled
-  name: Plasteel Chef restock crate
-  description: Contains a restock box for the Plasteel Chef vending machine.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockDinnerware
-        amount: 2 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
   id: CrateVendingMachineRestockEngineeringFilled
   name: EngiVend restock crate
   description: Contains a restock box for the EngiVend. Also supports the YouTool.
@@ -81,30 +9,6 @@
       entity_storage:
         id: VendingMachineRestockEngineering
         amount: 2 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockGamesFilled
-  name: Good Clean Fun restock crate
-  description: Contains a restock box for the Good Clean Fun vending machine.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockGames
-        amount: 2 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockHotDrinksFilled
-  name: Solar's Best restock crate
-  description: Contains two restock boxes for Solar's Best Hot Drinks vending machine.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockHotDrinks
-        amount: 8 # Frontier
 
 - type: entity
   parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
@@ -144,42 +48,6 @@
 
 - type: entity
   parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockPTechFilled
-  name: PTech restock crate
-  description: Contains a restock box for the PTech bureaucracy dispenser.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockPTech
-        amount: 2 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockRobustSoftdrinksFilled
-  name: beverage vendor restock crate
-  description: Contains restock boxes for beverage vending machines.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockRobustSoftdrinks
-        amount: 8 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockSalvageEquipmentFilled
-  name: Salvage restock crate
-  description: Contains a restock box for the salvage vendor.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockSalvageEquipment
-        amount: 2 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
   id: CrateVendingMachineRestockSecTechFilled
   name: SecTech restock crate
   description: Contains a restock box for the SecTech vending machine.
@@ -204,30 +72,6 @@
 
 - type: entity
   parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockSmokesFilled
-  name: ShadyCigs restock crate
-  description: Contains two restock boxes for the ShadyCigs vending machine.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockSmokes
-        amount: 8 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockVendomatFilled
-  name: Vendomat restock crate
-  description: Contains a restock box for a Vendomat vending machine.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockVendomat
-        amount: 2 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
   id: CrateVendingMachineRestockRoboticsFilled
   name: Robotech Deluxe restock crate
   description: Contains a restock box for a Robotech Deluxe vending machine.
@@ -237,75 +81,3 @@
       entity_storage:
         id: VendingMachineRestockRobotics
         amount: 2 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockTankDispenserFilled
-  name: tank dispenser restock crate
-  description: Contains a restock box for an Engineering or Atmospherics tank dispenser.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockTankDispenser
-        amount: 2 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockHappyHonkFilled
-  name: Happy Honk restock crate
-  description: Contains a restock box for a happy honk dispenser.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockHappyHonk
-        amount: 8 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockGetmoreChocolateCorpFilled
-  name: Getmore Chocolate Corp restock crate
-  description: Contains a restock box for a Getmore Chocolate Corp dispenser.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockGetmoreChocolateCorp
-        amount: 8 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockChangFilled
-  name: Chang restock crate
-  description: Contains a restock box for a Mr. Chang dispenser.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockChang
-        amount: 8 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockDiscountDansFilled
-  name: Discount Dans restock crate
-  description: Contains a restock box for a Discount Dan's dispenser.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockDiscountDans
-        amount: 8 # Frontier
-
-- type: entity
-  parent: CratePlasticBiodegradable # Frontier: CratePlastic<CratePlasticBiodegradable
-  id: CrateVendingMachineRestockDonutFilled
-  name: Donut restock crate
-  description: Contains a restock box for a Monkin' Donuts dispenser.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage:
-        id: VendingMachineRestockDonut
-        amount: 8 # Frontier

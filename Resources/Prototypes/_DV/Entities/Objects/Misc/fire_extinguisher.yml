@@ -1,6 +1,6 @@
 - type: entity
   name: bluespace fire extinguisher
-  parent: FireExtinguisher
+  parent: [SolutionLarge, FireExtinguisher] # Aurora's Song - Use SolutionLarge
   id: FireExtinguisherBluespace
   description: An experimental fire extinguisher that uses bluespace technology to gradually refill itself. The faint blue glow is only slightly disconcerting.
   components:
@@ -12,19 +12,16 @@
   - type: Item
     sprite: _DV/Objects/Misc/fire_extinguisher_bluespace.rsi
     size: Normal
-  - type: SolutionContainerManager
-    solutions:
-      spray:
-        maxVol: 200
-        reagents:
-        - ReagentId: Water
-          Quantity: 200
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Water
+        Quantity: 240
   - type: PhysicalComposition
     materialComposition:
       Steel: 80
       Bluespace: 20
-  - type: SolutionRegeneration
-    solution: spray
+  - type: SolutionRegeneration # Aurora's Song - Removed solution property
     generated:
       reagents:
       - ReagentId: Water

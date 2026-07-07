@@ -7,7 +7,6 @@
   startingGear: ColcomGear
   icon: "JobIconColonialCommandOfficial"
   supervisors: job-supervisors-hos
-  canBeAntag: false
   accessGroups:
   - AllAccess
   access:

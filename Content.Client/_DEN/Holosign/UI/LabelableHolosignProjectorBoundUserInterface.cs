@@ -10,9 +10,9 @@ using Robust.Client.UserInterface;
 namespace Content.Client._DEN.Holosign.UI;
 
 
-public sealed class LabelableHolosignProjectorBoundUserInterface : BoundUserInterface
+public sealed partial class LabelableHolosignProjectorBoundUserInterface : BoundUserInterface
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private IEntityManager _entManager = default!;
 
     [ViewVariables]
     private LabelableHolosignProjectorWindow? _window;

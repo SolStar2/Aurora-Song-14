@@ -133,7 +133,7 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: FairyBlood
-        Quantity: 50
+        Quantity: 120 # 1L of blood
   - type: Item # fairies are like mice, you can pick them up quickly and store them in a lot of places
     size: Small
     heldPrefix: 0
@@ -186,7 +186,7 @@
     energy: 10
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganFairy
   abstract: true
   suffix: Fairy
@@ -285,15 +285,14 @@
   parent: [ OrganBaseStomach, OrganFairyInternal, OrganFairyMetabolizer ]
   id: OrganFairyStomach
   components:
-  - type: SolutionContainerManager
+  - type: SolutionManager
     solutions:
-      stomach:
-        maxVol: 30
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
+    - SolutionFairyStomach
+
+- type: entity
+  parent: [SolutionTiny, SolutionStomach]
+  id: SolutionFairyStomach
+  categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: [ OrganBaseLiver, OrganFairy, OrganHumanInternal, OrganFairyMetabolizer ]

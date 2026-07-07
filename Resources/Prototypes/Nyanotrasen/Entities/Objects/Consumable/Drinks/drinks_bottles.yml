@@ -4,12 +4,11 @@
   name: soju bottle
   description: It's like sake but if you're trying to get FUCKED. UP.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Soju
-          Quantity: 100
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Soju
+        Quantity: 120
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Drinks/sojubottle.rsi
 
@@ -19,13 +18,11 @@
   name: tokkuri
   description: Floral and full of osake!
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 100
-        reagents:
-        - ReagentId: Sake
-          Quantity: 100
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Sake
+        Quantity: 120
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Drinks/saketokkuri.rsi
 
@@ -35,11 +32,10 @@
   name: flask of holy water
   description: A flask of holy water.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Holywater
-          Quantity: 100
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Holywater
+        Quantity: 120
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Drinks/flaskholywater.rsi

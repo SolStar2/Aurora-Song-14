@@ -1,5 +1,5 @@
-using Content.Shared.Atmos.Components;
-using Content.Shared.Atmos.EntitySystems;
+using Content.Server.Atmos.Piping.Components;
+using Content.Server.Atmos.Piping.EntitySystems;
 using Content.Server.Charges;
 using Content.Server.Decals;
 using Content.Server.Destructible;
@@ -24,14 +24,14 @@ namespace Content.Server.SprayPainter;
 /// Handles spraying pipes and decals using a spray painter.
 /// Other paintable objects are handled in shared.
 /// </summary>
-public sealed class SprayPainterSystem : SharedSprayPainterSystem
+public sealed partial class SprayPainterSystem : SharedSprayPainterSystem
 {
-    [Dependency] private readonly AtmosPipeColorSystem _pipeColor = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly DecalSystem _decals = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly ChargesSystem _charges = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private AtmosPipeColorSystem _pipeColor = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private DecalSystem _decals = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private ChargesSystem _charges = default!;
+    [Dependency] private TransformSystem _transform = default!;
 
     public override void Initialize()
     {
@@ -156,7 +156,7 @@ public sealed class SprayPainterSystem : SharedSprayPainterSystem
             return;
 
         Audio.PlayPvs(ent.Comp.SpraySound, ent);
-        _pipeColor.SetColor((target, color), args.Color);
+        _pipeColor.SetColor(target, color, args.Color);
 
         args.Handled = true;
     }

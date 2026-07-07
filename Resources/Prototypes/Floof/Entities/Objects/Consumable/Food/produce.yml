@@ -1,6 +1,6 @@
 - type: entity # Floofstation
   name: pomegranate
-  parent: FoodProduceBase
+  parent: [SolutionSmall, FoodProduceBase]
   id: FoodPomegranate
   description: A delicious, sweet fruit, believed to have special properties.
   components:
@@ -8,15 +8,13 @@
     flavors:
       - sweet
       - spooky
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 40
-        reagents:
-        - ReagentId: Nymphalexine # Aurora's Song | refactor to remove horny popups from what is just a fruit.
-          Quantity: 30
-        - ReagentId: Nutriment
-          Quantity: 10
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nymphalexine # Aurora's Song | refactor to remove horny popups from what is just a fruit.
+        Quantity: 30
+      - ReagentId: Nutriment
+        Quantity: 10
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/pomegranate.rsi
   - type: Produce
@@ -41,7 +39,7 @@
 
 - type: entity # Floofstation
   name: pomegranate slice
-  parent: ProduceSliceBase
+  parent: [SolutionTiny, ProduceSliceBase]
   id: FoodPomegranateSlice
   description: A delicious, sweet fruit, believed to have special properties.
   components:
@@ -51,15 +49,13 @@
       - spooky
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/pomegranate.rsi
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Nymphalexine # Aurora's Song | refactor to remove horny popups from what is just a fruit.
-          Quantity: 15
-        - ReagentId: Nutriment
-          Quantity: 5
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Nymphalexine # Aurora's Song | refactor to remove horny popups from what is just a fruit.
+        Quantity: 15
+      - ReagentId: Nutriment
+        Quantity: 5
   - type: Extractable
     juiceSolution:
       reagents:

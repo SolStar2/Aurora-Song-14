@@ -95,7 +95,7 @@
           - HyperlinkBook
     sprite: _NF/Objects/Misc/mail_capsule.rsi
   - type: Dumpable
-  - type: Damageable
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:

@@ -23,8 +23,9 @@
         layer:
         - GlassLayer
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: RGlass
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Physics
     bodyType: Static
 #  - type: Occluder

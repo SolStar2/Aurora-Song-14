@@ -175,7 +175,7 @@
           - id: FoodCondimentPacketKetchup
             weight: 0.25
         # Extra
-#        - id: FoodCondimentPacketPepper
+        - id: FoodCondimentPacketPepper
         - id: FoodCondimentPacketSalt
 
 - type: entity

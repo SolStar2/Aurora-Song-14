@@ -10,10 +10,10 @@ namespace Content.Server._AS.Togglable;
 /// <summary>
 /// Handles the action buttons for the undergarment toggles
 /// </summary>
-public sealed class ToggleUndergarmentSystem : EntitySystem
+public sealed partial class ToggleUndergarmentSystem : EntitySystem
 {
-    [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly SharedHideableHumanoidLayersSystem _humanoid = default!;
+    [Dependency] private ActionsSystem _actions = default!;
+    [Dependency] private SharedHideableHumanoidLayersSystem _humanoid = default!;
 
     private static readonly EntProtoId ToggleTopAction = "ActionToggleUndergarmentTop";
     private static readonly EntProtoId ToggleBottomAction = "ActionToggleUndergarmentBottom";

@@ -3,6 +3,7 @@ using Content.Shared._EE.Silicon.EmitBuzzWhileDamaged;
 using Content.Shared.Audio;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems; // Aurora's Song
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Audio.Systems;
@@ -15,14 +16,15 @@ namespace Content.Server._EE.Silicon.EmitBuzzOnCrit;
 /// <summary>
 /// This handles the buzzing popup and sound of a silicon based race when it is pretty damaged.
 /// </summary>
-public sealed class EmitBuzzWhileDamagedSystem : EntitySystem
+public sealed partial class EmitBuzzWhileDamagedSystem : EntitySystem
 {
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IRobustRandom _robustRandom = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private IRobustRandom _robustRandom = default!;
+    [Dependency] private DamageableSystem _damageable = default!; // Aurora's Song
 
     public override void Update(float frameTime)
     {
@@ -35,7 +37,7 @@ public sealed class EmitBuzzWhileDamagedSystem : EntitySystem
 
             if (_mobState.IsDead(uid, mobStateComponent)
                 || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var threshold, thresholdsComponent)
-                || damageableComponent.TotalDamage < threshold / 2)
+                || _damageable.GetTotalDamage((uid, damageableComponent)) < threshold / 2) // Aurora's Song - Use damageable system
                 continue;
 
             emitBuzzOnCritComponent.AccumulatedFrametime += frameTime;

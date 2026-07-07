@@ -53,8 +53,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Rock
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -70,8 +71,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: PerforatedMetallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
 
 - type: entity
   parent: N14BaseWallSlanted
@@ -79,8 +81,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: StructuralMetallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -96,8 +99,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: StructuralMetallicStrong
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: RadiationBlocker
     resistance: 10
   - type: Destructible
@@ -115,8 +119,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Wood
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -467,6 +472,7 @@
     snapCardinals: true
   - type: Damageable
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:

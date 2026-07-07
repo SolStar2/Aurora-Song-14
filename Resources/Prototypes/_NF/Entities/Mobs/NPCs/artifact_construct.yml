@@ -95,10 +95,6 @@
         - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
           state: flash
           shader: unshaded
-        - map: [ "clownedon" ]
-          sprite: "_NF/Effects/creampie_64.rsi"
-          state: "creampie_grimforged"
-          visible: false
     - type: DamageStateVisuals
       states:
         Alive:
@@ -123,6 +119,9 @@
       sound:
         path: /Audio/_NF/Ambience/force-field.ogg
     - type: CreamPied
+      sprite: # Aurora's Song - Creampie refactor
+        sprite: _NF/Effects/creampie_64.rsi
+        state: creampie_grimforged
     - type: HTN
       rootTask:
         task: SimpleRangedHostileCompound

@@ -3,35 +3,32 @@
 
 - type: entity
   abstract: true
-  parent: FoodInjectableBase
+  parent: [SolutionNormal, FoodInjectableBase]
   id: FoodPieBase
   components:
   - type: Item
-    shape:
-    - 0,0,1,0
+    size: Normal
   - type: FlavorProfile
     flavors:
       - sweet
   - type: Sprite
     sprite: Objects/Consumable/Food/Baked/pie.rsi
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents: #Most of these are this with slight variations, not worth changing until we have the rest of the reagents
-        - ReagentId: Nutriment
-          Quantity: 20 # Frontier: 30<20
-        - ReagentId: Vitamin
-          Quantity: 10 # Frontier: 14<10
-        - ReagentId: Sugar
-          Quantity: 5
-        - ReagentId: Flavorol # Frontier
-          Quantity: 15 # Frontier
+  - type: Solution
+    solution:
+      reagents: #Most of these are this with slight variations, not worth changing until we have the rest of the reagents
+      - ReagentId: Nutriment
+        Quantity: 64
+      - ReagentId: Vitamin
+        Quantity: 8
+      - ReagentId: Sugar
+        Quantity: 8
+      - ReagentId: Flavorol # Frontier
+        Quantity: 15 # Frontier
   - type: Edible #It's actually possible now to have a pie stored in a tin rather than spawning trash when you finish eating it. But right now I'm just cleaning up.
     trash:
     - FoodPlateTin
   - type: SliceableFood
-    count: 4
+    count: 8
   - type: Tag
     tags:
     - Pie
@@ -49,19 +46,17 @@
       - sweet
   - type: Sprite
     sprite: Objects/Consumable/Food/Baked/pie.rsi
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 12.5 # Frontier: 7<12.5
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5 # Frontier: 7.5<5
-        - ReagentId: Vitamin
-          Quantity: 2.5 # Frontier: 3.5<2.5
-        - ReagentId: Sugar
-          Quantity: 1.25
-        - ReagentId: Flavorol # Frontier
-          Quantity: 2.75 # Frontier
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 8
+      - ReagentId: Vitamin
+        Quantity: 1
+      - ReagentId: Sugar
+        Quantity: 1
+      - ReagentId: Flavorol # Frontier
+        Quantity: 2.75 # Frontier
   - type: Tag
     tags:
     - Pie
@@ -466,8 +461,6 @@
     heldPrefix: mime
 # Tastes like nothing.
 
-# No Slice
-
 - type: entity
   name: amanita pie
   parent: FoodPieBase
@@ -478,20 +471,51 @@
     flavors:
       - mushroom
   - type: Sprite
-    state: amanita
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 23
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 6
-        - ReagentId: Amatoxin
-          Quantity: 3
-        - ReagentId: Vitamin
-          Quantity: 4
-        - ReagentId: Flavorol
-          Quantity: 6
+    layers:
+    - state: tin
+    - state: amanita
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 64
+      - ReagentId: Vitamin
+        Quantity: 8
+      - ReagentId: Sugar
+        Quantity: 8
+      - ReagentId: Amatoxin
+        Quantity: 10
+      - ReagentId: Flavorol # Frontier
+        Quantity: 8
+  - type: SliceableFood
+    slice: FoodPieAmanitaSlice
+
+- type: entity
+  name: slice of amanita pie
+  parent: FoodPieSliceBase
+  id: FoodPieAmanitaSlice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - mushroom
+  - type: Sprite
+    layers:
+    - state: plain-slice
+    - state: alpha-slice-filling
+      color: red
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 8
+      - ReagentId: Vitamin
+        Quantity: 1
+      - ReagentId: Sugar
+        Quantity: 1
+      - ReagentId: Amatoxin
+        Quantity: 1.25
+      - ReagentId: Flavorol # Frontier
+        Quantity: 1
 # Tastes like pie, mushrooms.
 
 - type: entity
@@ -504,7 +528,25 @@
     flavors:
       - mushroom
   - type: Sprite
-    state: plump
+    layers:
+    - state: tin
+    - state: plump
+  - type: SliceableFood
+    slice: FoodPiePlumpSlice
+
+- type: entity
+  name: slice of plump pie
+  parent: FoodPieSliceBase
+  id: FoodPiePlumpSlice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - mushroom
+  - type: Sprite
+    layers:
+    - state: plain-slice
+    - state: alpha-slice-filling
+      color: purple
 # Tastes like pie, mushrooms.
 
 # Tart
@@ -520,17 +562,6 @@
       - sweet
   - type: Sprite
     state: grape
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 15
-        - ReagentId: Vitamin
-          Quantity: 5
-        - ReagentId: Sugar
-          Quantity: 5
   - type: Tag
     tags:
     - Fruit
@@ -565,17 +596,17 @@
       - chocolate
   - type: Sprite
     state: cocolava
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50 # Frontier: 35<50
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 25
-        - ReagentId: Theobromine
-          Quantity: 2
-        - ReagentId: Sugar # Frontier
-          Quantity: 13 # Frontier
-        - ReagentId: Flavorol
-          Quantity: 15
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 64
+      - ReagentId: Vitamin
+        Quantity: 8
+      - ReagentId: Sugar
+        Quantity: 8
+      - ReagentId: Theobromine
+        Quantity: 8
+      - ReagentId: Flavorol # Aurora's Song
+        Quantity: 15
 # Tastes like tart, dark chocolate.

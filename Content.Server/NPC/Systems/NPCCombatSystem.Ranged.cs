@@ -23,15 +23,15 @@ namespace Content.Server.NPC.Systems;
 
 public sealed partial class NPCCombatSystem
 {
-    [Dependency] private readonly SharedCombatModeSystem _combat = default!;
-    [Dependency] private readonly RotateToFaceSystem _rotate = default!;
+    [Dependency] private SharedCombatModeSystem _combat = default!;
+    [Dependency] private RotateToFaceSystem _rotate = default!;
 
-    private EntityQuery<CombatModeComponent> _combatQuery;
-    private EntityQuery<NPCSteeringComponent> _steeringQuery;
-    private EntityQuery<RechargeBasicEntityAmmoComponent> _rechargeQuery;
-    private EntityQuery<PhysicsComponent> _physicsQuery;
-    private EntityQuery<TransformComponent> _xformQuery;
-    private EntityQuery<RequireProjectileTargetComponent> _requireTargetQuery; // Mono
+    [Dependency] private EntityQuery<CombatModeComponent> _combatQuery = default!;
+    [Dependency] private EntityQuery<NPCSteeringComponent> _steeringQuery = default!;
+    [Dependency] private EntityQuery<RechargeBasicEntityAmmoComponent> _rechargeQuery = default!;
+    [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery = default!;
+    [Dependency] private EntityQuery<TransformComponent> _xformQuery = default!;
+    [Dependency] private EntityQuery<RequireProjectileTargetComponent> _requireTargetQuery = default!; // Mono
 
     // TODO: Don't predict for hitscan
     private const float ShootSpeed = 20f;
@@ -43,13 +43,6 @@ public sealed partial class NPCCombatSystem
 
     private void InitializeRanged()
     {
-        _combatQuery = GetEntityQuery<CombatModeComponent>();
-        _physicsQuery = GetEntityQuery<PhysicsComponent>();
-        _rechargeQuery = GetEntityQuery<RechargeBasicEntityAmmoComponent>();
-        _steeringQuery = GetEntityQuery<NPCSteeringComponent>();
-        _xformQuery = GetEntityQuery<TransformComponent>();
-        _requireTargetQuery = GetEntityQuery<RequireProjectileTargetComponent>(); // Mono
-
         SubscribeLocalEvent<NPCRangedCombatComponent, ComponentStartup>(OnRangedStartup);
         SubscribeLocalEvent<NPCRangedCombatComponent, ComponentShutdown>(OnRangedShutdown);
     }

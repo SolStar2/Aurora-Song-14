@@ -16,7 +16,7 @@
   - type: Physics
     bodyType: Static
     canCollide: false
-  - type: Damageable
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:

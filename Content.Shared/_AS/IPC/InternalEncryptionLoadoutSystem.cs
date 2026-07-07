@@ -7,9 +7,9 @@ namespace Content.Shared._AS.IPC;
 
 public sealed partial class InternalEncryptionLoadoutSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     public bool TryEquipLoadoutEquipment(Entity<EncryptionKeyHolderComponent?> ent, IEquipmentLoadout loadout)
     {

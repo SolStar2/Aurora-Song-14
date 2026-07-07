@@ -31,19 +31,19 @@ using Robust.Shared.Physics.Components;
 
 namespace Content.Server._EE.Silicon.Charge;
 
-public sealed class SiliconChargeSystem : EntitySystem
+public sealed partial class SiliconChargeSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly FlammableSystem _flammable = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _moveMod = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
-    [Dependency] private readonly AlertsSystem _alerts = default!;
-    [Dependency] private readonly SharedJetpackSystem _jetpack = default!; // TheDen - IPC Dynamic Power draw
-    [Dependency] private readonly SharedBatterySystem _battery = default!; // Aurora's Song
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private FlammableSystem _flammable = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private MovementSpeedModifierSystem _moveMod = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IConfigurationManager _config = default!;
+    [Dependency] private PowerCellSystem _powerCell = default!;
+    [Dependency] private AlertsSystem _alerts = default!;
+    [Dependency] private SharedJetpackSystem _jetpack = default!; // TheDen - IPC Dynamic Power draw
+    [Dependency] private SharedBatterySystem _battery = default!; // Aurora's Song
     public override void Initialize()
     {
         base.Initialize();
@@ -200,7 +200,7 @@ public sealed class SiliconChargeSystem : EntitySystem
 
             siliconComp.OverheatAccumulator -= 5;
 
-            if (!EntityManager.TryGetComponent<FlammableComponent>(silicon, out var flamComp)
+            if (!TryComp<FlammableComponent>(silicon, out var flamComp)
                 || flamComp is { OnFire: true }
                 || !(temperComp.CurrentTemperature > tempDamageComp.HeatDamageThreshold)) // starcup
                 return hotTempMulti;

@@ -19,9 +19,8 @@
       enum.SharedGasTankUiKey.Key:
         type: GasTankBoundUserInterface
   - type: GasTank
-    outputPressure: 0.1
-    maxOutputPressure: 0.1
-    valveOutputRate: 50
+    releasePressure: 0.1 # Aurora's Song - outputPressure>releasePressure
+    maxReleasePressure: 0.1 # Aurora's Song - maxOutputPressure>maxReleasePressure
     air:
       volume: 1
       moles:
@@ -261,9 +260,8 @@
   - type: CollisionWake
     enabled: false
   - type: GasTank
-    outputPressure: 0.1
-    maxOutputPressure: 0.1
-    valveOutputRate: 50
+    releasePressure: 0.1 # Aurora's Song - outputPressure>releasePressure
+    maxReleasePressure: 0.1 # Aurora's Song - maxOutputPressure>maxReleasePressure
     air:
       volume: 1
       moles:

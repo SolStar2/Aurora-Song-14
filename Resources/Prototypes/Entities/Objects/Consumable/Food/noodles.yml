@@ -3,7 +3,7 @@
 
 - type: entity
   abstract: true
-  parent: FoodInjectableBase
+  parent: [SolutionSmall, FoodInjectableBase]
   id: FoodNoodlesBase
   description: Now that's a nice pasta!
   components:
@@ -12,16 +12,13 @@
     - 0,0,1,0
   - type: Sprite
     sprite: Objects/Consumable/Food/noodles.rsi
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 15 # Frontier: 20<15
-        - ReagentId: Flavorol # Frontier
-          Quantity: 10 # Frontier
-
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 30
+      - ReagentId: Flavorol # Frontier
+        Quantity: 10 # Frontier
 # Noodles
 
 - type: entity
@@ -53,22 +50,22 @@
       - tomato
   - type: Sprite
     state: tomato
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 40
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 15 # Frontier: 35<15
-        - ReagentId: Flavorol # Frontier
-          Quantity: 15 # Frontier
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 45
+      - ReagentId: Vitamin
+        Quantity: 5
+      - ReagentId: Flavorol # Frontier
+        Quantity: 15 # Frontier
   - type: Tag
     tags:
-    - Fruit
+    - Fruit # ???
 # Tastes like pasta, tomato.
 
 - type: entity
-  parent: FoodNoodlesBase
+  parent: [SolutionNormal, FoodNoodlesBase]
   id: FoodNoodlesCopy
   name: copypasta
   description: You probably shouldn't try this, you always hear people talking about how bad it is...
@@ -86,15 +83,15 @@
       - copypasta
   - type: Sprite
     state: copypasta
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 80
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 30 # Frontier: 70<30
-        - ReagentId: Flavorol # Frontier
-          Quantity: 30 # Frontier
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 90
+      - ReagentId: Vitamin
+        Quantity: 10
+      - ReagentId: Flavorol # Frontier
+        Quantity: 30 # Frontier
 # Tastes like pasta, bad humor.
 
 - type: entity
@@ -111,17 +108,15 @@
       - meaty
   - type: Sprite
     state: meatball
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 45 # Frontier: 35<45
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 15
-        - ReagentId: Protein
-          Quantity: 6
-        - ReagentId: Flavorol # Frontier
-          Quantity: 15 # Frontier
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 40
+      - ReagentId: Protein
+        Quantity: 5
+      - ReagentId: Flavorol # Frontier
+        Quantity: 15 # Frontier
   - type: Tag
     tags:
     - Meat
@@ -141,17 +136,6 @@
       - meaty
   - type: Sprite
     state: spesslaw
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 8
-        - ReagentId: Vitamin
-          Quantity: 6
-        - ReagentId: Flavorol
-          Quantity: 5
 # Tastes like pasta, meat.
 
 - type: entity
@@ -168,19 +152,15 @@
       - carrot
   - type: Sprite
     state: chowmein
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 56 # Frontier: 51<56
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 15 # Frontier: 20<15
-        - ReagentId: Protein
-          Quantity: 6
-        - ReagentId: Vitamin
-          Quantity: 15 # Frontier: 20<15
-        - ReagentId: Flavorol # Frontier
-          Quantity: 15 # Frontier
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 45
+      - ReagentId: Vitamin
+        Quantity: 12
+      - ReagentId: Flavorol # Frontier
+        Quantity: 15 # Frontier
 # Tastes like pasta, tomato.
 
 - type: entity
@@ -197,13 +177,13 @@
       - butter
   - type: Sprite
     state: butter
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30 # Frontier: 25<30
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 15 # Frontier: 23<15
-        - ReagentId: Flavorol # Frontier
-          Quantity: 12 # Frontier
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 30
+      - ReagentId: Butter
+        Quantity: 5
+      - ReagentId: Flavorol # Frontier
+        Quantity: 12 # Frontier
 # Tastes like pasta, butter.

@@ -1,3 +1,4 @@
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
 using Content.Shared.Storage.Components;
 using Content.Shared.Item.ItemToggle; // DeltaV
@@ -15,27 +16,27 @@ namespace Content.Shared.Storage.EntitySystems;
 /// <summary>
 /// <see cref="MagnetPickupComponent"/>
 /// </summary>
-public sealed class MagnetPickupSystem : EntitySystem
+public sealed partial class MagnetPickupSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    // [Dependency] private readonly InventorySystem _inventory = default!; // Frontier
-    [Dependency] private readonly ItemToggleSystem _toggle = default!; // DeltaV
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedStorageSystem _storage = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly SharedItemSystem _item = default!; // Frontier
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private InventorySystem _inventory = default!;
+    [Dependency] private ItemToggleSystem _toggle = default!; // DeltaV
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedStorageSystem _storage = default!;
+    [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedItemSystem _item = default!; // Frontier
 
+    [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery = default!;
 
     private static readonly TimeSpan ScanDelay = TimeSpan.FromSeconds(1);
     private const int MaxEntitiesToInsert = 15; // Frontier
 
-    private EntityQuery<PhysicsComponent> _physicsQuery;
 
     public override void Initialize()
     {
         base.Initialize();
-        _physicsQuery = GetEntityQuery<PhysicsComponent>();
         SubscribeLocalEvent<MagnetPickupComponent, MapInitEvent>(OnMagnetMapInit);
         SubscribeLocalEvent<MagnetPickupComponent, ExaminedEvent>(OnExamined); // Frontier
         SubscribeLocalEvent<MagnetPickupComponent, GetVerbsEvent<AlternativeVerb>>(AddToggleMagnetVerb); // Frontier
@@ -113,6 +114,11 @@ public sealed class MagnetPickupSystem : EntitySystem
             comp.NextScan = currentTime + ScanDelay; // Frontier: no need to rerun if built late in-round
             Dirty(uid, comp);
 
+            var parentUid = xform.ParentUid;
+
+            if (comp.RequireActiveHand && (!_hands.TryGetActiveItem(parentUid, out var activeItem) || activeItem != uid))
+                continue;
+
             // Frontier: combine DeltaV/White Dream's magnet toggle with old system
             if (comp.MagnetCanBeEnabled)
             {
@@ -126,13 +132,14 @@ public sealed class MagnetPickupSystem : EntitySystem
             }
             // End Frontier
 
-            // Begin DeltaV Removals: Allow ore bags to work inhand
-            //if (!_inventory.TryGetContainingSlot((uid, xform, meta), out var slotDef))
-            //    continue;
+            if (comp.SlotFlags != null)
+            {
+                if (!_inventory.TryGetContainingSlot((uid, xform, meta), out var slotDef))
+                    continue;
 
-            //if ((slotDef.SlotFlags & comp.SlotFlags) == 0x0)
-            //    continue;
-            // End DeltaV Removals
+                if ((slotDef.SlotFlags & comp.SlotFlags) == 0x0)
+                    continue;
+            }
 
             // Frontier: run conservative space estimations, cut down on space checks
             var slotCount = _storage.GetCumulativeItemAreas((uid, storage)); // Frontier
@@ -141,7 +148,6 @@ public sealed class MagnetPickupSystem : EntitySystem
                 continue;
             // End Frontier
 
-            var parentUid = xform.ParentUid;
             var playedSound = false;
             var finalCoords = xform.Coordinates;
             var moverCoords = _transform.GetMoverCoordinates(uid, xform);
@@ -182,7 +188,7 @@ public sealed class MagnetPickupSystem : EntitySystem
                 var nearCoords = _transform.ToCoordinates(moverCoords.EntityId, nearMap);
 
                 if (!_storage.Insert(uid, near, out var stacked, storageComp: storage, playSound: !playedSound))
-                    break; // Frontier: continue<break
+                    continue;
 
                 slotCount += itemSize; // Frontier: adjust size (assume it's in a new slot)
 

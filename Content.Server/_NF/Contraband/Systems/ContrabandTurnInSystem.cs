@@ -32,17 +32,17 @@ namespace Content.Server._NF.Contraband.Systems;
 /// </summary>
 public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSystem
 {
-    [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly AudioSystem _audio = default!; // Aurora
-    [Dependency] private readonly PopupSystem _popup = default!; // Aurora
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly HandsSystem _hands = default!;
-    [Dependency] private readonly StackSystem _stack = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!; // Aurora
-    [Dependency] private readonly LicenseSystem _license = default!; // Aurora
+    [Dependency] private IPrototypeManager _protoMan = default!;
+    [Dependency] private AudioSystem _audio = default!; // Aurora
+    [Dependency] private PopupSystem _popup = default!; // Aurora
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private HandsSystem _hands = default!;
+    [Dependency] private StackSystem _stack = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private SharedContainerSystem _container = default!; // Aurora
+    [Dependency] private LicenseSystem _license = default!; // Aurora
 
     private EntityQuery<MobStateComponent> _mobQuery;
     private EntityQuery<TransformComponent> _xformQuery;

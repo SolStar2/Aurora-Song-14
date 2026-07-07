@@ -140,7 +140,7 @@
 # Pistol bullets, the rest are parented to these with damage/transfer amounts adjusted
 # Initial piercing/holy damage values chosen by direction, may need work
 - type: entity
-  parent: BaseBullet
+  parent: [SolutionAmmo, SolutionToolVeryTiny, BaseBullet] # Aurora's Song - Convert to solution
   id: BulletMantisCrypto
   categories: [ HideSpawnMenu ]
   components:
@@ -166,12 +166,11 @@
       params:
         variation: 0.05
   - type: ChemicalAmmo
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        reagents:
-        - ReagentId: Cryptobiolin
-          Quantity: 5
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Cryptobiolin
+        Quantity: 5
   - type: SolutionInjectOnProjectileHit
     solution: ammo
     transferAmount: 5 # 5u of crypto disables psionics for 1m40s, and a full magazine of any mantis gun will disable psionics for 20m
@@ -232,16 +231,15 @@
 
 # Revolver bullets
 - type: entity
-  parent: BulletMantisCrypto
+  parent: [SolutionToolTiny, BulletMantisCrypto] # Aurora's Song - Convert to solution
   id: BulletMantisCryptoRevolver
   categories: [ HideSpawnMenu ]
   components:
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        reagents:
-        - ReagentId: Cryptobiolin
-          Quantity: 10
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Cryptobiolin
+        Quantity: 10
   - type: SolutionInjectOnProjectileHit
     solution: ammo
     transferAmount: 10 # 10u of crypto disables psionics for 3m20s, and a full magazine of any mantis gun will disable psionics for 20m
@@ -272,12 +270,11 @@
   id: BulletMantisCryptoShotgun
   categories: [ HideSpawnMenu ]
   components:
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        reagents:
-        - ReagentId: Cryptobiolin
-          Quantity: 2
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Cryptobiolin
+        Quantity: 2
   - type: SolutionInjectOnProjectileHit
     solution: ammo
     transferAmount: 2 # 2u of crypto disables psionics for 40s, and a full magazine of any mantis gun will disable psionics for 20m
@@ -338,12 +335,11 @@
   id: BulletMantisCryptoSubMachineGun
   categories: [ HideSpawnMenu ]
   components:
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        reagents:
-        - ReagentId: Cryptobiolin
-          Quantity: 2.5
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Cryptobiolin
+        Quantity: 2.5
   - type: SolutionInjectOnProjectileHit
     solution: ammo
     transferAmount: 2.5 # 2.5u of crypto disables psionics for 50s, and a full magazine of any mantis gun will disable psionics for 20m

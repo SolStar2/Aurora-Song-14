@@ -9,8 +9,9 @@
     drawdepth: Mobs
   - type: SpriteFade
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Rock
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
 
 - type: entity
   parent: N14BaseWallTall
@@ -18,8 +19,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: PerforatedMetallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
 
 - type: entity
   parent: N14BaseWallTall
@@ -27,8 +29,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: StructuralMetallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
 
 - type: entity
   parent: N14BaseWallTall
@@ -36,8 +39,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: StructuralMetallicStrong
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: RadiationBlocker
     resistance: 10
 
@@ -47,8 +51,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Wood
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
 
 - type: entity
   parent: N14BaseWallTall
@@ -101,8 +106,9 @@
   - type: Icon
     sprite: _Nuclear14/Structures/Walls/ms13/tall/concrete.rsi
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Rock
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: IconSmooth
     key: walls
     base: tallconcrete
@@ -164,8 +170,9 @@
       tags:
         - Pickaxe
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
       - trigger:

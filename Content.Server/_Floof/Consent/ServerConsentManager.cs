@@ -14,16 +14,16 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Floof.Consent;
 
-public sealed class ServerConsentManager : IServerConsentManager
+public sealed partial class ServerConsentManager : IServerConsentManager
 {
-    [Dependency] private readonly IConfigurationManager _configManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IServerNetManager _netManager = default!;
-    [Dependency] private readonly IServerDbManager _db = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
+    [Dependency] private IConfigurationManager _configManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IServerNetManager _netManager = default!;
+    [Dependency] private IServerDbManager _db = default!;
+    [Dependency] private ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private ILogManager _logManager = default!;
 
     private readonly HashSet<ConsentTogglePrototype> _consentTogglePrototypes = new();
     private ISawmill? _sawmill = null;

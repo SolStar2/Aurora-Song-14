@@ -13,7 +13,6 @@
   startingGear: NFPirateCaptainGear
   alwaysUseSpawner: true
   hideConsoleVisibility: true
-  canBeAntag: true
   icon: "JobIconNFPirateCaptain"
   supervisors: job-supervisors-freebooters-union
   weight: 40

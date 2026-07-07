@@ -1,6 +1,6 @@
 # region Base
 - type: entity
-  parent: BaseBlueprint
+  parent: [SolutionFood, BaseBlueprint] # Aurora's Song - Convert to solution
   id: NFBaseBlueprint
   abstract: true
   components:
@@ -58,6 +58,8 @@
     normalState: fire
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable # Aurora's Song
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -79,13 +81,12 @@
     flavors:
     - paper
   - type: BadFood
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 1
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 0.1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      maxVol: 1
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 0.1
   - type: Blueprint
     providedRecipes: []
 

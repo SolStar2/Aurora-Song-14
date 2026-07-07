@@ -5,9 +5,9 @@ using Content.Shared.Body;
 
 namespace Content.Server._AS.Humanoid.Markings;
 
-public sealed class SnoutHelmetSystem : EntitySystem
+public sealed partial class SnoutHelmetSystem : EntitySystem
 {
-    // [Dependency] private readonly SharedVisualBodySystem _visualBody = default!; // Aurora's Song
+    // [Dependency] private SharedVisualBodySystem _visualBody = default!; // Aurora's Song
 
     public override void Initialize()
     {

@@ -23,8 +23,9 @@
         layer:
         - WallLayer
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -55,15 +56,11 @@
 
 # Base Open
 - type: entity
-  parent: N14BaseBarrel
+  parent: [SolutionTank, SolutionHuge, N14BaseBarrel] # Aurora's Song - Convert to solution
   id: N14BaseBarrelOpen
   suffix: open
   categories: [ HideSpawnMenu ]
   components:
-  - type: SolutionContainerManager
-    solutions:
-      barrel:
-        maxVol: 500
   - type: DrainableSolution
     solution: barrel
   - type: ReagentTank
@@ -92,12 +89,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/barrels.rsi
     state: red-closed
-  - type: SolutionContainerManager
-    solutions:
-      barrel:
-        reagents:
-        - ReagentId: WeldingFuel
-          Quantity: 100
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 120
   - type: DamageOnToolInteract
     tools: Welding
     weldingDamage:
@@ -177,12 +173,11 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/barrels.rsi
     state: red-full
-  - type: SolutionContainerManager
-    solutions:
-      barrel:
-        reagents:
-        - ReagentId: WeldingFuel
-          Quantity: 100
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 120
   - type: DamageOnToolInteract
     tools: Welding
     weldingDamage:

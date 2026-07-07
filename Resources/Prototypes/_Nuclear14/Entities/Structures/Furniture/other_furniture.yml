@@ -80,7 +80,7 @@
     state: tiny_tv
 
 - type: entity
-  parent: SeatBase
+  parent: [SolutionTank, SolutionHuge, SeatBase]
   id: N14Toilet
   components:
   - type: Sprite
@@ -94,8 +94,9 @@
   - type: Transform
     anchored: true
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
       - trigger:
@@ -122,12 +123,9 @@
   - type: ContainerContainer
     containers:
       stash: !type:ContainerSlot {}
-  - type: SolutionContainerManager
+  - type: SolutionManager # Aurora's Song - Convert to solution
     solutions:
-      drainBuffer:
-        maxVol: 500
-      toilet:
-        maxVol: 250
+    - SolutionDrainNormal
   - type: Drain
     autoDrain: false
   - type: DumpableSolution
@@ -138,14 +136,12 @@
   id: N14ToiletWater
   suffix: filled water
   components:
-  - type: SolutionContainerManager
-    solutions:
-      toilet:
-        reagents:
-        - ReagentId: Water
-          Quantity: 200
-  - type: SolutionRegeneration
-    solution: toilet
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Water
+        Quantity: 480
+  - type: SolutionRegeneration # Aurora's Song - Removed solution property
     generated:
       reagents:
       - ReagentId: Water
@@ -156,16 +152,14 @@
   id: N14ToiletDirty
   suffix: filled dirty water
   components:
-  - type: SolutionContainerManager
-    solutions:
-      toilet:
-        reagents:
-        - ReagentId: Water
-          Quantity: 180
-        - ReagentId: GastroToxin
-          Quantity: 20
-  - type: SolutionRegeneration
-    solution: toilet
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Water
+        Quantity: 440
+      - ReagentId: GastroToxin
+        Quantity: 40
+  - type: SolutionRegeneration # Aurora's Song - Removed solution property
     generated:
       reagents:
       - ReagentId: Water
@@ -174,26 +168,9 @@
         Quantity: 1
 
 - type: entity
-  parent: N14Toilet
+  parent: N14ToiletDirty # Aurora's Song - Convert to solution
   id: N14ToiletIrradiated
   suffix: filled rad water
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      toilet:
-        reagents:
-        - ReagentId: Water
-          Quantity: 180
-        - ReagentId: GastroToxin
-          Quantity: 20
-  - type: SolutionRegeneration
-    solution: toilet
-    generated:
-      reagents:
-      - ReagentId: Water
-        Quantity: 3
-      - ReagentId: GastroToxin
-        Quantity: 1
 
 #- type: entity
 #  parent: N14Shower - this parent needs to be made
@@ -230,8 +207,7 @@
 #        reagents:
 #        - ReagentId: Water
 #          Quantity: 200
-#  - type: SolutionRegeneration
-#    solution: tank
+#  - type: SolutionRegeneration # Aurora's Song - Removed solution property
 #    generated:
 #      reagents:
 #      - ReagentId: Water
@@ -250,8 +226,7 @@
 #        reagents:
 #        - ReagentId: WaterDirty
 #          Quantity: 200
-#  - type: SolutionRegeneration
-#    solution: tank
+#  - type: SolutionRegeneration # Aurora's Song - Removed solution property
 #    generated:
 #      reagents:
 #      - ReagentId: WaterDirty
@@ -270,8 +245,7 @@
 #        reagents:
 #        - ReagentId: WaterIrradiated
 #          Quantity: 200
-#  - type: SolutionRegeneration
-#    solution: tank
+#  - type: SolutionRegeneration # Aurora's Song - Removed solution property
 #    generated:
 #      reagents:
 #      - ReagentId: WaterIrradiated

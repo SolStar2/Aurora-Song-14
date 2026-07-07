@@ -54,6 +54,12 @@ namespace Content.Server.Bible.Components
         [DataField("locPrefix")]
         public string LocPrefix = "bible";
 
+        /// <summary>
+        /// A short light effect to display when successfully healing someone
+        /// </summary>
+        [DataField]
+        public EntProtoId? HealingLightEffect = "HolyLightEffect";
+
         // Frontier: prevent non-bible users from blessing water/blood.
 
         /// <summary>

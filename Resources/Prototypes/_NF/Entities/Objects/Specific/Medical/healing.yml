@@ -45,13 +45,11 @@
     state: pill14
   - type: Label
     currentLabel: mannitol 10u
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Mannitol
-          Quantity: 10
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Mannitol
+        Quantity: 10
 
 - type: entity
   name: pill
@@ -66,19 +64,17 @@
     state: pill10
   - type: Label
     currentLabel: sheleg emergency pill
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Cryoxadone
-          Quantity: 3
-        - ReagentId: Stellibinin
-          Quantity: 2
-        - ReagentId: Traumoxadone
-          Quantity: 1
-        - ReagentId: Aloxadone
-          Quantity: 1
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: Cryoxadone
+        Quantity: 3
+      - ReagentId: Stellibinin
+        Quantity: 2
+      - ReagentId: Traumoxadone
+        Quantity: 1
+      - ReagentId: Aloxadone
+        Quantity: 1
 
 # region Normal Vial Fills
 
@@ -89,13 +85,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-bruizine
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Bruizine
-              Quantity: 30
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Bruizine
+          Quantity: 30
 
 - type: entity
   parent: ChemistryEmptyVial # Aurora's Song - BaseChemistryEmptyVial>ChemistryEmptyVial
@@ -104,13 +98,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-lacerinol
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Lacerinol
-              Quantity: 30
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Lacerinol
+          Quantity: 30
 
 - type: entity
   parent: ChemistryEmptyVial # Aurora's Song - BaseChemistryEmptyVial>ChemistryEmptyVial
@@ -119,13 +111,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-puncturase
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Puncturase
-              Quantity: 30
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Puncturase
+          Quantity: 30
 
 - type: entity
   parent: ChemistryEmptyVial # Aurora's Song - BaseChemistryEmptyVial>ChemistryEmptyVial
@@ -134,13 +124,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-dexalin-plus
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: DexalinPlus
-              Quantity: 30
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: DexalinPlus
+          Quantity: 30
 
 - type: entity
   parent: ChemistryEmptyVial # Aurora's Song - BaseChemistryEmptyVial>ChemistryEmptyVial
@@ -149,13 +137,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-saline
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Saline
-              Quantity: 30
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Saline
+          Quantity: 30
 
 - type: entity
   parent: ChemistryEmptyVial # Aurora's Song - BaseChemistryEmptyVial>ChemistryEmptyVial
@@ -164,13 +150,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-pyrazine
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Pyrazine
-              Quantity: 30
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Pyrazine
+          Quantity: 30
 
 - type: entity
   parent: ChemistryEmptyVial # Aurora's Song - BaseChemistryEmptyVial>ChemistryEmptyVial
@@ -179,13 +163,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-insuzine
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Insuzine
-              Quantity: 30
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Insuzine
+          Quantity: 30
 
 - type: entity
   parent: ChemistryEmptyVial # Aurora's Song - BaseChemistryEmptyVial>ChemistryEmptyVial
@@ -194,13 +176,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-leporazine
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Leporazine
-              Quantity: 30
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Leporazine
+          Quantity: 30
 
 - type: entity
   parent: ChemistryEmptyVial # Aurora's Song - BaseChemistryEmptyVial>ChemistryEmptyVial
@@ -209,13 +189,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-stellibinin
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Stellibinin
-              Quantity: 30
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Stellibinin
+          Quantity: 30
 
 - type: entity
   parent: ChemistryEmptyVial # Aurora's Song - BaseChemistryEmptyVial>ChemistryEmptyVial
@@ -224,13 +202,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-tranexamic-acid
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: TranexamicAcid
-              Quantity: 30
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: TranexamicAcid
+          Quantity: 30
 
 - type: entity
   parent: ChemistryEmptyVial # Aurora's Song - BaseChemistryEmptyVial>ChemistryEmptyVial
@@ -239,15 +215,13 @@
   components:
     - type: Label
       currentLabel: radiation treatment blend
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: PolypyryliumOligomers
-              Quantity: 15
-            - ReagentId: Arithrazine
-              Quantity: 15
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: PolypyryliumOligomers
+          Quantity: 15
+        - ReagentId: Arithrazine
+          Quantity: 15
 
 - type: entity
   parent: ChemistryEmptyVial # Aurora's Song - BaseChemistryEmptyVial>ChemistryEmptyVial
@@ -256,13 +230,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-bicaridine
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Bicaridine
-              Quantity: 30
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Bicaridine
+          Quantity: 30
 
 - type: entity
   parent: ChemistryEmptyVial # Aurora's Song - BaseChemistryEmptyVial>ChemistryEmptyVial
@@ -271,13 +243,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-dermaline
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Dermaline
-              Quantity: 30
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Dermaline
+          Quantity: 30
 
 - type: entity
   parent: ChemistryEmptyVial # Aurora's Song - BaseChemistryEmptyVial>ChemistryEmptyVial
@@ -286,13 +256,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-dylovene
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Dylovene
-              Quantity: 30
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Dylovene
+          Quantity: 30
 
 - type: entity
   parent: ChemistryEmptyVial # Aurora's Song - BaseChemistryEmptyVial>ChemistryEmptyVial
@@ -301,13 +269,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-epinephrine
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Epinephrine
-              Quantity: 30
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Epinephrine
+          Quantity: 30
 
 #region Bluespace Vial Fills
 - type: entity
@@ -317,13 +283,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-bruizine
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 300
-          reagents:
-            - ReagentId: Bruizine
-              Quantity: 300
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Bruizine
+          Quantity: 300
 
 - type: entity
   parent: VialBluespace
@@ -332,13 +296,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-lacerinol
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 300
-          reagents:
-            - ReagentId: Lacerinol
-              Quantity: 300
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Lacerinol
+          Quantity: 300
 
 - type: entity
   parent: VialBluespace
@@ -347,13 +309,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-puncturase
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 300
-          reagents:
-            - ReagentId: Puncturase
-              Quantity: 300
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Puncturase
+          Quantity: 300
 
 - type: entity
   parent: VialBluespace
@@ -362,13 +322,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-dexalin-plus
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 300
-          reagents:
-            - ReagentId: DexalinPlus
-              Quantity: 300
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: DexalinPlus
+          Quantity: 300
 
 - type: entity
   parent: VialBluespace
@@ -377,13 +335,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-saline
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 300
-          reagents:
-            - ReagentId: Saline
-              Quantity: 300
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Saline
+          Quantity: 300
 
 - type: entity
   parent: VialBluespace
@@ -392,13 +348,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-pyrazine
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 300
-          reagents:
-            - ReagentId: Pyrazine
-              Quantity: 300
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Pyrazine
+          Quantity: 300
 
 - type: entity
   parent: VialBluespace
@@ -407,13 +361,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-insuzine
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 300
-          reagents:
-            - ReagentId: Insuzine
-              Quantity: 300
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Insuzine
+          Quantity: 300
 
 - type: entity
   parent: VialBluespace
@@ -422,13 +374,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-leporazine
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 300
-          reagents:
-            - ReagentId: Leporazine
-              Quantity: 300
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Leporazine
+          Quantity: 300
 
 - type: entity
   parent: VialBluespace
@@ -437,13 +387,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-stellibinin
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 300
-          reagents:
-            - ReagentId: Stellibinin
-              Quantity: 300
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Stellibinin
+          Quantity: 300
 
 - type: entity
   parent: VialBluespace
@@ -452,13 +400,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-tranexamic-acid
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 300
-          reagents:
-            - ReagentId: TranexamicAcid
-              Quantity: 300
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: TranexamicAcid
+          Quantity: 300
 
 - type: entity
   parent: VialBluespace
@@ -467,15 +413,13 @@
   components:
     - type: Label
       currentLabel: radiation treatment blend
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 300
-          reagents:
-            - ReagentId: PolypyryliumOligomers
-              Quantity: 150
-            - ReagentId: Arithrazine
-              Quantity: 150
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: PolypyryliumOligomers
+          Quantity: 150
+        - ReagentId: Arithrazine
+          Quantity: 150
 
 - type: entity
   parent: VialBluespace
@@ -484,13 +428,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-polypyrylium-oligomers
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 300
-          reagents:
-            - ReagentId: PolypyryliumOligomers
-              Quantity: 300
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: PolypyryliumOligomers
+          Quantity: 300
 
 - type: entity
   parent: VialBluespace
@@ -499,13 +441,11 @@
   components:
     - type: Label
       currentLabel: reagent-name-omnizine
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 300
-          reagents:
-            - ReagentId: Omnizine
-              Quantity: 300
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 300
 
 - type: entity
   parent: VialBluespace
@@ -514,10 +454,8 @@
   components:
     - type: Label
       currentLabel: reagent-name-hyperzine
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 300
-          reagents:
-            - ReagentId: Stimulants
-              Quantity: 300
+    - type: Solution # Aurora's Song - Convert to solution
+      solution:
+        reagents:
+        - ReagentId: Stimulants
+          Quantity: 300

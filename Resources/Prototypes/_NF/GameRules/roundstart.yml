@@ -117,52 +117,20 @@
     - NFPirateBountyObjective
   - type: AntagSelection
     agentName: nf-pirate-round-end-agent-name
-    definitions:
+    lateJoinAdditional: true
+    antags:
     # Pirate Captain role
-    - prefRoles: [ NFPirateCaptain ]
-      max: 999
+    - !type:FixedAntagCount
+      proto: PirateCaptain
+      count: 999
       playerRatio: -1
-      lateJoinAdditional: true
-      allowNonHumans: true
-      multiAntagSetting: All
-      components: &pirateComponents
-      - type: MailDisabled
-      - type: NpcFactionMember
-        factions:
-        - NFPirate
-      whitelist:
-        components:
-        - AutoPirateCaptain
-      mindRoles:
-      - MindRoleNFPirateCaptain
-      briefing: &pirateBriefing
-        sound: "/Audio/_NF/Misc/pirate_greeting.ogg"
-    # Pirate First Mate role
-    - prefRoles: [ NFPirateFirstMate ]
-      max: 999
+    - !type:FixedAntagCount
+      proto: PirateFirstMate
       playerRatio: -1
-      lateJoinAdditional: true
-      allowNonHumans: true
-      multiAntagSetting: All
-      components: *pirateComponents
-      mindRoles:
-      - MindRoleNFPirateFirstMate
-      whitelist:
-        components:
-        - AutoPirateFirstMate
-      briefing: *pirateBriefing
-    # Pirate role
-    - prefRoles: [ NFPirate ]
-      max: 999
+    - !type:FixedAntagCount
+      proto: Pirate
+      count: 999
       playerRatio: -1
-      lateJoinAdditional: true
-      allowNonHumans: true
-      multiAntagSetting: All
-      components: *pirateComponents
-      mindRoles:
-      - MindRoleNFPirate
-      # no whitelist, catchall
-      briefing: *pirateBriefing
 
 # Concrete ignored upstream definitions
 - type: entity

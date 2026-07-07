@@ -14,10 +14,10 @@ namespace Content.Server._NF.NPC.Systems;
 /// </summary>
 public sealed partial class HostileNPCDeletionSystem : EntitySystem
 {
-    [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
-    [Dependency] private readonly GibbingSystem _gibbingSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private NpcFactionSystem _npcFaction = default!;
+    [Dependency] private GibbingSystem _gibbingSystem = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
 
     private const string NanoTrasen = "NanoTrasen"; // Aurora's Song
 

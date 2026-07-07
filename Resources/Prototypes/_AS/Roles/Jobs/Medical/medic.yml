@@ -12,7 +12,6 @@
   supervisors: job-supervisors-doc
   weight: 170
   displayWeight: 55 # Second from the top
-  canBeAntag: false
   accessGroups:
   - Medical
   - GeneralAccess

@@ -17,7 +17,6 @@
 #  supervisors: job-supervisors-centcom
 #  weight: 170
 #  displayWeight: 60 # Top
-#  canBeAntag: false
 #  accessGroups:
 #  - AllAccess
 #  special:

@@ -10,9 +10,9 @@ using Content.Server._NF.Power.Components; // Frontier
 
 namespace Content.Server.Power.EntitySystems;
 
-public sealed class BatterySystem : SharedBatterySystem
+public sealed partial class BatterySystem : SharedBatterySystem
 {
-    [Dependency] private readonly ContainerSystem _container = default!; // WD
+    [Dependency] private ContainerSystem _container = default!; // WD
 
     public override void Initialize()
     {

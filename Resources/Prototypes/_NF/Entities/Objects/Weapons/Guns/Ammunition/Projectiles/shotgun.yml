@@ -211,7 +211,7 @@
 - type: entity
   categories: [ HideSpawnMenu ]
   id: NFShotgunSlugTranquilizer
-  parent: NFBaseBullet
+  parent: [SolutionAmmo, SolutionToolTiny, NFBaseBullet] # Aurora's Song - Convert to solution
   name: slug (12g tranquilizer) # renamed from .50 to 12g | Aurora
   components:
   - type: Sprite
@@ -226,10 +226,6 @@
     damage:
       types:
         Blunt: 1
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        maxVol: 15
   - type: RefillableSolution
     solution: ammo
   - type: DrainableSolution

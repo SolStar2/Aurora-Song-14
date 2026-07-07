@@ -4,30 +4,24 @@
   id: PlantBGoneSprayEmpty
   suffix: Empty
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink: # Aurora's Song - Use correct solution
-        reagents: []
-        maxVol: 100
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents: []
 
 - type: entity
   parent: WeedSpray
   id: WeedSprayEmpty
   suffix: Empty
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink: # Aurora's Song - Use correct solution
-        reagents: []
-        maxVol: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents: []
 
 - type: entity
   parent: PestSpray
   id: PestSprayEmpty
   suffix: Empty
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink: # Aurora's Song - Use correct solution
-        reagents: []
-        maxVol: 50
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents: []

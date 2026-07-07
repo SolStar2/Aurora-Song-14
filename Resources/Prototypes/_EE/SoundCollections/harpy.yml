@@ -226,8 +226,8 @@
 - type: soundCollection
   id: HarpyRevs
   files:
-    - /Audio/Weapons/chainsawwield.ogg
-    # - /Audio/Machines/blender.ogg # Frontier
+    # - /Audio/Weapons/chainsawwield.ogg # Aurora's Song
+    - /Audio/Machines/blender.ogg # Aurora's Song - Uncomment NF
     # - /Audio/Machines/juicer.ogg # Frontier
     # - /Audio/Machines/reclaimer_startup.ogg # Frontier
 

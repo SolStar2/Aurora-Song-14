@@ -11,8 +11,9 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 3
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic # Metal shell
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -57,8 +58,9 @@
   - type: Item
     sprite: _DEN/Objects/Specific/Mantis/pillcanistermantis.rsi
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic # Metal shell
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:

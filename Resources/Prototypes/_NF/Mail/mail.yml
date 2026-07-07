@@ -1628,17 +1628,18 @@
     contents:
       - id: SyringeCognizine # 15u cognizine, 3 friends should be enough.
 
-- type: entity
-  categories: [ HideSpawnMenu ]
-  parent: BaseMail
-  id: MailNFNecrosol # Not sure about keeping this, but its probably fine
-  suffix: necrosol bottle
-  components:
-  - type: Mail
-    isFragile: true
-    contents:
-      - id: ChemistryBottleNecrosol
-      - id: Syringe
+# Aurora's Song - Necrosol was replaced with Arcryox upstream
+# - type: entity
+#   categories: [ HideSpawnMenu ]
+#   parent: BaseMail
+#   id: MailNFNecrosol # Not sure about keeping this, but its probably fine
+#   suffix: necrosol bottle
+#   components:
+#   - type: Mail
+#     isFragile: true
+#     contents:
+#       - id: ChemistryBottleNecrosol
+#       - id: Syringe
 
 - type: entity
   categories: [ HideSpawnMenu ]

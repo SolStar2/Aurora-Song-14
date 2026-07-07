@@ -62,8 +62,9 @@
       - ASMedicalBounty # Aurora's Song - add AS
 #    forceWhitelist: true # Frontier - force whitelist # Aurora's Song
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:

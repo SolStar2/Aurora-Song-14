@@ -26,7 +26,7 @@
   suffix: Filled
   components:
     - type: GasTank
-      outputPressure: 101.3
+      releasePressure: 101.3 # Aurora's Song - outputPressure>releasePressure
       air:
         # 6 minutes due to output pressure
         volume: 2.5
@@ -46,7 +46,7 @@
     #  * 101.325 | one atmosphere
     # __________
     #    42.5565   output pressure
-    outputPressure: 42.6
+    releasePressure: 42.6 # Aurora's Song - outputPressure>releasePressure
     air:
       # only 7.8 minutes due to pressure
       volume: 5
@@ -68,7 +68,7 @@
   suffix: Filled
   components:
     - type: GasTank
-      outputPressure: 42.6
+      releasePressure: 42.6 # Aurora's Song - outputPressure>releasePressure
       air:
         # 3.9 minutes due to output pressure
         volume: 2.5

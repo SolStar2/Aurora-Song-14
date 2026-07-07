@@ -256,7 +256,7 @@
   - type: NpcFactionMember
     factions:
       - SimpleHostile
-  - type: Damageable
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
     damageContainer: StructuralInorganic
   - type: MovementIgnoreGravity # Or they just can't do something
   - type: Appearance # Next three components make the mob fall over when dead

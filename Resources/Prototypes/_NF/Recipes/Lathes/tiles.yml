@@ -45,22 +45,23 @@
 
 # Recipes
 
-- type: latheRecipe
-  id: FloorTileItemMetalDiamond
-  parent: NFBaseFloorTileRecipe
-  result: FloorTileItemMetalDiamond
-  materials:
-    Steel: 50
+# Aurora's Song - Prefer upstream version
+#- type: latheRecipe
+#  id: FloorTileItemMetalDiamond
+#  parent: NFBaseFloorTileRecipe
+#  result: FloorTileItemMetalDiamond
+#  materials:
+#    Steel: 50
 
-- type: latheRecipe
-  id: FloorTileItemFreezer
-  parent: NFBaseFloorTileRecipe
-  result: FloorTileItemFreezer
+#- type: latheRecipe
+#  id: FloorTileItemFreezer
+#  parent: NFBaseFloorTileRecipe
+#  result: FloorTileItemFreezer
 
-- type: latheRecipe
-  id: FloorTileItemShowroom
-  parent: NFBaseFloorTileRecipe
-  result: FloorTileItemShowroom
+#- type: latheRecipe
+#  id: FloorTileItemShowroom
+#  parent: NFBaseFloorTileRecipe
+#  result: FloorTileItemShowroom
 
 - type: latheRecipe
   id: FloorTileItemGCircuit
@@ -77,22 +78,22 @@
   parent: NFBaseFloorTileSilverRecipe
   result: FloorTileItemRCircuit
 
-- type: latheRecipe
-  id: FloorTileItemGold
-  parent: NFBaseFloorTileGoldRecipe
-  result: FloorTileItemGold
+#- type: latheRecipe
+#  id: FloorTileItemGold
+#  parent: NFBaseFloorTileGoldRecipe
+#  result: FloorTileItemGold
 
 - type: latheRecipe
   id: FloorTileItemMono
   parent: NFBaseFloorTileRecipe
   result: FloorTileItemMono
 
-- type: latheRecipe
-  id: FloorTileItemLino
-  parent: NFBaseFloorTileRecipe
-  result: FloorTileItemLino
-  materials:
-    Plastic: 25
+#- type: latheRecipe
+#  id: FloorTileItemLino
+#  parent: NFBaseFloorTileRecipe
+#  result: FloorTileItemLino
+#  materials:
+#    Plastic: 25
 
 - type: latheRecipe
   id: FloorTileItemHydro
@@ -104,10 +105,10 @@
   parent: NFBaseFloorTileRecipe
   result: FloorTileItemLime
 
-- type: latheRecipe
-  id: FloorTileItemShuttleWhite
-  parent: NFBaseFloorTileSilverRecipe
-  result: FloorTileItemShuttleWhite
+#- type: latheRecipe
+#  id: FloorTileItemShuttleWhite
+#  parent: NFBaseFloorTileSilverRecipe
+#  result: FloorTileItemShuttleWhite
 
 #- type: latheRecipe
 #  id: FloorTileStackShuttleBlue
@@ -119,65 +120,65 @@
 #  parent: NFBaseFloorTileSilverRecipe
 #  result: FloorTileStackShuttleOrange
 
-- type: latheRecipe
-  id: FloorTileItemShuttlePurple
-  parent: NFBaseFloorTileSilverRecipe
-  result: FloorTileItemShuttlePurple
+#- type: latheRecipe
+#  id: FloorTileItemShuttlePurple
+#  parent: NFBaseFloorTileSilverRecipe
+#  result: FloorTileItemShuttlePurple
 
 #- type: latheRecipe
 #  id: FloorTileStackShuttleRed
 #  parent: NFBaseFloorTileSilverRecipe
 #  result: FloorTileStackShuttleRed
 
-- type: latheRecipe
-  id: FloorTileItemEighties
-  parent: NFBaseFloorTileClothRecipe
-  result: FloorTileItemEighties
+#- type: latheRecipe
+#  id: FloorTileItemEighties
+#  parent: NFBaseFloorTileClothRecipe
+#  result: FloorTileItemEighties
 
-- type: latheRecipe
-  id: FloorTileItemArcadeBlue
-  parent: NFBaseFloorTileClothRecipe
-  result: FloorTileItemArcadeBlue
+#- type: latheRecipe
+#  id: FloorTileItemArcadeBlue
+#  parent: NFBaseFloorTileClothRecipe
+#  result: FloorTileItemArcadeBlue
 
-- type: latheRecipe
-  id: FloorTileItemArcadeBlue2
-  parent: NFBaseFloorTileClothRecipe
-  result: FloorTileItemArcadeBlue2
+#- type: latheRecipe
+#  id: FloorTileItemArcadeBlue2
+#  parent: NFBaseFloorTileClothRecipe
+#  result: FloorTileItemArcadeBlue2
 
-- type: latheRecipe
-  id: FloorTileItemArcadeRed
-  parent: NFBaseFloorTileClothRecipe
-  result: FloorTileItemArcadeRed
+#- type: latheRecipe
+#  id: FloorTileItemArcadeRed
+#  parent: NFBaseFloorTileClothRecipe
+#  result: FloorTileItemArcadeRed
 
-- type: latheRecipe
-  id: FloorTileItemBoxing
-  parent: NFBaseFloorTileRecipe
-  result: FloorTileItemBoxing
+#- type: latheRecipe
+#  id: FloorTileItemBoxing
+#  parent: NFBaseFloorTileRecipe
+#  result: FloorTileItemBoxing
 
-- type: latheRecipe
-  id: FloorTileItemGym
-  parent: NFBaseFloorTileRecipe
-  result: FloorTileItemGym
+#- type: latheRecipe
+#  id: FloorTileItemGym
+#  parent: NFBaseFloorTileRecipe
+#  result: FloorTileItemGym
 
 - type: latheRecipe
   id: FloorTileItemBlue
   parent: NFBaseFloorTileRecipe
   result: FloorTileItemBlue
 
-- type: latheRecipe
-  id: FloorTileItemMining
-  parent: NFBaseFloorTileRecipe
-  result: FloorTileItemMining
+#- type: latheRecipe
+#  id: FloorTileItemMining
+#  parent: NFBaseFloorTileRecipe
+#  result: FloorTileItemMining
 
-- type: latheRecipe
-  id: FloorTileItemMiningDark
-  parent: NFBaseFloorTileRecipe
-  result: FloorTileItemMiningDark
+#- type: latheRecipe
+#  id: FloorTileItemMiningDark
+#  parent: NFBaseFloorTileRecipe
+#  result: FloorTileItemMiningDark
 
-- type: latheRecipe
-  id: FloorTileItemMiningLight
-  parent: NFBaseFloorTileRecipe
-  result: FloorTileItemMiningLight
+#- type: latheRecipe
+#  id: FloorTileItemMiningLight
+#  parent: NFBaseFloorTileRecipe
+#  result: FloorTileItemMiningLight
 
 - type: latheRecipe
   id: FloorTileItemBar
@@ -204,25 +205,25 @@
   parent: NFBaseFloorTileRecipe
   result: FloorTileItemLaundry
 
-- type: latheRecipe
-  id: FloorTileItemSilver
-  parent: NFBaseFloorTileSilverRecipe
-  result: FloorTileItemSilver
+#- type: latheRecipe
+#  id: FloorTileItemSilver
+#  parent: NFBaseFloorTileSilverRecipe
+#  result: FloorTileItemSilver
 
 - type: latheRecipe
   id: FloorCarpetItemSkyBlue
   parent: NFBaseFloorTileClothRecipe
   result: FloorCarpetItemSkyBlue
 
-- type: latheRecipe
-  id: FloorTileItemCarpetClown
-  parent: NFBaseFloorTileClothRecipe
-  result: FloorTileItemCarpetClown
+#- type: latheRecipe
+#  id: FloorTileItemCarpetClown
+#  parent: NFBaseFloorTileClothRecipe
+#  result: FloorTileItemCarpetClown
 
-- type: latheRecipe
-  id: FloorTileItemCarpetOffice
-  parent: NFBaseFloorTileClothRecipe
-  result: FloorTileItemCarpetOffice
+#- type: latheRecipe
+#  id: FloorTileItemCarpetOffice
+#  parent: NFBaseFloorTileClothRecipe
+#  result: FloorTileItemCarpetOffice
 
 - type: latheRecipe
   id: FloorTileItemFlesh

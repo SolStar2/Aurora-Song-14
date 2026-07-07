@@ -16,7 +16,7 @@
         amount: 3
         doAfter: 0.5
       - material: MetalRod
-        amount: 5
+        amount: 10 # Aurora's Song 5>10
         doAfter: 0.5
   - node: ImprovisedCrossbow
     entity: CrossbowImprovised

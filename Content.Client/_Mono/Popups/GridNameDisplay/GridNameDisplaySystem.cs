@@ -12,11 +12,11 @@ namespace Content.Client._Mono.Popups.GridNameDisplay;
 /// <summary>
 /// Handles displaying grid names when a player enters a grid.
 /// </summary>
-public sealed class GridNameDisplaySystem : EntitySystem
+public sealed partial class GridNameDisplaySystem : EntitySystem
 {
-    [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IResourceCache _resourceCache = default!;
+    [Dependency] private IUserInterfaceManager _uiManager = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IResourceCache _resourceCache = default!;
 
     private Font? _gridNameFont;
     private Control? _container;

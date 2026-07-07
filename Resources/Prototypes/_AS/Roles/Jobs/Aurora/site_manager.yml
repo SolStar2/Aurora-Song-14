@@ -17,7 +17,6 @@
   supervisors: job-supervisors-colcom
   weight: 160
   displayWeight: 10
-  canBeAntag: false
   accessGroups:
   - AllAccess
   special:

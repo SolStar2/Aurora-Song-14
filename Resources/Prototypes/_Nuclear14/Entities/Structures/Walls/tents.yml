@@ -21,8 +21,9 @@
         - WallLayer
         density: 100
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Web
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: StructuralInorganic
   - type: RangedDamageSound
     soundGroups:
       Brute:

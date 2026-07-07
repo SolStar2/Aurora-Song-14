@@ -154,7 +154,7 @@
 - type: entity
   id: NFShellShotgunTranquilizer
   name: shell (12g tranquilizer)
-  parent: NFBaseShellShotgunLight
+  parent: [SolutionAmmo, SolutionToolVeryTiny, NFBaseShellShotgunLight]
   components:
   - type: Sprite
     layers:
@@ -165,11 +165,10 @@
   - type: SpentAmmoVisuals
     state: "tranquilizer"
   - type: ChemicalAmmo
-  - type: SolutionContainerManager
-    solutions:
-      ammo:
-        reagents:
-        - ReagentId: ChloralHydrate
-          Quantity: 4
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: ChloralHydrate
+        Quantity: 4
   - type: SolutionTransfer
     maxTransferAmount: 4

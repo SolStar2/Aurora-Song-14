@@ -1,5 +1,5 @@
 - type: entity
-  parent: MaterialBase
+  parent: [SolutionCompositeNormalStackable, MaterialBase] # Aurora's Song - Convert to solution
   id: MaterialMnemolith # Not actually useful for anything right now, but you can grind it to get a roleplay chemical
   name: mnemolith # Hypothetically, it could be used to make psionic tools (like PenMantis and MantisMeleeKnife)
   description: "A dark, glassy stone that forms during severe noospheric storms. It absorbs the intent of psions, allowing it to be \"taught\" new properties and repurposed for different uses. Commonly employed in the construction of esoteric tools, but you don't know how." # Edit that last bit out if it gets crafting recipes
@@ -33,15 +33,15 @@
   - type: Material
   - type: Extractable
     grindableSolutionName: mnemolith
-  - type: SolutionContainerManager
-    solutions:
-      mnemolith:
-        reagents:
-        - ReagentId: MnemolithReagent
-          Quantity: 15
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: MnemolithReagent
+        Quantity: 10
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible # No real reason to break it, but if you do it turns into powder
     thresholds:
     - trigger:
@@ -74,7 +74,7 @@
     count: 1
 
 - type: entity
-  parent: BaseItem # No longer really a material, more like ash now
+  parent: [SolutionCompositeNormalStackable, BaseItem] # No longer really a material, more like ash now # Aurora's Song - Convert to solution
   id: MnemolithPowder
   name: mnemolith powder
   description: "The pulverized remains of a dark, glassy stone that forms during severe noospheric storms. It absorbs the intent of psions, allowing it to be \"taught\" new properties and repurposed for different uses, though in powder form it only serves medicinal purposes. Potential psychological impact aside, there are no known lasting effects."
@@ -87,23 +87,21 @@
     sprite: _DEN/Objects/Materials/materials.rsi
     state: mnemolithpowder
   - type: Edible # Aurora's Song - Food>Edible
-    solution: food
+    solution: composite # Aurora's Song - Convert to solution
     transferAmount: 15
   - type: BadFood
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: MnemolithReagent
-          Quantity: 15
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents:
+      - ReagentId: MnemolithReagent
+        Quantity: 10
   - type: SolutionSpiker
-    sourceSolution: food
+    sourceSolution: composite # Aurora's Song - Convert to solution
     ignoreEmpty: true
   - type: ScoopableSolution
-    solution: food
+    solution: composite # Aurora's Song - Convert to solution
   - type: Extractable
-    grindableSolutionName: food
+    grindableSolutionName: composite # Aurora's Song - Convert to solution
   - type: Tag
     tags:
     - MantisBeltStorable # Why not, their gear is made of it
@@ -148,8 +146,9 @@
     castShadows: false
     color: "#d9418d"
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Glass
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible # No real reason to break it, but if you do it just splits into shards like its description suggests
     thresholds:
     - trigger:

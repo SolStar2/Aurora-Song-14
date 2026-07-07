@@ -9,11 +9,11 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._Impstation.NotifierExamine;
 
-public sealed class NotifierExamineSystem : EntitySystem
+public sealed partial class NotifierExamineSystem : EntitySystem
 {
-    [Dependency] private readonly ExamineSystemShared _examine = default!;
-    [Dependency] private readonly INetConfigurationManager _netCfg = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private ExamineSystemShared _examine = default!;
+    [Dependency] private INetConfigurationManager _netCfg = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
 
     private readonly ResPath _accessibilityIcon = new("/Textures/_Impstation/Interface/VerbIcons/star.svg.192dpi.png");
     public override void Initialize()

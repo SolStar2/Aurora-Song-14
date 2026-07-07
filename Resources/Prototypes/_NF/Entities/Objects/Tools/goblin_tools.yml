@@ -4,7 +4,6 @@
   suffix: Goblin Made
   abstract: true
   components:
-  - type: Timer
   - type: TimedSpawner
     prototypes:
     - SpawnGoblinMadeToolMalfunction
@@ -13,8 +12,9 @@
     minimumEntitiesSpawned: 1
     maximumEntitiesSpawned: 1
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable # Aurora's Song - Extract damageContainer to Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -468,11 +468,9 @@
   parent: NFGoblinMadeWelder
   suffix: Goblin Made, Empty
   components:
-  - type: SolutionContainerManager
-    solutions:
-      Welder:
-        reagents: []
-        maxVol: 100
+  - type: Solution # Aurora's Song - Convert to solution
+    solution:
+      reagents: []
   - type: Construction
     graph: NFGoblinMadeWelder
     node: NFGoblinMadeWelder
