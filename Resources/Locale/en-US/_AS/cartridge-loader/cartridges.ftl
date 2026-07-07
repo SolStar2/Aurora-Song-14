@@ -6,7 +6,7 @@ ledger-tab-Damascus = Damascus
 neonote-program-name = NeoNote
 
 neonote-ui-list-create = New
-neonote-ui-list-no-notes = no notes
+neonote-ui-list-no-notes = No Notes
 
 neonote-ui-list-entry-created = created: {$time}
 neonote-ui-list-entry-modified = modified: {$time}
