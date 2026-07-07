@@ -14,13 +14,13 @@ namespace Content.Server._AS.CartridgeLoader.Cartridges;
 /// <summary>
 /// Server side handling of the NeoNote system. Handles messages and sends states to client and interfaces with Personal Note API.
 /// </summary>
-public sealed class NeoNoteCartridgeSystem : EntitySystem
+public sealed partial class NeoNoteCartridgeSystem : EntitySystem
 {
-    [Dependency] private readonly PersonalRecordSystem _record = default!;
-    [Dependency] private readonly CartridgeLoaderSystem _cartridge = default!;
-    [Dependency] private readonly IdCardSystem _id = default!;
-    [Dependency] private readonly ActorSystem _actor = default!;
-    [Dependency] private readonly RecordLogging _logging = default!;
+    [Dependency] private PersonalRecordSystem _record = default!;
+    [Dependency] private CartridgeLoaderSystem _cartridge = default!;
+    [Dependency] private IdCardSystem _id = default!;
+    [Dependency] private ActorSystem _actor = default!;
+    [Dependency] private RecordLogging _logging = default!;
     private ISawmill _sawmill = default!;
 
     public override void Initialize()

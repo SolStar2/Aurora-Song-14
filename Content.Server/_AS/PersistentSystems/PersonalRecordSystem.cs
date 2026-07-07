@@ -9,10 +9,10 @@ namespace Content.Server._AS.PersistentSystems;
 /// <summary>
 /// Handles interfacing with PersonalNotes with logging.
 /// </summary>
-public sealed class PersonalRecordSystem : EntitySystem
+public sealed partial class PersonalRecordSystem : EntitySystem
 {
-    [Dependency] private readonly IServerDbManager _db = default!;
-    [Dependency] private readonly RecordLogging _logging = default!;
+    [Dependency] private IServerDbManager _db = default!;
+    [Dependency] private RecordLogging _logging = default!;
     private int _roundId;
 
     public override void Initialize()
