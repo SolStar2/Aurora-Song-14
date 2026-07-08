@@ -21,6 +21,8 @@ public sealed partial class NeoNoteUiFragmentEdit : Control
 
         var recordId = note?.RecordId;
 
+        BodyEdit.Placeholder = new Rope.Leaf(Loc.GetString("neonote-ui-body-placeholder"));
+
         if (note is { } existing) // null recordId means this is a new note (create), otherwise it's an edit (save)
         {
             // Pre populate the fields of the note if they exist.

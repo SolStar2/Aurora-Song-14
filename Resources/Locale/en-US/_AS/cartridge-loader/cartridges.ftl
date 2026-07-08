@@ -21,3 +21,4 @@ neonote-ui-edit-close = Exit
 neonote-ui-edit-save = Save
 neonote-ui-edit-create = Create New
 neonote-ui-title-placeholder = Untitled
+neonote-ui-body-placeholder = Please enter note here.
