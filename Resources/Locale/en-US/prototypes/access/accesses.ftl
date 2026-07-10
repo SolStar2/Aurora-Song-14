@@ -3,7 +3,7 @@ id-card-access-level-captain = Captain
 id-card-access-level-cryogenics = Cryogenics
 id-card-access-level-emergency-shuttle-repeal = E.Shuttle Repeal All
 
-#Aurora's Song: HoP/ HoS edited to Colonial Rep/ Commissioner
+# Aurora's Song: HoP/ HoS edited to Colonial Rep/ Commissioner
 id-card-access-level-head-of-personnel = Colonial Representative
 id-card-access-level-head-of-security = Commissioner
 id-card-access-level-security = Security

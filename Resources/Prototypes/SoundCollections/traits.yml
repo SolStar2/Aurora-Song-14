@@ -347,8 +347,8 @@
   - /Audio/_Moffstation/Voice/Avali/avali_yawn.ogg
   - /Audio/_NF/Animals/cat_meow_mistake3.ogg
   - /Audio/_NF/Animals/dinosaur_breath1.ogg
-  - /Audio/_NF/Effects/Gasp/sheleg_deathgasp_1.ogg
-  - /Audio/_NF/Effects/Gasp/sheleg_gasp_1.ogg
+  - /Audio/_AS/Voice/Sheleg/sheleg_deathgasp_1.ogg
+  - /Audio/_AS/Voice/Sheleg/sheleg_gasp_1.ogg
   - /Audio/_NF/Effects/Scrapbots/robot-chatter-03.ogg
   - /Audio/_NF/Effects/Scrapbots/robot-chatter-04.ogg
   - /Audio/_NF/Items/Artifact/artifact-activation-fail1.ogg
@@ -358,12 +358,12 @@
   - /Audio/_NF/Voice/Goblin/goblin_deathgasp_2.ogg
   - /Audio/_NF/Voice/Goblin/goblin_gasp_3.ogg
   - /Audio/_NF/Voice/Goblin/goblin_scream_1.ogg
-  - /Audio/_NF/Voice/Sheleg/sheleg_laugh_1.ogg
-  - /Audio/_NF/Voice/Sheleg/sheleg_scream_4.ogg
-  - /Audio/_NF/Voice/Sheleg/sheleg_yawn_1.ogg
-  - /Audio/_NF/Voice/Talk/sheleg.ogg
-  - /Audio/_NF/Voice/Talk/sheleg_ask.ogg
-  - /Audio/_NF/Voice/Talk/sheleg_exclaim.ogg
+  - /Audio/_AS/Voice/Sheleg/sheleg_laugh_1.ogg
+  - /Audio/_AS/Voice/Sheleg/sheleg_scream_1.ogg
+  - /Audio/_AS/Voice/Sheleg/sheleg_yawn_1.ogg
+  - /Audio/_AS/Voice/Talk/sheleg.ogg
+  - /Audio/_AS/Voice/Talk/sheleg_ask.ogg
+  - /Audio/_AS/Voice/Talk/sheleg_exclaim.ogg
   - /Audio/_NF/Weapons/Guns/Gunshots/rifle.ogg
   - /Audio/Nyanotrasen/Weapons/club.ogg
   # Aurora's Song Edit End

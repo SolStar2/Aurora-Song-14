@@ -24,11 +24,13 @@
     - /Audio/Floof/Voice/Vulpkanin/vulpscream2.ogg # Floofstation
     - /Audio/Floof/Voice/Vulpkanin/vulpscream3.ogg # Floofstation
     - /Audio/Floof/Voice/Vulpkanin/vulpscream4.ogg # Floofstation
-    - /Audio/_NF/Voice/Sheleg/sheleg_scream_1.ogg # Frontier
-    - /Audio/_NF/Voice/Sheleg/sheleg_scream_2.ogg # Frontier
-    - /Audio/_NF/Voice/Sheleg/sheleg_scream_3.ogg # Frontier
-    - /Audio/_NF/Voice/Sheleg/sheleg_scream_4.ogg # Frontier
-    - /Audio/_NF/Voice/Sheleg/sheleg_scream_5.ogg # Frontier
+    # Aurora's Song Edit: Sheleg sound replacement
+    - /Audio/_AS/Voice/Sheleg/sheleg_scream_1.ogg
+    #- /Audio/_NF/Voice/Sheleg/sheleg_scream_2.ogg # Frontier
+    #- /Audio/_NF/Voice/Sheleg/sheleg_scream_3.ogg # Frontier
+    #- /Audio/_NF/Voice/Sheleg/sheleg_scream_4.ogg # Frontier
+    #- /Audio/_NF/Voice/Sheleg/sheleg_scream_5.ogg # Frontier
+    # End Aurora's Song Edit
     - /Audio/_NF/Voice/Goblin/goblin_scream_1.ogg # Frontier
     - /Audio/_NF/Voice/Goblin/goblin_scream_2.ogg # Frontier
     - /Audio/_NF/Voice/Goblin/goblin_scream_3.ogg # Frontier
@@ -51,8 +53,10 @@
     - /Audio/Animals/ferret_happy.ogg
     - /Audio/Voice/Moth/moth_laugh.ogg
     - /Audio/Voice/Vox/vox_laugh.ogg # Frontier
-    - /Audio/_NF/Voice/Sheleg/sheleg_laugh_1.ogg # Frontier
-    - /Audio/_NF/Voice/Sheleg/sheleg_laugh_2.ogg # Frontier
+    # Aurora's Song Edit: Sheleg sound replacement
+    - /Audio/_AS/Voice/Sheleg/sheleg_laugh_1.ogg
+    #- /Audio/_NF/Voice/Sheleg/sheleg_laugh_2.ogg # Frontier
+    # Aurora's Song Edit End
     - /Audio/_NF/Voice/Goblin/goblin_cackle_1.ogg # Frontier
     - /Audio/_NF/Voice/Goblin/goblin_cackle_2.ogg # Frontier
     - /Audio/_SimpleStation14/Voice/Slime/slime_laugh_f1.ogg # Aurora Song
@@ -85,7 +89,7 @@
   files:
     - /Audio/Voice/Human/male_sigh.ogg
     - /Audio/Voice/Human/female_sigh.ogg
-    - /Audio/_NF/Voice/Sheleg/sheleg_sigh_1.ogg # Frontier
+    - /Audio/_AS/Voice/Sheleg/sheleg_sigh_1.ogg # Aurora's Song: Sheleg sound replacement
 
 - type: soundCollection
   id: HarpyCry
@@ -97,10 +101,12 @@
     - /Audio/Voice/Human/cry_female_1.ogg
     - /Audio/Voice/Human/cry_female_2.ogg
     - /Audio/Voice/Human/cry_female_3.ogg
-    - /Audio/Voice/Human/cry_female_4.ogg
-    - /Audio/_NF/Voice/Sheleg/sheleg_cry_1.ogg # Frontier
-    - /Audio/_NF/Voice/Sheleg/sheleg_cry_2.ogg # Frontier
-    - /Audio/_NF/Voice/Sheleg/sheleg_cry_3.ogg # Frontier
+    - /Audio/Voice/Human/cry_female_4.ogg 
+    # Aurora's Song Edit: Sheleg sound replacement
+    - /Audio/_AS/Voice/Sheleg/sheleg_cry_1.ogg
+    #- /Audio/_NF/Voice/Sheleg/sheleg_cry_2.ogg # Frontier
+    #- /Audio/_NF/Voice/Sheleg/sheleg_cry_3.ogg # Frontier
+    # Aurora's Song Edit End
 
 - type: soundCollection
   id: HarpyMeows

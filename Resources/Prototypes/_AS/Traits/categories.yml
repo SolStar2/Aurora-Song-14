@@ -1,0 +1,4 @@
+- type: traitCategory
+  id: IPCSpeechSynth
+  name: trait-category-synthesizer
+  maxTraitPoints: 1

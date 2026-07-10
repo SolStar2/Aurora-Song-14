@@ -25,7 +25,7 @@
   replaceComponents: true
   name: trait-silicon-synth-name
   description: trait-silicon-synth-desc
-  category: SpeechTraits
+  category: IPCSpeechSynth
   speciesWhitelist: [IPC]
   cost: 1
   components:
@@ -38,7 +38,7 @@
   replaceComponents: true
   name: trait-syndie-synth-name
   description: trait-syndie-synth-desc
-  category: SpeechTraits
+  category: IPCSpeechSynth
   speciesWhitelist: [IPC]
   cost: 1
   components:
@@ -54,7 +54,7 @@
   replaceComponents: true
   name: trait-xeno-synth-name
   description: trait-xeno-synth-desc
-  category: SpeechTraits
+  category: IPCSpeechSynth
   speciesWhitelist: [IPC]
   cost: 1
   components:

@@ -1889,3 +1889,24 @@ Entries:
   id: 9594
   time: '2026-07-07T04:07:51.0000000+00:00'
   url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1187
+- author: Dizzy-Eevee
+  changes:
+    - type: Tweak
+      message: Sheleg have been given completely new audio.
+  id: 9595
+  time: '2026-07-07T07:07:35.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1220
+- author: salamanderskies
+  changes:
+    - type: Tweak
+      message: IPC speech traits are now in their own category.
+  id: 9596
+  time: '2026-07-07T07:07:57.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1222
+- author: GreyScaleHarlequin
+  changes:
+    - type: Fix
+      message: Syndicate laser turrets now take damage again, whoops.
+  id: 9597
+  time: '2026-07-09T20:24:50.0000000+00:00'
+  url: https://github.com/AuroraSong14/Aurora-Song-14/pull/1231

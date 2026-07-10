@@ -8,4 +8,4 @@
 - type: soundCollection
   id: ShelegGasp
   files:
-  - /Audio/_NF/Effects/Gasp/sheleg_gasp_1.ogg
+  - /Audio/_AS/Voice/Sheleg/sheleg_gasp_1.ogg # Aurora's Song: Sheleg sound replacement

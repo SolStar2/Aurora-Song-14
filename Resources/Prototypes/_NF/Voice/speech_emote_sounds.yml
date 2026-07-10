@@ -107,7 +107,7 @@
     Yawn:
       collection: ShelegYawn
     Snore:
-      collection: ShelegSnores
+      collection: Snores # Aurora's Song: Sheleg sound replacement
     Honk:
       collection: CluwneHorn
     Sigh:
@@ -115,7 +115,7 @@
     Crying:
       collection: ShelegCry
     Whistle:
-      collection: ShelegWhistles
+      collection: Whistles # Aurora's Song: Sheleg sound replacement
     Weh:
       collection: Weh
     Hew:

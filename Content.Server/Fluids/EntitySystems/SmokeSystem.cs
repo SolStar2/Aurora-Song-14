@@ -95,7 +95,7 @@ public sealed partial class SmokeSystem : EntitySystem
                 return;
         }
 
-        var exists = Exists(entity);
+        var exists = Exists(entity) && Exists(args.OtherEntity); // Aurora's Song - Test for both entities existing
 
         if (!TryComp<PhysicsComponent>(args.OtherEntity, out var body))
             return;

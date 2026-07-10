@@ -4,9 +4,9 @@ chat-radio-message-wrap-bold = [color={$color}]{$channel} [bold]{$name}[/bold] {
 
 examine-headset-default-channel = Use {$prefix} for the default channel ([color={$color}]{$channel}[/color]).
 
-#Monolith - change Common to Broadband, logged by AS
+# Monolith - change Common to Broadband, logged by AS
 chat-radio-common = Broadband
-#Aurora's Song - change CentComm to Nanotrasen
+# Aurora's Song - change CentComm to Nanotrasen
 chat-radio-centcom = Nanotrasen
 chat-radio-command = Command
 chat-radio-engineering = Engineering

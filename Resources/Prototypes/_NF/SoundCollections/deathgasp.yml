@@ -9,4 +9,4 @@
 - type: soundCollection
   id: ShelegDeathGasp
   files:
-  - /Audio/_NF/Effects/Gasp/sheleg_deathgasp_1.ogg
+  - /Audio/_AS/Voice/Sheleg/sheleg_deathgasp_1.ogg # Aurora's Song: Sheleg sound replacement

@@ -1,4 +1,4 @@
-#Aurora's Song - Change Frontier Outpost to the central station, Frontier to Aurora, Frontier Station to Aurora's Song, NFSD to SLE, SR/ Station Representative to CR/ Colonial Representative, Sheriff to Commissioner, tip 111 changed to taste/ rules match
+# Aurora's Song - Change Frontier Outpost to the central station, Frontier to Aurora, Frontier Station to Aurora's Song, NFSD to SLE, SR/ Station Representative to CR/ Colonial Representative, Sheriff to Commissioner, tip 111 changed to taste/ rules match
 nf-tips-dataset-1 = If you're on fire, you can click the alert on the right of your screen to stop, drop, and roll.
 nf-tips-dataset-2 = You can view and edit all keybindings used in-game at any time through the Options menu.
 nf-tips-dataset-3 = You can access the in-game guidebook through the escape menu, or by pressing Numpad 0 by default.
@@ -110,7 +110,7 @@ nf-tips-dataset-107 = Large ships like the Crescent can act as motherships. They
 nf-tips-dataset-108 = Remember to read Space Law, it comes with your PDA! It contains some useful info, for example: you can start a mutiny if your captain is found to be in violation of the Space Law.
 nf-tips-dataset-109 = Your PDA has a pre-installed news application. Check it out, perhaps the local reporter has posted some interesting news?
 nf-tips-dataset-110 = There's a special app installed in your PDA, which allows you to see posted bounties. If you can fulfill one of them, you can ask the local CR or Commissioner for a reward!
-#nf-tips-dataset-111 = Remember, the central station has a 200m wide safe-zone. It's forbidden to engage in antagonist behavior or damage property in any way within that limit!
+# nf-tips-dataset-111 = Remember, the central station has a 200m wide safe-zone. It's forbidden to engage in antagonist behavior or damage property in any way within that limit!
 nf-tips-dataset-111 = Remember, the central station is a primary hub for people to convene on and travel through. Try to keep it nice and well-kept!
 nf-tips-dataset-112 = If you're using an IFF console, remember to turn your IFF on within 500m of Frontier, or you'll risk facing SLE on your ship!
 nf-tips-dataset-113 = Going on an expedition alone is very risky! Make sure to always have a crewmate to save you in case you get ambushed by a xeno queen.

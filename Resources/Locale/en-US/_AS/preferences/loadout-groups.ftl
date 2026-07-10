@@ -1,4 +1,4 @@
-#region Medic
+# region Medic
 loadout-group-medic-head = head
 loadout-group-medic-jumpsuit = jumpsuit
 loadout-group-medic-ears = ears
@@ -8,15 +8,15 @@ loadout-group-medic-outerclothing = outer clothing
 loadout-group-medic-pda = PDA
 loadout-group-medic-cartridge = PDA cartridges
 
-#region Service Worker
+# region Service Worker
 loadout-group-service-worker-pda = PDA
 
-#region Mercenary
+# region Mercenary
 loadout-group-mercenary-longarm = longarm
 loadout-group-mercenary-sidearm = sidearm
 loadout-group-mercenary-ammo = ammo
 
-#region Site Manager
+# region Site Manager
 loadout-group-site-manager-jumpsuit = jumpsuit
 loadout-group-site-manager-head = head
 loadout-group-site-manager-neck = neck
@@ -29,7 +29,7 @@ loadout-group-site-manager-belt = belt
 loadout-group-site-manager-gloves = gloves
 loadout-group-site-manager-pda = PDA
 
-#region Site Worker
+# region Site Worker
 loadout-group-site-worker-jumpsuit = jumpsuit
 loadout-group-site-worker-head = head
 loadout-group-site-worker-neck = neck

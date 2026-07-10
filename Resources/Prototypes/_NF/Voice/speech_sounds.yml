@@ -19,8 +19,8 @@
 - type: speechSounds
   id: Sheleg
   saySound:
-    path: /Audio/_NF/Voice/Talk/sheleg.ogg
+    path: /Audio/_AS/Voice/Talk/sheleg.ogg # Aurora's Song: Sheleg sound replacement
   askSound:
-    path: /Audio/_NF/Voice/Talk/sheleg_ask.ogg
+    path: /Audio/_AS/Voice/Talk/sheleg_ask.ogg # Aurora's Song: Sheleg sound replacement
   exclaimSound:
-    path: /Audio/_NF/Voice/Talk/sheleg_exclaim.ogg
+    path: /Audio/_AS/Voice/Talk/sheleg_exclaim.ogg # Aurora's Song: Sheleg sound replacement
